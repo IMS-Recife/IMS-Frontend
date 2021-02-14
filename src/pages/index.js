@@ -1,6 +1,7 @@
 import Head from "next/head";
 import React from "react";
 import styled from "styled-components";
+import PrefeituraRecife from "../assets/prefeiturarecife.png";
 
 const Title = styled.h1`
   font-size: 100px;
@@ -21,6 +22,7 @@ export default function Home() {
       </Head>
       <main>
         <Title>Homepage IMS</Title>
+        <img src={PrefeituraRecife} alt="Prefeitura do Recife" />
         <Paragraph>isso é um teste</Paragraph>
       </main>
     </div>
