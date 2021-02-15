@@ -22,15 +22,19 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
-        <Title>Homepage IMS</Title>
+        <Title>
+          <FormattedMessage id="HOMEPAGE_IMS" />
+        </Title>
         <img src={PrefeituraRecife} alt="Prefeitura do Recife" />
-        <Paragraph>isso é um teste</Paragraph>
+        <Paragraph>
+          <FormattedMessage id="THIS_IS_A_TEST" />
+        </Paragraph>
         <div className="row">
           <button
             type="button"
             className="btn btn-success font-weight-bolder btn-lg col-5"
           >
-            Botão Teste Bootstrap
+            <FormattedMessage id="BOOTSTRAP_TEST_BUTTON" />
           </button>
           <FormattedMessage id="HELLO" />
         </div>
