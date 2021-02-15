@@ -32,7 +32,7 @@ export default function Home() {
         <div className="row">
           <button
             type="button"
-            className="btn btn-success font-weight-bolder btn-lg col-5"
+            className="btn btn-warning font-weight-bolder btn-lg col-5"
           >
             <FormattedMessage id="BOOTSTRAP_TEST_BUTTON" />
           </button>
