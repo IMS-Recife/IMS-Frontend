@@ -1,6 +1,7 @@
 import Head from "next/head";
 import React from "react";
 import styled from "styled-components";
+import { FormattedMessage } from "react-intl";
 import PrefeituraRecife from "../assets/prefeiturarecife.png";
 
 const Title = styled.h1`
@@ -31,6 +32,7 @@ export default function Home() {
           >
             Botão Teste Bootstrap
           </button>
+          <FormattedMessage id="HELLO" />
         </div>
       </main>
     </div>
