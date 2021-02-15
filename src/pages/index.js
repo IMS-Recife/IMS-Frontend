@@ -1,6 +1,7 @@
 import Head from "next/head";
 import React from "react";
 import styled from "styled-components";
+import "bootstrap/dist/css/bootstrap.css";
 import PrefeituraRecife from "../assets/prefeiturarecife.png";
 
 const Title = styled.h1`
@@ -24,6 +25,13 @@ export default function Home() {
         <Title>Homepage IMS</Title>
         <img src={PrefeituraRecife} alt="Prefeitura do Recife" />
         <Paragraph>isso é um teste</Paragraph>
+        <button
+          style={{ marginLeft: "50px" }}
+          type="button"
+          className="btn btn-success font-weight-bolder btn-lg"
+        >
+          Botão Teste Bootstrap
+        </button>
       </main>
     </div>
   );
