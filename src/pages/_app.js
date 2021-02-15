@@ -3,6 +3,7 @@ import React from "react";
 import { ThemeProvider } from "styled-components";
 
 import GlobalStyle from "../styles/global";
+import "bootstrap/dist/css/bootstrap.css";
 import theme from "../styles/theme";
 
 function MyApp({ Component, pageProps }) {
