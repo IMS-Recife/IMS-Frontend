@@ -1,20 +1,6 @@
 import Head from "next/head";
 import React from "react";
-import styled from "styled-components";
-import { FormattedMessage } from "react-intl";
-import Image from "next/image";
-import PrefeituraRecife from "../assets/prefeiturarecife.png";
-
-const Title = styled.h1`
-  font-size: 100px;
-  color: #f7ec45;
-`;
-
-const Paragraph = styled.p`
-  font-size: 40px;
-  color: #ffffff;
-  margin-left: 40px;
-`;
+import Navbar from "../patterns/Navbar";
 
 export default function Home() {
   return (
@@ -22,29 +8,7 @@ export default function Home() {
       <Head>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main>
-        <Title>
-          <FormattedMessage id="HOMEPAGE_IMS" />
-        </Title>
-        <Image
-          src={PrefeituraRecife}
-          alt="Prefeitura do Recife"
-          width="200px"
-          height="200px"
-        />
-        <Paragraph>
-          <FormattedMessage id="THIS_IS_A_TEST" />
-        </Paragraph>
-        <div className="row">
-          <button
-            type="button"
-            className="btn btn-warning font-weight-bolder btn-lg col-5"
-          >
-            <FormattedMessage id="BOOTSTRAP_TEST_BUTTON" />
-          </button>
-          <FormattedMessage id="HELLO" />
-        </div>
-      </main>
+      <Navbar />
     </div>
   );
 }
