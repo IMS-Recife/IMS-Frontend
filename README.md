@@ -18,7 +18,6 @@
 
 - React JS;
 - Next JS;
-- Next Images;
 - React-Bootstrap;
 - Redux e Redux-saga;
 - Styled components;
