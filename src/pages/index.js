@@ -2,6 +2,7 @@ import Head from "next/head";
 import React from "react";
 import styled from "styled-components";
 import { FormattedMessage } from "react-intl";
+import Image from "next/image";
 import PrefeituraRecife from "../assets/prefeiturarecife.png";
 
 const Title = styled.h1`
@@ -25,7 +26,12 @@ export default function Home() {
         <Title>
           <FormattedMessage id="HOMEPAGE_IMS" />
         </Title>
-        <img src={PrefeituraRecife} alt="Prefeitura do Recife" />
+        <Image
+          src={PrefeituraRecife}
+          alt="Prefeitura do Recife"
+          width="200px"
+          height="200px"
+        />
         <Paragraph>
           <FormattedMessage id="THIS_IS_A_TEST" />
         </Paragraph>
