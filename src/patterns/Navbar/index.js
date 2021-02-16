@@ -7,7 +7,7 @@ import {
   Nav,
   NavLink,
   Bars,
-  NavMenu,
+  LeftNavMenu,
   ProjectNavLink,
   IconsPack,
 } from "../../components/NavbarElements";
@@ -18,14 +18,14 @@ const Navbar = () => (
       <ProjectNavLink href="/">
         <FormattedMessage id="IMS_PROJECT" />
       </ProjectNavLink>
-      <NavMenu>
+      <LeftNavMenu>
         <NavLink>
           <FormattedMessage id="PRESENTATION" />
         </NavLink>
         <NavLink>
           <FormattedMessage id="ABOUT" />
         </NavLink>
-      </NavMenu>
+      </LeftNavMenu>
       <IconsPack className="ml-5" />
       <Bars />
     </Nav>

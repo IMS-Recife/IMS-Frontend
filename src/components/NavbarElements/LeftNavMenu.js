@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-const NavMenu = styled.div`
+const LeftNavMenu = styled.div`
   padding: 0.5rem calc((70vw - 1000px) / 2);
 
   display: flex;
@@ -9,4 +9,4 @@ const NavMenu = styled.div`
   }
 `;
 
-export default NavMenu;
+export default LeftNavMenu;
