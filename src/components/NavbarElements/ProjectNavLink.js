@@ -5,10 +5,10 @@ const ProjectNavLink = styled.a`
   letter-spacing: 0.2rem;
   display: flex;
   align-items: center;
-  justify-content: start;
   text-decoration: none;
   padding: 0 1rem;
   height: 100%;
+  white-space: nowrap;
   cursor: pointer;
   font: 700 16px Roboto Mono, sans-serif;
   &.active {
