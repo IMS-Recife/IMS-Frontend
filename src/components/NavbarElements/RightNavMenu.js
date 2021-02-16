@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
-const NavMenu = styled.div`
-  padding: 0.5rem calc((70vw - 1000px) / 2);
+const RightNavMenu = styled.div`
+  padding: 0.5rem calc((170vw - 1000px) / 2);
 
   display: flex;
   @media screen and (max-width: 768px) {
@@ -9,4 +9,4 @@ const NavMenu = styled.div`
   }
 `;
 
-export default NavMenu;
+export default RightNavMenu;
