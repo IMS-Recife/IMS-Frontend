@@ -24,3 +24,4 @@
 - Styled components;
 - Eslint;
 - React-intl;
+- React icons;
