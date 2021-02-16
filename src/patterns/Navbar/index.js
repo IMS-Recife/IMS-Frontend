@@ -8,7 +8,7 @@ import {
   Bars,
   NavMenu,
   ProjectNavLink,
-} from "../../styles/NavbarElements";
+} from "../../components/NavbarElements";
 
 const Navbar = () => (
   <>
