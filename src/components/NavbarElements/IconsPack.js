@@ -5,9 +5,25 @@ import {
   FaGithubSquare,
   FaYoutubeSquare,
 } from "react-icons/fa";
-import IconNavLink from "./IconNavLink";
+import styled from "styled-components";
+
 import RightNavMenu from "./RightNavMenu";
 import LogoPortoDigital from "../../assets/LogoPortoDigital.svg";
+
+const IconNavLink = styled.a`
+  color: #1f81e8;
+  display: flex;
+  align-items: center;
+  padding: 0 0.2rem;
+  height: 100%;
+  cursor: pointer;
+  &.active {
+    color: #fff;
+  }
+  :hover {
+    color: #fff;
+  }
+`;
 
 function IconsPack() {
   return (
