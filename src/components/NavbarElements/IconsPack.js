@@ -7,11 +7,15 @@ import {
 } from "react-icons/fa";
 import IconNavLink from "./IconNavLink";
 import RightNavMenu from "./RightNavMenu";
+import LogoPortoDigital from "../../assets/LogoPortoDigital.svg";
 
 function IconsPack() {
   return (
     <div>
       <RightNavMenu>
+        <IconNavLink>
+          <img src={LogoPortoDigital} alt="Logo Porto Digital" />
+        </IconNavLink>
         <IconNavLink>
           <FaFacebookSquare size="1.9em" title="Facebook" />
         </IconNavLink>
