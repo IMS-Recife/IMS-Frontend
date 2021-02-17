@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 const NavLink = styled.a`
-  color: #1f81e8;
+  color: ${(props) => props.theme.colors.primary};
   letter-spacing: 0.2rem;
   display: flex;
   align-items: center;
@@ -11,10 +11,10 @@ const NavLink = styled.a`
   cursor: pointer;
   font: 700 16px Roboto Mono, sans-serif;
   &.active {
-    color: #fff;
+    color: ${(props) => props.theme.colors.light};
   }
   :hover {
-    color: #fff;
+    color: ${(props) => props.theme.colors.light};
     text-decoration: none;
   }
 `;

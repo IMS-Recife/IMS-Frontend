@@ -3,7 +3,7 @@ import { FaBars } from "react-icons/fa";
 
 const Bars = styled(FaBars)`
   display: none;
-  color: #fff;
+  color: ${(props) => props.theme.colors.light};
   @media screen and (max-width: 768px) {
     display: block;
     position: absolute;
@@ -13,7 +13,7 @@ const Bars = styled(FaBars)`
     font-size: 1.5rem;
     cursor: pointer;
     :hover {
-      color: #1f81e8;
+      color: ${(props) => props.theme.colors.primary};
     }
   }
 `;

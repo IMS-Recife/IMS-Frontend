@@ -11,17 +11,17 @@ import RightNavMenu from "./RightNavMenu";
 import LogoPortoDigital from "../../assets/LogoPortoDigital.svg";
 
 const IconNavLink = styled.a`
-  color: #1f81e8;
+  color: ${(props) => props.theme.colors.primary};
   display: flex;
   align-items: center;
   padding: 0 0.2rem;
   height: 100%;
   cursor: pointer;
   &.active {
-    color: #fff;
+    color: ${(props) => props.theme.colors.light};
   }
   :hover {
-    color: #fff;
+    color: ${(props) => props.theme.colors.light};
   }
 `;
 

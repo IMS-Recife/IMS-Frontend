@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 const ProjectNavLink = styled.a`
-  color: #fff;
+  color: ${(props) => props.theme.colors.light};
   letter-spacing: 0.2rem;
   display: flex;
   align-items: center;
@@ -12,10 +12,10 @@ const ProjectNavLink = styled.a`
   cursor: pointer;
   font: 700 16px Roboto Mono, sans-serif;
   &.active {
-    color: #1f81e8;
+    color: ${(props) => props.theme.colors.primary};
   }
   :hover {
-    color: #1f81e8;
+    color: ${(props) => props.theme.colors.primary};
     text-decoration: none;
   }
 `;
