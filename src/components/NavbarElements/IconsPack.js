@@ -29,7 +29,7 @@ function IconsPack() {
   return (
     <div>
       <RightNavMenu>
-        <IconNavLink style={{ padding: "0 0.9rem" }}>
+        <IconNavLink style={{ padding: "0 1rem" }}>
           <img src={LogoPortoDigital} alt="Logo Porto Digital" />
         </IconNavLink>
         <IconNavLink>

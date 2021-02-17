@@ -3,7 +3,7 @@ import { FaBars } from "react-icons/fa";
 
 const Bars = styled(FaBars)`
   display: none;
-  color: #feec47;
+  color: #fff;
   @media screen and (max-width: 768px) {
     display: block;
     position: absolute;
