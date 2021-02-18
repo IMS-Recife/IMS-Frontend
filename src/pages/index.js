@@ -3,6 +3,7 @@ import { injectIntl, FormattedMessage } from "react-intl";
 import React from "react";
 import { ProSidebar, MenuItem, Menu } from "react-pro-sidebar";
 import {
+  FaAngleLeft,
   FaBuffer,
   FaChartBar,
   FaChartLine,
@@ -21,7 +22,14 @@ function Home() {
       <Navbar />
       <ProSidebar>
         <Menu iconShape="square">
-          <MenuItem icon={<FaPlusSquare size="1.5rem" />}>
+          <MenuItem
+            style={{ color: "#FFFFFF" }}
+            icon={<FaAngleLeft size="1.5rem" />}
+          />
+          <MenuItem
+            style={{ color: "#FEEC47" }}
+            icon={<FaPlusSquare size="1.5rem" />}
+          >
             <FormattedMessage id="ADD_INDICATOR" />
           </MenuItem>
           <MenuItem icon={<FaBuffer size="1.5rem" />}>
