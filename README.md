@@ -25,3 +25,5 @@
 - Eslint;
 - React-intl;
 - React icons;
+- React-pro-sidebar;
+- Material UI;
