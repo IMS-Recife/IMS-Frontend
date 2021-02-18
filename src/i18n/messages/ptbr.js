@@ -6,4 +6,10 @@ export default {
   IMS_PROJECT: "PROJETO IMS/",
   ABOUT: "SOBRE",
   PRESENTATION: "APRESENTAÇÃO",
+  ADD_INDICATOR: "Adicionar indicador",
+  SHOW_ALL: "Mostrar todos",
+  ANALYSIS: "Análises",
+  SIRD: "SIRD",
+  NEIGHBORHOODS: "Bairros",
+  MAP: "Mapa",
 };

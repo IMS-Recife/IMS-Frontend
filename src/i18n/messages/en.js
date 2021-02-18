@@ -6,4 +6,10 @@ export default {
   IMS_PROJECT: "IMS PROJECT",
   ABOUT: "ABOUT",
   PRESENTATION: "PRESENTATION",
+  ADD_INDICATOR: "Add indicator",
+  SHOW_ALL: "Show all",
+  ANALYSIS: "Analysis",
+  SIRD: "SIRD",
+  NEIGHBORHOODS: "Neighboorhoods",
+  MAP: "Map",
 };
