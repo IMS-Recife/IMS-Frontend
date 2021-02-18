@@ -85,46 +85,55 @@ function Home() {
           03/01/2020 23h59
         </span>
       </div>
-      <ProSidebar collapsed={collapseSideBar}>
-        <Menu iconShape="square">
-          <ArrowButton
-            type="button"
-            onClick={() => setCollapseSideBar(!collapseSideBar)}
-          >
+      <div className="row">
+        <ProSidebar collapsed={collapseSideBar}>
+          <Menu iconShape="square">
+            <ArrowButton
+              type="button"
+              onClick={() => setCollapseSideBar(!collapseSideBar)}
+            >
+              <MenuItem
+                style={{ color: "#FFFFFF" }}
+                icon={
+                  collapseSideBar ? (
+                    <FaAngleRight size="1.5rem" />
+                  ) : (
+                    <FaAngleLeft size="1.5rem" />
+                  )
+                }
+              />
+            </ArrowButton>
             <MenuItem
-              style={{ color: "#FFFFFF" }}
-              icon={
-                collapseSideBar ? (
-                  <FaAngleRight size="1.5rem" />
-                ) : (
-                  <FaAngleLeft size="1.5rem" />
-                )
-              }
-            />
-          </ArrowButton>
-          <MenuItem
-            style={{ color: "#FEEC47" }}
-            icon={<FaPlusSquare size="1.5rem" />}
-          >
-            <FormattedMessage id="ADD_INDICATOR" />
-          </MenuItem>
-          <MenuItem icon={<FaBuffer size="1.5rem" />}>
-            <FormattedMessage id="SHOW_ALL" />
-          </MenuItem>
-          <MenuItem icon={<FaChartBar size="1.5rem" />}>
-            <FormattedMessage id="ANALYSIS" />
-          </MenuItem>
-          <MenuItem icon={<FaChartLine size="1.5rem" />}>
-            <FormattedMessage id="SIRD" />
-          </MenuItem>
-          <MenuItem icon={<FaCity size="1.5rem" />}>
-            <FormattedMessage id="NEIGHBORHOODS" />
-          </MenuItem>
-          <MenuItem icon={<FaMapMarkedAlt size="1.5rem" />}>
-            <FormattedMessage id="MAP" />
-          </MenuItem>
-        </Menu>
-      </ProSidebar>
+              style={{ color: "#FEEC47" }}
+              icon={<FaPlusSquare size="1.5rem" />}
+            >
+              <FormattedMessage id="ADD_INDICATOR" />
+            </MenuItem>
+            <MenuItem icon={<FaBuffer size="1.5rem" />}>
+              <FormattedMessage id="SHOW_ALL" />
+            </MenuItem>
+            <MenuItem icon={<FaChartBar size="1.5rem" />}>
+              <FormattedMessage id="ANALYSIS" />
+            </MenuItem>
+            <MenuItem icon={<FaChartLine size="1.5rem" />}>
+              <FormattedMessage id="SIRD" />
+            </MenuItem>
+            <MenuItem icon={<FaCity size="1.5rem" />}>
+              <FormattedMessage id="NEIGHBORHOODS" />
+            </MenuItem>
+            <MenuItem icon={<FaMapMarkedAlt size="1.5rem" />}>
+              <FormattedMessage id="MAP" />
+            </MenuItem>
+          </Menu>
+        </ProSidebar>
+        <div className="container">
+          <div className="row">
+            <div className="col-sm-12">
+              <div className="card card-custom" />
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }
