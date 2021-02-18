@@ -64,6 +64,7 @@ function Home() {
           transform: "translateX(-50%)",
           marginTop: "25px",
         }}
+        className="mt-5 mt-sm-0"
       >
         <span
           style={{
@@ -72,6 +73,7 @@ function Home() {
             display: "block",
             textAlign: "center",
           }}
+          className="mt-5 mt-sm-0"
         >
           <FormattedMessage id="LAST_UPDATE" />
         </span>
@@ -88,7 +90,7 @@ function Home() {
       </div>
       <Container fluid>
         <div className="row">
-          <div className="col-2 m-0 p-0">
+          <div className="col-2 col-md-2 col-lg-2 m-0 p-0">
             <ProSidebar
               style={{ marginLeft: "30px", marginTop: "0px" }}
               collapsed={collapseSideBar}
@@ -137,38 +139,37 @@ function Home() {
               </Menu>
             </ProSidebar>
           </div>
-          <div className="col-sm-10 ml-0">
+          <div className="col-12 col-sm-10 col-md-10 ml-0">
             <div
               className="card card-responsive p-4 pt-5 ml-0"
               style={{
-                height: "1030px",
                 marginBottom: "40px",
                 marginLeft: "0px",
               }}
             >
               <div className="row">
                 <div
-                  className="card card-custom col-5 bg-secondary m-2 ml-5"
+                  className="card card-custom bg-secondary col-12 m-0 mb-3 col-md-5 mr-md-2 m-xl-2 ml-xl-5 "
                   style={{ height: "250px" }}
                 />
                 <div
-                  className="card card-custom col-6 bg-primary m-2 ml-1"
+                  className="card card-custom bg-primary col-12 m-0 mb-3 col-md-6  m-lg-0 ml-xl-1 mt-xl-2"
                   style={{ height: "250px" }}
                 />
                 <div
-                  className="card card-custom col-4 bg-info m-2 ml-5"
+                  className="card card-custom bg-info col-12 m-0 mb-3 col-md-4 mr-md-2 m-xl-2 ml-xl-5 "
                   style={{ height: "300px" }}
                 />
                 <div
-                  className="card card-custom col-7 bg-success m-2"
+                  className="card card-custom bg-success col-12 m-0 mb-3 col-md-7  m-xl-2"
                   style={{ height: "300px" }}
                 />
                 <div
-                  className="card card-custom col-4 bg-warning m-2 ml-5 mb-4"
+                  className="card card-custom bg-warning col-12 m-0 mb-3 col-md-4 mr-md-2 m-xl-2 ml-xl-5 mb-xl-4 "
                   style={{ height: "300px" }}
                 />
                 <div
-                  className="card card-custom col-7 bg-danger m-2 mb-4"
+                  className="card card-custom bg-danger col-12 m-0 mb-3 col-md-7  m-xl-2 mb-4"
                   style={{ height: "300px" }}
                 />
               </div>
