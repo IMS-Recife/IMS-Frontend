@@ -35,7 +35,7 @@ function IconsPack() {
       <RightNavMenu>
         <IconNavLink
           style={{ padding: "0 1rem" }}
-          onMouseEnter={() => setLogoPortoDigital(LogoPortoDigitalBranca)}
+          onMouseOver={() => setLogoPortoDigital(LogoPortoDigitalBranca)}
           onMouseOut={() => setLogoPortoDigital(LogoPortoDigitalAzul)}
         >
           <img src={logoPortoDigital} alt="Logo Porto Digital" />
