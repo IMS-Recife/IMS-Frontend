@@ -13,7 +13,7 @@ export default function MaterialUISelect() {
 
   return (
     <div>
-      <FormControl style={{ minWidth: "200px", color: "#fff" }}>
+      <FormControl style={{ minWidth: "200px", marginTop: "40px" }}>
         <InputLabel
           shrink
           style={{ color: "#87c2ff", font: "400 12px Roboto, sans-serif" }}

@@ -86,7 +86,7 @@ function Home() {
         </span>
       </div>
       <div className="row">
-        <ProSidebar collapsed={collapseSideBar}>
+        <ProSidebar style={{ marginLeft: "20px" }} collapsed={collapseSideBar}>
           <Menu iconShape="square">
             <ArrowButton
               type="button"
@@ -126,10 +126,10 @@ function Home() {
             </MenuItem>
           </Menu>
         </ProSidebar>
-        <div className="container">
+        <div className="container position-sticky mt-5">
           <div className="row">
             <div className="col-sm-12">
-              <div className="card card-custom" />
+              <div className="card card-responsive" />
             </div>
           </div>
         </div>
