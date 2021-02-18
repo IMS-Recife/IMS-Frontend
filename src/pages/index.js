@@ -54,7 +54,7 @@ function Home() {
         <span
           style={{
             marginTop: "10px",
-            font: "700 12px Roboto, sans-serif",
+            font: "700 10px Roboto, sans-serif",
             color: "#87c2ff",
             display: "block",
             textAlign: "center",
@@ -65,7 +65,7 @@ function Home() {
         <span
           style={{
             marginTop: "5px",
-            font: "500 22px Roboto, sans-serif",
+            font: "500 18px Roboto, sans-serif",
             display: "block",
             textAlign: "center",
           }}
