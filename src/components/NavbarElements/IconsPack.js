@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   FaFacebookSquare,
   FaTwitterSquare,
@@ -8,7 +8,8 @@ import {
 import styled from "styled-components";
 
 import RightNavMenu from "./RightNavMenu";
-import LogoPortoDigital from "../../assets/LogoPortoDigital.svg";
+import LogoPortoDigitalAzul from "../../assets/LogoPortoDigitalAzul.svg";
+import LogoPortoDigitalBranca from "../../assets/LogoPortoDigitalBranca.svg";
 
 const IconNavLink = styled.a`
   color: ${(props) => props.theme.colors.primary};
@@ -26,11 +27,18 @@ const IconNavLink = styled.a`
 `;
 
 function IconsPack() {
+  const [logoPortoDigital, setLogoPortoDigital] = useState(
+    LogoPortoDigitalAzul
+  );
   return (
     <div>
       <RightNavMenu>
-        <IconNavLink style={{ padding: "0 1rem" }}>
-          <img src={LogoPortoDigital} alt="Logo Porto Digital" />
+        <IconNavLink
+          style={{ padding: "0 1rem" }}
+          onMouseEnter={() => setLogoPortoDigital(LogoPortoDigitalBranca)}
+          onMouseOut={() => setLogoPortoDigital(LogoPortoDigitalAzul)}
+        >
+          <img src={logoPortoDigital} alt="Logo Porto Digital" />
         </IconNavLink>
         <IconNavLink>
           <FaFacebookSquare size="1.9em" title="Facebook" />
