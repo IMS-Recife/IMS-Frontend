@@ -12,4 +12,5 @@ export default {
   SIRD: "SIRD",
   NEIGHBORHOODS: "Neighboorhoods",
   MAP: "Map",
+  LAST_UPDATE: "LAST UPDATE",
 };
