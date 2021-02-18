@@ -31,27 +31,48 @@ function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Navbar />
-      <span
+      <img
+        src="/prefeiturarecife.png"
+        alt="prefeitura do recife"
+        width="100px"
+        height="100px"
+        className="rounded"
         style={{
-          marginTop: "10px",
-          font: "700 12px Roboto, sans-serif",
-          color: "#87c2ff",
-          display: "block",
-          textAlign: "center",
+          marginTop: "20px",
+          marginLeft: "20px",
+          display: "inline-block",
+        }}
+      />
+      <div
+        style={{
+          display: "inline-block",
+          position: "absolute",
+          left: "50%",
+          transform: "translateX(-50%)",
         }}
       >
-        <FormattedMessage id="LAST_UPDATE" />
-      </span>
-      <span
-        style={{
-          marginTop: "5px",
-          font: "500 22px Roboto, sans-serif",
-          display: "block",
-          textAlign: "center",
-        }}
-      >
-        03/01/2020 23h59
-      </span>
+        <span
+          style={{
+            marginTop: "10px",
+            font: "700 12px Roboto, sans-serif",
+            color: "#87c2ff",
+            display: "block",
+            textAlign: "center",
+          }}
+        >
+          <FormattedMessage id="LAST_UPDATE" />
+        </span>
+        <span
+          style={{
+            marginTop: "5px",
+            font: "500 22px Roboto, sans-serif",
+            display: "block",
+            textAlign: "center",
+          }}
+        >
+          03/01/2020 23h59
+        </span>
+      </div>
       <ProSidebar collapsed={collapseSideBar}>
         <Menu iconShape="square">
           <ArrowButton
