@@ -1,9 +1,12 @@
 import Head from "next/head";
 import { injectIntl, FormattedMessage } from "react-intl";
-import React from "react";
+import React, { useState } from "react";
+import styled from "styled-components";
+
 import { ProSidebar, MenuItem, Menu } from "react-pro-sidebar";
 import {
   FaAngleLeft,
+  FaAngleRight,
   FaBuffer,
   FaChartBar,
   FaChartLine,
@@ -13,19 +16,38 @@ import {
 } from "react-icons/fa";
 import Navbar from "../patterns/Navbar";
 
+const ArrowButton = styled.button`
+  background: none;
+  border: none;
+  width: 1.5rem;
+  height: 1.5rem;
+`;
+
 function Home() {
+  const [collapseSideBar, setCollapseSideBar] = useState(false);
   return (
     <div>
       <Head>
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Navbar />
-      <ProSidebar>
+      <ProSidebar collapsed={collapseSideBar}>
         <Menu iconShape="square">
-          <MenuItem
-            style={{ color: "#FFFFFF" }}
-            icon={<FaAngleLeft size="1.5rem" />}
-          />
+          <ArrowButton
+            type="button"
+            onClick={() => setCollapseSideBar(!collapseSideBar)}
+          >
+            <MenuItem
+              style={{ color: "#FFFFFF" }}
+              icon={
+                collapseSideBar ? (
+                  <FaAngleRight size="1.5rem" />
+                ) : (
+                  <FaAngleLeft size="1.5rem" />
+                )
+              }
+            />
+          </ArrowButton>
           <MenuItem
             style={{ color: "#FEEC47" }}
             icon={<FaPlusSquare size="1.5rem" />}
