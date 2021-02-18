@@ -64,7 +64,7 @@ function Home() {
           transform: "translateX(-50%)",
           marginTop: "25px",
         }}
-        className="mt-5 mt-sm-0"
+        className="mt-5 mt-sm-3"
       >
         <span
           style={{
@@ -73,7 +73,7 @@ function Home() {
             display: "block",
             textAlign: "center",
           }}
-          className="mt-5 mt-sm-0"
+          className="mt-5 mt-sm-3"
         >
           <FormattedMessage id="LAST_UPDATE" />
         </span>
