@@ -13,4 +13,6 @@ export default {
   NEIGHBORHOODS: "Neighboorhoods",
   MAP: "Map",
   LAST_UPDATE: "LAST UPDATE",
+  PANEL: "PANEL",
+  RECIFE: "Recife",
 };

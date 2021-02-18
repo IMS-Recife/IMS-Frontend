@@ -3,8 +3,9 @@ import InputLabel from "@material-ui/core/InputLabel";
 import MenuItem from "@material-ui/core/MenuItem";
 import FormControl from "@material-ui/core/FormControl";
 import Select from "@material-ui/core/Select";
+import { injectIntl, FormattedMessage } from "react-intl";
 
-export default function MaterialUISelect() {
+function MaterialUISelect() {
   const [age, setAge] = React.useState("");
 
   const handleChange = (event) => {
@@ -18,7 +19,7 @@ export default function MaterialUISelect() {
           shrink
           style={{ color: "#87c2ff", font: "400 12px Roboto, sans-serif" }}
         >
-          PAINEL
+          <FormattedMessage id="PANEL" />
         </InputLabel>
         <Select
           style={{
@@ -31,7 +32,7 @@ export default function MaterialUISelect() {
           displayEmpty
         >
           <MenuItem value="">
-            <em>Recife</em>
+            <FormattedMessage id="RECIFE" />
           </MenuItem>
           <MenuItem value={10}>Ten</MenuItem>
           <MenuItem value={20}>Twenty</MenuItem>
@@ -41,3 +42,5 @@ export default function MaterialUISelect() {
     </div>
   );
 }
+
+export default injectIntl(MaterialUISelect);
