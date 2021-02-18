@@ -14,6 +14,7 @@ import {
   FaMapMarkedAlt,
   FaPlusSquare,
 } from "react-icons/fa";
+import MaterialUISelect from "../components/MaterialUISelect";
 import Navbar from "../patterns/Navbar";
 
 const ArrowButton = styled.button`
@@ -43,6 +44,17 @@ function Home() {
           display: "inline-block",
         }}
       />
+      <div
+        style={{
+          position: "absolute",
+          marginTop: "25px",
+          marginLeft: "20px",
+          display: "inline-block",
+        }}
+      >
+        <MaterialUISelect />
+      </div>
+
       <div
         style={{
           display: "inline-block",
