@@ -27,7 +27,3 @@
 - React-pro-sidebar;
 - Material UI;
 - Sass;
-
-## Link do projeto em staging
-
-- https://ims-frontend-n9wdno0os.vercel.app/
