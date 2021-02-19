@@ -36,6 +36,7 @@ function IconsPack() {
         <IconNavLink
           style={{ padding: "0 1rem" }}
           onMouseOver={() => setLogoPortoDigital(LogoPortoDigitalBranca)}
+          onMouseEnter={() => setLogoPortoDigital(LogoPortoDigitalBranca)}
           onMouseOut={() => setLogoPortoDigital(LogoPortoDigitalAzul)}
         >
           <img src={logoPortoDigital} alt="Logo Porto Digital" />
