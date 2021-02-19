@@ -26,6 +26,7 @@
 - React icons;
 - React-pro-sidebar;
 - Material UI;
+- Sass;
 
 ## Link do projeto em staging
 
