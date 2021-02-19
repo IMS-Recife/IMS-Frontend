@@ -153,7 +153,7 @@ function Home() {
                   style={{ height: "250px" }}
                 />
                 <div
-                  className="card card-custom bg-primary col-12 m-0 mb-3 col-md-6  m-lg-0 ml-xl-1 mt-xl-2"
+                  className="card card-custom bg-primary col-12 m-0 mb-3 col-md-6  m-lg-0 ml-xl-2 mt-xl-2"
                   style={{ height: "250px" }}
                 />
                 <div
