@@ -2,7 +2,7 @@
 
 - Componentes mais complexos, que usam vários componentes simples
 
-## UI components
+## Components
 
 - Componentes simples de UI, como botões estilizados, tipografias etc
 
