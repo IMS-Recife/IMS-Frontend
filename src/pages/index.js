@@ -28,19 +28,21 @@ const ArrowButton = styled.button`
 function Home() {
   const [collapseSideBar, setCollapseSideBar] = useState(false);
   const [sideBarClassName, setSideBarClassName] = useState(
-    "col-2 col-md-2 col-lg-3 col-xl-2 m-0 p-0"
+    "col-2 col-md-2 col-lg-4 col-xl-2 m-0 p-0"
   );
   const [bigCardClassName, setBigCardClassName] = useState(
-    "col-12 col-sm-10 col-md-10 col-lg-9 col-xl-10 ml-0"
+    "col-12 col-sm-10 col-md-10 col-lg-8 col-xl-10 ml-0"
   );
 
   useEffect(() => {
     if (collapseSideBar) {
-      setSideBarClassName("col-2 col-md-2 col-lg-1 m-0 p-0");
-      setBigCardClassName("col-12 col-sm-10 col-md-10 col-lg-11 ml-0");
+      setSideBarClassName("col-2 col-md-2 col-lg-2 col-xl-1 m-0 p-0");
+      setBigCardClassName(
+        "col-12 col-sm-10 col-md-10 col-lg-10 col-xl-11 ml-0"
+      );
     } else {
-      setSideBarClassName("col-2 col-sm-3 col-md-4 col-lg-3 col-xl-2 m-0 p-0");
-      setBigCardClassName("col-12 col-sm-12 col-md-8 col-lg-9 col-xl-10 ml-0");
+      setSideBarClassName("col-2 col-sm-5 col-md-4 col-lg-4 col-xl-2 m-0 p-0");
+      setBigCardClassName("col-12 col-sm-7 col-md-8 col-lg-8 col-xl-10 ml-0");
     }
   }, [collapseSideBar]);
   return (
@@ -157,7 +159,7 @@ function Home() {
           </div>
           <div className={bigCardClassName}>
             <div
-              className="card card-responsive p-5 pt-5 ml-0"
+              className="card card-responsive p-5 pt-5 mr-sm-0 ml-md-4 m-lg-0"
               style={{
                 marginBottom: "40px",
                 marginLeft: "0px",
