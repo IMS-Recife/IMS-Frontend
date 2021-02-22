@@ -1,6 +1,6 @@
 import Head from "next/head";
 import { injectIntl, FormattedMessage } from "react-intl";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import { Container } from "react-bootstrap";
 
@@ -27,6 +27,22 @@ const ArrowButton = styled.button`
 
 function Home() {
   const [collapseSideBar, setCollapseSideBar] = useState(false);
+  const [sideBarClassName, setSideBarClassName] = useState(
+    "col-2 col-md-2 col-lg-2 m-0 p-0"
+  );
+  const [bigCardClassName, setBigCardClassName] = useState(
+    "col-12 col-sm-10 col-md-10 ml-0"
+  );
+
+  useEffect(() => {
+    if (collapseSideBar) {
+      setSideBarClassName("col-2 col-md-1 col-lg-1 m-0 p-0");
+      setBigCardClassName("col-12 col-sm-10 col-md-11 ml-0");
+    } else {
+      setSideBarClassName("col-2 col-md-2 col-lg-2 m-0 p-0");
+      setBigCardClassName("col-12 col-sm-10 col-md-10 ml-0");
+    }
+  }, [collapseSideBar]);
   return (
     <div>
       <Head>
@@ -90,7 +106,7 @@ function Home() {
       </div>
       <Container fluid>
         <div className="row">
-          <div className="col-2 col-md-2 col-lg-2 m-0 p-0">
+          <div className={sideBarClassName}>
             <ProSidebar
               style={{ marginLeft: "30px", marginTop: "0px" }}
               collapsed={collapseSideBar}
@@ -139,7 +155,7 @@ function Home() {
               </Menu>
             </ProSidebar>
           </div>
-          <div className="col-12 col-sm-10 col-md-10 ml-0">
+          <div className={bigCardClassName}>
             <div
               className="card card-responsive p-4 pt-5 ml-0"
               style={{
