@@ -105,10 +105,10 @@ function Home() {
         </span>
       </div>
       <Container fluid>
-        <div className="row">
+        <div className="row mt-3">
           <div className={sideBarClassName}>
             <ProSidebar
-              style={{ marginLeft: "30px", marginTop: "0px" }}
+              style={{ marginLeft: "20px", marginTop: "0px" }}
               collapsed={collapseSideBar}
             >
               <Menu iconShape="square">
