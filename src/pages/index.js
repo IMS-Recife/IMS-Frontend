@@ -28,19 +28,19 @@ const ArrowButton = styled.button`
 function Home() {
   const [collapseSideBar, setCollapseSideBar] = useState(false);
   const [sideBarClassName, setSideBarClassName] = useState(
-    "col-2 col-md-2 col-lg-2 m-0 p-0"
+    "col-2 col-md-2 col-lg-3 col-xl-2 m-0 p-0"
   );
   const [bigCardClassName, setBigCardClassName] = useState(
-    "col-12 col-sm-10 col-md-10 ml-0"
+    "col-12 col-sm-10 col-md-10 col-lg-9 col-xl-10 ml-0"
   );
 
   useEffect(() => {
     if (collapseSideBar) {
-      setSideBarClassName("col-2 col-md-1 col-lg-1 m-0 p-0");
-      setBigCardClassName("col-12 col-sm-10 col-md-11 ml-0");
+      setSideBarClassName("col-2 col-md-2 col-lg-1 m-0 p-0");
+      setBigCardClassName("col-12 col-sm-10 col-md-10 col-lg-11 ml-0");
     } else {
-      setSideBarClassName("col-2 col-md-2 col-lg-2 m-0 p-0");
-      setBigCardClassName("col-12 col-sm-10 col-md-10 ml-0");
+      setSideBarClassName("col-2 col-sm-3 col-md-4 col-lg-3 col-xl-2 m-0 p-0");
+      setBigCardClassName("col-12 col-sm-12 col-md-8 col-lg-9 col-xl-10 ml-0");
     }
   }, [collapseSideBar]);
   return (
@@ -57,7 +57,7 @@ function Home() {
         className="rounded"
         style={{
           marginTop: "20px",
-          marginLeft: "20px",
+          marginLeft: "40px",
           display: "inline-block",
         }}
       />
@@ -108,7 +108,7 @@ function Home() {
         <div className="row mt-3">
           <div className={sideBarClassName}>
             <ProSidebar
-              style={{ marginLeft: "20px", marginTop: "0px" }}
+              style={{ marginLeft: "35px", marginTop: "0px" }}
               collapsed={collapseSideBar}
             >
               <Menu iconShape="square">
@@ -157,7 +157,7 @@ function Home() {
           </div>
           <div className={bigCardClassName}>
             <div
-              className="card card-responsive p-4 pt-5 ml-0"
+              className="card card-responsive p-5 pt-5 ml-0"
               style={{
                 marginBottom: "40px",
                 marginLeft: "0px",
@@ -165,27 +165,27 @@ function Home() {
             >
               <div className="row">
                 <div
-                  className="card card-custom bg-secondary col-12 m-0 mb-3 col-md-5 mr-md-2 m-xl-2 ml-xl-5 "
+                  className="card card-custom bg-secondary col-12 m-0 mb-3 col-lg-5 mr-md-2 m-xl-2 ml-xl-5 "
                   style={{ height: "250px" }}
                 />
                 <div
-                  className="card card-custom bg-primary col-12 m-0 mb-3 col-md-6  m-lg-0 ml-xl-2 mt-xl-2"
+                  className="card card-custom bg-primary col-12 m-0 mb-3 col-lg-6  m-lg-0 ml-xl-2 mt-xl-2"
                   style={{ height: "250px" }}
                 />
                 <div
-                  className="card card-custom bg-info col-12 m-0 mb-3 col-md-4 mr-md-2 m-xl-2 ml-xl-5 "
+                  className="card card-custom bg-info col-12 m-0 mb-3 col-lg-4 mr-md-2 m-xl-2 ml-xl-5 "
                   style={{ height: "300px" }}
                 />
                 <div
-                  className="card card-custom bg-success col-12 m-0 mb-3 col-md-7  m-xl-2"
+                  className="card card-custom bg-success col-12 m-0 mb-3 col-lg-7  m-xl-2"
                   style={{ height: "300px" }}
                 />
                 <div
-                  className="card card-custom bg-warning col-12 m-0 mb-3 col-md-4 mr-md-2 m-xl-2 ml-xl-5 mb-xl-4 "
+                  className="card card-custom bg-warning col-12 m-0 mb-3 col-lg-4 mr-md-2 m-xl-2 ml-xl-5 mb-xl-4 "
                   style={{ height: "300px" }}
                 />
                 <div
-                  className="card card-custom bg-danger col-12 m-0 mb-3 col-md-7  m-xl-2 mb-4"
+                  className="card card-custom bg-danger col-12 m-0 mb-3 col-lg-7  m-xl-2 mb-4"
                   style={{ height: "300px" }}
                 />
               </div>
