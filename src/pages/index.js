@@ -17,6 +17,7 @@ import {
 } from "react-icons/fa";
 import MaterialUISelect from "../components/MaterialUISelect";
 import Navbar from "../patterns/Navbar";
+import MobileToolbar from "../patterns/MobileToolbar";
 
 const ArrowButton = styled.button`
   background: none;
@@ -106,6 +107,7 @@ function Home() {
           03/01/2020 23h59
         </span>
       </div>
+      <MobileToolbar />
       <Container fluid>
         <div className="row mt-3">
           <div className={sideBarClassName}>
