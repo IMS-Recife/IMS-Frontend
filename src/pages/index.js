@@ -1,5 +1,5 @@
 import Head from "next/head";
-import { injectIntl, FormattedMessage } from "react-intl";
+import { injectIntl, FormattedMessage, useIntl } from "react-intl";
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import { Container } from "react-bootstrap";
@@ -27,6 +27,7 @@ const ArrowButton = styled.button`
 `;
 
 function Home() {
+  const intl = useIntl();
   const { width } = useWindowDimensions();
   const [windowWidth, setWindowWidth] = useState();
   const [collapseSideBar, setCollapseSideBar] = useState(false);
@@ -179,31 +180,67 @@ function Home() {
                   <MenuItem
                     className="mt-2"
                     style={{ color: "#FEEC47" }}
-                    icon={<FaPlusSquare size="1.8rem" />}
+                    icon={
+                      <FaPlusSquare
+                        size="1.8rem"
+                        title={intl.formatMessage({ id: "ADD_INDICATOR" })}
+                      />
+                    }
                   >
                     <FormattedMessage id="ADD_INDICATOR" />
                   </MenuItem>
-                  <MenuItem className="mt-2" icon={<FaBuffer size="1.8rem" />}>
+                  <MenuItem
+                    className="mt-2"
+                    icon={
+                      <FaBuffer
+                        size="1.8rem"
+                        title={intl.formatMessage({ id: "SHOW_ALL" })}
+                      />
+                    }
+                  >
                     <FormattedMessage id="SHOW_ALL" />
                   </MenuItem>
                   <MenuItem
                     className="mt-2"
-                    icon={<FaChartBar size="1.8rem" />}
+                    icon={
+                      <FaChartBar
+                        size="1.8rem"
+                        title={intl.formatMessage({ id: "ANALYSIS" })}
+                      />
+                    }
                   >
                     <FormattedMessage id="ANALYSIS" />
                   </MenuItem>
                   <MenuItem
                     className="mt-2"
-                    icon={<FaChartLine size="1.8rem" />}
+                    icon={
+                      <FaChartLine
+                        size="1.8rem"
+                        title={intl.formatMessage({ id: "SIRD" })}
+                      />
+                    }
                   >
                     <FormattedMessage id="SIRD" />
                   </MenuItem>
-                  <MenuItem className="mt-2" icon={<FaCity size="1.8rem" />}>
+                  <MenuItem
+                    className="mt-2"
+                    icon={
+                      <FaCity
+                        size="1.8rem"
+                        title={intl.formatMessage({ id: "NEIGHBORHOODS" })}
+                      />
+                    }
+                  >
                     <FormattedMessage id="NEIGHBORHOODS" />
                   </MenuItem>
                   <MenuItem
                     className="mt-2"
-                    icon={<FaMapMarkedAlt size="1.8rem" />}
+                    icon={
+                      <FaMapMarkedAlt
+                        size="1.8rem"
+                        title={intl.formatMessage({ id: "MAP" })}
+                      />
+                    }
                   >
                     <FormattedMessage id="MAP" />
                   </MenuItem>

@@ -2,6 +2,7 @@ import React from "react";
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
 import IconButton from "@material-ui/core/IconButton";
+import { useIntl } from "react-intl";
 import {
   FaBuffer,
   FaChartBar,
@@ -63,27 +64,30 @@ const StyledFaMapMarkedAlt = styled(FaMapMarkedAlt)`
 `;
 
 export default function ButtonAppBar() {
+  const intl = useIntl();
   return (
     <div>
       <StyledAppBar position="static">
         <Toolbar>
           <IconButton color="inherit" aria-label="menu">
-            <StyledFaPlusSquare />
+            <StyledFaPlusSquare
+              title={intl.formatMessage({ id: "ADD_INDICATOR" })}
+            />
           </IconButton>
           <IconButton color="inherit" aria-label="menu">
-            <StyledFaBuffer />
+            <StyledFaBuffer title={intl.formatMessage({ id: "SHOW_ALL" })} />
           </IconButton>
           <IconButton color="inherit" aria-label="menu">
-            <StyledFaChartBar />
+            <StyledFaChartBar title={intl.formatMessage({ id: "ANALYSIS" })} />
           </IconButton>
           <IconButton color="inherit" aria-label="menu">
-            <StyledFaChartLine />
+            <StyledFaChartLine title={intl.formatMessage({ id: "SIRD" })} />
           </IconButton>
           <IconButton color="inherit" aria-label="menu">
-            <StyledFaCity />
+            <StyledFaCity title={intl.formatMessage({ id: "NEIGHBORHOODS" })} />
           </IconButton>
           <IconButton color="inherit" aria-label="menu">
-            <StyledFaMapMarkedAlt />
+            <StyledFaMapMarkedAlt title={intl.formatMessage({ id: "MAP" })} />
           </IconButton>
         </Toolbar>
       </StyledAppBar>
