@@ -3,7 +3,6 @@ import { injectIntl, FormattedMessage } from "react-intl";
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import { Container } from "react-bootstrap";
-
 import { ProSidebar, MenuItem, Menu } from "react-pro-sidebar";
 import {
   FaAngleLeft,
@@ -15,6 +14,7 @@ import {
   FaMapMarkedAlt,
   FaPlusSquare,
 } from "react-icons/fa";
+import useWindowDimensions from "../Hooks/useWindowDimensions";
 import MaterialUISelect from "../components/MaterialUISelect";
 import Navbar from "../patterns/Navbar";
 import MobileToolbar from "../patterns/MobileToolbar";
@@ -28,6 +28,7 @@ const ArrowButton = styled.button`
 
 function Home() {
   const [collapseSideBar, setCollapseSideBar] = useState(false);
+  const { width } = useWindowDimensions();
   const [sideBarClassName, setSideBarClassName] = useState(
     "col-2 col-md-2 col-lg-4 col-xl-2 m-0 p-0"
   );
@@ -107,59 +108,10 @@ function Home() {
           03/01/2020 23h59
         </span>
       </div>
-      <MobileToolbar />
-      <Container fluid>
-        <div className="row mt-3">
-          <div className={sideBarClassName}>
-            <ProSidebar
-              style={{ marginLeft: "35px", marginTop: "0px" }}
-              collapsed={collapseSideBar}
-            >
-              <Menu iconShape="square">
-                <ArrowButton
-                  type="button"
-                  onClick={() => setCollapseSideBar(!collapseSideBar)}
-                >
-                  <MenuItem
-                    style={{ color: "#FFFFFF", marginTop: "20px" }}
-                    icon={
-                      collapseSideBar ? (
-                        <FaAngleRight size="2rem" />
-                      ) : (
-                        <FaAngleLeft size="2rem" />
-                      )
-                    }
-                  />
-                </ArrowButton>
-                <MenuItem
-                  className="mt-2"
-                  style={{ color: "#FEEC47" }}
-                  icon={<FaPlusSquare size="1.8rem" />}
-                >
-                  <FormattedMessage id="ADD_INDICATOR" />
-                </MenuItem>
-                <MenuItem className="mt-2" icon={<FaBuffer size="1.8rem" />}>
-                  <FormattedMessage id="SHOW_ALL" />
-                </MenuItem>
-                <MenuItem className="mt-2" icon={<FaChartBar size="1.8rem" />}>
-                  <FormattedMessage id="ANALYSIS" />
-                </MenuItem>
-                <MenuItem className="mt-2" icon={<FaChartLine size="1.8rem" />}>
-                  <FormattedMessage id="SIRD" />
-                </MenuItem>
-                <MenuItem className="mt-2" icon={<FaCity size="1.8rem" />}>
-                  <FormattedMessage id="NEIGHBORHOODS" />
-                </MenuItem>
-                <MenuItem
-                  className="mt-2"
-                  icon={<FaMapMarkedAlt size="1.8rem" />}
-                >
-                  <FormattedMessage id="MAP" />
-                </MenuItem>
-              </Menu>
-            </ProSidebar>
-          </div>
-          <div className={bigCardClassName}>
+      {width <= 776 ? (
+        <div>
+          <MobileToolbar />
+          <div className="col-12 mt-3">
             <div
               className="card card-responsive p-5 pt-5 mr-sm-0 ml-md-4 m-lg-0"
               style={{
@@ -196,7 +148,103 @@ function Home() {
             </div>
           </div>
         </div>
-      </Container>
+      ) : (
+        <Container fluid>
+          <div className="row mt-3">
+            <div className={sideBarClassName}>
+              <ProSidebar
+                style={{ marginLeft: "35px", marginTop: "0px" }}
+                collapsed={collapseSideBar}
+              >
+                <Menu iconShape="square">
+                  <ArrowButton
+                    type="button"
+                    onClick={() => setCollapseSideBar(!collapseSideBar)}
+                  >
+                    <MenuItem
+                      style={{ color: "#FFFFFF", marginTop: "20px" }}
+                      icon={
+                        collapseSideBar ? (
+                          <FaAngleRight size="2rem" />
+                        ) : (
+                          <FaAngleLeft size="2rem" />
+                        )
+                      }
+                    />
+                  </ArrowButton>
+                  <MenuItem
+                    className="mt-2"
+                    style={{ color: "#FEEC47" }}
+                    icon={<FaPlusSquare size="1.8rem" />}
+                  >
+                    <FormattedMessage id="ADD_INDICATOR" />
+                  </MenuItem>
+                  <MenuItem className="mt-2" icon={<FaBuffer size="1.8rem" />}>
+                    <FormattedMessage id="SHOW_ALL" />
+                  </MenuItem>
+                  <MenuItem
+                    className="mt-2"
+                    icon={<FaChartBar size="1.8rem" />}
+                  >
+                    <FormattedMessage id="ANALYSIS" />
+                  </MenuItem>
+                  <MenuItem
+                    className="mt-2"
+                    icon={<FaChartLine size="1.8rem" />}
+                  >
+                    <FormattedMessage id="SIRD" />
+                  </MenuItem>
+                  <MenuItem className="mt-2" icon={<FaCity size="1.8rem" />}>
+                    <FormattedMessage id="NEIGHBORHOODS" />
+                  </MenuItem>
+                  <MenuItem
+                    className="mt-2"
+                    icon={<FaMapMarkedAlt size="1.8rem" />}
+                  >
+                    <FormattedMessage id="MAP" />
+                  </MenuItem>
+                </Menu>
+              </ProSidebar>
+            </div>
+            <div className={bigCardClassName}>
+              <div
+                className="card card-responsive p-5 pt-5 mr-sm-0 ml-md-4 m-lg-0"
+                style={{
+                  marginBottom: "40px",
+                  marginLeft: "0px",
+                }}
+              >
+                <div className="row">
+                  <div
+                    className="card card-custom bg-secondary col-12 m-0 mb-3 col-lg-5 mr-md-2 m-xl-2 ml-xl-5 "
+                    style={{ height: "250px" }}
+                  />
+                  <div
+                    className="card card-custom bg-primary col-12 m-0 mb-3 col-lg-6  m-lg-0 ml-xl-2 mt-xl-2"
+                    style={{ height: "250px" }}
+                  />
+                  <div
+                    className="card card-custom bg-info col-12 m-0 mb-3 col-lg-4 mr-md-2 m-xl-2 ml-xl-5 "
+                    style={{ height: "300px" }}
+                  />
+                  <div
+                    className="card card-custom bg-success col-12 m-0 mb-3 col-lg-7  m-xl-2"
+                    style={{ height: "300px" }}
+                  />
+                  <div
+                    className="card card-custom bg-warning col-12 m-0 mb-3 col-lg-4 mr-md-2 m-xl-2 ml-xl-5 mb-xl-4 "
+                    style={{ height: "300px" }}
+                  />
+                  <div
+                    className="card card-custom bg-danger col-12 m-0 mb-3 col-lg-7  m-xl-2 mb-4"
+                    style={{ height: "300px" }}
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </Container>
+      )}
     </div>
   );
 }
