@@ -27,8 +27,9 @@ const ArrowButton = styled.button`
 `;
 
 function Home() {
-  const [collapseSideBar, setCollapseSideBar] = useState(false);
   const { width } = useWindowDimensions();
+  const [windowWidth, setWindowWidth] = useState();
+  const [collapseSideBar, setCollapseSideBar] = useState(false);
   const [sideBarClassName, setSideBarClassName] = useState(
     "col-2 col-md-2 col-lg-4 col-xl-2 m-0 p-0"
   );
@@ -36,6 +37,9 @@ function Home() {
     "col-12 col-sm-10 col-md-10 col-lg-8 col-xl-10 ml-0"
   );
 
+  useEffect(() => {
+    setWindowWidth(width);
+  }, []);
   useEffect(() => {
     if (collapseSideBar) {
       setSideBarClassName("col-2 col-md-2 col-lg-2 col-xl-1 m-0 p-0");
@@ -108,7 +112,7 @@ function Home() {
           03/01/2020 23h59
         </span>
       </div>
-      {width <= 776 ? (
+      {windowWidth <= 776 ? (
         <div>
           <MobileToolbar />
           <div className="col-12 mt-3">
