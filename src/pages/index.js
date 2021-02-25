@@ -18,6 +18,7 @@ import useWindowDimensions from "../Hooks/useWindowDimensions";
 import MaterialUISelect from "../components/MaterialUISelect";
 import Navbar from "../patterns/Navbar";
 import MobileToolbar from "../patterns/MobileToolbar";
+import MobileHeaderMenu from "../patterns/MobileHeaderMenu";
 
 const ArrowButton = styled.button`
   background: none;
@@ -31,6 +32,7 @@ function Home() {
   const { width } = useWindowDimensions();
   const [windowWidth, setWindowWidth] = useState();
   const [collapseSideBar, setCollapseSideBar] = useState(false);
+  const [showMobileMenu, setShowMobileMenu] = useState(false);
   const [sideBarClassName, setSideBarClassName] = useState(
     "col-2 col-md-2 col-lg-4 col-xl-2 m-0 p-0"
   );
@@ -52,24 +54,31 @@ function Home() {
       setBigCardClassName("col-12 col-sm-7 col-md-8 col-lg-8 col-xl-10 ml-0");
     }
   }, [collapseSideBar]);
+
+  const handleShowMobileMenu = () => {
+    setShowMobileMenu(!showMobileMenu);
+  };
   return (
     <div>
       <Head>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Navbar />
-      <img
-        src="/prefeiturarecife.png"
-        alt="prefeitura do recife"
-        width="70px"
-        height="70px"
-        className="rounded"
-        style={{
-          marginTop: "20px",
-          marginLeft: "40px",
-          display: "inline-block",
-        }}
-      />
+      <Navbar showMobileMenu={handleShowMobileMenu} />
+      <MobileHeaderMenu show={showMobileMenu} />
+      <a href="http://www.recife.pe.gov.br/" target="_blank" rel="noreferrer">
+        <img
+          src="/prefeiturarecife.png"
+          alt="prefeitura do recife"
+          width="70px"
+          height="70px"
+          className="rounded"
+          style={{
+            marginTop: "20px",
+            marginLeft: "40px",
+            display: "inline-block",
+          }}
+        />
+      </a>
       <div
         style={{
           position: "absolute",
