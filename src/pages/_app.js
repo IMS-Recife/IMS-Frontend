@@ -1,4 +1,3 @@
-/* eslint react/prop-types: 0 */
 import React from "react";
 import { ThemeProvider } from "styled-components";
 import I18nProvider from "../i18n/I18nProvider";

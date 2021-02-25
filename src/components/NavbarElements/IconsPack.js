@@ -38,6 +38,8 @@ function IconsPack() {
           onMouseOver={() => setLogoPortoDigital(LogoPortoDigitalBranca)}
           onMouseEnter={() => setLogoPortoDigital(LogoPortoDigitalBranca)}
           onMouseOut={() => setLogoPortoDigital(LogoPortoDigitalAzul)}
+          href="https://www.portodigital.org/home"
+          target="_blank"
         >
           <img src={logoPortoDigital} alt="Logo Porto Digital" />
         </IconNavLink>

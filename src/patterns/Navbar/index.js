@@ -1,8 +1,10 @@
 import React from "react";
+import { PropTypes } from "prop-types";
 import { injectIntl, FormattedMessage } from "react-intl";
 
 // import Link from "next/link";
 
+import styled from "styled-components";
 import {
   Nav,
   NavLink,
@@ -12,7 +14,9 @@ import {
   IconsPack,
 } from "../../components/NavbarElements";
 
-const Navbar = () => (
+const BarsButton = styled.a``;
+
+const Navbar = ({ showMobileMenu }) => (
   <>
     <Nav>
       <ProjectNavLink href="/">
@@ -27,9 +31,18 @@ const Navbar = () => (
         </NavLink>
       </LeftNavMenu>
       <IconsPack className="ml-5" />
-      <Bars />
+      <BarsButton onClick={() => showMobileMenu()} type="button">
+        <Bars />
+      </BarsButton>
     </Nav>
   </>
 );
 
 export default injectIntl(Navbar);
+
+Navbar.defaultProps = {
+  showMobileMenu: () => null,
+};
+Navbar.propTypes = {
+  showMobileMenu: PropTypes.func,
+};
