@@ -8,6 +8,7 @@ import {
 import styled from "styled-components";
 
 import Select from "react-select";
+import { useRouter } from "next/router";
 import RightNavMenu from "./RightNavMenu";
 import LogoPortoDigitalAzul from "../../assets/LogoPortoDigitalAzul.svg";
 import LogoPortoDigitalBranca from "../../assets/LogoPortoDigitalBranca.svg";
@@ -29,7 +30,7 @@ const IconNavLink = styled.a`
   }
 `;
 
-const StyledSelect = styled(Select)`
+const LanguagesDropdownSelect = styled(Select)`
   display: inline-block !important;
   width: 5rem !important;
   background-color: #0000 !important;
@@ -40,6 +41,7 @@ const StyledSelect = styled(Select)`
 `;
 
 function IconsPack() {
+  const router = useRouter();
   const [logoPortoDigital, setLogoPortoDigital] = useState(
     LogoPortoDigitalAzul
   );
@@ -74,15 +76,25 @@ function IconsPack() {
   };
   const options = [
     {
-      value: "BR",
-      label: <img src={BrasilFlag} style={{ width: "20px" }} />,
+      value: "/pt-br",
+      label: (
+        <img src={BrasilFlag} alt="Brasil Flag" style={{ width: "20px" }} />
+      ),
     },
-    { value: "US", label: <img src={USFlag} style={{ width: "20px" }} /> },
+    {
+      value: "/en",
+      label: <img src={USFlag} alt="US Flag" style={{ width: "20px" }} />,
+    },
   ];
   return (
     <div>
       <RightNavMenu>
-        <StyledSelect options={options} styles={customStyles} />
+        <LanguagesDropdownSelect
+          value={options[0]}
+          options={options}
+          styles={customStyles}
+          onChange={(url) => router.replace(url.value)}
+        />
         <IconNavLink
           style={{ padding: "0 1rem" }}
           onMouseOver={() => setLogoPortoDigital(LogoPortoDigitalBranca)}
