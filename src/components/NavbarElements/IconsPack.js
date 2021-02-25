@@ -7,6 +7,7 @@ import {
 } from "react-icons/fa";
 import styled from "styled-components";
 
+import Select from "react-select";
 import RightNavMenu from "./RightNavMenu";
 import LogoPortoDigitalAzul from "../../assets/LogoPortoDigitalAzul.svg";
 import LogoPortoDigitalBranca from "../../assets/LogoPortoDigitalBranca.svg";
@@ -26,13 +27,65 @@ const IconNavLink = styled.a`
   }
 `;
 
+const StyledSelect = styled(Select)`
+  display: inline-block !important;
+  width: 6rem !important;
+  background-color: #0000 !important;
+  color: black !important;
+  control {
+    background: blue;
+  }
+`;
+
 function IconsPack() {
   const [logoPortoDigital, setLogoPortoDigital] = useState(
     LogoPortoDigitalAzul
   );
+  const customStyles = {
+    control: (base, state) => ({
+      ...base,
+      background: "#262f51",
+      // Overwrittes the different states of border
+      borderColor: state.isFocused ? "#262f51" : "#262f51",
+      // Removes weird border around container
+      boxShadow: state.isFocused ? null : null,
+      color: "#000",
+      marginTop: "0px",
+      "&:hover": {
+        // Overwrittes the different states of border
+        borderColor: state.isFocused ? "#262f51" : "#262f51",
+      },
+    }),
+    dropdownIndicator: (base) => ({
+      ...base,
+      color: "#1f81e8", // Custom colour
+      "&:hover": {
+        color: "#fff",
+        cursor: "pointer",
+      },
+    }),
+    indicatorSeparator: (base) => ({
+      ...base,
+      display: "none", // Custom colour
+    }),
+  };
+  const options = [
+    {
+      value: "chocolate",
+      label: (
+        <div>
+          <FaFacebookSquare size="2rem" />
+          BR
+        </div>
+      ),
+    },
+    { value: "strawberry", label: "Strawberry" },
+    { value: "vanilla", label: "Vanilla" },
+  ];
   return (
     <div>
       <RightNavMenu>
+        <StyledSelect options={options} styles={customStyles} />
         <IconNavLink
           style={{ padding: "0 1rem" }}
           onMouseOver={() => setLogoPortoDigital(LogoPortoDigitalBranca)}
