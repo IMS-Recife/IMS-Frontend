@@ -6,6 +6,8 @@ export default {
   IMS_PROJECT: "PROJETO IMS/",
   ABOUT: "SOBRE",
   PRESENTATION: "APRESENTAÇÃO",
+  ABOUT_CAPITALIZED: "Sobre",
+  PRESENTATION_CAPITALIZED: "Apresentação",
   ADD_INDICATOR: "Adicionar indicador",
   SHOW_ALL: "Mostrar todos",
   ANALYSIS: "Análises",

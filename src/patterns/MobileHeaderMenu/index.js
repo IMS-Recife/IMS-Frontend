@@ -1,7 +1,15 @@
 import React from "react";
-import { injectIntl, FormatMessage } from "react-intl";
+import { injectIntl, FormattedMessage } from "react-intl";
 import PropTypes from "prop-types";
 import styled from "styled-components";
+import {
+  FaFacebookF,
+  FaInfo,
+  FaTwitter,
+  FaGithub,
+  FaTv,
+  FaYoutube,
+} from "react-icons/fa";
 
 const Container = styled.div`
   width: 100vw;
@@ -15,11 +23,11 @@ const Container = styled.div`
 const MenuButton = styled.a`
   display: flex;
   width: 100vw;
-  height: 70px;
+  height: 100px;
+  font: 600 16px Roboto, sans-serif;
   background: ${(props) => props.theme.colors.background};
   color: ${(props) => props.theme.colors.light};
   border: none;
-  justify-content: center;
   align-items: center;
 
   :hover {
@@ -36,19 +44,58 @@ function MobileHeaderMenu({ show }) {
         <Container>
           <ul>
             <li>
-              <MenuButton>Olá</MenuButton>
+              <MenuButton>
+                <FaTv
+                  size="1.3rem"
+                  style={{ marginLeft: "20%", marginRight: "10px" }}
+                />
+                <FormattedMessage id="PRESENTATION_CAPITALIZED" />
+              </MenuButton>
             </li>
             <li>
-              <MenuButton>Olá</MenuButton>
+              <MenuButton>
+                <FaInfo
+                  size="1.1rem"
+                  style={{ marginLeft: "20%", marginRight: "10px" }}
+                />
+                <FormattedMessage id="ABOUT_CAPITALIZED" />
+              </MenuButton>
             </li>
             <li>
-              <MenuButton>Olá</MenuButton>
+              <MenuButton>
+                <FaFacebookF
+                  size="1.3rem"
+                  style={{ marginLeft: "20%", marginRight: "10px" }}
+                />
+                Facebook
+              </MenuButton>
             </li>
             <li>
-              <MenuButton>Olá</MenuButton>
+              <MenuButton>
+                <FaTwitter
+                  size="1.3rem"
+                  style={{ marginLeft: "20%", marginRight: "10px" }}
+                />
+                Twitter
+              </MenuButton>
             </li>
             <li>
-              <MenuButton>Olá</MenuButton>
+              <MenuButton>
+                <FaGithub
+                  size="1.3rem"
+                  style={{ marginLeft: "20%", marginRight: "10px" }}
+                />
+                Github
+              </MenuButton>
+            </li>
+            <li>
+              <MenuButton>
+                <FaYoutube
+                  size="1.3rem"
+                  style={{ marginLeft: "20%", marginRight: "10px" }}
+                />
+                Youtube
+              </MenuButton>
             </li>
           </ul>
         </Container>
