@@ -13,7 +13,7 @@ import {
 
 const Container = styled.div`
   width: 100vw;
-  height: calc(100vh);
+  height: 100vh;
   z-index: 10;
   background: ${(props) => props.theme.colors.background};
   @media screen and (min-width: 768px) {
@@ -27,7 +27,6 @@ const MenuButton = styled.a`
   font: 600 16px Roboto, sans-serif;
   background: ${(props) => props.theme.colors.background};
   color: ${(props) => props.theme.colors.light};
-  border: none;
   align-items: center;
 
   :hover {
@@ -47,7 +46,7 @@ function MobileHeaderMenu({ show }) {
               <MenuButton>
                 <FaTv
                   size="1.3rem"
-                  style={{ marginLeft: "20%", marginRight: "10px" }}
+                  style={{ marginLeft: "40%", marginRight: "10px" }}
                 />
                 <FormattedMessage id="PRESENTATION_CAPITALIZED" />
               </MenuButton>
@@ -56,7 +55,7 @@ function MobileHeaderMenu({ show }) {
               <MenuButton>
                 <FaInfo
                   size="1.1rem"
-                  style={{ marginLeft: "20%", marginRight: "10px" }}
+                  style={{ marginLeft: "40%", marginRight: "10px" }}
                 />
                 <FormattedMessage id="ABOUT_CAPITALIZED" />
               </MenuButton>
@@ -65,7 +64,7 @@ function MobileHeaderMenu({ show }) {
               <MenuButton>
                 <FaFacebookF
                   size="1.3rem"
-                  style={{ marginLeft: "20%", marginRight: "10px" }}
+                  style={{ marginLeft: "40%", marginRight: "10px" }}
                 />
                 Facebook
               </MenuButton>
@@ -74,7 +73,7 @@ function MobileHeaderMenu({ show }) {
               <MenuButton>
                 <FaTwitter
                   size="1.3rem"
-                  style={{ marginLeft: "20%", marginRight: "10px" }}
+                  style={{ marginLeft: "40%", marginRight: "10px" }}
                 />
                 Twitter
               </MenuButton>
@@ -83,7 +82,7 @@ function MobileHeaderMenu({ show }) {
               <MenuButton>
                 <FaGithub
                   size="1.3rem"
-                  style={{ marginLeft: "20%", marginRight: "10px" }}
+                  style={{ marginLeft: "40%", marginRight: "10px" }}
                 />
                 Github
               </MenuButton>
@@ -92,7 +91,7 @@ function MobileHeaderMenu({ show }) {
               <MenuButton>
                 <FaYoutube
                   size="1.3rem"
-                  style={{ marginLeft: "20%", marginRight: "10px" }}
+                  style={{ marginLeft: "40%", marginRight: "10px" }}
                 />
                 Youtube
               </MenuButton>
