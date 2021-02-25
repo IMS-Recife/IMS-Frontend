@@ -28,3 +28,4 @@
 - Material UI;
 - Sass;
 - React-select;
+- Next-images;
