@@ -32,7 +32,7 @@ const IconNavLink = styled.a`
 
 const LanguagesDropdownSelect = styled(Select)`
   display: inline-block !important;
-  width: 5rem !important;
+  width: 4.4rem !important;
   background-color: #0000 !important;
   color: black !important;
   control {
@@ -45,6 +45,20 @@ function IconsPack() {
   const [logoPortoDigital, setLogoPortoDigital] = useState(
     LogoPortoDigitalAzul
   );
+  const options = [
+    {
+      value: "/pt-br",
+      label: (
+        <img src={BrasilFlag} alt="Brasil Flag" style={{ width: "20px" }} />
+      ),
+    },
+    {
+      value: "/en",
+      label: <img src={USFlag} alt="US Flag" style={{ width: "20px" }} />,
+    },
+  ];
+  const [selectedLanguage, setSelectedLanguage] = useState(options[0]);
+
   const customStyles = {
     control: (base, state) => ({
       ...base,
@@ -74,26 +88,18 @@ function IconsPack() {
       display: "none", // Custom colour
     }),
   };
-  const options = [
-    {
-      value: "/pt-br",
-      label: (
-        <img src={BrasilFlag} alt="Brasil Flag" style={{ width: "20px" }} />
-      ),
-    },
-    {
-      value: "/en",
-      label: <img src={USFlag} alt="US Flag" style={{ width: "20px" }} />,
-    },
-  ];
+
   return (
     <div>
       <RightNavMenu>
         <LanguagesDropdownSelect
-          value={options[0]}
+          value={selectedLanguage}
           options={options}
           styles={customStyles}
-          onChange={(url) => router.replace(url.value)}
+          onChange={(option) => {
+            router.replace(option.value);
+            setSelectedLanguage(option);
+          }}
         />
         <IconNavLink
           style={{ padding: "0 1rem" }}
