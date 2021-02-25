@@ -47,13 +47,13 @@ function IconsPack() {
   );
   const options = [
     {
-      value: "/pt-br",
+      value: "pt-br",
       label: (
         <img src={BrasilFlag} alt="Brasil Flag" style={{ width: "20px" }} />
       ),
     },
     {
-      value: "/en",
+      value: "en",
       label: <img src={USFlag} alt="US Flag" style={{ width: "20px" }} />,
     },
   ];
@@ -96,8 +96,8 @@ function IconsPack() {
           value={selectedLanguage}
           options={options}
           styles={customStyles}
-          onChange={(option) => {
-            router.replace(option.value);
+          onChange={async (option) => {
+            await router.push("/", "/", { locale: option.value });
             setSelectedLanguage(option);
           }}
         />
