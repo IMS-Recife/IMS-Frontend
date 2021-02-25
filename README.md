@@ -27,3 +27,4 @@
 - React-pro-sidebar;
 - Material UI;
 - Sass;
+- React-select;
