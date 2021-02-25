@@ -11,6 +11,8 @@ import Select from "react-select";
 import RightNavMenu from "./RightNavMenu";
 import LogoPortoDigitalAzul from "../../assets/LogoPortoDigitalAzul.svg";
 import LogoPortoDigitalBranca from "../../assets/LogoPortoDigitalBranca.svg";
+import BrasilFlag from "../../assets/Flags/255-brazil.svg";
+import USFlag from "../../assets/Flags/226-united-states.svg";
 
 const IconNavLink = styled.a`
   color: ${(props) => props.theme.colors.primary};
@@ -29,7 +31,7 @@ const IconNavLink = styled.a`
 
 const StyledSelect = styled(Select)`
   display: inline-block !important;
-  width: 6rem !important;
+  width: 5rem !important;
   background-color: #0000 !important;
   color: black !important;
   control {
@@ -52,6 +54,7 @@ function IconsPack() {
       color: "#000",
       marginTop: "0px",
       "&:hover": {
+        cursor: "pointer",
         // Overwrittes the different states of border
         borderColor: state.isFocused ? "#262f51" : "#262f51",
       },
@@ -71,16 +74,10 @@ function IconsPack() {
   };
   const options = [
     {
-      value: "chocolate",
-      label: (
-        <div>
-          <FaFacebookSquare size="2rem" />
-          BR
-        </div>
-      ),
+      value: "BR",
+      label: <img src={BrasilFlag} style={{ width: "20px" }} />,
     },
-    { value: "strawberry", label: "Strawberry" },
-    { value: "vanilla", label: "Vanilla" },
+    { value: "US", label: <img src={USFlag} style={{ width: "20px" }} /> },
   ];
   return (
     <div>
