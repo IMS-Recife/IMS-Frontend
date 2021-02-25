@@ -46,7 +46,7 @@ function MobileHeaderMenu({ show }) {
               <MenuButton>
                 <FaTv
                   size="1.3rem"
-                  style={{ marginLeft: "40%", marginRight: "10px" }}
+                  style={{ marginLeft: "20%", marginRight: "20px" }}
                 />
                 <FormattedMessage id="PRESENTATION_CAPITALIZED" />
               </MenuButton>
@@ -55,7 +55,7 @@ function MobileHeaderMenu({ show }) {
               <MenuButton>
                 <FaInfo
                   size="1.1rem"
-                  style={{ marginLeft: "40%", marginRight: "10px" }}
+                  style={{ marginLeft: "20%", marginRight: "20px" }}
                 />
                 <FormattedMessage id="ABOUT_CAPITALIZED" />
               </MenuButton>
@@ -64,7 +64,7 @@ function MobileHeaderMenu({ show }) {
               <MenuButton>
                 <FaFacebookF
                   size="1.3rem"
-                  style={{ marginLeft: "40%", marginRight: "10px" }}
+                  style={{ marginLeft: "20%", marginRight: "20px" }}
                 />
                 Facebook
               </MenuButton>
@@ -73,7 +73,7 @@ function MobileHeaderMenu({ show }) {
               <MenuButton>
                 <FaTwitter
                   size="1.3rem"
-                  style={{ marginLeft: "40%", marginRight: "10px" }}
+                  style={{ marginLeft: "20%", marginRight: "20px" }}
                 />
                 Twitter
               </MenuButton>
@@ -82,7 +82,7 @@ function MobileHeaderMenu({ show }) {
               <MenuButton>
                 <FaGithub
                   size="1.3rem"
-                  style={{ marginLeft: "40%", marginRight: "10px" }}
+                  style={{ marginLeft: "20%", marginRight: "20px" }}
                 />
                 Github
               </MenuButton>
@@ -91,7 +91,7 @@ function MobileHeaderMenu({ show }) {
               <MenuButton>
                 <FaYoutube
                   size="1.3rem"
-                  style={{ marginLeft: "40%", marginRight: "10px" }}
+                  style={{ marginLeft: "20%", marginRight: "20px" }}
                 />
                 Youtube
               </MenuButton>
