@@ -30,7 +30,7 @@ const Navbar = ({ showMobileMenu }) => (
           <FormattedMessage id="ABOUT" />
         </NavLink>
       </LeftNavMenu>
-      <IconsPack className="ml-5" />
+      <IconsPack />
       <BarsButton onClick={() => showMobileMenu()} type="button">
         <Bars />
       </BarsButton>
