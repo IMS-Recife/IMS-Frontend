@@ -164,7 +164,7 @@ function Home() {
         </div>
       ) : (
         <Container fluid>
-          <div className="row mt-3">
+          <div className="row mt-3 mb-5">
             <div className={sideBarClassName}>
               <ProSidebar
                 style={{ marginLeft: "35px", marginTop: "0px" }}
