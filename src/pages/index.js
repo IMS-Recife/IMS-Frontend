@@ -2,9 +2,9 @@ import Head from "next/head";
 import { injectIntl } from "react-intl";
 import React, { useState } from "react";
 import Navbar from "../patterns/Navbar";
-import MobileHeaderMenu from "../patterns/MobileHeaderMenu";
+import MobileHeaderMenu from "../patterns/MobileDashboard/MobileHeaderMenu";
 import MobileDashboard from "../patterns/MobileDashboard";
-import Dashboard from "../patterns/DashBoard";
+import Dashboard from "../patterns/Dashboard";
 
 function Home() {
   const [showMobileMenu, setShowMobileMenu] = useState(false);

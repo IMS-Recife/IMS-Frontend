@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
 import { FormattedMessage, injectIntl } from "react-intl";
-import MobileToolbar from "../MobileToolbar";
+import MobileToolbar from "./MobileToolbar";
 import { MaterialUISelect } from "../../components/Selects";
 
 const Div = styled.div`
@@ -51,7 +51,6 @@ function MobileDashboard({ show }) {
               position: "absolute",
               left: "50%",
               transform: "translateX(-50%)",
-              marginTop: "25px",
             }}
             className="mt-5 mt-sm-3"
           >
