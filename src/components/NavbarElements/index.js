@@ -4,7 +4,6 @@ import ProjectNavLink from "./ProjectNavLink";
 import LeftNavMenu from "./LeftNavMenu";
 import Bars from "./Bars";
 import IconsPack from "./IconsPack";
-import LanguagesDropdownSelect from "./LanguagesDropdownSelect";
 
 export {
   Nav,
@@ -13,5 +12,4 @@ export {
   LeftNavMenu,
   Bars,
   IconsPack,
-  LanguagesDropdownSelect,
 };

@@ -15,7 +15,7 @@ import {
   FaPlusSquare,
 } from "react-icons/fa";
 import useWindowDimensions from "../Hooks/useWindowDimensions";
-import MaterialUISelect from "../components/MaterialUISelect";
+import { MaterialUISelect } from "../components/Selects";
 import Navbar from "../patterns/Navbar";
 import MobileHeaderMenu from "../patterns/MobileHeaderMenu";
 import MobileDashboard from "../patterns/MobileDashboard";

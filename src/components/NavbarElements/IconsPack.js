@@ -8,7 +8,7 @@ import {
 import styled from "styled-components";
 
 import RightNavMenu from "./RightNavMenu";
-import LanguagesDropdownSelect from "./LanguagesDropdownSelect";
+import { LanguagesDropdownSelect } from "../Selects";
 import LogoPortoDigitalAzul from "../../assets/LogoPortoDigitalAzul.svg";
 import LogoPortoDigitalBranca from "../../assets/LogoPortoDigitalBranca.svg";
 

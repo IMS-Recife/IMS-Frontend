@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import { FormattedMessage, injectIntl } from "react-intl";
 import MobileToolbar from "../MobileToolbar";
-import MaterialUISelect from "../../components/MaterialUISelect";
+import { MaterialUISelect } from "../../components/Selects";
 
 function MobileDashboard({ show }) {
   return (
