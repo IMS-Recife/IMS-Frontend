@@ -4,7 +4,7 @@ import { FaBars } from "react-icons/fa";
 const Bars = styled(FaBars)`
   display: none;
   color: ${(props) => props.theme.colors.light};
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 850px) {
     display: block;
     position: absolute;
     top: 0;
