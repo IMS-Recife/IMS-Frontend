@@ -16,7 +16,7 @@ const Container = styled.div`
   height: 100%;
   z-index: 10;
   background: ${(props) => props.theme.colors.background};
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: 850px) {
     display: none;
   }
 `;
