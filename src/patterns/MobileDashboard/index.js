@@ -1,12 +1,19 @@
 import React from "react";
 import PropTypes from "prop-types";
+import styled from "styled-components";
 import { FormattedMessage, injectIntl } from "react-intl";
 import MobileToolbar from "../MobileToolbar";
 import { MaterialUISelect } from "../../components/Selects";
 
+const Div = styled.div`
+  @media screen and (min-width: 850px) {
+    display: none;
+  }
+`;
+
 function MobileDashboard({ show }) {
   return (
-    <div>
+    <Div>
       {show ? (
         <div>
           <a
@@ -109,7 +116,7 @@ function MobileDashboard({ show }) {
           </div>
         </div>
       ) : null}
-    </div>
+    </Div>
   );
 }
 

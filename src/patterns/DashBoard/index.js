@@ -22,6 +22,12 @@ const ArrowButton = styled.button`
   height: 1.5rem;
 `;
 
+const Div = styled.div`
+  @media screen and (max-width: 850px) {
+    display: none;
+  }
+`;
+
 function Dashboard() {
   const intl = useIntl();
   const [collapseSideBar, setCollapseSideBar] = useState(false);
@@ -44,7 +50,7 @@ function Dashboard() {
     }
   }, [collapseSideBar]);
   return (
-    <div>
+    <Div>
       <a href="http://www.recife.pe.gov.br/" target="_blank" rel="noreferrer">
         <img
           src="/prefeiturarecife.png"
@@ -200,7 +206,7 @@ function Dashboard() {
           </div>
         </div>
       </Container>
-    </div>
+    </Div>
   );
 }
 
