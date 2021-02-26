@@ -12,8 +12,8 @@ import {
 } from "react-icons/fa";
 
 const Container = styled.div`
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: 100%;
   z-index: 10;
   background: ${(props) => props.theme.colors.background};
   @media screen and (min-width: 768px) {
@@ -38,7 +38,7 @@ const MenuButton = styled.a`
 `;
 function MobileHeaderMenu({ show }) {
   return (
-    <div>
+    <div style={{ marginBottom: "0px" }}>
       {show ? (
         <Container>
           <ul>
