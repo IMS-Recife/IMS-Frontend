@@ -5,7 +5,7 @@ const RightNavMenu = styled.div`
   right: 20px;
   margin-top: 10px;
   display: flex;
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 860px) {
     display: none;
   }
 `;

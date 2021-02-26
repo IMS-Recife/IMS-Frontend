@@ -7,12 +7,18 @@ import BrasilFlag from "../../assets/Flags/255-brazil.svg";
 import USFlag from "../../assets/Flags/226-united-states.svg";
 
 const StyledSelect = styled(Select)`
-  display: inline-block !important;
+  display: block !important;
+  position: absolute !important;
+  margin-top: 10px !important;
+  right: 300px !important;
   width: 4.4rem !important;
   background-color: #0000 !important;
   color: black !important;
   control {
     background: blue;
+  }
+  @media screen and (max-width: 860px) {
+    right: 60px !important;
   }
 `;
 

@@ -13,6 +13,7 @@ import {
   ProjectNavLink,
   IconsPack,
 } from "../../components/NavbarElements";
+import { LanguagesDropdownSelect } from "../../components/Selects";
 
 const BarsButton = styled.a``;
 
@@ -30,6 +31,7 @@ const Navbar = ({ showMobileMenu }) => (
           <FormattedMessage id="ABOUT" />
         </NavLink>
       </LeftNavMenu>
+      <LanguagesDropdownSelect />
       <IconsPack />
       <BarsButton onClick={() => showMobileMenu()} type="button">
         <Bars />

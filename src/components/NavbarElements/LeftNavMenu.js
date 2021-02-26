@@ -4,7 +4,7 @@ const LeftNavMenu = styled.div`
   padding: 0.5rem calc((60vw - 1000px) / 2);
 
   display: flex;
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 860px) {
     display: none;
   }
 `;
