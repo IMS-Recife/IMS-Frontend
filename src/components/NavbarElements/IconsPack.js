@@ -7,13 +7,10 @@ import {
 } from "react-icons/fa";
 import styled from "styled-components";
 
-import Select from "react-select";
-import { useRouter } from "next/router";
 import RightNavMenu from "./RightNavMenu";
+import LanguagesDropdownSelect from "./LanguagesDropdownSelect";
 import LogoPortoDigitalAzul from "../../assets/LogoPortoDigitalAzul.svg";
 import LogoPortoDigitalBranca from "../../assets/LogoPortoDigitalBranca.svg";
-import BrasilFlag from "../../assets/Flags/255-brazil.svg";
-import USFlag from "../../assets/Flags/226-united-states.svg";
 
 const IconNavLink = styled.a`
   color: ${(props) => props.theme.colors.primary};
@@ -30,77 +27,15 @@ const IconNavLink = styled.a`
   }
 `;
 
-const LanguagesDropdownSelect = styled(Select)`
-  display: inline-block !important;
-  width: 4.4rem !important;
-  background-color: #0000 !important;
-  color: black !important;
-  control {
-    background: blue;
-  }
-`;
-
 function IconsPack() {
-  const router = useRouter();
   const [logoPortoDigital, setLogoPortoDigital] = useState(
     LogoPortoDigitalAzul
   );
-  const options = [
-    {
-      value: "pt-br",
-      label: (
-        <img src={BrasilFlag} alt="Brasil Flag" style={{ width: "20px" }} />
-      ),
-    },
-    {
-      value: "en",
-      label: <img src={USFlag} alt="US Flag" style={{ width: "20px" }} />,
-    },
-  ];
-  const [selectedLanguage, setSelectedLanguage] = useState(options[0]);
-
-  const customStyles = {
-    control: (base, state) => ({
-      ...base,
-      background: "#262f51",
-      // Overwrittes the different states of border
-      borderColor: state.isFocused ? "#262f51" : "#262f51",
-      // Removes weird border around container
-      boxShadow: state.isFocused ? null : null,
-      color: "#000",
-      marginTop: "0px",
-      "&:hover": {
-        cursor: "pointer",
-        // Overwrittes the different states of border
-        borderColor: state.isFocused ? "#262f51" : "#262f51",
-      },
-    }),
-    dropdownIndicator: (base) => ({
-      ...base,
-      color: "#1f81e8", // Custom colour
-      "&:hover": {
-        color: "#fff",
-        cursor: "pointer",
-      },
-    }),
-    indicatorSeparator: (base) => ({
-      ...base,
-      display: "none", // Custom colour
-    }),
-  };
 
   return (
     <div>
       <RightNavMenu>
-        <LanguagesDropdownSelect
-          value={selectedLanguage}
-          options={options}
-          styles={customStyles}
-          onChange={async (option) => {
-            await router.push("/", "/", { locale: option.value });
-            setSelectedLanguage(option);
-          }}
-        />
+        <LanguagesDropdownSelect />
         <IconNavLink
           style={{ padding: "0 1rem" }}
           onMouseOver={() => setLogoPortoDigital(LogoPortoDigitalBranca)}
