@@ -75,6 +75,38 @@ function Dashboard() {
       >
         <MaterialUISelect />
       </div>
+      <div
+        style={{
+          display: "inline-block",
+          position: "absolute",
+          left: "50%",
+          transform: "translateX(-50%)",
+          marginTop: "25px",
+        }}
+        className="mt-5 mt-sm-3"
+      >
+        <span
+          style={{
+            font: "700 10px Roboto, sans-serif",
+            color: "#87c2ff",
+            display: "block",
+            textAlign: "center",
+          }}
+          className="mt-5 mt-sm-3"
+        >
+          <FormattedMessage id="LAST_UPDATE" />
+        </span>
+        <span
+          style={{
+            marginTop: "5px",
+            font: "500 18px Roboto, sans-serif",
+            display: "block",
+            textAlign: "center",
+          }}
+        >
+          03/01/2020 23h59
+        </span>
+      </div>
       <Container fluid>
         <div className="row mt-3">
           <div className={sideBarClassName}>
