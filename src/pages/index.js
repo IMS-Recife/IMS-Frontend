@@ -2,8 +2,9 @@ import Head from "next/head";
 import { injectIntl } from "react-intl";
 import React, { useState } from "react";
 import Navbar from "../patterns/Navbar";
-import MobileHeaderMenu from "../patterns/MobileDashboard/MobileHeaderMenu";
-import MobileDashboard from "../patterns/MobileDashboard";
+import MobileHeaderMenu from "../patterns/MobileLayout/MobileHeaderMenu";
+import MobileLayout from "../patterns/MobileLayout";
+import MobileDashboard from "../patterns/MobileDashboard/MobileDashboard";
 import Dashboard from "../patterns/Dashboard";
 
 function Home() {
@@ -19,7 +20,9 @@ function Home() {
       </Head>
       <Navbar showMobileMenu={handleShowMobileMenu} />
       <MobileHeaderMenu show={showMobileMenu} />
-      <MobileDashboard show={!showMobileMenu} />
+      <MobileLayout show={!showMobileMenu}>
+        <MobileDashboard />
+      </MobileLayout>
       <Dashboard />
     </div>
   );
