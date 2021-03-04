@@ -6,6 +6,7 @@ import MobileHeaderMenu from "../patterns/MobileLayout/MobileHeaderMenu";
 import MobileLayout from "../patterns/MobileLayout";
 import MobileDashboard from "../patterns/MobileDashboard/MobileDashboard";
 import Dashboard from "../patterns/Dashboard";
+import Layout from "../patterns/Layout";
 
 function Home() {
   const [showMobileMenu, setShowMobileMenu] = useState(false);
@@ -23,7 +24,9 @@ function Home() {
       <MobileLayout show={!showMobileMenu}>
         <MobileDashboard />
       </MobileLayout>
-      <Dashboard />
+      <Layout>
+        <Dashboard />
+      </Layout>
     </div>
   );
 }
