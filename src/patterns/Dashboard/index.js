@@ -1,6 +1,6 @@
 import { injectIntl } from "react-intl";
 import React from "react";
-import { propTypes } from "react-bootstrap/esm/Image";
+import PropTypes from "prop-types";
 
 function Dashboard({ bigCardClassName }) {
   return (
@@ -45,9 +45,9 @@ function Dashboard({ bigCardClassName }) {
 
 export default injectIntl(Dashboard);
 
-Dashboard.default = {
+Dashboard.defaultProps = {
   bigCardClassName: "col-12 col-sm-10 col-md-10 col-lg-8 col-xl-10 ml-0",
 };
 Dashboard.propTypes = {
-  bigCardClassName: propTypes.string.isRequired,
+  bigCardClassName: PropTypes.string,
 };
