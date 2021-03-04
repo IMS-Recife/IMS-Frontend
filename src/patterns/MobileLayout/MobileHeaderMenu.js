@@ -23,12 +23,11 @@ const Container = styled.div`
 const MenuButton = styled.a`
   display: flex;
   width: 100vw;
-  height: 100px;
+  height: 15.76vh;
   font: 600 16px Roboto, sans-serif;
   background: ${(props) => props.theme.colors.background};
   color: ${(props) => props.theme.colors.light};
   align-items: center;
-
   :hover {
     cursor: pointer;
     background: ${(props) => props.theme.colors.primary};
@@ -41,7 +40,7 @@ function MobileHeaderMenu({ show }) {
     <div style={{ marginBottom: "0px" }}>
       {show ? (
         <Container>
-          <ul>
+          <ul style={{ marginBottom: "0px" }}>
             <li>
               <MenuButton>
                 <FaTv
