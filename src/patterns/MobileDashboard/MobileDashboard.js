@@ -1,10 +1,8 @@
-import { injectIntl } from "react-intl";
 import React from "react";
-import PropTypes from "prop-types";
 
-function Dashboard({ bigCardClassName }) {
+function MobileDashboard() {
   return (
-    <div className={bigCardClassName}>
+    <div className="col-12 mt-3">
       <div
         className="card card-responsive p-5 pt-5 mr-sm-0 ml-md-4 m-lg-0"
         style={{
@@ -43,11 +41,4 @@ function Dashboard({ bigCardClassName }) {
   );
 }
 
-export default injectIntl(Dashboard);
-
-Dashboard.defaultProps = {
-  bigCardClassName: "col-12 col-sm-10 col-md-10 col-lg-8 col-xl-10 ml-0",
-};
-Dashboard.propTypes = {
-  bigCardClassName: PropTypes.string,
-};
+export default MobileDashboard;
