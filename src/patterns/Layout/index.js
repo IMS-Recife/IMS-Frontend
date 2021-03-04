@@ -29,6 +29,14 @@ const Div = styled.div`
   }
 `;
 
+const Hr = styled.hr`
+  border: 1px solid ${(props) => props.theme.colors.primary};
+  margin-left: 22px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  width: 80%;
+`;
+
 // TODO pass the bigCardClassName to the children component as props
 function Layout({ children }) {
   const intl = useIntl();
@@ -144,6 +152,8 @@ function Layout({ children }) {
                 >
                   <FormattedMessage id="ADD_INDICATOR" />
                 </MenuItem>
+                {!collapseSideBar && <Hr />}
+
                 <MenuItem
                   className="mt-2"
                   icon={
