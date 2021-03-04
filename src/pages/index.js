@@ -14,6 +14,11 @@ function Home() {
   const handleShowMobileMenu = () => {
     setShowMobileMenu(!showMobileMenu);
   };
+
+  const [bigCardClassName, setBigCardClassName] = useState(
+    "col-12 col-sm-10 col-md-10 col-lg-8 col-xl-10 ml-0"
+  );
+
   return (
     <div>
       <Head>
@@ -24,8 +29,8 @@ function Home() {
       <MobileLayout show={!showMobileMenu}>
         <MobileDashboard />
       </MobileLayout>
-      <Layout>
-        <Dashboard />
+      <Layout setBigCardClassName={setBigCardClassName}>
+        <Dashboard bigCardClassName={bigCardClassName} />
       </Layout>
     </div>
   );

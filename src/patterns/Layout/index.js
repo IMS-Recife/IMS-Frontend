@@ -38,14 +38,11 @@ const Hr = styled.hr`
 `;
 
 // TODO pass the bigCardClassName to the children component as props
-function Layout({ children }) {
+function Layout({ children, setBigCardClassName }) {
   const intl = useIntl();
   const [collapseSideBar, setCollapseSideBar] = useState(false);
   const [sideBarClassName, setSideBarClassName] = useState(
     "col-2 col-md-2 col-lg-4 col-xl-2 m-0 p-0"
-  );
-  const [bigCardClassName, setBigCardClassName] = useState(
-    "col-12 col-sm-10 col-md-10 col-lg-8 col-xl-10 ml-0"
   );
 
   useEffect(() => {
@@ -223,4 +220,5 @@ export default injectIntl(Layout);
 
 Layout.propTypes = {
   children: PropTypes.node.isRequired,
+  setBigCardClassName: PropTypes.func.isRequired,
 };
