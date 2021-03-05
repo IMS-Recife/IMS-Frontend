@@ -22,5 +22,29 @@ $breakpoint-xl: 1200px;
 
 
 .map-card {
-  background-color: rgba(245, 245, 245, 0.4) !important;
+  font: 14px / 20px UberMove, Helvetica, Arial, sans-serif;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 344px;
+  background: rgb(255, 255, 255);
+  box-shadow: rgb(0 0 0 / 16%) 0 1px 4px;
+  margin: 24px;
+  padding: 10px 24px;
+  max-height: 96%;
+  overflow: hidden;
+  outline: none;
+  z-index: 1;
 }
+
+.map-card--title {
+  display: flex;
+  color: rgb(25, 32, 44);
+  -webkit-box-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  justify-content: space-between;
+  font: bold 16px / 24px UberMove, Helvetica, Arial, sans-serif;
+  margin: 8px 0;
+}
+

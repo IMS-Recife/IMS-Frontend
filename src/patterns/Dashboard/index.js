@@ -2,13 +2,18 @@ import { injectIntl } from "react-intl";
 import React, { useEffect, useState } from "react";
 import PropTypes from "prop-types";
 import { StaticMap } from "react-map-gl";
-import { GeoJsonLayer } from "@deck.gl/layers";
+import { GeoJsonLayer, ScatterplotLayer } from "@deck.gl/layers";
 import { DeckGL } from "deck.gl";
-import lotes from "../../assets/lotes.json";
-import ruas from "../../assets/logradouros.json";
-import scCal from "../../assets/sc_cal.json";
+import scPoints from "../../assets/sc_arv_pos.json";
 
 const Dashboard = ({ bigCardClassName }) => {
+  const [filters, setFilters] = useState([
+    { id: 1, visible: true, description: "Lotes" },
+    { id: 2, visible: true, description: "Logradouros" },
+    { id: 3, visible: true, description: "Calçada - Siqueira Campos" },
+    { id: 4, visible: true, description: "Vegetação/Postes - Siqueira Campos" },
+  ]);
+
   const [viewport, setViewport] = useState({
     width: "100%",
     height: "100%",
@@ -39,38 +44,77 @@ const Dashboard = ({ bigCardClassName }) => {
   //   });
   // }, []);
 
+  const toggleLayers = (id) => {
+    const updatedLayers = filters.map((f) => {
+      if (f.id === id) {
+        return { ...f, visible: !f.visible };
+      }
+      return f;
+    });
+    setFilters(updatedLayers);
+  };
+
   const layers = [
     new GeoJsonLayer({
       id: "Siqueira Campos Calçadas",
-      data: scCal,
+      data:
+        "https://raw.githubusercontent.com/Filipegbessaa/IMS-Frontend/dev_map/src/assets/sc_cal.json",
       opacity: 0.8,
-      stroked: false,
+      lineWidthScale: 0.03,
+      stroked: true,
       filled: true,
+      autoHighlight: true,
+      highlightColor: [0, 0, 128, 128],
+      pickable: true,
+      onClick: ({ object }) => {
+        console.log(object);
+      },
       getLineWidth: 4,
       getFillColor: [55, 126, 184],
-      visible: true,
+      visible: filters[2].visible,
     }),
     new GeoJsonLayer({
       id: "Lotes",
-      data: lotes,
-      opacity: 0.4,
-      stroked: false,
+      data:
+        "https://raw.githubusercontent.com/Filipegbessaa/IMS-Frontend/dev_map/src/assets/lotes.json",
+      opacity: 0.2,
+      stroked: true,
       filled: true,
+      lineWidthScale: 0.1,
+      autoHighlight: true,
+      highlightColor: [0, 0, 128, 128],
       wireframe: true,
       getFillColor: [255, 127, 0],
       pickable: true,
-      visible: true,
+      visible: filters[0].visible,
     }),
     new GeoJsonLayer({
       id: "Logradouros",
-      data: ruas,
+      data:
+        "https://raw.githubusercontent.com/Filipegbessaa/IMS-Frontend/dev_map/src/assets/logradouros.json",
       opacity: 0.8,
       stroked: false,
       filled: true,
-      getLineWidth: 2,
+      getLineWidth: 0.5,
       getLineColor: [183, 72, 75],
       getFillColor: [183, 72, 75],
-      visible: true,
+      visible: filters[1].visible,
+    }),
+    new ScatterplotLayer({
+      id: "Scatterplot Points",
+      data: scPoints.features,
+      opacity: 0.8,
+      filled: true,
+      onClick: (e) => {
+        console.log(e.object.properties.RefName);
+      },
+      autoHighlight: true,
+      highlightColor: [0, 0, 128, 128],
+      radiusMinPixels: 1,
+      pickable: true,
+      getPosition: (d) => d.geometry.coordinates,
+      getFillColor: [91, 222, 126],
+      visible: filters[3].visible,
     }),
   ];
 
@@ -83,38 +127,23 @@ const Dashboard = ({ bigCardClassName }) => {
           marginLeft: "0px",
         }}
       >
-        <div
-          className="card mt-4 ml-4 text-dark"
-          style={{ maxWidth: "18rem", zIndex: "1" }}
-        >
-          <div className="card-body map-card">
-            <h5 className="card-title">Camadas:</h5>
-            <div className="form-check form-switch">
-              <input
-                className="form-check-input"
-                type="checkbox"
-                id="flexSwitchCheckDefault"
-              />
-              <label
-                className="form-check-label"
-                htmlFor="flexSwitchCheckDefault"
-              >
-                Lotes
-              </label>
-            </div>
-            <div className="form-check form-switch">
-              <input
-                className="form-check-input"
-                type="checkbox"
-                id="flexSwitchCheckDefault"
-              />
-              <label
-                className="form-check-label"
-                htmlFor="flexSwitchCheckDefault"
-              >
-                Logradouros
-              </label>
-            </div>
+        <div className="map-card text-dark">
+          <div className="map-card--title">Camadas:</div>
+          <div className="map-card--body">
+            {filters.map((f, i) => (
+              <div className="form-check" key={f.id}>
+                <label className="form-check-label" htmlFor={f.id}>
+                  <input
+                    className="form-check-input"
+                    type="checkbox"
+                    checked={f.visible}
+                    id={f.id}
+                    onChange={() => toggleLayers(f.id)}
+                  />
+                  {f.description}
+                </label>
+              </div>
+            ))}
           </div>
         </div>
         <DeckGL
@@ -124,9 +153,10 @@ const Dashboard = ({ bigCardClassName }) => {
           onViewStateChange={(viewState) => setViewport(viewState.viewState)}
         >
           <StaticMap
+            mapStyle="mapbox://styles/mapbox/dark-v10"
             reuseMaps
             mapboxApiAccessToken="pk.eyJ1IjoiaWFjYXB1Y2EiLCJhIjoiY2pnem4wMWRtMDJqZzMxbXd2YTkxbzAzdiJ9.fAmljrg3ipHbRWZY2comOA"
-          ></StaticMap>
+          />
         </DeckGL>
       </div>
     </div>
