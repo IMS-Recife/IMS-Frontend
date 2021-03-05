@@ -36,7 +36,9 @@ function LanguagesDropdownSelect() {
       label: <img src={USFlag} alt="US Flag" style={{ width: "20px" }} />,
     },
   ];
-  const [selectedLanguage, setSelectedLanguage] = useState(options[0]);
+  const [selectedLanguage, setSelectedLanguage] = useState(
+    router.locale === "pt-br" ? options[0] : options[1]
+  );
 
   const customStyles = {
     control: (base, state) => ({
