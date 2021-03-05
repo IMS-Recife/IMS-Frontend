@@ -1,47 +1,137 @@
 import { injectIntl } from "react-intl";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import PropTypes from "prop-types";
+import { StaticMap } from "react-map-gl";
+import { GeoJsonLayer } from "@deck.gl/layers";
+import { DeckGL } from "deck.gl";
+import lotes from "../../assets/lotes.json";
+import ruas from "../../assets/logradouros.json";
+import scCal from "../../assets/sc_cal.json";
 
-function Dashboard({ bigCardClassName }) {
+const Dashboard = ({ bigCardClassName }) => {
+  const [viewport, setViewport] = useState({
+    width: "100%",
+    height: "100%",
+    latitude: -8.0702703,
+    longitude: -34.910261,
+    zoom: 10,
+  });
+
+  // useEffect(() => {
+  //   const map = new mapboxgl.Map({
+  //     container: "map",
+  //     style: "mapbox://styles/mapbox/dark-v10",
+  //     center: [-34.910261, -8.0702703],
+  //     zoom: 12,
+  //   });
+  //   map.on("load", () => {
+  //     map.addSource("lotes", { type: "geojson", data: lotes });
+  //     map.addLayer({
+  //       id: "lotes",
+  //       type: "fill",
+  //       source: "lotes",
+  //       layout: {},
+  //       paint: {
+  //         "fill-color": "#088",
+  //         "fill-opacity": 0.8,
+  //       },
+  //     });
+  //   });
+  // }, []);
+
+  const layers = [
+    new GeoJsonLayer({
+      id: "Siqueira Campos Calçadas",
+      data: scCal,
+      opacity: 0.8,
+      stroked: false,
+      filled: true,
+      getLineWidth: 4,
+      getFillColor: [55, 126, 184],
+      visible: true,
+    }),
+    new GeoJsonLayer({
+      id: "Lotes",
+      data: lotes,
+      opacity: 0.4,
+      stroked: false,
+      filled: true,
+      wireframe: true,
+      getFillColor: [255, 127, 0],
+      pickable: true,
+      visible: true,
+    }),
+    new GeoJsonLayer({
+      id: "Logradouros",
+      data: ruas,
+      opacity: 0.8,
+      stroked: false,
+      filled: true,
+      getLineWidth: 2,
+      getLineColor: [183, 72, 75],
+      getFillColor: [183, 72, 75],
+      visible: true,
+    }),
+  ];
+
   return (
-    <div className={bigCardClassName}>
+    <div className={bigCardClassName} style={{ minHeight: "85vh" }}>
       <div
-        className="card card-responsive p-5 pt-5 mr-sm-0 ml-md-4 m-lg-0"
+        className="card card-responsive mr-sm-0 ml-md-4 m-lg-0 h-100"
         style={{
           marginBottom: "40px",
           marginLeft: "0px",
         }}
       >
-        <div className="row">
-          <div
-            className="card card-custom bg-secondary col-12 m-0 mb-3 col-lg-5 mr-md-2 m-xl-2 ml-xl-5 "
-            style={{ height: "250px" }}
-          />
-          <div
-            className="card card-custom bg-primary col-12 m-0 mb-3 col-lg-6  m-lg-0 ml-xl-2 mt-xl-2"
-            style={{ height: "250px" }}
-          />
-          <div
-            className="card card-custom bg-info col-12 m-0 mb-3 col-lg-4 mr-md-2 m-xl-2 ml-xl-5 "
-            style={{ height: "300px" }}
-          />
-          <div
-            className="card card-custom bg-success col-12 m-0 mb-3 col-lg-7  m-xl-2"
-            style={{ height: "300px" }}
-          />
-          <div
-            className="card card-custom bg-warning col-12 m-0 mb-3 col-lg-4 mr-md-2 m-xl-2 ml-xl-5 mb-xl-4 "
-            style={{ height: "300px" }}
-          />
-          <div
-            className="card card-custom bg-danger col-12 m-0 mb-3 col-lg-7  m-xl-2 mb-4"
-            style={{ height: "300px" }}
-          />
+        <div
+          className="card mt-4 ml-4 text-dark"
+          style={{ maxWidth: "18rem", zIndex: "1" }}
+        >
+          <div className="card-body map-card">
+            <h5 className="card-title">Camadas:</h5>
+            <div className="form-check form-switch">
+              <input
+                className="form-check-input"
+                type="checkbox"
+                id="flexSwitchCheckDefault"
+              />
+              <label
+                className="form-check-label"
+                htmlFor="flexSwitchCheckDefault"
+              >
+                Lotes
+              </label>
+            </div>
+            <div className="form-check form-switch">
+              <input
+                className="form-check-input"
+                type="checkbox"
+                id="flexSwitchCheckDefault"
+              />
+              <label
+                className="form-check-label"
+                htmlFor="flexSwitchCheckDefault"
+              >
+                Logradouros
+              </label>
+            </div>
+          </div>
         </div>
+        <DeckGL
+          controller
+          layers={layers}
+          viewState={viewport}
+          onViewStateChange={(viewState) => setViewport(viewState.viewState)}
+        >
+          <StaticMap
+            reuseMaps
+            mapboxApiAccessToken="pk.eyJ1IjoiaWFjYXB1Y2EiLCJhIjoiY2pnem4wMWRtMDJqZzMxbXd2YTkxbzAzdiJ9.fAmljrg3ipHbRWZY2comOA"
+          ></StaticMap>
+        </DeckGL>
       </div>
     </div>
   );
-}
+};
 
 export default injectIntl(Dashboard);
 
