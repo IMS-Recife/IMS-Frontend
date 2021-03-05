@@ -37,7 +37,7 @@ function LanguagesDropdownSelect() {
     },
   ];
   const [selectedLanguage, setSelectedLanguage] = useState(
-    router.locale === "pt-br" ? options[0] : options[1]
+    options.map((option) => router.locale === option.value && option)
   );
 
   const customStyles = {
