@@ -120,14 +120,15 @@ const Map = () => {
   return (
     <div
       className="card card-responsive m-0 p-0 border-0"
-      style={{ height: "100vh" }}
+      style={{ minHeight: "100vh" }}
     >
       <div
-        className="card card-responsive m-0 p-0 h-100 border-0"
+        className="card card-responsive mr-sm-0 ml-md-4 m-lg-0 h-100 p-3"
         style={{
           marginBottom: "40px",
-          marginLeft: "0px",
-          width: "100px",
+          width: "300px",
+          left: "30px",
+          top: "30px",
           zIndex: "10",
         }}
       >
