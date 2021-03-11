@@ -24,7 +24,7 @@ function MapPage() {
       </Head>
       <Navbar showMobileMenu={handleShowMobileMenu} />
       <MobileHeaderMenu show={showMobileMenu} />
-      {!showMobileMenu && <Map />}
+      <Map show={!showMobileMenu} />
     </div>
   );
 }

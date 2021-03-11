@@ -3,9 +3,10 @@ import React, { useState } from "react";
 import { StaticMap } from "react-map-gl";
 import { GeoJsonLayer, ScatterplotLayer } from "@deck.gl/layers";
 import { DeckGL } from "deck.gl";
+import PropTypes from "prop-types";
 import scPoints from "../../assets/sc_arv_pos.json";
 
-const Map = () => {
+const Map = ({ show }) => {
   const [filters, setFilters] = useState([
     { id: 1, visible: true, description: "Lotes" },
     { id: 2, visible: true, description: "Logradouros" },
@@ -120,7 +121,7 @@ const Map = () => {
   return (
     <div
       className="card card-responsive m-0 p-0 border-0"
-      style={{ minHeight: "100vh" }}
+      style={show ? { minHeight: "100vh" } : { display: "none" }}
     >
       <div
         className="card card-responsive mr-sm-0 ml-md-4 m-lg-0 h-100 p-3"
@@ -169,3 +170,7 @@ const Map = () => {
 };
 
 export default injectIntl(Map);
+
+Map.propTypes = {
+  show: PropTypes.bool.isRequired,
+};
