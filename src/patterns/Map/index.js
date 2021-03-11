@@ -118,12 +118,17 @@ const Map = () => {
   ];
 
   return (
-    <div style={{ height: "100vh" }}>
+    <div
+      className="card card-responsive m-0 p-0 border-0"
+      style={{ height: "100vh" }}
+    >
       <div
         className="card card-responsive m-0 p-0 h-100 border-0"
         style={{
           marginBottom: "40px",
           marginLeft: "0px",
+          width: "100px",
+          zIndex: "10",
         }}
       >
         <div className="map-card text-dark">
@@ -145,19 +150,19 @@ const Map = () => {
             ))}
           </div>
         </div>
-        <DeckGL
-          controller
-          layers={layers}
-          viewState={viewport}
-          onViewStateChange={(viewState) => setViewport(viewState.viewState)}
-        >
-          <StaticMap
-            mapStyle="mapbox://styles/mapbox/dark-v10"
-            reuseMaps
-            mapboxApiAccessToken="pk.eyJ1IjoiaWFjYXB1Y2EiLCJhIjoiY2pnem4wMWRtMDJqZzMxbXd2YTkxbzAzdiJ9.fAmljrg3ipHbRWZY2comOA"
-          />
-        </DeckGL>
       </div>
+      <DeckGL
+        controller
+        layers={layers}
+        viewState={viewport}
+        onViewStateChange={(viewState) => setViewport(viewState.viewState)}
+      >
+        <StaticMap
+          mapStyle="mapbox://styles/mapbox/dark-v10"
+          reuseMaps
+          mapboxApiAccessToken="pk.eyJ1IjoiaWFjYXB1Y2EiLCJhIjoiY2pnem4wMWRtMDJqZzMxbXd2YTkxbzAzdiJ9.fAmljrg3ipHbRWZY2comOA"
+        />
+      </DeckGL>
     </div>
   );
 };
