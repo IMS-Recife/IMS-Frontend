@@ -159,7 +159,7 @@ const Map = () => {
         onViewStateChange={(viewState) => setViewport(viewState.viewState)}
       >
         <StaticMap
-          mapStyle="mapbox://styles/mapbox/dark-v10"
+          mapStyle="mapbox://styles/mapbox/streets-v11"
           reuseMaps
           mapboxApiAccessToken="pk.eyJ1IjoiaWFjYXB1Y2EiLCJhIjoiY2pnem4wMWRtMDJqZzMxbXd2YTkxbzAzdiJ9.fAmljrg3ipHbRWZY2comOA"
         />
