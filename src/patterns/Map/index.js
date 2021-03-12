@@ -11,7 +11,8 @@ const Map = ({ show }) => {
     { id: 1, visible: true, description: "Lotes" },
     { id: 2, visible: true, description: "Logradouros" },
     { id: 3, visible: true, description: "Calçada - Siqueira Campos" },
-    { id: 4, visible: true, description: "Vegetação/Postes - Siqueira Campos" },
+    { id: 4, visible: true, description: "Postes - Siqueira Campos" },
+    { id: 5, visible: true, description: "Vegetação - Siqueira Campos" },
   ]);
 
   const [viewport, setViewport] = useState({
@@ -136,7 +137,7 @@ const Map = ({ show }) => {
       pickable: true,
       getPosition: (d) => d.geometry.coordinates,
       getFillColor: [91, 222, 126],
-      visible: filters[3].visible,
+      visible: filters[4].visible,
     }),
   ];
 
