@@ -53,6 +53,12 @@ const Map = ({ show }) => {
     });
     setFilters(updatedLayers);
   };
+  const streetPoles = scPoints.features.filter(
+    (point) => point.properties.Layer === "ATP_URB_POSTE"
+  );
+  const trees = scPoints.features.filter(
+    (point) => point.properties.Layer !== "ATP_URB_POSTE"
+  );
 
   const layers = [
     new GeoJsonLayer({
@@ -101,15 +107,31 @@ const Map = ({ show }) => {
       visible: filters[1].visible,
     }),
     new ScatterplotLayer({
-      id: "Scatterplot Points",
-      data: scPoints.features,
+      id: "Postes",
+      data: streetPoles,
       opacity: 0.8,
       filled: true,
       onClick: (e) => {
         console.log(e.object.properties.RefName);
       },
       autoHighlight: true,
-      highlightColor: [0, 0, 128, 128],
+      highlightColor: [220, 220, 220, 220],
+      radiusMinPixels: 1,
+      pickable: true,
+      getPosition: (d) => d.geometry.coordinates,
+      getFillColor: [80, 80, 80],
+      visible: filters[3].visible,
+    }),
+    new ScatterplotLayer({
+      id: "Arvores",
+      data: trees,
+      opacity: 0.8,
+      filled: true,
+      onClick: (e) => {
+        console.log(e.object.properties.RefName);
+      },
+      autoHighlight: true,
+      highlightColor: [220, 220, 0, 220],
       radiusMinPixels: 1,
       pickable: true,
       getPosition: (d) => d.geometry.coordinates,
