@@ -73,6 +73,7 @@ function LanguagesDropdownSelect() {
   return (
     <div>
       <StyledSelect
+        instanceId="language selector"
         value={selectedLanguage}
         options={options}
         styles={customStyles}
