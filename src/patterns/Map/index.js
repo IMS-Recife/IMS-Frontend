@@ -23,28 +23,6 @@ const Map = ({ show }) => {
     zoom: 16,
   });
 
-  // useEffect(() => {
-  //   const map = new mapboxgl.Map({
-  //     container: "map",
-  //     style: "mapbox://styles/mapbox/dark-v10",
-  //     center: [-34.910261, -8.0702703],
-  //     zoom: 12,
-  //   });
-  //   map.on("load", () => {
-  //     map.addSource("lotes", { type: "geojson", data: lotes });
-  //     map.addLayer({
-  //       id: "lotes",
-  //       type: "fill",
-  //       source: "lotes",
-  //       layout: {},
-  //       paint: {
-  //         "fill-color": "#088",
-  //         "fill-opacity": 0.8,
-  //       },
-  //     });
-  //   });
-  // }, []);
-
   const toggleLayers = (id) => {
     const updatedLayers = filters.map((f) => {
       if (f.id === id) {
