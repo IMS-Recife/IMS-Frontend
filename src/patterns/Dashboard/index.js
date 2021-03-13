@@ -77,15 +77,10 @@ const Dashboard = ({ bigCardClassName }) => {
       id: "Lotes",
       data:
         "https://raw.githubusercontent.com/Filipegbessaa/IMS-Frontend/dev_map/src/assets/lotes.json",
-      opacity: 0.2,
       stroked: true,
-      filled: true,
-      lineWidthScale: 0.1,
-      autoHighlight: true,
-      highlightColor: [0, 0, 128, 128],
+      filled: false,
+      lineWidthScale: 0.2,
       wireframe: true,
-      getFillColor: [255, 127, 0],
-      pickable: true,
       visible: filters[0].visible,
     }),
     new GeoJsonLayer({
@@ -153,7 +148,7 @@ const Dashboard = ({ bigCardClassName }) => {
           onViewStateChange={(viewState) => setViewport(viewState.viewState)}
         >
           <StaticMap
-            mapStyle="mapbox://styles/mapbox/dark-v10"
+            mapStyle="mapbox://styles/mapbox/streets-v11"
             reuseMaps
             mapboxApiAccessToken="pk.eyJ1IjoiaWFjYXB1Y2EiLCJhIjoiY2pnem4wMWRtMDJqZzMxbXd2YTkxbzAzdiJ9.fAmljrg3ipHbRWZY2comOA"
           />
