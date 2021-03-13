@@ -36,7 +36,9 @@ function LanguagesDropdownSelect() {
       label: <img src={USFlag} alt="US Flag" style={{ width: "20px" }} />,
     },
   ];
-  const [selectedLanguage, setSelectedLanguage] = useState(options[0]);
+  const [selectedLanguage, setSelectedLanguage] = useState(
+    options.map((option) => router.locale === option.value && option)
+  );
 
   const customStyles = {
     control: (base, state) => ({
@@ -71,6 +73,7 @@ function LanguagesDropdownSelect() {
   return (
     <div>
       <StyledSelect
+        instanceId="language selector"
         value={selectedLanguage}
         options={options}
         styles={customStyles}

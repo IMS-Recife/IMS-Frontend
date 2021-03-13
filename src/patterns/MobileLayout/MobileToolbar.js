@@ -3,6 +3,7 @@ import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
 import IconButton from "@material-ui/core/IconButton";
 import { useIntl } from "react-intl";
+import Link from "next/link";
 import {
   FaBuffer,
   FaChartBar,
@@ -87,7 +88,9 @@ export default function ButtonAppBar() {
             <StyledFaCity title={intl.formatMessage({ id: "NEIGHBORHOODS" })} />
           </IconButton>
           <IconButton color="inherit" aria-label="menu">
-            <StyledFaMapMarkedAlt title={intl.formatMessage({ id: "MAP" })} />
+            <Link href="/map">
+              <StyledFaMapMarkedAlt title={intl.formatMessage({ id: "MAP" })} />
+            </Link>
           </IconButton>
         </Toolbar>
       </StyledAppBar>

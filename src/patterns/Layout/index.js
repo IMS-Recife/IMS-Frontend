@@ -2,6 +2,7 @@ import { injectIntl, FormattedMessage, useIntl } from "react-intl";
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import { Container } from "react-bootstrap";
+import Link from "next/link";
 import PropTypes from "prop-types";
 import { ProSidebar, MenuItem, Menu } from "react-pro-sidebar";
 import {
@@ -195,17 +196,19 @@ function Layout({ children, setBigCardClassName }) {
                 >
                   <FormattedMessage id="NEIGHBORHOODS" />
                 </MenuItem>
-                <MenuItem
-                  className="mt-2"
-                  icon={
-                    <FaMapMarkedAlt
-                      size="1.8rem"
-                      title={intl.formatMessage({ id: "MAP" })}
-                    />
-                  }
-                >
-                  <FormattedMessage id="MAP" />
-                </MenuItem>
+                <Link href="/map">
+                  <MenuItem
+                    className="mt-2"
+                    icon={
+                      <FaMapMarkedAlt
+                        size="1.8rem"
+                        title={intl.formatMessage({ id: "MAP" })}
+                      />
+                    }
+                  >
+                    <FormattedMessage id="MAP" />
+                  </MenuItem>
+                </Link>
               </Menu>
             </ProSidebar>
           </div>
