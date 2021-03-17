@@ -17,4 +17,5 @@ export default {
   LAST_UPDATE: "LAST UPDATE",
   PANEL: "PANEL",
   RECIFE: "Recife",
+  COVID: "Covid",
 };

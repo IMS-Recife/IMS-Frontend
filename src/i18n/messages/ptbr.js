@@ -17,4 +17,5 @@ export default {
   LAST_UPDATE: "ÚLTIMA ATUALIZAÇÃO",
   PANEL: "PAINEL",
   RECIFE: "Recife",
+  COVID: "COVID",
 };
