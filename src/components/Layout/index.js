@@ -17,9 +17,10 @@ const Layout = ({ children }) => {
     <>
       <Navbar showMobileMenu={handleShowMobileMenu} />
       <MobileHeaderMenu show={showMobileMenu} />
-      <MobileToolbar />
       <div style={showMobileMenu ? { display: "none" } : null}>
         <Header />
+        <MobileToolbar />
+
         <div className="flex">
           <Sidebar />
           {children}
