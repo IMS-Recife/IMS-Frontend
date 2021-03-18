@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
 import Navbar from "../../patterns/Navbar";
-import MobileHeaderMenu from "../../patterns/MobileLayout/MobileHeaderMenu";
+import MobileHeaderMenu from "../MobileToggledNavbar";
 import Header from "../Header";
 import Sidebar from "../Sidebar";
-import MobileToolbar from "../../patterns/MobileLayout/MobileToolbar";
+import MobileToolbar from "../MobileToolbar";
 
 const Layout = ({ children }) => {
   const [showMobileMenu, setShowMobileMenu] = useState(false);
@@ -17,9 +17,9 @@ const Layout = ({ children }) => {
     <>
       <Navbar showMobileMenu={handleShowMobileMenu} />
       <MobileHeaderMenu show={showMobileMenu} />
+      <MobileToolbar />
       <div style={showMobileMenu ? { display: "none" } : null}>
         <Header />
-        <MobileToolbar />
         <div className="flex">
           <Sidebar />
           {children}

@@ -35,7 +35,7 @@ const MenuButton = styled.a`
     color: ${(props) => props.theme.colors.light};
   }
 `;
-function MobileHeaderMenu({ show }) {
+function MobileToggledNavbar({ show }) {
   return (
     <div style={{ marginBottom: "0px" }}>
       {show ? (
@@ -102,11 +102,11 @@ function MobileHeaderMenu({ show }) {
   );
 }
 
-export default injectIntl(MobileHeaderMenu);
+export default injectIntl(MobileToggledNavbar);
 
-MobileHeaderMenu.propTypes = {
+MobileToggledNavbar.propTypes = {
   show: PropTypes.bool,
 };
-MobileHeaderMenu.defaultProps = {
+MobileToggledNavbar.defaultProps = {
   show: false,
 };
