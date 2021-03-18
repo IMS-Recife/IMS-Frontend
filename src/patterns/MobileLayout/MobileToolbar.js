@@ -17,6 +17,9 @@ import styled from "styled-components";
 const StyledAppBar = styled(AppBar)`
   background: ${(props) => props.theme.colors.background} !important;
   margin-top: 50px;
+  @media screen and (min-width: 850px) {
+    display: none;
+  }
 `;
 
 const StyledFaPlusSquare = styled(FaPlusSquare)`
@@ -67,33 +70,31 @@ const StyledFaMapMarkedAlt = styled(FaMapMarkedAlt)`
 export default function ButtonAppBar() {
   const intl = useIntl();
   return (
-    <div>
-      <StyledAppBar position="static">
-        <Toolbar>
-          <IconButton color="inherit" aria-label="menu">
-            <StyledFaPlusSquare
-              title={intl.formatMessage({ id: "ADD_INDICATOR" })}
-            />
-          </IconButton>
-          <IconButton color="inherit" aria-label="menu">
-            <StyledFaBuffer title={intl.formatMessage({ id: "SHOW_ALL" })} />
-          </IconButton>
-          <IconButton color="inherit" aria-label="menu">
-            <StyledFaChartBar title={intl.formatMessage({ id: "ANALYSIS" })} />
-          </IconButton>
-          <IconButton color="inherit" aria-label="menu">
-            <StyledFaChartLine title={intl.formatMessage({ id: "SIRD" })} />
-          </IconButton>
-          <IconButton color="inherit" aria-label="menu">
-            <StyledFaCity title={intl.formatMessage({ id: "NEIGHBORHOODS" })} />
-          </IconButton>
-          <IconButton color="inherit" aria-label="menu">
-            <Link href="/map">
-              <StyledFaMapMarkedAlt title={intl.formatMessage({ id: "MAP" })} />
-            </Link>
-          </IconButton>
-        </Toolbar>
-      </StyledAppBar>
-    </div>
+    <StyledAppBar position="static">
+      <Toolbar>
+        <IconButton color="inherit" aria-label="menu">
+          <StyledFaPlusSquare
+            title={intl.formatMessage({ id: "ADD_INDICATOR" })}
+          />
+        </IconButton>
+        <IconButton color="inherit" aria-label="menu">
+          <StyledFaBuffer title={intl.formatMessage({ id: "SHOW_ALL" })} />
+        </IconButton>
+        <IconButton color="inherit" aria-label="menu">
+          <StyledFaChartBar title={intl.formatMessage({ id: "ANALYSIS" })} />
+        </IconButton>
+        <IconButton color="inherit" aria-label="menu">
+          <StyledFaChartLine title={intl.formatMessage({ id: "SIRD" })} />
+        </IconButton>
+        <IconButton color="inherit" aria-label="menu">
+          <StyledFaCity title={intl.formatMessage({ id: "NEIGHBORHOODS" })} />
+        </IconButton>
+        <IconButton color="inherit" aria-label="menu">
+          <Link href="/map">
+            <StyledFaMapMarkedAlt title={intl.formatMessage({ id: "MAP" })} />
+          </Link>
+        </IconButton>
+      </Toolbar>
+    </StyledAppBar>
   );
 }
