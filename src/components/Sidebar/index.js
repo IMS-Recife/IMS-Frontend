@@ -30,12 +30,18 @@ const Hr = styled.hr`
   width: 80%;
 `;
 
+const MediaQueryDiv = styled.div`
+  @media (max-width: 850px) {
+    display: none;
+  }
+`;
+
 const Sidebar = () => {
   const { collapseSideBar, setCollapseSideBar } = useLayout();
 
   const intl = useIntl();
   return (
-    <>
+    <MediaQueryDiv>
       <ProSidebar
         style={{ marginLeft: "35px", marginTop: "0px" }}
         collapsed={collapseSideBar}
@@ -142,7 +148,7 @@ const Sidebar = () => {
           </Link>
         </Menu>
       </ProSidebar>
-    </>
+    </MediaQueryDiv>
   );
 };
 

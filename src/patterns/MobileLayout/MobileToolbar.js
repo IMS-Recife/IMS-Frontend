@@ -17,6 +17,7 @@ import styled from "styled-components";
 const StyledAppBar = styled(AppBar)`
   background: ${(props) => props.theme.colors.background} !important;
   margin-top: 50px;
+  margin-bottom: 30px;
   @media screen and (min-width: 850px) {
     display: none;
   }
