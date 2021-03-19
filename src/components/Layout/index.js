@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import Navbar from "../../patterns/Navbar";
+import Navbar from "../Navbar";
 import Header from "../Header";
 import Sidebar from "../Sidebar";
 import Footer from "../Footer";

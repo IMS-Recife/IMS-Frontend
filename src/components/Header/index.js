@@ -1,6 +1,5 @@
 import React from "react";
 import { FormattedMessage } from "react-intl";
-import { MaterialUISelect } from "../Selects";
 import useLayout from "../../contexts/layout";
 
 const Header = () => {

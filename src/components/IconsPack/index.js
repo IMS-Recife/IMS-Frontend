@@ -1,26 +1,24 @@
 import React, { useState } from "react";
-import styled from "styled-components";
 import {
   FaFacebookSquare,
   FaTwitterSquare,
   FaGithubSquare,
   FaYoutubeSquare,
 } from "react-icons/fa";
+import styled from "styled-components";
+
 import LogoPortoDigitalAzul from "../../assets/LogoPortoDigitalAzul.svg";
 import LogoPortoDigitalBranca from "../../assets/LogoPortoDigitalBranca.svg";
 
-export const Container = styled.div`
-  background: ${(props) => props.theme.colors.darkBlue};
-  height: 50px;
-  width: 100%;
-  @media (min-width: 850px) {
+const Container = styled.div`
+  @media (max-width: 768px) {
     display: none;
   }
 `;
-const IconLink = styled.a`
+const IconNavLink = styled.a`
   color: ${(props) => props.theme.colors.primary};
+  padding: 0 0.2rem;
   cursor: pointer;
-
   &.active {
     color: ${(props) => props.theme.colors.light};
   }
@@ -29,14 +27,15 @@ const IconLink = styled.a`
   }
 `;
 
-function Footer() {
+function IconsPack() {
   const [logoPortoDigital, setLogoPortoDigital] = useState(
     LogoPortoDigitalAzul
   );
+
   return (
-    <Container className="flex flex-row items-center justify-center">
-      <IconLink
-        style={{ padding: "1rem" }}
+    <Container className="flex flex-row justify-center align-center">
+      <IconNavLink
+        style={{ padding: "0 1rem" }}
         onMouseOver={() => setLogoPortoDigital(LogoPortoDigitalBranca)}
         onMouseEnter={() => setLogoPortoDigital(LogoPortoDigitalBranca)}
         onMouseOut={() => setLogoPortoDigital(LogoPortoDigitalAzul)}
@@ -44,21 +43,21 @@ function Footer() {
         target="_blank"
       >
         <img src={logoPortoDigital} alt="Logo Porto Digital" />
-      </IconLink>
-      <IconLink>
+      </IconNavLink>
+      <IconNavLink>
         <FaFacebookSquare size="1.9em" title="Facebook" />
-      </IconLink>
-      <IconLink>
+      </IconNavLink>
+      <IconNavLink>
         <FaTwitterSquare size="1.9em" title="Twitter" />
-      </IconLink>
-      <IconLink>
+      </IconNavLink>
+      <IconNavLink>
         <FaGithubSquare size="1.9em" title="Github" />
-      </IconLink>
-      <IconLink>
+      </IconNavLink>
+      <IconNavLink>
         <FaYoutubeSquare size="1.9em" title="Youtube" />
-      </IconLink>
+      </IconNavLink>
     </Container>
   );
 }
 
-export default Footer;
+export default IconsPack;
