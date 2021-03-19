@@ -35,6 +35,7 @@ const CovidPage = () => {
 
   useEffect(() => {
     setTimeout(() => Highcharts.charts[0].reflow(), 300);
+    setTimeout(() => Highcharts.charts[1].reflow(), 300);
   }, [collapseSideBar]);
 
   const a11Options = {
@@ -83,7 +84,7 @@ const CovidPage = () => {
     <Layout>
       <div
         style={{ background: "#FEEC47" }}
-        className=" w-100 mx-4 mb-4 p-4 rounded"
+        className="w-100 mx-4 mb-4 p-4 rounded"
       >
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-3 md:grid-cols-4 xl:grid-cols-8 md:gap-8">
           <div className="text-black-50 col-span-1 sm:col-span-3 md:col-span-4 xl:col-span-3 row-span-2 bg-white rounded-lg shadow-xl h-100 w-100">
