@@ -1,7 +1,5 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { FaBars } from "react-icons/fa";
-import styled from "styled-components";
 import Navbar from "../../patterns/Navbar";
 import Header from "../Header";
 import Sidebar from "../Sidebar";
@@ -9,7 +7,7 @@ import Footer from "../Footer";
 import ToggleSidebarButton from "../ToggleSidebarButton/index";
 
 const Layout = ({ children }) => (
-  <>
+  <div>
     <Navbar />
     <Header />
     <ToggleSidebarButton />
@@ -18,7 +16,7 @@ const Layout = ({ children }) => (
       {children}
     </div>
     <Footer />
-  </>
+  </div>
 );
 
 export default Layout;

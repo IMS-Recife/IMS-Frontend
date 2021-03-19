@@ -24,10 +24,10 @@ const ToggleButton = styled.div`
 `;
 
 function ToggleSidebarButton() {
-  const { handleToggleSidebar } = useLayout();
+  const { setToggledSidebar } = useLayout();
 
   return (
-    <ToggleButton onClick={() => handleToggleSidebar()}>
+    <ToggleButton onClick={() => setToggledSidebar(true)}>
       <FaBars />
     </ToggleButton>
   );

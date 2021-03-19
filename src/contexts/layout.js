@@ -9,8 +9,8 @@ export const LayoutProvider = ({ children }) => {
   const [collapseSideBar, setCollapseSideBar] = useState(false);
   const [lastTimeUpdated, setLastTimeUpdated] = useState(new Date());
 
-  const handleToggleSidebar = () => {
-    setToggledSidebar(!toggledSidebar);
+  const handleToggleSidebar = (value) => {
+    setToggledSidebar(value);
   };
 
   useEffect(() => {
@@ -32,6 +32,7 @@ export const LayoutProvider = ({ children }) => {
         setCollapseSideBar,
         lastTimeUpdated,
         toggledSidebar,
+        setToggledSidebar,
         handleToggleSidebar,
       }}
     >

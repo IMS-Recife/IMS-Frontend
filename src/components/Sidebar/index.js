@@ -41,7 +41,12 @@ const StyledProSidebar = styled(ProSidebar)`
 `;
 
 const Sidebar = () => {
-  const { collapseSideBar, setCollapseSideBar, toggledSidebar } = useLayout();
+  const {
+    collapseSideBar,
+    setCollapseSideBar,
+    toggledSidebar,
+    handleToggleSidebar,
+  } = useLayout();
 
   const intl = useIntl();
   return (
@@ -49,6 +54,7 @@ const Sidebar = () => {
       collapsed={collapseSideBar}
       breakPoint="md"
       toggled={toggledSidebar}
+      onToggle={handleToggleSidebar}
     >
       <Menu iconShape="square">
         <ArrowButton
