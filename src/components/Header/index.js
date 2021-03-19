@@ -30,9 +30,7 @@ const Header = () => {
             marginLeft: "20px",
             display: "inline-block",
           }}
-        >
-          <MaterialUISelect />
-        </div>
+        />
         <div
           style={{
             display: "inline-block",

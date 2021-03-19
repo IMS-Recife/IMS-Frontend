@@ -11,7 +11,7 @@ const Layout = ({ children }) => (
     <Navbar />
     <Header />
     <ToggleSidebarButton />
-    <div className="flex flex-row">
+    <div className="flex flex-row mt-6">
       <Sidebar />
       {children}
     </div>
