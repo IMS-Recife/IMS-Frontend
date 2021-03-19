@@ -34,17 +34,21 @@ const StyledProSidebar = styled(ProSidebar)`
   @media (min-width: 768px) {
     margin-left: 35px;
   }
+  @media (max-width: 768px) {
+    position: absolute;
+    top: 0;
+  }
 `;
 
 const Sidebar = () => {
-  const { collapseSideBar, setCollapseSideBar } = useLayout();
+  const { collapseSideBar, setCollapseSideBar, toggledSidebar } = useLayout();
 
   const intl = useIntl();
   return (
     <StyledProSidebar
       collapsed={collapseSideBar}
-      breakPoint="sm"
-      toggled="false"
+      breakPoint="md"
+      toggled={toggledSidebar}
     >
       <Menu iconShape="square">
         <ArrowButton

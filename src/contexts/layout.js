@@ -5,8 +5,13 @@ import covidAPI from "../Services/api";
 const LayoutContext = createContext(undefined);
 
 export const LayoutProvider = ({ children }) => {
+  const [toggledSidebar, setToggledSidebar] = useState(false);
   const [collapseSideBar, setCollapseSideBar] = useState(false);
   const [lastTimeUpdated, setLastTimeUpdated] = useState(new Date());
+
+  const handleToggleSidebar = () => {
+    setToggledSidebar(!toggledSidebar);
+  };
 
   useEffect(() => {
     const getLastTimeUpdated = async () => {
@@ -22,7 +27,13 @@ export const LayoutProvider = ({ children }) => {
 
   return (
     <LayoutContext.Provider
-      value={{ collapseSideBar, setCollapseSideBar, lastTimeUpdated }}
+      value={{
+        collapseSideBar,
+        setCollapseSideBar,
+        lastTimeUpdated,
+        toggledSidebar,
+        handleToggleSidebar,
+      }}
     >
       {children}
     </LayoutContext.Provider>

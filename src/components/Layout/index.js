@@ -6,34 +6,13 @@ import Navbar from "../../patterns/Navbar";
 import Header from "../Header";
 import Sidebar from "../Sidebar";
 import Footer from "../Footer";
-
-const ToggleButton = styled.div`
-  cursor: pointer;
-  width: 35px;
-  height: 35px;
-  background: ${(props) => props.theme.colors.darkBlue};
-  color: #fff;
-  text-align: center;
-  border-radius: 50%;
-  align-items: center;
-  justify-content: center;
-  margin-left: 50px;
-  margin-top: 20px;
-  margin-bottom: 10px;
-  font-size: 15px;
-  display: none;
-  @media (max-width: 768px) {
-    display: flex;
-  }
-`;
+import ToggleSidebarButton from "../ToggleSidebarButton/index";
 
 const Layout = ({ children }) => (
   <>
     <Navbar />
     <Header />
-    <ToggleButton>
-      <FaBars />
-    </ToggleButton>
+    <ToggleSidebarButton />
     <div className="flex flex-row">
       <Sidebar />
       {children}
