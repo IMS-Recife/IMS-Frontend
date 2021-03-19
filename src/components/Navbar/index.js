@@ -51,7 +51,7 @@ const Navbar = () => (
           <FormattedMessage id="ABOUT" />
         </NavLink>
       </div>
-      <div className="flex items-center justify-end mr-5">
+      <div className="flex items-center justify-end mr-3">
         <LanguagesDropdownSelect />
         <IconsPack />
       </div>

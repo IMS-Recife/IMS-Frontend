@@ -11,7 +11,7 @@ import LogoPortoDigitalBranca from "../../assets/LogoPortoDigitalBranca.svg";
 
 export const Container = styled.div`
   background: ${(props) => props.theme.colors.darkBlue};
-  height: 50px;
+  height: 60px;
   width: 100%;
   @media (min-width: 850px) {
     display: none;
@@ -20,6 +20,7 @@ export const Container = styled.div`
 const IconLink = styled.a`
   color: ${(props) => props.theme.colors.primary};
   cursor: pointer;
+  padding: 0 5px;
 
   &.active {
     color: ${(props) => props.theme.colors.light};
