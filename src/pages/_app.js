@@ -8,16 +8,18 @@ import "react-toastify/dist/ReactToastify.css";
 import GlobalStyle from "../styles/global";
 import "bootstrap/dist/css/bootstrap.css";
 import theme from "../styles/theme";
+import { LayoutProvider } from "../contexts/layout";
 
 function MyApp({ Component, pageProps }) {
   return (
-    <ThemeProvider theme={theme}>
-      <I18nProvider>
-        <ToastContainer />
-        <Component {...pageProps} />
-        <GlobalStyle />
-      </I18nProvider>
-    </ThemeProvider>
+    <LayoutProvider>
+      <ThemeProvider theme={theme}>
+        <I18nProvider>
+          <Component {...pageProps} />
+          <GlobalStyle />
+        </I18nProvider>
+      </ThemeProvider>
+    </LayoutProvider>
   );
 }
 
