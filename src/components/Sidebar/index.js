@@ -1,15 +1,18 @@
 import React from "react";
-import { Menu, MenuItem, ProSidebar } from "react-pro-sidebar";
+import {
+  Menu,
+  MenuItem,
+  ProSidebar,
+  SidebarContent,
+  SubMenu,
+} from "react-pro-sidebar";
 import {
   FaAngleLeft,
   FaAngleRight,
-  FaBuffer,
-  FaChartBar,
-  FaChartLine,
   FaCity,
-  FaMapMarkedAlt,
-  FaPlusSquare,
+  FaDollarSign,
 } from "react-icons/fa";
+import { RiVirusFill } from "react-icons/ri";
 import { FormattedMessage, useIntl } from "react-intl";
 import Link from "next/link";
 import styled from "styled-components";
@@ -22,13 +25,6 @@ const ArrowButton = styled.button`
   height: 1.5rem;
 `;
 
-const Hr = styled.hr`
-  border: 1px solid ${(props) => props.theme.colors.primary};
-  margin-left: 22px;
-  margin-top: 5px;
-  margin-bottom: 5px;
-  width: 80%;
-`;
 const StyledProSidebar = styled(ProSidebar)`
   margin-top: 0px;
   @media (min-width: 768px) {
@@ -56,107 +52,73 @@ const Sidebar = () => {
       toggled={toggledSidebar}
       onToggle={handleToggleSidebar}
     >
-      <Menu iconShape="square">
-        <ArrowButton
-          type="button"
-          onClick={() => setCollapseSideBar((prevState) => !prevState)}
-        >
-          <MenuItem
-            style={{ color: "#FFFFFF", marginTop: "20px" }}
-            icon={
-              collapseSideBar ? (
-                <FaAngleRight size="2rem" />
-              ) : (
-                <FaAngleLeft size="2rem" />
-              )
-            }
-          />
-        </ArrowButton>
-        <MenuItem
-          className="mt-2"
-          style={{ color: "#FEEC47" }}
-          icon={
-            <FaPlusSquare
-              size="1.8rem"
-              title={intl.formatMessage({ id: "ADD_INDICATOR" })}
+      <SidebarContent>
+        <Menu iconShape="square">
+          <ArrowButton
+            type="button"
+            onClick={() => setCollapseSideBar((prevState) => !prevState)}
+          >
+            <MenuItem
+              style={{ color: "#FFFFFF", marginTop: "20px" }}
+              icon={
+                collapseSideBar ? (
+                  <FaAngleRight size="2rem" />
+                ) : (
+                  <FaAngleLeft size="2rem" />
+                )
+              }
             />
-          }
-        >
-          <FormattedMessage id="ADD_INDICATOR" />
-        </MenuItem>
-        {!collapseSideBar && <Hr />}
+          </ArrowButton>
 
-        <MenuItem
-          className="mt-2"
-          icon={
-            <FaBuffer
-              size="1.8rem"
-              title={intl.formatMessage({ id: "SHOW_ALL" })}
-            />
-          }
-        >
-          <FormattedMessage id="SHOW_ALL" />
-        </MenuItem>
-        <MenuItem
-          className="mt-2"
-          icon={
-            <FaChartBar
-              size="1.8rem"
-              title={intl.formatMessage({ id: "ANALYSIS" })}
-            />
-          }
-        >
-          <FormattedMessage id="ANALYSIS" />
-        </MenuItem>
-        <Link href="/covid">
+          <Link href="/covid">
+            <MenuItem
+              className="mt-2"
+              icon={
+                <RiVirusFill
+                  size="1.8rem"
+                  title={intl.formatMessage({ id: "COVID" })}
+                />
+              }
+            >
+              <FormattedMessage id="COVID" />
+            </MenuItem>
+          </Link>
           <MenuItem
             className="mt-2"
             icon={
-              <FaChartBar
+              <FaDollarSign
                 size="1.8rem"
-                title={intl.formatMessage({ id: "COVID" })}
+                title={intl.formatMessage({ id: "ECONOMY" })}
               />
             }
           >
-            <FormattedMessage id="COVID" />
+            <FormattedMessage id="ECONOMY" />
           </MenuItem>
-        </Link>
-        <MenuItem
-          className="mt-2"
-          icon={
-            <FaChartLine
-              size="1.8rem"
-              title={intl.formatMessage({ id: "SIRD" })}
-            />
-          }
-        >
-          <FormattedMessage id="SIRD" />
-        </MenuItem>
-        <MenuItem
-          className="mt-2"
-          icon={
-            <FaCity
-              size="1.8rem"
-              title={intl.formatMessage({ id: "NEIGHBORHOODS" })}
-            />
-          }
-        >
-          <FormattedMessage id="NEIGHBORHOODS" />
-        </MenuItem>
-        <Link href="/map">
-          <MenuItem
+          <SubMenu
+            title={intl.formatMessage({ id: "URBANISM" })}
             className="mt-2"
             icon={
-              <FaMapMarkedAlt
+              <FaCity
                 size="1.8rem"
-                title={intl.formatMessage({ id: "MAP" })}
+                title={intl.formatMessage({ id: "URBANISM" })}
               />
             }
           >
-            <FormattedMessage id="MAP" />
-          </MenuItem>
-        </Link>
-      </Menu>
+            <SubMenu title="PROJETOS PUBLICOS">
+              {" "}
+              <MenuItem>
+                <FormattedMessage id="PUBLIC_TOURS_REQUALIFICATION" />
+              </MenuItem>
+            </SubMenu>
+            <MenuItem>
+              <FormattedMessage id="PUBLIC_PLANS" />
+            </MenuItem>
+            <MenuItem>
+              <FormattedMessage id="OTHER_BASES" />
+            </MenuItem>
+          </SubMenu>
+        </Menu>
+      </SidebarContent>
     </StyledProSidebar>
   );
 };
