@@ -1,8 +1,7 @@
 import Head from "next/head";
 import { injectIntl } from "react-intl";
 import React, { useState } from "react";
-import Navbar from "../patterns/Navbar";
-import MobileToggledNavbar from "../components/MobileToggledNavbar";
+import Navbar from "../components/Navbar";
 
 import Map from "../patterns/Map";
 
@@ -23,7 +22,6 @@ function MapPage() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Navbar showMobileMenu={handleShowMobileMenu} />
-      <MobileToggledNavbar show={showMobileMenu} />
       <Map show={!showMobileMenu} />
     </div>
   );

@@ -59,6 +59,24 @@ const Map = ({ show }) => {
       visible: filters[2].visible,
     }),
     new GeoJsonLayer({
+      id: "Rua Velha",
+      data:
+        "https://raw.githubusercontent.com/Filipegbessaa/IMS-Frontend/dev_map/src/assets/RuaVelha/rua_velha_cal.json",
+      opacity: 0.8,
+      lineWidthScale: 0.03,
+      stroked: true,
+      filled: true,
+      autoHighlight: true,
+      highlightColor: [0, 0, 128, 128],
+      pickable: true,
+      onClick: ({ object }) => {
+        console.log(object);
+      },
+      getLineWidth: 4,
+      getFillColor: [55, 126, 184],
+      visible: filters[2].visible,
+    }),
+    new GeoJsonLayer({
       id: "Lotes",
       data:
         "https://raw.githubusercontent.com/Filipegbessaa/IMS-Frontend/dev_map/src/assets/lotes.json",
