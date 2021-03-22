@@ -4,7 +4,7 @@ import { StaticMap } from "react-map-gl";
 import { GeoJsonLayer, ScatterplotLayer } from "@deck.gl/layers";
 import { DeckGL } from "deck.gl";
 import PropTypes from "prop-types";
-import scPoints from "../../assets/sc_arv_pos.json";
+import scPoints from "../../assets/SiqueiraCampos/sc_arv_pos.json";
 import ruaVelhaTrees from "../../assets/RuaVelha/rua_velha_arv.json";
 import ruaVelhaStreetPoles from "../../assets/RuaVelha/rua_velha_post.json";
 
@@ -48,7 +48,7 @@ const Map = ({ show }) => {
     new GeoJsonLayer({
       id: "Siqueira Campos Calçadas",
       data:
-        "https://raw.githubusercontent.com/Filipegbessaa/IMS-Frontend/dev_map/src/assets/sc_cal.json",
+        "https://raw.githubusercontent.com/Filipegbessaa/IMS-Frontend/side_walks/src/assets/SiqueiraCampos/sc_cal.json",
       opacity: 0.8,
       lineWidthScale: 0.03,
       stroked: true,
