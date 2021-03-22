@@ -13,6 +13,7 @@ const Map = ({ show }) => {
     { id: 3, visible: true, description: "Calçada - Siqueira Campos" },
     { id: 4, visible: true, description: "Postes - Siqueira Campos" },
     { id: 5, visible: true, description: "Vegetação - Siqueira Campos" },
+    { id: 6, visible: true, description: "Calçada - Rua Velha" },
   ]);
 
   const [viewport, setViewport] = useState({
@@ -44,24 +45,6 @@ const Map = ({ show }) => {
       id: "Siqueira Campos Calçadas",
       data:
         "https://raw.githubusercontent.com/Filipegbessaa/IMS-Frontend/dev_map/src/assets/sc_cal.json",
-      opacity: 0.8,
-      lineWidthScale: 0.03,
-      stroked: true,
-      filled: true,
-      autoHighlight: true,
-      highlightColor: [0, 0, 128, 128],
-      pickable: true,
-      onClick: ({ object }) => {
-        console.log(object);
-      },
-      getLineWidth: 4,
-      getFillColor: [55, 126, 184],
-      visible: filters[2].visible,
-    }),
-    new GeoJsonLayer({
-      id: "Rua Velha",
-      data:
-        "https://raw.githubusercontent.com/Filipegbessaa/IMS-Frontend/dev_map/src/assets/RuaVelha/rua_velha_cal.json",
       opacity: 0.8,
       lineWidthScale: 0.03,
       stroked: true,
@@ -134,6 +117,24 @@ const Map = ({ show }) => {
       getPosition: (d) => d.geometry.coordinates,
       getFillColor: [91, 222, 126],
       visible: filters[4].visible,
+    }),
+    new GeoJsonLayer({
+      id: "Rua Velha",
+      data:
+        "https://raw.githubusercontent.com/Filipegbessaa/IMS-Frontend/change_responsivity/src/assets/RuaVelha/rua_velha_cal.json",
+      opacity: 0.8,
+      lineWidthScale: 0.03,
+      stroked: true,
+      filled: true,
+      autoHighlight: true,
+      highlightColor: [0, 0, 128, 128],
+      pickable: true,
+      onClick: ({ object }) => {
+        console.log(object);
+      },
+      getLineWidth: 4,
+      getFillColor: [55, 126, 184],
+      visible: filters[5].visible,
     }),
   ];
 
