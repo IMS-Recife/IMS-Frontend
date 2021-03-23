@@ -11,6 +11,7 @@ import {
   FaAngleRight,
   FaCity,
   FaDollarSign,
+  FaInfoCircle,
 } from "react-icons/fa";
 import { RiVirusFill } from "react-icons/ri";
 import { FormattedMessage, useIntl } from "react-intl";
@@ -117,6 +118,17 @@ const Sidebar = () => {
               <FormattedMessage id="OTHER_BASES" />
             </MenuItem>
           </SubMenu>
+          <MenuItem
+            className="mt-2"
+            icon={
+              <FaInfoCircle
+                size="1.8rem"
+                title={intl.formatMessage({ id: "ABOUT" })}
+              />
+            }
+          >
+            <FormattedMessage id="ABOUT" />
+          </MenuItem>
         </Menu>
       </SidebarContent>
     </StyledProSidebar>

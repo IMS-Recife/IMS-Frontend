@@ -47,9 +47,6 @@ const Navbar = () => (
         <ProjectNavLink href="/">
           <FormattedMessage id="IMS_PROJECT" />
         </ProjectNavLink>
-        <NavLink>
-          <FormattedMessage id="ABOUT" />
-        </NavLink>
       </div>
       <div className="flex items-center justify-end mr-3">
         <LanguagesDropdownSelect />
