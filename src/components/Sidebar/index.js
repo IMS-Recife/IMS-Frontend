@@ -106,10 +106,11 @@ const Sidebar = () => {
             }
           >
             <SubMenu title="PROJETOS PUBLICOS">
-              {" "}
-              <MenuItem>
-                <FormattedMessage id="PUBLIC_TOURS_REQUALIFICATION" />
-              </MenuItem>
+              <Link href="/map">
+                <MenuItem>
+                  <FormattedMessage id="PUBLIC_TOURS_REQUALIFICATION" />
+                </MenuItem>
+              </Link>
             </SubMenu>
             <MenuItem>
               <FormattedMessage id="PUBLIC_PLANS" />
