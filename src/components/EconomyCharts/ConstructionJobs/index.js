@@ -6,33 +6,33 @@ import useLayout from "../../../contexts/layout";
 
 function PIBPerCapta() {
   const { collapseSideBar } = useLayout();
-  const [pibPerCaptaYear, setPibPerCaptaYear] = useState([]);
-  const [pibPerCaptaValue, setPibPerCaptaValue] = useState([]);
+  const [years, setYears] = useState([]);
+  const [numOfConstructionJobs, setNumOfConstructionJobs] = useState([]);
 
-  const getPibPerCapta = async () => {
+  const getConstructionJobs = async () => {
     try {
       const { data } = await economyAPI.get(
-        "/t1p1?V5=eq.PE&V8=eq.Recife&select=V1,V42",
+        "/t6p1?select=B3,E8,V8&V8=eq.RECIFE",
         {}
       );
 
-      setPibPerCaptaYear(data.map((d) => d.V1));
-      setPibPerCaptaValue(data.map((d) => d.V42));
+      setYears(data.map((d) => d.B3).reverse());
+      setNumOfConstructionJobs(data.map((d) => d.E8).reverse());
     } catch (error) {
       alert("Ocorreu um erro ao buscar os items");
     }
   };
   useEffect(() => {
-    getPibPerCapta();
+    getConstructionJobs();
   }, []);
 
   useEffect(() => {
     setTimeout(() => Highcharts.charts[0].reflow(), 300);
   }, [collapseSideBar]);
 
-  const PibPerCaptaOptions = {
+  const constructionJobsOptions = {
     title: {
-      text: "Produto Interno Bruto per capita, a preços correntes (R$ 1,00)",
+      text: "Evolução do número de emprego no setor de Construção",
     },
     subtitle: {
       text: "Source: thesolarfoundation.com",
@@ -42,11 +42,11 @@ function PIBPerCapta() {
     },
     yAxis: {
       title: {
-        text: "PIB per capta",
+        text: "Empregos",
       },
     },
     xAxis: {
-      categories: pibPerCaptaYear,
+      categories: years,
     },
     legend: {
       layout: "vertical",
@@ -64,7 +64,7 @@ function PIBPerCapta() {
     series: [
       {
         name: "Recife",
-        data: pibPerCaptaValue,
+        data: numOfConstructionJobs,
       },
     ],
     credits: {
@@ -73,7 +73,10 @@ function PIBPerCapta() {
   };
 
   return (
-    <HighchartsReact highcharts={Highcharts} options={PibPerCaptaOptions} />
+    <HighchartsReact
+      highcharts={Highcharts}
+      options={constructionJobsOptions}
+    />
   );
 }
 

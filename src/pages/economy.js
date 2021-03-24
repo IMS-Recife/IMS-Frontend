@@ -2,6 +2,7 @@ import { injectIntl } from "react-intl";
 import React from "react";
 import Layout from "../components/Layout";
 import PIBPerCapta from "../components/EconomyCharts/PIBPerCapta";
+import ConstructionJobs from "../components/EconomyCharts/ConstructionJobs";
 
 const CovidPage = () => (
   <Layout>
@@ -13,7 +14,9 @@ const CovidPage = () => (
         <div className="text-black-50 col-span-1 sm:col-span-3 md:col-span-4 xl:col-span-3 row-span-2 bg-white rounded-lg shadow-xl h-100 w-100">
           <PIBPerCapta />
         </div>
-        <div className="text-black-50 col-span-1 md:col-span-4 xl:col-span-3 row-span-2 bg-white rounded-lg shadow-xl h-100" />
+        <div className="text-black-50 col-span-1 md:col-span-4 xl:col-span-3 row-span-2 bg-white rounded-lg shadow-xl h-100">
+          <ConstructionJobs />
+        </div>
         <div className="bg-white rounded-lg md:col-span-2 shadow-xl h-48">
           1
         </div>
