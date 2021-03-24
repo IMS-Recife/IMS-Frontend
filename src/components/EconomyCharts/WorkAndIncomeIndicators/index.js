@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Spinner } from "react-bootstrap";
 import { economyAPI } from "../../../Services/api";
 
 function PIBPerCapta() {
@@ -38,7 +39,7 @@ function PIBPerCapta() {
   return (
     <>
       <div className="bg-blue-500 rounded-lg md:col-span-4 shadow-xl h-48 z-10">
-        {workersAverageMonthlyWages && (
+        {workersAverageMonthlyWages ? (
           <>
             <h2 className="text-start ml-4 mt-4 font-bold">
               {workersAverageMonthlyWages.Indicador}
@@ -47,20 +48,24 @@ function PIBPerCapta() {
               {workersAverageMonthlyWages.Valor}
             </h5>
           </>
+        ) : (
+          <Spinner animation="border" variant="light" />
         )}
       </div>
       <div className="bg-blue-500 rounded-lg md:col-span-4 shadow-xl h-48 z-10">
-        {busyPeople && (
+        {busyPeople ? (
           <>
             <h2 className="text-start ml-4 mt-4 font-bold">
               {busyPeople.Indicador}
             </h2>
             <h5 className="text-start ml-4 mt-4">{busyPeople.Valor}</h5>
           </>
+        ) : (
+          <Spinner animation="border" variant="light" />
         )}
       </div>
       <div className="bg-blue-500 rounded-lg md:col-span-4 shadow-xl h-48 z-10">
-        {percentageEmployedPopulation && (
+        {percentageEmployedPopulation ? (
           <>
             <h2 className="text-start ml-4 mt-4 font-bold">
               {percentageEmployedPopulation.Indicador}
@@ -69,10 +74,12 @@ function PIBPerCapta() {
               {percentageEmployedPopulation.Valor}
             </h5>
           </>
+        ) : (
+          <Spinner animation="border" variant="light" />
         )}
       </div>
       <div className="bg-blue-500 rounded-lg md:col-span-4 shadow-xl h-48 z-10">
-        {populationUpToHalfPerCaptaWage && (
+        {populationUpToHalfPerCaptaWage ? (
           <>
             <h2 className="text-start ml-4 mt-4 font-bold">
               {populationUpToHalfPerCaptaWage.Indicador}
@@ -81,6 +88,8 @@ function PIBPerCapta() {
               {populationUpToHalfPerCaptaWage.Valor}
             </h5>
           </>
+        ) : (
+          <Spinner animation="border" variant="light" />
         )}
       </div>
     </>
