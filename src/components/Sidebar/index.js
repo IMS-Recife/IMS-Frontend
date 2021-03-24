@@ -84,17 +84,19 @@ const Sidebar = () => {
               <FormattedMessage id="COVID" />
             </MenuItem>
           </Link>
-          <MenuItem
-            className="mt-2"
-            icon={
-              <FaDollarSign
-                size="1.8rem"
-                title={intl.formatMessage({ id: "ECONOMY" })}
-              />
-            }
-          >
-            <FormattedMessage id="ECONOMY" />
-          </MenuItem>
+          <Link href="/economy">
+            <MenuItem
+              className="mt-2"
+              icon={
+                <FaDollarSign
+                  size="1.8rem"
+                  title={intl.formatMessage({ id: "ECONOMY" })}
+                />
+              }
+            >
+              <FormattedMessage id="ECONOMY" />
+            </MenuItem>
+          </Link>
           <SubMenu
             title={intl.formatMessage({ id: "URBANISM" })}
             className="mt-2"
