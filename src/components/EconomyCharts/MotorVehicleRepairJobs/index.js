@@ -39,7 +39,7 @@ function PIBPerCapta() {
         "Evolução do número de emprego no Comércio, Reparação de Veículos automotores",
     },
     subtitle: {
-      text: "Source: thesolarfoundation.com",
+      text: "Fonte: IBGE",
     },
     chart: {
       zoomType: "x",

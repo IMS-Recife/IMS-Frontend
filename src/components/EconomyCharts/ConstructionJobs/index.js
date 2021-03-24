@@ -35,7 +35,7 @@ function PIBPerCapta() {
       text: "Evolução do número de emprego no setor de Construção",
     },
     subtitle: {
-      text: "Source: thesolarfoundation.com",
+      text: "Fonte: IBGE",
     },
     chart: {
       zoomType: "x",

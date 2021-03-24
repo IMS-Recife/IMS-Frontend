@@ -35,7 +35,7 @@ function PIBPerCapta() {
       text: "Produto Interno Bruto per capita, a preços correntes (R$ 1,00)",
     },
     subtitle: {
-      text: "Source: thesolarfoundation.com",
+      text: "Fonte: IBGE",
     },
     chart: {
       zoomType: "x",
