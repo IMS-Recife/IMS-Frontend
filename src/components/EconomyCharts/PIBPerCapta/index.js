@@ -27,7 +27,7 @@ function PIBPerCapta() {
   }, []);
 
   useEffect(() => {
-    setTimeout(() => Highcharts.charts[0].reflow(), 300);
+    setTimeout(() => Highcharts.charts[2].reflow(), 300);
   }, [collapseSideBar]);
 
   const PibPerCaptaOptions = {

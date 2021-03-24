@@ -30,7 +30,7 @@ function PIBPerCapta() {
   }, []);
 
   useEffect(() => {
-    setTimeout(() => Highcharts.charts[0].reflow(), 300);
+    setTimeout(() => Highcharts.charts[1].reflow(), 300);
   }, [collapseSideBar]);
 
   const constructionJobsOptions = {
