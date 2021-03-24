@@ -4,7 +4,7 @@ import HighchartsReact from "highcharts-react-official";
 import Highcharts from "highcharts";
 import Layout from "../components/Layout";
 import useLayout from "../contexts/layout";
-import covidAPI from "../Services/api";
+import { covidAPI } from "../Services/api";
 
 const CovidPage = () => {
   const { collapseSideBar } = useLayout();
