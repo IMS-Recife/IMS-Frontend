@@ -32,7 +32,7 @@ function EconomyIndicators() {
 
   return (
     <>
-      <div className="bg-green-600 rounded-lg md:col-span-4 shadow-xl h-48 z-10">
+      <div className="bg-green-500 rounded-lg md:col-span-4 shadow-xl h-48 z-10">
         {PIBPerCapta2018 ? (
           <>
             <h2 className="text-start ml-4 mt-4 font-bold">
@@ -44,7 +44,7 @@ function EconomyIndicators() {
           <Spinner animation="border" variant="light" />
         )}
       </div>
-      <div className="bg-green-600 rounded-lg md:col-span-4 shadow-xl h-48 z-10">
+      <div className="bg-green-500 rounded-lg md:col-span-4 shadow-xl h-48 z-10">
         {IDHM ? (
           <>
             <h2 className="text-start ml-4 mt-4 font-bold">{IDHM.Indicador}</h2>
@@ -54,7 +54,7 @@ function EconomyIndicators() {
           <Spinner animation="border" variant="light" />
         )}
       </div>
-      <div className="bg-green-600 rounded-lg md:col-span-4 shadow-xl h-48 z-10">
+      <div className="bg-green-500 rounded-lg md:col-span-4 shadow-xl h-48 z-10">
         {totalRevenue2017 ? (
           <>
             <h2 className="text-start ml-4 mt-4 font-bold">
@@ -66,7 +66,7 @@ function EconomyIndicators() {
           <Spinner animation="border" variant="light" />
         )}
       </div>
-      <div className="bg-green-600 rounded-lg md:col-span-4 shadow-xl h-48 z-10">
+      <div className="bg-green-500 rounded-lg md:col-span-4 shadow-xl h-48 z-10">
         {totalExpendituresCommitted ? (
           <>
             <h2 className="text-start ml-4 mt-4 font-bold">
