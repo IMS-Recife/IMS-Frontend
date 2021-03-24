@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Spinner } from "react-bootstrap";
 import { economyAPI } from "../../../Services/api";
 
-function PIBPerCapta() {
+function WorkAndIncomeIndicators() {
   const [
     workersAverageMonthlyWages,
     setWorkersAverageMonthlyWages,
@@ -38,7 +38,7 @@ function PIBPerCapta() {
 
   return (
     <>
-      <div className="bg-blue-500 rounded-lg md:col-span-4 shadow-xl h-48 z-10">
+      <div className="bg-blue-600 rounded-lg md:col-span-4 shadow-xl h-48 z-10">
         {workersAverageMonthlyWages ? (
           <>
             <h2 className="text-start ml-4 mt-4 font-bold">
@@ -52,7 +52,7 @@ function PIBPerCapta() {
           <Spinner animation="border" variant="light" />
         )}
       </div>
-      <div className="bg-blue-500 rounded-lg md:col-span-4 shadow-xl h-48 z-10">
+      <div className="bg-blue-600 rounded-lg md:col-span-4 shadow-xl h-48 z-10">
         {busyPeople ? (
           <>
             <h2 className="text-start ml-4 mt-4 font-bold">
@@ -64,7 +64,7 @@ function PIBPerCapta() {
           <Spinner animation="border" variant="light" />
         )}
       </div>
-      <div className="bg-blue-500 rounded-lg md:col-span-4 shadow-xl h-48 z-10">
+      <div className="bg-blue-600 rounded-lg md:col-span-4 shadow-xl h-48 z-10">
         {percentageEmployedPopulation ? (
           <>
             <h2 className="text-start ml-4 mt-4 font-bold">
@@ -78,7 +78,7 @@ function PIBPerCapta() {
           <Spinner animation="border" variant="light" />
         )}
       </div>
-      <div className="bg-blue-500 rounded-lg md:col-span-4 shadow-xl h-48 z-10">
+      <div className="bg-blue-600 rounded-lg md:col-span-4 shadow-xl h-48 z-10">
         {populationUpToHalfPerCaptaWage ? (
           <>
             <h2 className="text-start ml-4 mt-4 font-bold">
@@ -96,4 +96,4 @@ function PIBPerCapta() {
   );
 }
 
-export default PIBPerCapta;
+export default WorkAndIncomeIndicators;
