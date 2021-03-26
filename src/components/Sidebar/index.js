@@ -116,21 +116,24 @@ const Sidebar = ({ href }) => {
               />
             }
           >
-            <SubMenu title="PROJETOS PUBLICOS">
+            <SubMenu style={{ color: "#fff" }} title="PROJETOS PUBLICOS">
               <Link href="/map">
                 <MenuItem
                   style={{
-                    color: router.pathname === "/map" ? "#4b4d53" : "#c4c4c4",
+                    color: router.pathname === "/map" ? "#4b4d53" : "#fff",
                   }}
                 >
-                  <FormattedMessage id="PUBLIC_TOURS_REQUALIFICATION" />
+                  <FormattedMessage
+                    style={{ color: "#fff" }}
+                    id="PUBLIC_TOURS_REQUALIFICATION"
+                  />
                 </MenuItem>
               </Link>
             </SubMenu>
-            <MenuItem>
+            <MenuItem style={{ color: "#fff" }}>
               <FormattedMessage id="PUBLIC_PLANS" />
             </MenuItem>
-            <MenuItem>
+            <MenuItem style={{ color: "#fff" }}>
               <FormattedMessage id="OTHER_BASES" />
             </MenuItem>
           </SubMenu>
