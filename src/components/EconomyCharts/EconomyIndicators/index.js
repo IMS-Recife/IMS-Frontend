@@ -37,49 +37,63 @@ function EconomyIndicators() {
 
   return (
     <>
-      <Card className="rounded-lg md:col-span-4 shadow-xl h-48 z-10">
+      <Card className="rounded-lg md:col-span-4 shadow-xl h-48 z-10 p-5">
         {PIBPerCapta2018 ? (
           <>
-            <h2 className="text-start ml-4 mt-4 font-bold">
+            <div className="text-xl text-gray-400">
               {PIBPerCapta2018.Indicador}
-            </h2>
-            <h5 className="text-start ml-4 mt-4">{PIBPerCapta2018.Valor}</h5>
+            </div>
+            <div className="flex items-center pt-1">
+              <div className="text-4xl font-bold text-gray-900 ">
+                {PIBPerCapta2018.Valor}
+              </div>
+            </div>
           </>
         ) : (
           <Spinner animation="border" variant="light" />
         )}
       </Card>
-      <Card className="rounded-lg md:col-span-4 shadow-xl h-48 z-10">
+      <Card className="rounded-lg md:col-span-4 shadow-xl h-48 z-10 p-5">
         {IDHM ? (
           <>
-            <h2 className="text-start ml-4 mt-4 font-bold">{IDHM.Indicador}</h2>
-            <h5 className="text-start ml-4 mt-4">{IDHM.Valor}</h5>
+            <div className="text-xl text-gray-400">{IDHM.Indicador}</div>
+            <div className="flex items-center pt-1">
+              <div className="text-4xl font-bold text-gray-900 ">
+                {IDHM.Valor}
+              </div>
+            </div>
           </>
         ) : (
           <Spinner animation="border" variant="light" />
         )}
       </Card>
-      <Card className="rounded-lg md:col-span-4 shadow-xl h-48 z-10">
+      <Card className="rounded-lg md:col-span-4 shadow-xl h-48 z-10 p-5">
         {totalRevenue2017 ? (
           <>
-            <h2 className="text-start ml-4 mt-4 font-bold">
+            <div className="text-xl text-gray-400">
               {totalRevenue2017.Indicador}
-            </h2>
-            <h5 className="text-start ml-4 mt-4">{totalRevenue2017.Valor}</h5>
+            </div>
+            <div className="flex items-center pt-1">
+              <div className="text-4xl font-bold text-gray-900 ">
+                {totalRevenue2017.Valor}
+              </div>
+            </div>
           </>
         ) : (
           <Spinner animation="border" variant="light" />
         )}
       </Card>
-      <Card className="rounded-lg md:col-span-4 shadow-xl h-48 z-10">
+      <Card className="rounded-lg md:col-span-4 shadow-xl h-48 z-10 p-5">
         {totalExpendituresCommitted ? (
           <>
-            <h2 className="text-start ml-4 mt-4 font-bold">
+            <div className="text-xl text-gray-400">
               {totalExpendituresCommitted.Indicador}
-            </h2>
-            <h5 className="text-start ml-4 mt-4">
-              {totalExpendituresCommitted.Valor}
-            </h5>
+            </div>
+            <div className="flex items-center pt-1">
+              <div className="text-4xl font-bold text-gray-900 ">
+                {totalExpendituresCommitted.Valor}
+              </div>
+            </div>
           </>
         ) : (
           <Spinner animation="border" variant="light" />
