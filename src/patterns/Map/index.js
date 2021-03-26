@@ -28,6 +28,8 @@ const Map = ({ show }) => {
     zoom: 16,
   });
 
+  const [showSidebar, setShowSidebar] = useState(false);
+
   const toggleLayers = (id) => {
     const updatedLayers = filters.map((f) => {
       if (f.id === id) {
@@ -58,6 +60,7 @@ const Map = ({ show }) => {
       pickable: true,
       onClick: ({ object }) => {
         console.log(object);
+        setShowSidebar(prevState => !prevState)
       },
       getLineWidth: 4,
       getFillColor: [55, 126, 184],
@@ -179,6 +182,14 @@ const Map = ({ show }) => {
       className="card card-responsive m-0 p-0 border-0"
       style={show ? { minHeight: "100vh" } : { display: "none" }}
     >
+      {showSidebar &&
+      <div className="w-96 h-screen bg-white z-10 text-black border-r flex-grow">
+        <div className="p-4">
+          Rua Siqueira Campos
+        </div>
+      </div>
+      }
+      {!showSidebar &&
       <div
         className="card card-responsive mr-sm-0 ml-md-4 m-lg-0 h-100 p-3"
         style={{
@@ -209,6 +220,7 @@ const Map = ({ show }) => {
           </div>
         </div>
       </div>
+      }
       <DeckGL
         controller
         layers={layers}
