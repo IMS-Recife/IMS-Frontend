@@ -12,8 +12,9 @@ const Map = ({ show }) => {
     { id: 1, visible: true, description: "Lotes" },
     { id: 2, visible: true, description: "Logradouros" },
     { id: 3, visible: true, description: "Calçadas" },
-    { id: 4, visible: true, description: "Postes" },
-    { id: 5, visible: true, description: "Vegetação" },
+    { id: 4, visible: true, description: "Calçadas Acessíveis" },
+    { id: 5, visible: true, description: "Postes" },
+    { id: 6, visible: true, description: "Vegetação" },
   ]);
 
   const [viewport, setViewport] = useState({
@@ -83,6 +84,25 @@ const Map = ({ show }) => {
       getFillColor: [55, 126, 184],
       visible: filters[2].visible,
     }),
+    new GeoJsonLayer({
+      id: "Ruas",
+      data:
+        "https://raw.githubusercontent.com/Filipegbessaa/IMS-Frontend/map_enh/src/assets/Geojsons/calcadas_acessiveis.json",
+      opacity: 0.8,
+      lineWidthScale: 0.03,
+      stroked: true,
+      filled: true,
+      autoHighlight: true,
+      highlightColor: [0, 0, 128, 128],
+      pickable: true,
+      onClick: ({ object }) => {
+        console.log(object);
+        setShowSidebar((prevState) => !prevState);
+      },
+      getLineWidth: 4,
+      getFillColor: [55, 126, 184],
+      visible: filters[3].visible,
+    }),
     new ScatterplotLayer({
       id: "Postes",
       data: streetPoles.features,
@@ -97,7 +117,7 @@ const Map = ({ show }) => {
       pickable: true,
       getPosition: (d) => d.geometry.coordinates,
       getFillColor: [80, 80, 80],
-      visible: filters[3].visible,
+      visible: filters[4].visible,
     }),
     new ScatterplotLayer({
       id: "Arvores",
@@ -113,7 +133,7 @@ const Map = ({ show }) => {
       pickable: true,
       getPosition: (d) => d.geometry.coordinates,
       getFillColor: [91, 222, 126],
-      visible: filters[4].visible,
+      visible: filters[5].visible,
     }),
   ];
 
