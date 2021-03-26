@@ -287,7 +287,10 @@ const CovidPage = () => {
 
   return (
     <Layout>
-      <div className="bg-white rounded-lg shadow-xl h-100 w-100 m-4 p-10">
+      <div
+        style={{ border: "1px solid #f7f7f7" }}
+        className="bg-white rounded-lg h-100 w-100 m-4 p-10"
+      >
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-4 md:gap-8">
           <Card className="rounded-lg shadow-xl p-5">
             <div className="text-xl text-gray-400">Total de casos</div>

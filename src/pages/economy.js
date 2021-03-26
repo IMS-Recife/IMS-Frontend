@@ -9,7 +9,10 @@ import EconomyIndicators from "../components/EconomyCharts/EconomyIndicators";
 
 const CovidPage = () => (
   <Layout>
-    <div className="bg-white rounded-lg shadow-xl h-100 w-100 m-4 p-10">
+    <div
+      style={{ border: "1px solid #f7f7f7" }}
+      className="bg-white rounded-lg h-100 w-100 m-4 p-10"
+    >
       <div className="grid grid-cols-1 gap-4 sm:grid-cols-3 md:grid-cols-4 xl:grid-cols-8 md:gap-8">
         <WorkAndIncomeIndicators />
         <EconomyIndicators />
