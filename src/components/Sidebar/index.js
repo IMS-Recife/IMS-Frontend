@@ -136,7 +136,6 @@ const Sidebar = ({ href }) => {
           </SubMenu>
           <MenuItem
             className="mt-2"
-            style={{ color: "#00539f" }}
             icon={
               <FaInfoCircle
                 size="1.8rem"
