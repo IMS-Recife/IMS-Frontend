@@ -43,55 +43,63 @@ function WorkAndIncomeIndicators() {
 
   return (
     <>
-      <Card className="rounded-lg md:col-span-4 shadow-xl h-48 z-10">
+      <Card className="rounded-lg md:col-span-4 shadow-xl h-48 z-10 p-5">
         {workersAverageMonthlyWages ? (
           <>
-            <h2 className="text-start ml-4 mt-4 font-bold">
+            <div className="text-xl text-gray-400">
               {workersAverageMonthlyWages.Indicador}
-            </h2>
-            <h5 className="text-start ml-4 mt-4">
-              {workersAverageMonthlyWages.Valor}
-            </h5>
+            </div>
+            <div className="flex items-center pt-1">
+              <div className="text-4xl font-bold text-gray-900 ">
+                {workersAverageMonthlyWages.Valor}
+              </div>
+            </div>
           </>
         ) : (
           <Spinner animation="border" variant="light" />
         )}
       </Card>
-      <Card className="rounded-lg md:col-span-4 shadow-xl h-48 z-10">
+      <Card className="rounded-lg md:col-span-4 shadow-xl h-48 z-10 p-5">
         {busyPeople ? (
           <>
-            <h2 className="text-start ml-4 mt-4 font-bold">
-              {busyPeople.Indicador}
-            </h2>
-            <h5 className="text-start ml-4 mt-4">{busyPeople.Valor}</h5>
+            <div className="text-xl text-gray-400">{busyPeople.Indicador}</div>
+            <div className="flex items-center pt-1">
+              <div className="text-4xl font-bold text-gray-900 ">
+                {busyPeople.Valor}
+              </div>
+            </div>
           </>
         ) : (
           <Spinner animation="border" variant="light" />
         )}
       </Card>
-      <Card className="rounded-lg md:col-span-4 shadow-xl h-48 z-10">
+      <Card className="rounded-lg md:col-span-4 shadow-xl h-48 z-10 p-5">
         {percentageEmployedPopulation ? (
           <>
-            <h2 className="text-start ml-4 mt-4 font-bold">
+            <div className="text-xl text-gray-400">
               {percentageEmployedPopulation.Indicador}
-            </h2>
-            <h5 className="text-start ml-4 mt-4">
-              {percentageEmployedPopulation.Valor}
-            </h5>
+            </div>
+            <div className="flex items-center pt-1">
+              <div className="text-4xl font-bold text-gray-900 ">
+                {percentageEmployedPopulation.Valor}
+              </div>
+            </div>
           </>
         ) : (
           <Spinner animation="border" variant="light" />
         )}
       </Card>
-      <Card className="rounded-lg md:col-span-4 shadow-xl h-48 z-10">
+      <Card className="rounded-lg md:col-span-4 shadow-xl h-48 z-10 p-5">
         {populationUpToHalfPerCaptaWage ? (
           <>
-            <h2 className="text-start ml-4 mt-4 font-bold">
+            <div className="text-xl text-gray-400">
               {populationUpToHalfPerCaptaWage.Indicador}
-            </h2>
-            <h5 className="text-start ml-4 mt-4">
-              {populationUpToHalfPerCaptaWage.Valor}
-            </h5>
+            </div>
+            <div className="flex items-center pt-1">
+              <div className="text-4xl font-bold text-gray-900 ">
+                {populationUpToHalfPerCaptaWage.Valor}
+              </div>
+            </div>
           </>
         ) : (
           <Spinner animation="border" variant="light" />
