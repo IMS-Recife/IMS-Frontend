@@ -6,7 +6,6 @@ import styled from "styled-components";
 import Layout from "../components/Layout";
 import useLayout from "../contexts/layout";
 import { covidAPI } from "../Services/api";
-import Dashboard from "../components/Dashboard";
 
 const Card = styled.div`
   background: #f7f7f7;

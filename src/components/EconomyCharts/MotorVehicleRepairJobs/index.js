@@ -30,9 +30,11 @@ function PIBPerCapta() {
   }, []);
 
   useEffect(() => {
-    if (Highcharts.charts[1] !== undefined) {
-      setTimeout(() => Highcharts.charts[1].reflow(), 300);
-    }
+    Highcharts.charts.forEach((c) => {
+      if (c !== undefined) {
+        setTimeout(() => c.reflow(), 300);
+      }
+    });
   }, [collapseSideBar]);
 
   const constructionJobsOptions = {
