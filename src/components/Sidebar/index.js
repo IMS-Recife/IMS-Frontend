@@ -17,6 +17,7 @@ import { RiVirusFill } from "react-icons/ri";
 import { FormattedMessage, useIntl } from "react-intl";
 import Link from "next/link";
 import styled from "styled-components";
+import { useRouter } from "next/router";
 import useLayout from "../../contexts/layout";
 
 const ArrowButton = styled.button`
@@ -38,7 +39,11 @@ const StyledProSidebar = styled(ProSidebar)`
   }
 `;
 
-const Sidebar = () => {
+const Sidebar = ({ href }) => {
+  const router = useRouter();
+  const style = {
+    color: router.pathname === href ? "#4b4d53" : "#c4c4c4",
+  };
   const {
     collapseSideBar,
     setCollapseSideBar,
@@ -74,6 +79,7 @@ const Sidebar = () => {
 
           <Link href="/covid">
             <MenuItem
+              style={style}
               className="mt-2"
               icon={
                 <RiVirusFill
@@ -87,6 +93,7 @@ const Sidebar = () => {
           </Link>
           <Link href="/economy">
             <MenuItem
+              style={style}
               className="mt-2"
               icon={
                 <FaDollarSign
@@ -101,6 +108,7 @@ const Sidebar = () => {
           <SubMenu
             title={intl.formatMessage({ id: "URBANISM" })}
             className="mt-2"
+            style={style}
             icon={
               <FaCity
                 size="1.8rem"
@@ -110,7 +118,11 @@ const Sidebar = () => {
           >
             <SubMenu title="PROJETOS PUBLICOS">
               <Link href="/map">
-                <MenuItem>
+                <MenuItem
+                  style={{
+                    color: router.pathname === "/map" ? "#4b4d53" : "#c4c4c4",
+                  }}
+                >
                   <FormattedMessage id="PUBLIC_TOURS_REQUALIFICATION" />
                 </MenuItem>
               </Link>
@@ -124,6 +136,7 @@ const Sidebar = () => {
           </SubMenu>
           <MenuItem
             className="mt-2"
+            style={{ color: "#00539f" }}
             icon={
               <FaInfoCircle
                 size="1.8rem"

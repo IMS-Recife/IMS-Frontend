@@ -7,8 +7,8 @@ import {
 } from "react-icons/fa";
 import styled from "styled-components";
 
-import LogoPortoDigitalAzul from "../../assets/LogoPortoDigitalAzul.svg";
 import LogoPortoDigitalBranca from "../../assets/LogoPortoDigitalBranca.svg";
+import LogoPortoDigitalCinza from "../../assets/LogoPortoDigitalCinza.svg";
 
 const Container = styled.div`
   @media (max-width: 768px) {
@@ -16,29 +16,29 @@ const Container = styled.div`
   }
 `;
 const IconNavLink = styled.a`
-  color: ${(props) => props.theme.colors.primary};
+  color: ${(props) => props.theme.colors.light};
   padding: 0 0.2rem;
   cursor: pointer;
   &.active {
-    color: ${(props) => props.theme.colors.light};
+    color: ${(props) => props.theme.colors.lightGrey};
   }
   :hover {
-    color: ${(props) => props.theme.colors.light};
+    color: ${(props) => props.theme.colors.lightGrey};
   }
 `;
 
 function IconsPack() {
   const [logoPortoDigital, setLogoPortoDigital] = useState(
-    LogoPortoDigitalAzul
+    LogoPortoDigitalBranca
   );
 
   return (
     <Container className="flex flex-row justify-center align-center">
       <IconNavLink
         style={{ padding: "0 1rem" }}
-        onMouseOver={() => setLogoPortoDigital(LogoPortoDigitalBranca)}
-        onMouseEnter={() => setLogoPortoDigital(LogoPortoDigitalBranca)}
-        onMouseOut={() => setLogoPortoDigital(LogoPortoDigitalAzul)}
+        onMouseOver={() => setLogoPortoDigital(LogoPortoDigitalCinza)}
+        onMouseEnter={() => setLogoPortoDigital(LogoPortoDigitalCinza)}
+        onMouseOut={() => setLogoPortoDigital(LogoPortoDigitalBranca)}
         href="https://www.portodigital.org/home"
         target="_blank"
       >

@@ -1,6 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { Spinner } from "react-bootstrap";
+import styled from "styled-components";
 import { economyAPI } from "../../../Services/api";
+
+const Card = styled.div`
+  background: #f7f7f7;
+`;
 
 function WorkAndIncomeIndicators() {
   const [
@@ -38,7 +43,7 @@ function WorkAndIncomeIndicators() {
 
   return (
     <>
-      <div className="bg-blue-500 rounded-lg md:col-span-4 shadow-xl h-48 z-10">
+      <Card className="rounded-lg md:col-span-4 shadow-xl h-48 z-10">
         {workersAverageMonthlyWages ? (
           <>
             <h2 className="text-start ml-4 mt-4 font-bold">
@@ -51,8 +56,8 @@ function WorkAndIncomeIndicators() {
         ) : (
           <Spinner animation="border" variant="light" />
         )}
-      </div>
-      <div className="bg-blue-500 rounded-lg md:col-span-4 shadow-xl h-48 z-10">
+      </Card>
+      <Card className="rounded-lg md:col-span-4 shadow-xl h-48 z-10">
         {busyPeople ? (
           <>
             <h2 className="text-start ml-4 mt-4 font-bold">
@@ -63,8 +68,8 @@ function WorkAndIncomeIndicators() {
         ) : (
           <Spinner animation="border" variant="light" />
         )}
-      </div>
-      <div className="bg-blue-500 rounded-lg md:col-span-4 shadow-xl h-48 z-10">
+      </Card>
+      <Card className="rounded-lg md:col-span-4 shadow-xl h-48 z-10">
         {percentageEmployedPopulation ? (
           <>
             <h2 className="text-start ml-4 mt-4 font-bold">
@@ -77,8 +82,8 @@ function WorkAndIncomeIndicators() {
         ) : (
           <Spinner animation="border" variant="light" />
         )}
-      </div>
-      <div className="bg-blue-500 rounded-lg md:col-span-4 shadow-xl h-48 z-10">
+      </Card>
+      <Card className="rounded-lg md:col-span-4 shadow-xl h-48 z-10">
         {populationUpToHalfPerCaptaWage ? (
           <>
             <h2 className="text-start ml-4 mt-4 font-bold">
@@ -91,7 +96,7 @@ function WorkAndIncomeIndicators() {
         ) : (
           <Spinner animation="border" variant="light" />
         )}
-      </div>
+      </Card>
     </>
   );
 }

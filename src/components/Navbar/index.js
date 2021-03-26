@@ -6,7 +6,7 @@ import IconsPack from "../IconsPack";
 import { LanguagesDropdownSelect } from "../Selects";
 
 const Nav = styled.nav`
-  background: ${(props) => props.theme.colors.darkBlue};
+  background: ${(props) => props.theme.colors.lead};
   height: 52px;
   width: 100vw;
 `;

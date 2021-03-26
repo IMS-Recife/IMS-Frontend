@@ -9,7 +9,6 @@ import USFlag from "../../assets/Flags/226-united-states.svg";
 const StyledSelect = styled(Select)`
   display: block !important;
   width: 4.4rem !important;
-  background-color: #0000 !important;
   color: black !important;
   control {
     background: blue;
@@ -37,9 +36,9 @@ function LanguagesDropdownSelect() {
   const customStyles = {
     control: (base, state) => ({
       ...base,
-      background: "#262f51",
+      background: "#4b4d53",
       // Overwrittes the different states of border
-      borderColor: state.isFocused ? "#262f51" : "#262f51",
+      borderColor: state.isFocused ? "#4b4d53" : "#4b4d53",
       // Removes weird border around container
       boxShadow: state.isFocused ? null : null,
       color: "#000",
@@ -47,14 +46,14 @@ function LanguagesDropdownSelect() {
       "&:hover": {
         cursor: "pointer",
         // Overwrittes the different states of border
-        borderColor: state.isFocused ? "#262f51" : "#262f51",
+        borderColor: state.isFocused ? "#4b4d53" : "#4b4d53",
       },
     }),
     dropdownIndicator: (base) => ({
       ...base,
-      color: "#1f81e8", // Custom colour
+      color: "#fff", // Custom colour
       "&:hover": {
-        color: "#fff",
+        color: "#ddddde",
         cursor: "pointer",
       },
     }),

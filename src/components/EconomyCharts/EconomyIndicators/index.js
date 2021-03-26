@@ -1,6 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { Spinner } from "react-bootstrap";
+import styled from "styled-components";
 import { economyAPI } from "../../../Services/api";
+
+const Card = styled.div`
+  background: #f7f7f7;
+`;
 
 function EconomyIndicators() {
   const [PIBPerCapta2018, setPIBPerCapta2018] = useState();
@@ -32,7 +37,7 @@ function EconomyIndicators() {
 
   return (
     <>
-      <div className="bg-green-500 rounded-lg md:col-span-4 shadow-xl h-48 z-10">
+      <Card className="rounded-lg md:col-span-4 shadow-xl h-48 z-10">
         {PIBPerCapta2018 ? (
           <>
             <h2 className="text-start ml-4 mt-4 font-bold">
@@ -43,8 +48,8 @@ function EconomyIndicators() {
         ) : (
           <Spinner animation="border" variant="light" />
         )}
-      </div>
-      <div className="bg-green-500 rounded-lg md:col-span-4 shadow-xl h-48 z-10">
+      </Card>
+      <Card className="rounded-lg md:col-span-4 shadow-xl h-48 z-10">
         {IDHM ? (
           <>
             <h2 className="text-start ml-4 mt-4 font-bold">{IDHM.Indicador}</h2>
@@ -53,8 +58,8 @@ function EconomyIndicators() {
         ) : (
           <Spinner animation="border" variant="light" />
         )}
-      </div>
-      <div className="bg-green-500 rounded-lg md:col-span-4 shadow-xl h-48 z-10">
+      </Card>
+      <Card className="rounded-lg md:col-span-4 shadow-xl h-48 z-10">
         {totalRevenue2017 ? (
           <>
             <h2 className="text-start ml-4 mt-4 font-bold">
@@ -65,8 +70,8 @@ function EconomyIndicators() {
         ) : (
           <Spinner animation="border" variant="light" />
         )}
-      </div>
-      <div className="bg-green-500 rounded-lg md:col-span-4 shadow-xl h-48 z-10">
+      </Card>
+      <Card className="rounded-lg md:col-span-4 shadow-xl h-48 z-10">
         {totalExpendituresCommitted ? (
           <>
             <h2 className="text-start ml-4 mt-4 font-bold">
@@ -79,7 +84,7 @@ function EconomyIndicators() {
         ) : (
           <Spinner animation="border" variant="light" />
         )}
-      </div>
+      </Card>
     </>
   );
 }

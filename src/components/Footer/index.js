@@ -6,7 +6,7 @@ import {
   FaGithubSquare,
   FaYoutubeSquare,
 } from "react-icons/fa";
-import LogoPortoDigitalAzul from "../../assets/LogoPortoDigitalAzul.svg";
+import LogoPortoDigitalCinza from "../../assets/LogoPortoDigitalCinza.svg";
 import LogoPortoDigitalBranca from "../../assets/LogoPortoDigitalBranca.svg";
 
 export const Container = styled.div`
@@ -32,15 +32,15 @@ const IconLink = styled.a`
 
 function Footer() {
   const [logoPortoDigital, setLogoPortoDigital] = useState(
-    LogoPortoDigitalAzul
+    LogoPortoDigitalBranca
   );
   return (
     <Container className="flex flex-row items-center justify-center">
       <IconLink
         style={{ padding: "1rem" }}
-        onMouseOver={() => setLogoPortoDigital(LogoPortoDigitalBranca)}
-        onMouseEnter={() => setLogoPortoDigital(LogoPortoDigitalBranca)}
-        onMouseOut={() => setLogoPortoDigital(LogoPortoDigitalAzul)}
+        onMouseOver={() => setLogoPortoDigital(LogoPortoDigitalCinza)}
+        onMouseEnter={() => setLogoPortoDigital(LogoPortoDigitalCinza)}
+        onMouseOut={() => setLogoPortoDigital(LogoPortoDigitalBranca)}
         href="https://www.portodigital.org/home"
         target="_blank"
       >
