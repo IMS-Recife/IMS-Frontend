@@ -1,6 +1,5 @@
 import React from "react";
 import { FormattedMessage } from "react-intl";
-import { MaterialUISelect } from "../Selects";
 import useLayout from "../../contexts/layout";
 
 const Header = () => {
@@ -30,9 +29,7 @@ const Header = () => {
             marginLeft: "20px",
             display: "inline-block",
           }}
-        >
-          <MaterialUISelect />
-        </div>
+        />
         <div
           style={{
             display: "inline-block",
@@ -46,7 +43,7 @@ const Header = () => {
           <span
             style={{
               font: "700 10px Roboto, sans-serif",
-              color: "#87c2ff",
+              color: "#00539f",
               display: "block",
               textAlign: "center",
             }}
@@ -60,6 +57,7 @@ const Header = () => {
               font: "500 18px Roboto, sans-serif",
               display: "block",
               textAlign: "center",
+              color: "#00539f",
             }}
           >
             {lastTimeUpdated.toLocaleString("pt-BR")}

@@ -1,34 +1,23 @@
-import React, { useState } from "react";
+import React from "react";
 import PropTypes from "prop-types";
-import Navbar from "../../patterns/Navbar";
-import MobileHeaderMenu from "../../patterns/MobileLayout/MobileHeaderMenu";
-import MobileLayout from "../../patterns/MobileLayout";
-import MobileDashboard from "../../patterns/MobileDashboard/MobileDashboard";
+import Navbar from "../Navbar";
 import Header from "../Header";
 import Sidebar from "../Sidebar";
+import Footer from "../Footer";
+import ToggleSidebarButton from "../ToggleSidebarButton/index";
 
-const Layout = ({ children }) => {
-  const [showMobileMenu, setShowMobileMenu] = useState(false);
-
-  const handleShowMobileMenu = () => {
-    setShowMobileMenu((prevState) => !prevState);
-  };
-
-  return (
-    <>
-      <Navbar showMobileMenu={handleShowMobileMenu} />
-      <MobileHeaderMenu show={showMobileMenu} />
-      <MobileLayout show={!showMobileMenu}>
-        <MobileDashboard />
-      </MobileLayout>
-      <Header />
-      <div className="flex">
-        <Sidebar />
-        {children}
-      </div>
-    </>
-  );
-};
+const Layout = ({ children }) => (
+  <div>
+    <Navbar />
+    <Header />
+    <ToggleSidebarButton />
+    <div className="flex flex-row mt-6">
+      <Sidebar />
+      {children}
+    </div>
+    <Footer />
+  </div>
+);
 
 export default Layout;
 
