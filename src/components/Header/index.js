@@ -43,7 +43,7 @@ const Header = () => {
           <span
             style={{
               font: "700 10px Roboto, sans-serif",
-              color: "#87c2ff",
+              color: "#00539f",
               display: "block",
               textAlign: "center",
             }}
@@ -57,6 +57,7 @@ const Header = () => {
               font: "500 18px Roboto, sans-serif",
               display: "block",
               textAlign: "center",
+              color: "#00539f",
             }}
           >
             {lastTimeUpdated.toLocaleString("pt-BR")}

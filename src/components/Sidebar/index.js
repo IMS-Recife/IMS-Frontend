@@ -20,6 +20,7 @@ import styled from "styled-components";
 import useLayout from "../../contexts/layout";
 
 const ArrowButton = styled.button`
+  color: ${(props) => props.theme.colors.primary};
   background: none;
   border: none;
   width: 1.5rem;
@@ -60,12 +61,12 @@ const Sidebar = () => {
             onClick={() => setCollapseSideBar((prevState) => !prevState)}
           >
             <MenuItem
-              style={{ color: "#FFFFFF", marginTop: "20px" }}
+              style={{ color: "#00539f", marginTop: "20px" }}
               icon={
                 collapseSideBar ? (
-                  <FaAngleRight size="2rem" />
+                  <FaAngleRight style={{ color: "#00539f" }} size="2rem" />
                 ) : (
-                  <FaAngleLeft size="2rem" />
+                  <FaAngleLeft style={{ color: "#00539f" }} size="2rem" />
                 )
               }
             />
