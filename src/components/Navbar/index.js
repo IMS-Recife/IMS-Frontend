@@ -19,23 +19,7 @@ const ProjectNavLink = styled.a`
   cursor: pointer;
   font: 700 16px Roboto Mono, sans-serif;
   :hover {
-    color: ${(props) => props.theme.colors.primary};
-    text-decoration: none;
-  }
-`;
-
-const NavLink = styled.a`
-  color: ${(props) => props.theme.colors.primary};
-  letter-spacing: 0.2rem;
-  text-decoration: none;
-  padding: 0 1rem;
-  cursor: pointer;
-  font: 700 16px Roboto Mono, sans-serif;
-  &.active {
-    color: ${(props) => props.theme.colors.light};
-  }
-  :hover {
-    color: ${(props) => props.theme.colors.light};
+    color: ${(props) => props.theme.colors.lightGrey};
     text-decoration: none;
   }
 `;
