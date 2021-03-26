@@ -2,10 +2,15 @@ import { injectIntl } from "react-intl";
 import React, { useEffect, useState } from "react";
 import HighchartsReact from "highcharts-react-official";
 import Highcharts from "highcharts";
+import styled from "styled-components";
 import Layout from "../components/Layout";
 import useLayout from "../contexts/layout";
 import { covidAPI } from "../Services/api";
 import Dashboard from "../components/Dashboard";
+
+const Card = styled.div`
+  background: #f7f7f7;
+`;
 
 const CovidPage = () => {
   const { collapseSideBar } = useLayout();
@@ -284,15 +289,15 @@ const CovidPage = () => {
     <Layout>
       <Dashboard>
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-4 md:gap-8">
-          <div className="bg-white rounded-lg shadow-xl p-5">
+          <Card className="rounded-lg shadow-xl p-5">
             <div className="text-xl text-gray-400">Total de casos</div>
             <div className="flex items-center pt-1">
               <div className="text-4xl font-bold text-gray-900 ">
                 {panelData["Total.Confirmados"]?.toLocaleString("pt-BR")}
               </div>
             </div>
-          </div>
-          <div className="bg-white rounded-lg shadow-xl p-5">
+          </Card>
+          <Card className="rounded-lg shadow-xl p-5">
             <div className="text-xl text-gray-400">Casos nas últimas 24h</div>
             <div className="flex items-center pt-1">
               <div className="text-4xl font-bold text-gray-900 ">
@@ -301,55 +306,55 @@ const CovidPage = () => {
                 )}
               </div>
             </div>
-          </div>
-          <div className="bg-white rounded-lg shadow-xl p-5">
+          </Card>
+          <Card className="rounded-lg shadow-xl p-5">
             <div className="text-xl text-gray-400">Total de mortes</div>
             <div className="flex items-center pt-1">
               <div className="text-4xl font-bold text-gray-900 ">
                 {panelData["Total.de.Mortes"]?.toLocaleString("pt-BR")}
               </div>
             </div>
-          </div>
-          <div className="bg-white rounded-lg shadow-xl p-5">
+          </Card>
+          <Card className="rounded-lg shadow-xl p-5">
             <div className="text-xl text-gray-400">Mortes nas últimas 24h</div>
             <div className="flex items-center pt-1">
               <div className="text-4xl font-bold text-gray-900 ">
                 {panelData["Óbitos.nas.últimas.24h"]?.toLocaleString("pt-BR")}
               </div>
             </div>
-          </div>
-          <div className="bg-white rounded-lg shadow-xl p-5">
+          </Card>
+          <Card className="rounded-lg shadow-xl p-5">
             <div className="text-xl text-gray-400">Casos em investigação</div>
             <div className="flex items-center pt-1">
               <div className="text-4xl font-bold text-gray-900 ">
                 {panelData["Em.investigação"]?.toLocaleString("pt-BR")}
               </div>
             </div>
-          </div>
-          <div className="bg-white rounded-lg shadow-xl p-5">
+          </Card>
+          <Card className="rounded-lg shadow-xl p-5">
             <div className="text-xl text-gray-400">Recifenses em UTI</div>
             <div className="flex items-center pt-1">
               <div className="text-4xl font-bold text-gray-900 ">
                 {panelData["Recifenses.em.UTI"]?.toLocaleString("pt-BR")}
               </div>
             </div>
-          </div>
-          <div className="bg-white rounded-lg shadow-xl p-5">
+          </Card>
+          <Card className="rounded-lg shadow-xl p-5">
             <div className="text-xl text-gray-400">Hospitalizados</div>
             <div className="flex items-center pt-1">
               <div className="text-4xl font-bold text-gray-900 ">
                 {panelData.Hospitalizados?.toLocaleString("pt-BR")}
               </div>
             </div>
-          </div>
-          <div className="bg-white rounded-lg shadow-xl p-5">
+          </Card>
+          <Card className="rounded-lg shadow-xl p-5">
             <div className="text-xl text-gray-400">Casos recuperados</div>
             <div className="flex items-center pt-1">
               <div className="text-4xl font-bold text-gray-900 ">
                 {panelData["Total.de.Recuperados"]?.toLocaleString("pt-BR")}
               </div>
             </div>
-          </div>
+          </Card>
           <div className="text-black-50 col-span-2 row-span-2 bg-white rounded-lg shadow-xl h-100 w-100">
             <HighchartsReact highcharts={Highcharts} options={a11Options} />
           </div>
