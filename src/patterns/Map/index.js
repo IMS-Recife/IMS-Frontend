@@ -48,7 +48,7 @@ const Map = ({ show }) => {
     new GeoJsonLayer({
       id: "Siqueira Campos Calçadas",
       data:
-        "https://raw.githubusercontent.com/Filipegbessaa/IMS-Frontend/side_walks/src/assets/SiqueiraCampos/sc_cal.json",
+        "https://raw.githubusercontent.com/Filipegbessaa/IMS-Frontend/dev/src/assets/SiqueiraCampos/sc_cal.json",
       opacity: 0.8,
       lineWidthScale: 0.03,
       stroked: true,
