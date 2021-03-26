@@ -4,18 +4,16 @@ import { StaticMap } from "react-map-gl";
 import { GeoJsonLayer, ScatterplotLayer } from "@deck.gl/layers";
 import { DeckGL } from "deck.gl";
 import PropTypes from "prop-types";
-import scPoints from "../../assets/SiqueiraCampos/sc_arv_pos.json";
+import trees from "../../assets/Geojsons/passeiospublicos_arvores.json";
+import streetPoles from "../../assets/Geojsons/passeiospublicos_postes.json";
 
 const Map = ({ show }) => {
   const [filters, setFilters] = useState([
-    { id: 1, visible: true, description: "Ruas" },
+    { id: 1, visible: true, description: "Lotes" },
     { id: 2, visible: true, description: "Logradouros" },
-    { id: 3, visible: true, description: "Calçada - Siqueira Campos" },
-    { id: 4, visible: true, description: "Postes - Siqueira Campos" },
-    { id: 5, visible: true, description: "Vegetação - Siqueira Campos" },
-    { id: 6, visible: true, description: "Calçada - Rua Velha" },
-    { id: 7, visible: true, description: "Postes - Rua Velha" },
-    { id: 8, visible: true, description: "Vegetação - Rua Velha" },
+    { id: 3, visible: true, description: "Calçadas" },
+    { id: 4, visible: true, description: "Postes" },
+    { id: 5, visible: true, description: "Vegetação" },
   ]);
 
   const [viewport, setViewport] = useState({
@@ -37,33 +35,8 @@ const Map = ({ show }) => {
     });
     setFilters(updatedLayers);
   };
-  const streetPoles = scPoints.features.filter(
-    (point) => point.properties.Layer === "ATP_URB_POSTE"
-  );
-  const trees = scPoints.features.filter(
-    (point) => point.properties.Layer !== "ATP_URB_POSTE"
-  );
 
   const layers = [
-    new GeoJsonLayer({
-      id: "Ruas",
-      data:
-        "https://raw.githubusercontent.com/Filipegbessaa/IMS-Frontend/map_enh/src/assets/Geojsons/passeiospublicos_calcadas.json",
-      opacity: 0.8,
-      lineWidthScale: 0.03,
-      stroked: true,
-      filled: true,
-      autoHighlight: true,
-      highlightColor: [0, 0, 128, 128],
-      pickable: true,
-      onClick: ({ object }) => {
-        console.log(object);
-        setShowSidebar((prevState) => !prevState);
-      },
-      getLineWidth: 4,
-      getFillColor: [55, 126, 184],
-      visible: filters[2].visible,
-    }),
     new GeoJsonLayer({
       id: "Lotes",
       data:
@@ -91,10 +64,28 @@ const Map = ({ show }) => {
       getFillColor: [183, 72, 75],
       visible: filters[1].visible,
     }),
+    new GeoJsonLayer({
+      id: "Ruas",
+      data:
+        "https://raw.githubusercontent.com/Filipegbessaa/IMS-Frontend/map_enh/src/assets/Geojsons/passeiospublicos_calcadas.json",
+      opacity: 0.8,
+      lineWidthScale: 0.03,
+      stroked: true,
+      filled: true,
+      autoHighlight: true,
+      highlightColor: [0, 0, 128, 128],
+      pickable: true,
+      onClick: ({ object }) => {
+        console.log(object);
+        setShowSidebar((prevState) => !prevState);
+      },
+      getLineWidth: 4,
+      getFillColor: [55, 126, 184],
+      visible: filters[2].visible,
+    }),
     new ScatterplotLayer({
       id: "Postes",
-      data:
-        "https://raw.githubusercontent.com/Filipegbessaa/IMS-Frontend/map_enh/src/assets/Geojsons/passeiospublicos_postes.json",
+      data: streetPoles.features,
       opacity: 0.8,
       filled: true,
       onClick: (e) => {
@@ -110,8 +101,7 @@ const Map = ({ show }) => {
     }),
     new ScatterplotLayer({
       id: "Arvores",
-      data:
-        "https://raw.githubusercontent.com/Filipegbessaa/IMS-Frontend/map_enh/src/assets/Geojsons/passeiospublicos_arvores.json",
+      data: trees.features,
       opacity: 0.8,
       filled: true,
       onClick: (e) => {
