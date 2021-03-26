@@ -37,7 +37,7 @@ function EconomyIndicators() {
 
   return (
     <>
-      <Card className="rounded-lg md:col-span-4 shadow-xl h-48 z-10 p-5">
+      <Card className="rounded-lg md:col-span-4 shadow-xl p-5">
         {PIBPerCapta2018 ? (
           <>
             <div className="text-xl text-gray-400">
@@ -53,7 +53,7 @@ function EconomyIndicators() {
           <Spinner animation="border" variant="light" />
         )}
       </Card>
-      <Card className="rounded-lg md:col-span-4 shadow-xl h-48 z-10 p-5">
+      <Card className="rounded-lg md:col-span-4 shadow-xl p-5">
         {IDHM ? (
           <>
             <div className="text-xl text-gray-400">{IDHM.Indicador}</div>
@@ -67,7 +67,7 @@ function EconomyIndicators() {
           <Spinner animation="border" variant="light" />
         )}
       </Card>
-      <Card className="rounded-lg md:col-span-4 shadow-xl h-48 z-10 p-5">
+      <Card className="rounded-lg md:col-span-4 shadow-xl p-5">
         {totalRevenue2017 ? (
           <>
             <div className="text-xl text-gray-400">
@@ -83,7 +83,7 @@ function EconomyIndicators() {
           <Spinner animation="border" variant="light" />
         )}
       </Card>
-      <Card className="rounded-lg md:col-span-4 shadow-xl h-48 z-10 p-5">
+      <Card className="rounded-lg md:col-span-4 shadow-xl p-5">
         {totalExpendituresCommitted ? (
           <>
             <div className="text-xl text-gray-400">
