@@ -7,7 +7,7 @@ import Footer from "../Footer";
 import ToggleSidebarButton from "../ToggleSidebarButton/index";
 
 const Layout = ({ children }) => (
-  <div>
+  <>
     <Navbar />
     <Header />
     <ToggleSidebarButton />
@@ -16,7 +16,7 @@ const Layout = ({ children }) => (
       {children}
     </div>
     <Footer />
-  </div>
+  </>
 );
 
 export default Layout;
