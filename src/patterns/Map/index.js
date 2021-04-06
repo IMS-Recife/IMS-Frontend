@@ -147,9 +147,32 @@ const Map = ({ show }) => {
       style={show ? { minHeight: "100vh" } : { display: "none" }}
     >
       {showSidebar && (
-        <div className="w-96 h-screen bg-white z-10 text-black border-r flex-grow">
-          <div className="p-4">Rua Siqueira Campos</div>
-        </div>
+        <di className="w-96 h-screen bg-white z-10 text-black border-r flex-grow">
+          <div className="border-b p-4">
+            <span className="text-gray-400">Lote</span>
+            <p className="mt-2 font-black">8</p>
+          </div>
+          <div className="border-b p-4">
+            <span className="text-gray-400">Tipo</span>
+            <p className="mt-2 font-black">Rua</p>
+          </div>
+          <div className="border-b p-4">
+            <span className="text-gray-400">Logradouro</span>
+            <p className="mt-2 font-black">Rua Siqueira Campos</p>
+          </div>
+          <div className="border-b p-4">
+            <span className="text-gray-400">Extensão</span>
+            <p className="mt-2 font-black">418,57m</p>
+          </div>
+          <div className="border-b p-4">
+            <span className="text-gray-400">Extensão executada</span>
+            <p className="mt-2 font-black">0m</p>
+          </div>
+          <div className="border-b p-4">
+            <span className="text-gray-400">Status da Obra</span>
+            <p className="mt-2 font-black">A LICITAR</p>
+          </div>
+        </di>
       )}
       {!showSidebar && (
         <div
