@@ -1,6 +1,7 @@
-import React, { useMemo, useState } from "react";
+import React, { useMemo } from "react";
 import { useTable, usePagination } from "react-table";
 import styled from "styled-components";
+import PropTypes from "prop-types";
 import Pagination from "react-bootstrap/Pagination";
 
 export const Table = styled.table`
@@ -130,5 +131,7 @@ function NeighborhoodsTable({ data }) {
     </>
   );
 }
-
+NeighborhoodsTable.propTypes = {
+  data: PropTypes.arrayOf(PropTypes.object).isRequired,
+};
 export default NeighborhoodsTable;

@@ -1,5 +1,6 @@
 import { injectIntl } from "react-intl";
 import React from "react";
+import PropTypes from "prop-types";
 import Layout from "../components/Layout";
 import PIBPerCapta from "../components/EconomyCharts/PIBPerCapta";
 import ConstructionJobs from "../components/EconomyCharts/ConstructionJobs";
@@ -9,7 +10,7 @@ import EconomyIndicators from "../components/EconomyCharts/EconomyIndicators";
 import NeighborhoodsTable from "../components/EconomyCharts/NeighborhoodsTable";
 import { economyAPI } from "../Services/api";
 
-const CovidPage = ({ neighborhoodsData }) => (
+const EconomyPage = ({ neighborhoodsData }) => (
   <Layout>
     <div
       style={{ border: "1px solid #f7f7f7" }}
@@ -43,5 +44,8 @@ export async function getServerSideProps() {
 
   // Pass data to the page via props
 }
+EconomyPage.propTypes = {
+  neighborhoodsData: PropTypes.arrayOf(PropTypes.object).isRequired,
+};
 
-export default injectIntl(CovidPage);
+export default injectIntl(EconomyPage);
