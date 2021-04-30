@@ -1,13 +1,16 @@
 import { injectIntl } from "react-intl";
 import React from "react";
+import PropTypes from "prop-types";
 import Layout from "../components/Layout";
 import PIBPerCapta from "../components/EconomyCharts/PIBPerCapta";
 import ConstructionJobs from "../components/EconomyCharts/ConstructionJobs";
 import MotorVehicleRepairJobs from "../components/EconomyCharts/MotorVehicleRepairJobs";
 import WorkAndIncomeIndicators from "../components/EconomyCharts/WorkAndIncomeIndicators";
 import EconomyIndicators from "../components/EconomyCharts/EconomyIndicators";
+import NeighborhoodsTable from "../components/EconomyCharts/NeighborhoodsTable";
+import { economyAPI } from "../Services/api";
 
-const CovidPage = () => (
+const EconomyPage = ({ neighborhoodsData }) => (
   <Layout>
     <div
       style={{ border: "1px solid #f7f7f7" }}
@@ -25,8 +28,24 @@ const CovidPage = () => (
         <div className="text-black-50 col-span-1 sm:col-span-3 md:col-span-4 xl:col-span-8 row-span-2 bg-white rounded-lg shadow-xl h-100 w-100">
           <PIBPerCapta />
         </div>
+        <div className="text-black-50 col-span-1 sm:col-span-3 md:col-span-4 xl:col-span-8 row-span-2 bg-white rounded-lg shadow-xl h-100 w-100">
+          <NeighborhoodsTable data={neighborhoodsData} />
+        </div>
       </div>
     </div>
   </Layout>
 );
-export default injectIntl(CovidPage);
+
+// This gets called on every request
+export async function getServerSideProps() {
+  // Fetch data from external API
+  const { data } = await economyAPI.get("/t9p1");
+  return { props: { neighborhoodsData: data } };
+
+  // Pass data to the page via props
+}
+EconomyPage.propTypes = {
+  neighborhoodsData: PropTypes.arrayOf(PropTypes.object).isRequired,
+};
+
+export default injectIntl(EconomyPage);
