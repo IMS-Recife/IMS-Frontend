@@ -89,11 +89,11 @@ const Map = ({ show }) => {
       visible: filters[2].visible,
     }),
     new GeoJsonLayer({
-      id: "Ruas",
+      id: "Calçadas Acessíveis",
       data:
         "https://raw.githubusercontent.com/Filipegbessaa/IMS-Frontend/map_enh/src/assets/Geojsons/calcadas_acessiveis.json",
       opacity: 0.8,
-      lineWidthScale: 0.03,
+      lineWidthScale: 0.3,
       stroked: true,
       filled: true,
       autoHighlight: true,
