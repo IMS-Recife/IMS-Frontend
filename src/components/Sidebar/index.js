@@ -6,18 +6,15 @@ import {
   SidebarContent,
   SubMenu,
 } from "react-pro-sidebar";
-import {
-  FaAngleLeft,
-  FaAngleRight,
-  FaCity,
-  FaDollarSign,
-  FaInfoCircle,
-} from "react-icons/fa";
-import { RiVirusFill } from "react-icons/ri";
+import { GoSearch } from "react-icons/go";
+import { RiMoneyDollarCircleLine, RiVirusFill } from "react-icons/ri";
+import { BsFileEarmark } from "react-icons/bs";
+import { VscHome } from "react-icons/vsc";
+import { FaAngleLeft, FaAngleRight, FaCity } from "react-icons/fa";
+
 import { FormattedMessage, useIntl } from "react-intl";
 import Link from "next/link";
 import styled from "styled-components";
-import { useRouter } from "next/router";
 import useLayout from "../../contexts/layout";
 
 const ArrowButton = styled.button`
@@ -39,8 +36,7 @@ const StyledProSidebar = styled(ProSidebar)`
   }
 `;
 
-const Sidebar = ({ href }) => {
-  const router = useRouter();
+const Sidebar = () => {
   const {
     collapseSideBar,
     setCollapseSideBar,
@@ -73,50 +69,53 @@ const Sidebar = ({ href }) => {
               }
             />
           </ArrowButton>
-
-          <Link href="/covid">
-            <MenuItem
-              className="mt-2"
-              icon={
-                <RiVirusFill
-                  size="1.8rem"
-                  title={intl.formatMessage({ id: "COVID" })}
-                />
-              }
-            >
-              <FormattedMessage id="COVID" />
-            </MenuItem>
-          </Link>
-          <Link href="/economy">
-            <MenuItem
-              className="mt-2"
-              icon={
-                <FaDollarSign
-                  size="1.8rem"
-                  title={intl.formatMessage({ id: "ECONOMY" })}
-                />
-              }
-            >
-              <FormattedMessage id="ECONOMY" />
-            </MenuItem>
-          </Link>
+          <MenuItem
+            className="mt-2"
+            icon={
+              <GoSearch
+                style={{ color: "#fff" }}
+                size="1.8rem"
+                title={intl.formatMessage({ id: "SEARCH" })}
+              />
+            }
+          />
+          <MenuItem
+            className="mt-2"
+            icon={
+              <VscHome
+                style={{ color: "#fff" }}
+                size="2rem"
+                title={intl.formatMessage({ id: "HOME" })}
+              />
+            }
+          >
+            <FormattedMessage id="HOME" />
+          </MenuItem>
+          <MenuItem
+            className="mt-2"
+            icon={
+              <BsFileEarmark
+                style={{ color: "#fff" }}
+                size="1.6rem"
+                title={intl.formatMessage({ id: "PLANS" })}
+              />
+            }
+          >
+            <FormattedMessage id="COVID" />
+          </MenuItem>
           <SubMenu
-            title={intl.formatMessage({ id: "URBANISM" })}
+            title={intl.formatMessage({ id: "PROJECTS" })}
             className="mt-2"
             icon={
               <FaCity
-                size="1.8rem"
-                title={intl.formatMessage({ id: "URBANISM" })}
+                size="1.5rem"
+                title={intl.formatMessage({ id: "PROJECTS" })}
               />
             }
           >
             <SubMenu style={{ color: "#fff" }} title="PROJETOS PUBLICOS">
               <Link href="/map">
-                <MenuItem
-                  style={{
-                    color: router.pathname === "/map" ? "#4b4d53" : "#fff",
-                  }}
-                >
+                <MenuItem>
                   <FormattedMessage
                     style={{ color: "#fff" }}
                     id="PUBLIC_TOURS_REQUALIFICATION"
@@ -131,17 +130,32 @@ const Sidebar = ({ href }) => {
               <FormattedMessage id="OTHER_BASES" />
             </MenuItem>
           </SubMenu>
-          <MenuItem
-            className="mt-2"
-            icon={
-              <FaInfoCircle
-                size="1.8rem"
-                title={intl.formatMessage({ id: "ABOUT" })}
-              />
-            }
-          >
-            <FormattedMessage id="ABOUT" />
-          </MenuItem>
+          <Link href="/economy">
+            <MenuItem
+              className="mt-2"
+              icon={
+                <RiMoneyDollarCircleLine
+                  size="1.8rem"
+                  title={intl.formatMessage({ id: "ECONOMY" })}
+                />
+              }
+            >
+              <FormattedMessage id="ECONOMY" />
+            </MenuItem>
+          </Link>
+          <Link href="/covid">
+            <MenuItem
+              className="mt-2"
+              icon={
+                <RiVirusFill
+                  size="1.8rem"
+                  title={intl.formatMessage({ id: "COVID" })}
+                />
+              }
+            >
+              <FormattedMessage id="COVID" />
+            </MenuItem>
+          </Link>
         </Menu>
       </SidebarContent>
     </StyledProSidebar>
