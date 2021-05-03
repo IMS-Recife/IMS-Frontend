@@ -2,14 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
-$sidebar-bg-color: #fff;
-$sidebar-color: #c4c4c4;
+$sidebar-bg-color: #00a14b;
+$sidebar-color: #fff;
 $sidebar-width: 245px;
 $sidebar-collapsed-width: 80px;
-$highlight-color: #4b4d53;
-$submenu-bg-color: #ddddde;
-$submenu-bg-color-collapsed: #ddddde;
-$icon-bg-color: #fff;
+$highlight-color: #fff;
+$submenu-bg-color: #fff;
+$submenu-bg-color-collapsed: #fff;
+$icon-bg-color: #00a14b;
 $icon-size: 35px;
 
 $breakpoint-xs: 480px;

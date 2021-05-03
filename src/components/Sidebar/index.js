@@ -41,9 +41,6 @@ const StyledProSidebar = styled(ProSidebar)`
 
 const Sidebar = ({ href }) => {
   const router = useRouter();
-  const style = {
-    color: router.pathname === href ? "#4b4d53" : "#c4c4c4",
-  };
   const {
     collapseSideBar,
     setCollapseSideBar,
@@ -79,7 +76,6 @@ const Sidebar = ({ href }) => {
 
           <Link href="/covid">
             <MenuItem
-              style={style}
               className="mt-2"
               icon={
                 <RiVirusFill
@@ -93,7 +89,6 @@ const Sidebar = ({ href }) => {
           </Link>
           <Link href="/economy">
             <MenuItem
-              style={style}
               className="mt-2"
               icon={
                 <FaDollarSign
@@ -108,7 +103,6 @@ const Sidebar = ({ href }) => {
           <SubMenu
             title={intl.formatMessage({ id: "URBANISM" })}
             className="mt-2"
-            style={style}
             icon={
               <FaCity
                 size="1.8rem"
