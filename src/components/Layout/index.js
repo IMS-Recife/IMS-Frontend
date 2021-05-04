@@ -1,22 +1,17 @@
 import React from "react";
 import PropTypes from "prop-types";
 import Navbar from "../Navbar";
-import Header from "../Header";
 import Sidebar from "../Sidebar";
 import Footer from "../Footer";
-import ToggleSidebarButton from "../ToggleSidebarButton/index";
 
 const Layout = ({ children }) => (
-  <>
-    <Navbar />
-    <Header />
-    <ToggleSidebarButton />
-    <div className="flex flex-row mt-6">
-      <Sidebar />
+  <div className="grid grid-cols-2">
+    <Sidebar className="col-start" />
+    <div className="">
+      <Navbar />
       {children}
     </div>
-    <Footer />
-  </>
+  </div>
 );
 
 export default Layout;

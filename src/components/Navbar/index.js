@@ -8,7 +8,6 @@ import { LanguagesDropdownSelect } from "../Selects";
 const Nav = styled.nav`
   background: ${(props) => props.theme.colors.lead};
   height: 52px;
-  width: 100vw;
 `;
 
 const ProjectNavLink = styled.a`
@@ -26,7 +25,7 @@ const ProjectNavLink = styled.a`
 
 const Navbar = () => (
   <>
-    <Nav className="grid grid-cols-2">
+    <Nav className="grid grid-cols-2 w-100">
       <div className="flex items-center justify-start">
         <ProjectNavLink href="/">
           <FormattedMessage id="IMS_PROJECT" />
