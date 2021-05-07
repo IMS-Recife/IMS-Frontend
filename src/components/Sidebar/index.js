@@ -26,9 +26,7 @@ const ArrowButton = styled.button`
 `;
 
 const StyledProSidebar = styled(ProSidebar)`
-  margin-top: 0px;
   @media (min-width: 768px) {
-    height: 100% !important;
   }
   @media (max-width: 768px) {
     position: absolute;

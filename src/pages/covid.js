@@ -285,10 +285,10 @@ const CovidPage = () => {
   };
 
   return (
-    <Layout>
+    <Layout style={{ height: "100%" }}>
       <div
         style={{ border: "1px solid #f7f7f7" }}
-        className="bg-white rounded-lg h-100 w-100 m-4 p-10"
+        className="bg-white rounded-lg w-100 m-4 p-10"
       >
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-4 md:gap-8">
           <Card className="rounded-lg shadow-xl p-5">

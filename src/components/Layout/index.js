@@ -2,12 +2,11 @@ import React from "react";
 import PropTypes from "prop-types";
 import Navbar from "../Navbar";
 import Sidebar from "../Sidebar";
-import Footer from "../Footer";
 
 const Layout = ({ children }) => (
-  <div className="grid grid-cols-2">
-    <Sidebar className="col-start" />
-    <div className="">
+  <div className="flex flex-row h-100" style={{ height: "100vh" }}>
+    <Sidebar style={{ height: "100%" }} />
+    <div style={{ width: "100%", height: "100%" }}>
       <Navbar />
       {children}
     </div>

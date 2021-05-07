@@ -21,5 +21,10 @@ $breakpoint-xl: 1200px;
 .pro-menu-item {
   font: 600 22px Roboto, sans-serif;
 }
+.pro-menu {
+  min-height: 100% !important;
+
+  font: 600 22px Roboto, sans-serif;
+}
 
 @import "~react-pro-sidebar/dist/scss/styles.scss";
