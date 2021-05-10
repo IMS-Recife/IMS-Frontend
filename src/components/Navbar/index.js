@@ -1,12 +1,12 @@
 import React from "react";
-import { injectIntl, FormattedMessage } from "react-intl";
+import { injectIntl } from "react-intl";
 import styled from "styled-components";
 
 import { LanguagesDropdownSelect } from "../Selects";
 
 const Nav = styled.nav`
   background: ${(props) => props.theme.colors.primaryLight};
-  height: 52px;
+  height: 72px;
 `;
 
 const ProjectNavLink = styled.a`
@@ -28,7 +28,7 @@ const NavLink = styled.a`
   text-decoration: none;
   padding: 0 1rem;
   cursor: pointer;
-  font: 700 16px Roboto Mono, sans-serif;
+  font: 700 16px Raleway, sans-serif;
   :hover {
     color: ${(props) => props.theme.colors.primaryDark};
     text-decoration: none;
@@ -37,7 +37,7 @@ const NavLink = styled.a`
 
 const Navbar = () => (
   <>
-    <Nav className="grid grid-cols-2 w-100">
+    <Nav className="grid grid-cols-2 w-100 shadow-md">
       <div className="flex items-center justify-start">
         <ProjectNavLink href="/">
           Integrated Management System - IMS

@@ -11,7 +11,7 @@ export default {
   ADD_INDICATOR: "Adicionar indicador",
   SHOW_ALL: "Mostrar todos",
   HOME: "Início",
-  PLANS: "Plans",
+  PLANS: "Planos",
   PROJECTS: "Projetos",
   ECONOMY: "Economia",
   COVID: "Covid-19",

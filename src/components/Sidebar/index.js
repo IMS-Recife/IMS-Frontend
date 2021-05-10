@@ -51,18 +51,18 @@ const Sidebar = () => {
       onToggle={handleToggleSidebar}
     >
       <SidebarContent>
-        <Menu iconShape="square">
+        <Menu iconShape="round">
           <ArrowButton
             type="button"
             onClick={() => setCollapseSideBar((prevState) => !prevState)}
           >
             <MenuItem
-              style={{ color: "#00539f", marginTop: "20px" }}
+              style={{ color: "#fff", marginTop: "20px" }}
               icon={
                 collapseSideBar ? (
-                  <FaAngleRight style={{ color: "#00539f" }} size="2rem" />
+                  <FaAngleRight style={{ color: "#fff" }} size="2.5rem" />
                 ) : (
-                  <FaAngleLeft style={{ color: "#00539f" }} size="2rem" />
+                  <FaAngleLeft style={{ color: "#fff" }} size="2.5rem" />
                 )
               }
             />
@@ -82,7 +82,7 @@ const Sidebar = () => {
             icon={
               <VscHome
                 style={{ color: "#fff" }}
-                size="2rem"
+                size="1.9rem"
                 title={intl.formatMessage({ id: "HOME" })}
               />
             }
@@ -94,12 +94,12 @@ const Sidebar = () => {
             icon={
               <BsFileEarmark
                 style={{ color: "#fff" }}
-                size="1.6rem"
+                size="1.7rem"
                 title={intl.formatMessage({ id: "PLANS" })}
               />
             }
           >
-            <FormattedMessage id="COVID" />
+            <FormattedMessage id="PLANS" />
           </MenuItem>
           <SubMenu
             title={intl.formatMessage({ id: "PROJECTS" })}
