@@ -4,6 +4,7 @@ import { StaticMap } from "react-map-gl";
 import { GeoJsonLayer, ScatterplotLayer } from "@deck.gl/layers";
 import { DeckGL } from "deck.gl";
 import PropTypes from "prop-types";
+import { VscClose } from "react-icons/vsc";
 import trees from "../../assets/Geojsons/passeiospublicos_arvores.json";
 import streetPoles from "../../assets/Geojsons/passeiospublicos_postes.json";
 
@@ -149,6 +150,12 @@ const Map = ({ show }) => {
     >
       {showSidebar && (
         <div className="w-96 h-screen bg-white z-10 text-black border-r flex-grow">
+          <button onClick={() => setShowSidebar(false)} type="button">
+            <VscClose
+              style={{ marginLeft: "330px", marginTop: "20px" }}
+              size="1.5rem"
+            />
+          </button>
           <div className="border-b p-4">
             <span className="text-gray-400">Logradouro</span>
             <p className="mt-2 font-black">Rua Siqueira Campos</p>
