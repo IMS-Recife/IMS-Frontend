@@ -27,4 +27,16 @@ $breakpoint-xl: 1200px;
   font: 600 22px Roboto, sans-serif;
 }
 
+.pro-icon {
+  display: flex;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+
+  &:hover {
+    background: #00711f;
+    border-radius: 5px;
+  }
+}
+
 @import "~react-pro-sidebar/dist/scss/styles.scss";

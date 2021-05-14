@@ -6,6 +6,8 @@ import { LanguagesDropdownSelect } from "../Selects";
 
 const Nav = styled.nav`
   background: ${(props) => props.theme.colors.primaryLight};
+  z-index: 10;
+  opacity: 1;
   height: 72px;
 `;
 

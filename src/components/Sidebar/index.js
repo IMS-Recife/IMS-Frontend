@@ -1,11 +1,5 @@
 import React from "react";
-import {
-  Menu,
-  MenuItem,
-  ProSidebar,
-  SidebarContent,
-  SubMenu,
-} from "react-pro-sidebar";
+import { Menu, MenuItem, ProSidebar, SidebarContent } from "react-pro-sidebar";
 import { GoSearch } from "react-icons/go";
 import { RiMoneyDollarCircleLine, RiVirusFill } from "react-icons/ri";
 import { BsFileEarmark } from "react-icons/bs";
@@ -26,11 +20,18 @@ const ArrowButton = styled.button`
 `;
 
 const StyledProSidebar = styled(ProSidebar)`
+  height: 100vh;
   @media (min-width: 768px) {
   }
   @media (max-width: 768px) {
     position: absolute;
     top: 0;
+  }
+`;
+
+const StyledMenuItem = styled(MenuItem)`
+  padding: 0px;
+  :hover {
   }
 `;
 
@@ -50,7 +51,7 @@ const Sidebar = () => {
       toggled={toggledSidebar}
       onToggle={handleToggleSidebar}
     >
-      <SidebarContent>
+      <SidebarContent className="pt-5">
         <Menu iconShape="round">
           <ArrowButton
             type="button"
@@ -60,14 +61,14 @@ const Sidebar = () => {
               style={{ color: "#fff", marginTop: "20px" }}
               icon={
                 collapseSideBar ? (
-                  <FaAngleRight style={{ color: "#fff" }} size="2.5rem" />
+                  <FaAngleRight style={{ color: "#fff" }} size="2rem" />
                 ) : (
-                  <FaAngleLeft style={{ color: "#fff" }} size="2.5rem" />
+                  <FaAngleLeft style={{ color: "#fff" }} size="2rem" />
                 )
               }
             />
           </ArrowButton>
-          <MenuItem
+          <StyledMenuItem
             className="mt-2"
             icon={
               <GoSearch
@@ -77,7 +78,7 @@ const Sidebar = () => {
               />
             }
           />
-          <MenuItem
+          <StyledMenuItem
             className="mt-2"
             icon={
               <VscHome
@@ -88,8 +89,8 @@ const Sidebar = () => {
             }
           >
             <FormattedMessage id="HOME" />
-          </MenuItem>
-          <MenuItem
+          </StyledMenuItem>
+          <StyledMenuItem
             className="mt-2"
             icon={
               <BsFileEarmark
@@ -100,8 +101,8 @@ const Sidebar = () => {
             }
           >
             <FormattedMessage id="PLANS" />
-          </MenuItem>
-          <SubMenu
+          </StyledMenuItem>
+          <StyledMenuItem
             title={intl.formatMessage({ id: "PROJECTS" })}
             className="mt-2"
             icon={
@@ -111,25 +112,10 @@ const Sidebar = () => {
               />
             }
           >
-            <SubMenu style={{ color: "#fff" }} title="PROJETOS PUBLICOS">
-              <Link href="/map">
-                <MenuItem>
-                  <FormattedMessage
-                    style={{ color: "#fff" }}
-                    id="PUBLIC_TOURS_REQUALIFICATION"
-                  />
-                </MenuItem>
-              </Link>
-            </SubMenu>
-            <MenuItem style={{ color: "#fff" }}>
-              <FormattedMessage id="PUBLIC_PLANS" />
-            </MenuItem>
-            <MenuItem style={{ color: "#fff" }}>
-              <FormattedMessage id="OTHER_BASES" />
-            </MenuItem>
-          </SubMenu>
+            <FormattedMessage id="PROJECTS" />
+          </StyledMenuItem>
           <Link href="/economy">
-            <MenuItem
+            <StyledMenuItem
               className="mt-2"
               icon={
                 <RiMoneyDollarCircleLine
@@ -139,10 +125,10 @@ const Sidebar = () => {
               }
             >
               <FormattedMessage id="ECONOMY" />
-            </MenuItem>
+            </StyledMenuItem>
           </Link>
           <Link href="/covid">
-            <MenuItem
+            <StyledMenuItem
               className="mt-2"
               icon={
                 <RiVirusFill
@@ -152,7 +138,7 @@ const Sidebar = () => {
               }
             >
               <FormattedMessage id="COVID" />
-            </MenuItem>
+            </StyledMenuItem>
           </Link>
         </Menu>
       </SidebarContent>
