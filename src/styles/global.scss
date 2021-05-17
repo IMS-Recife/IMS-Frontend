@@ -19,12 +19,13 @@ $breakpoint-lg: 992px;
 $breakpoint-xl: 1200px;
 
 .pro-menu-item {
-  font: 600 22px Roboto, sans-serif;
+  font: 600 20px Roboto, sans-serif;
 }
 .pro-menu {
   min-height: 100% !important;
+  height: 100% !important;
 
-  font: 600 22px Roboto, sans-serif;
+  font: 600 20px Roboto, sans-serif;
 }
 
 .pro-icon {
@@ -38,5 +39,10 @@ $breakpoint-xl: 1200px;
     border-radius: 5px;
   }
 }
-
+html {
+  height: 100%;
+}
+body {
+  height: 100%;
+}
 @import "~react-pro-sidebar/dist/scss/styles.scss";

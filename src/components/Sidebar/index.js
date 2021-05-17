@@ -20,7 +20,7 @@ const ArrowButton = styled.button`
 `;
 
 const StyledProSidebar = styled(ProSidebar)`
-  height: 100vh;
+  height: 100vh !important;
   @media (min-width: 768px) {
   }
   @media (max-width: 768px) {
@@ -46,6 +46,7 @@ const Sidebar = () => {
   const intl = useIntl();
   return (
     <StyledProSidebar
+      className="h-screen sticky"
       collapsed={collapseSideBar}
       breakPoint="md"
       toggled={toggledSidebar}
