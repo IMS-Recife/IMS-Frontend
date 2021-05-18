@@ -5,9 +5,11 @@ import Sidebar from "../Sidebar";
 import Footer from "../Footer";
 
 const Layout = ({ children }) => (
-  <div className="flex flex-row">
-    <Sidebar />
-    <div style={{ width: "100%", minHeight: "100%" }}>
+  <div className="flex flex-no-wrap h-full">
+    <div>
+      <Sidebar />
+    </div>
+    <div>
       <Navbar />
       {children}
       <Footer />
