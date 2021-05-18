@@ -5,11 +5,11 @@ import Sidebar from "../Sidebar";
 import Footer from "../Footer";
 
 const Layout = ({ children }) => (
-  <div className="flex flex-no-wrap h-full">
+  <div className="flex flex-no-wrap h-full min-h-screen">
     <div>
       <Sidebar />
     </div>
-    <div>
+    <div className="w-full">
       <Navbar />
       {children}
       <Footer />
