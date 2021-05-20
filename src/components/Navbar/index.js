@@ -15,7 +15,7 @@ const ProjectNavLink = styled.a`
   color: ${(props) => props.theme.colors.secondary};
   letter-spacing: 0.2rem;
   text-decoration: none;
-  padding: 0 1rem;
+  padding: 0 0.5rem;
   cursor: pointer;
   font: 700 16px Roboto Mono, sans-serif;
   :hover {
@@ -28,7 +28,7 @@ const NavLink = styled.a`
   color: ${(props) => props.theme.colors.textColor1};
   letter-spacing: 0.2rem;
   text-decoration: none;
-  padding: 0 1rem;
+  padding: 0 0.5rem;
   cursor: pointer;
   font: 700 16px Raleway, sans-serif;
   :hover {
