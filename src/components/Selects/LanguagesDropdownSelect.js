@@ -36,9 +36,9 @@ function LanguagesDropdownSelect() {
   const customStyles = {
     control: (base, state) => ({
       ...base,
-      background: "#4b4d53",
+      background: "#fff",
       // Overwrittes the different states of border
-      borderColor: state.isFocused ? "#4b4d53" : "#4b4d53",
+      borderColor: state.isFocused ? "#fff" : "#fff",
       // Removes weird border around container
       boxShadow: state.isFocused ? null : null,
       color: "#000",
@@ -46,12 +46,12 @@ function LanguagesDropdownSelect() {
       "&:hover": {
         cursor: "pointer",
         // Overwrittes the different states of border
-        borderColor: state.isFocused ? "#4b4d53" : "#4b4d53",
+        borderColor: state.isFocused ? "#fff" : "#fff",
       },
     }),
     dropdownIndicator: (base) => ({
       ...base,
-      color: "#fff", // Custom colour
+      color: "#00a14b", // Custom colour
       "&:hover": {
         color: "#ddddde",
         cursor: "pointer",

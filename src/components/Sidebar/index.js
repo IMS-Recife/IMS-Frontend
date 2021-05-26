@@ -1,23 +1,14 @@
 import React from "react";
-import {
-  Menu,
-  MenuItem,
-  ProSidebar,
-  SidebarContent,
-  SubMenu,
-} from "react-pro-sidebar";
-import {
-  FaAngleLeft,
-  FaAngleRight,
-  FaCity,
-  FaDollarSign,
-  FaInfoCircle,
-} from "react-icons/fa";
-import { RiVirusFill } from "react-icons/ri";
+import { Menu, MenuItem, ProSidebar, SidebarContent } from "react-pro-sidebar";
+import { GoSearch } from "react-icons/go";
+import { RiMoneyDollarCircleLine, RiVirusFill } from "react-icons/ri";
+import { BsFileEarmark } from "react-icons/bs";
+import { VscHome } from "react-icons/vsc";
+import { FaAngleLeft, FaAngleRight, FaCity } from "react-icons/fa";
+
 import { FormattedMessage, useIntl } from "react-intl";
 import Link from "next/link";
 import styled from "styled-components";
-import { useRouter } from "next/router";
 import useLayout from "../../contexts/layout";
 
 const ArrowButton = styled.button`
@@ -29,9 +20,7 @@ const ArrowButton = styled.button`
 `;
 
 const StyledProSidebar = styled(ProSidebar)`
-  margin-top: 0px;
   @media (min-width: 768px) {
-    margin-left: 35px;
   }
   @media (max-width: 768px) {
     position: absolute;
@@ -39,11 +28,13 @@ const StyledProSidebar = styled(ProSidebar)`
   }
 `;
 
-const Sidebar = ({ href }) => {
-  const router = useRouter();
-  const style = {
-    color: router.pathname === href ? "#4b4d53" : "#c4c4c4",
-  };
+const StyledMenuItem = styled(MenuItem)`
+  padding: 0px;
+  :hover {
+  }
+`;
+
+const Sidebar = () => {
   const {
     collapseSideBar,
     setCollapseSideBar,
@@ -54,32 +45,90 @@ const Sidebar = ({ href }) => {
   const intl = useIntl();
   return (
     <StyledProSidebar
+      className="sticky"
       collapsed={collapseSideBar}
       breakPoint="md"
       toggled={toggledSidebar}
       onToggle={handleToggleSidebar}
     >
-      <SidebarContent>
-        <Menu iconShape="square">
+      <SidebarContent className="pt-5">
+        <Menu iconShape="round">
           <ArrowButton
             type="button"
             onClick={() => setCollapseSideBar((prevState) => !prevState)}
           >
             <MenuItem
-              style={{ color: "#00539f", marginTop: "20px" }}
+              style={{ color: "#fff", marginTop: "20px" }}
               icon={
                 collapseSideBar ? (
-                  <FaAngleRight style={{ color: "#00539f" }} size="2rem" />
+                  <FaAngleRight style={{ color: "#fff" }} size="2rem" />
                 ) : (
-                  <FaAngleLeft style={{ color: "#00539f" }} size="2rem" />
+                  <FaAngleLeft style={{ color: "#fff" }} size="2rem" />
                 )
               }
             />
           </ArrowButton>
-
+          <StyledMenuItem
+            className="mt-2"
+            icon={
+              <GoSearch
+                style={{ color: "#fff" }}
+                size="1.8rem"
+                title={intl.formatMessage({ id: "SEARCH" })}
+              />
+            }
+          />
+          <StyledMenuItem
+            className="mt-2"
+            icon={
+              <VscHome
+                style={{ color: "#fff" }}
+                size="1.9rem"
+                title={intl.formatMessage({ id: "HOME" })}
+              />
+            }
+          >
+            <FormattedMessage id="HOME" />
+          </StyledMenuItem>
+          <StyledMenuItem
+            className="mt-2"
+            icon={
+              <BsFileEarmark
+                style={{ color: "#fff" }}
+                size="1.7rem"
+                title={intl.formatMessage({ id: "PLANS" })}
+              />
+            }
+          >
+            <FormattedMessage id="PLANS" />
+          </StyledMenuItem>
+          <StyledMenuItem
+            title={intl.formatMessage({ id: "PROJECTS" })}
+            className="mt-2"
+            icon={
+              <FaCity
+                size="1.5rem"
+                title={intl.formatMessage({ id: "PROJECTS" })}
+              />
+            }
+          >
+            <FormattedMessage id="PROJECTS" />
+          </StyledMenuItem>
+          <Link href="/economy">
+            <StyledMenuItem
+              className="mt-2"
+              icon={
+                <RiMoneyDollarCircleLine
+                  size="1.8rem"
+                  title={intl.formatMessage({ id: "ECONOMY" })}
+                />
+              }
+            >
+              <FormattedMessage id="ECONOMY" />
+            </StyledMenuItem>
+          </Link>
           <Link href="/covid">
-            <MenuItem
-              style={style}
+            <StyledMenuItem
               className="mt-2"
               icon={
                 <RiVirusFill
@@ -89,65 +138,8 @@ const Sidebar = ({ href }) => {
               }
             >
               <FormattedMessage id="COVID" />
-            </MenuItem>
+            </StyledMenuItem>
           </Link>
-          <Link href="/economy">
-            <MenuItem
-              style={style}
-              className="mt-2"
-              icon={
-                <FaDollarSign
-                  size="1.8rem"
-                  title={intl.formatMessage({ id: "ECONOMY" })}
-                />
-              }
-            >
-              <FormattedMessage id="ECONOMY" />
-            </MenuItem>
-          </Link>
-          <SubMenu
-            title={intl.formatMessage({ id: "URBANISM" })}
-            className="mt-2"
-            style={style}
-            icon={
-              <FaCity
-                size="1.8rem"
-                title={intl.formatMessage({ id: "URBANISM" })}
-              />
-            }
-          >
-            <SubMenu style={{ color: "#fff" }} title="PROJETOS PUBLICOS">
-              <Link href="/map">
-                <MenuItem
-                  style={{
-                    color: router.pathname === "/map" ? "#4b4d53" : "#fff",
-                  }}
-                >
-                  <FormattedMessage
-                    style={{ color: "#fff" }}
-                    id="PUBLIC_TOURS_REQUALIFICATION"
-                  />
-                </MenuItem>
-              </Link>
-            </SubMenu>
-            <MenuItem style={{ color: "#fff" }}>
-              <FormattedMessage id="PUBLIC_PLANS" />
-            </MenuItem>
-            <MenuItem style={{ color: "#fff" }}>
-              <FormattedMessage id="OTHER_BASES" />
-            </MenuItem>
-          </SubMenu>
-          <MenuItem
-            className="mt-2"
-            icon={
-              <FaInfoCircle
-                size="1.8rem"
-                title={intl.formatMessage({ id: "ABOUT" })}
-              />
-            }
-          >
-            <FormattedMessage id="ABOUT" />
-          </MenuItem>
         </Menu>
       </SidebarContent>
     </StyledProSidebar>

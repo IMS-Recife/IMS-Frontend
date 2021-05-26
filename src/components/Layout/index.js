@@ -1,22 +1,20 @@
 import React from "react";
 import PropTypes from "prop-types";
 import Navbar from "../Navbar";
-import Header from "../Header";
 import Sidebar from "../Sidebar";
 import Footer from "../Footer";
-import ToggleSidebarButton from "../ToggleSidebarButton/index";
 
 const Layout = ({ children }) => (
-  <>
-    <Navbar />
-    <Header />
-    <ToggleSidebarButton />
-    <div className="flex flex-row mt-6">
+  <div className="flex flex-no-wrap h-full min-h-screen">
+    <div className="bg-secondary-green h-screen sticky sticky top-0">
       <Sidebar />
-      {children}
     </div>
-    <Footer />
-  </>
+    <div className="w-full">
+      <Navbar />
+      {children}
+      <Footer />
+    </div>
+  </div>
 );
 
 export default Layout;

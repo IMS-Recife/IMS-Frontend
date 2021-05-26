@@ -1,7 +1,7 @@
 import Head from "next/head";
 import { injectIntl } from "react-intl";
 import React, { useState } from "react";
-import Navbar from "../components/Navbar";
+import Layout from "../components/Layout";
 
 import Map from "../patterns/Map";
 
@@ -13,7 +13,7 @@ function MapPage() {
   };
 
   return (
-    <div>
+    <Layout>
       <Head>
         <link
           href="https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.css"
@@ -21,9 +21,8 @@ function MapPage() {
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Navbar showMobileMenu={handleShowMobileMenu} />
       <Map show={!showMobileMenu} />
-    </div>
+    </Layout>
   );
 }
 export default injectIntl(MapPage);
