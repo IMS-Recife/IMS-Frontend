@@ -45,7 +45,6 @@ const Sidebar = () => {
   const intl = useIntl();
   return (
     <StyledProSidebar
-      className="sticky"
       collapsed={collapseSideBar}
       breakPoint="md"
       toggled={toggledSidebar}
