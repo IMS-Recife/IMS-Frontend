@@ -20,9 +20,6 @@ const SmallInfoContainer = styled.div`
   width: 450px;
   height: 100%;
 `;
-const DropdownsContainer = styled.div`
-  background-color: ${(props) => props.theme.colors.primaryDark};
-`;
 const GreenCircle = styled.div`
   width: 20px;
   height: 20px;
@@ -313,105 +310,103 @@ const Map = ({ show }) => {
               </SmallInfoContainer>
               <SmallInfoContainer className="rounded-xl mt-3 ml-3 mr-3 p-3">
                 <h1 className="flex justify-center">Lotes do Projeto</h1>
-                <div className="mt-5">
-                  <table className="m-auto">
-                    <tr className="bg-red-700 shadow p-3">
-                      <th className="p-2">
-                        <p>Número</p>
-                        <Select
-                          className="mr-2"
-                          closeMenuOnSelect={false}
-                          components={animatedComponents}
-                          defaultValue={[filters[0], filters[1], filters[2]]}
-                          options={filters}
-                          onChange={(selectedObject) =>
-                            toggleLayers(
-                              selectedObject[selectedObject.length - 1]?.id
-                            )
-                          }
-                        />
-                      </th>
-                      <th className="p-2">
-                        <p>Status</p>
-                        <Select
-                          className="mr-2"
-                          closeMenuOnSelect={false}
-                          components={animatedComponents}
-                          defaultValue={[filters[0], filters[1], filters[2]]}
-                          options={filters}
-                          onChange={(selectedObject) =>
-                            toggleLayers(
-                              selectedObject[selectedObject.length - 1]?.id
-                            )
-                          }
-                        />
-                      </th>
-                      <th className="p-2 m-auto">
-                        <p>% EXECUÇÃO</p>
-                        <Select
-                          className="mr-2"
-                          closeMenuOnSelect={false}
-                          components={animatedComponents}
-                          defaultValue={[filters[0], filters[1], filters[2]]}
-                          options={filters}
-                          onChange={(selectedObject) =>
-                            toggleLayers(
-                              selectedObject[selectedObject.length - 1]?.id
-                            )
-                          }
-                        />
-                      </th>
-                    </tr>
-                    <tr>
-                      <td>
-                        <p>01</p>
-                      </td>
-                      <td className="flex flex-row">
-                        <GreenCircle className="mr-2" />
-                        <p className="">CONCLUÍDO</p>
-                      </td>
-                      <td>
-                        <p>100%</p>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>
-                        <p>02</p>
-                      </td>
-                      <td className="flex flex-row">
-                        <GreenCircle className="mr-2" />
-                        <p className="">CONCLUÍDO</p>
-                      </td>
-                      <td>
-                        <p>100%</p>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>
-                        <p>02</p>
-                      </td>
-                      <td className="flex flex-row">
-                        <YellowCircle className="mr-2" />
-                        <p className="">EM EXECUÇÃO</p>
-                      </td>
-                      <td>
-                        <p>50%</p>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>
-                        <p>02</p>
-                      </td>
-                      <td className="flex flex-row">
-                        <GreyCircle className="mr-2" />
-                        <p className="">A EXECUTAR</p>
-                      </td>
-                      <td>
-                        <p>0%</p>
-                      </td>
-                    </tr>
-                  </table>
-                </div>
+                <table className="m-auto">
+                  <tr className="bg-primary-dark shadow p-3">
+                    <th className="p-2">
+                      <p>Número</p>
+                      <Select
+                        className="mr-2"
+                        closeMenuOnSelect={false}
+                        components={animatedComponents}
+                        defaultValue={[filters[0], filters[1], filters[2]]}
+                        options={filters}
+                        onChange={(selectedObject) =>
+                          toggleLayers(
+                            selectedObject[selectedObject.length - 1]?.id
+                          )
+                        }
+                      />
+                    </th>
+                    <th className="p-2">
+                      <p>Status</p>
+                      <Select
+                        className="mr-2"
+                        closeMenuOnSelect={false}
+                        components={animatedComponents}
+                        defaultValue={[filters[0], filters[1], filters[2]]}
+                        options={filters}
+                        onChange={(selectedObject) =>
+                          toggleLayers(
+                            selectedObject[selectedObject.length - 1]?.id
+                          )
+                        }
+                      />
+                    </th>
+                    <th className="p-2 m-auto">
+                      <p>% EXECUÇÃO</p>
+                      <Select
+                        className="mr-2"
+                        closeMenuOnSelect={false}
+                        components={animatedComponents}
+                        defaultValue={[filters[0], filters[1], filters[2]]}
+                        options={filters}
+                        onChange={(selectedObject) =>
+                          toggleLayers(
+                            selectedObject[selectedObject.length - 1]?.id
+                          )
+                        }
+                      />
+                    </th>
+                  </tr>
+                  <tr className="border-b border-gray-400">
+                    <td className="p-2">
+                      <p>01</p>
+                    </td>
+                    <td className="flex flex-row p-2">
+                      <GreenCircle className="mr-2" />
+                      <p className="">CONCLUÍDO</p>
+                    </td>
+                    <td className="p-2">
+                      <p>100%</p>
+                    </td>
+                  </tr>
+                  <tr className="border-b border-gray-400">
+                    <td className="p-2">
+                      <p>02</p>
+                    </td>
+                    <td className="flex flex-row p-2">
+                      <GreenCircle className="mr-2" />
+                      <p className="">CONCLUÍDO</p>
+                    </td>
+                    <td className="p-2">
+                      <p>100%</p>
+                    </td>
+                  </tr>
+                  <tr className="border-b border-gray-400">
+                    <td className="p-2">
+                      <p>02</p>
+                    </td>
+                    <td className="flex flex-row p-2">
+                      <YellowCircle className="mr-2" />
+                      <p className="">EM EXECUÇÃO</p>
+                    </td>
+                    <td className="p-2">
+                      <p>50%</p>
+                    </td>
+                  </tr>
+                  <tr className="border-b border-gray-400">
+                    <td className="p-2">
+                      <p>02</p>
+                    </td>
+                    <td className="flex flex-row p-2">
+                      <GreyCircle className="mr-2" />
+                      <p className="">A EXECUTAR</p>
+                    </td>
+                    <td className="p-2">
+                      <p>0%</p>
+                    </td>
+                  </tr>
+                </table>
               </SmallInfoContainer>
             </div>
             <div className="flex flex-row mb-3">
