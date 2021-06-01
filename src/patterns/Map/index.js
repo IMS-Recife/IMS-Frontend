@@ -11,6 +11,17 @@ import styled from "styled-components";
 import trees from "../../assets/Geojsons/passeiospublicos_arvores.json";
 import streetPoles from "../../assets/Geojsons/passeiospublicos_postes.json";
 
+const FilterSelect = styled.select`
+  option:hover {
+    background: #00711f;
+  }
+  option:focus {
+    background: #00711f;
+  }
+  option:nth-child(even) {
+    background: #c4c4c4;
+  }
+`;
 const BigInfoContainer = styled.div`
   background: ${(props) => props.theme.colors.primary};
   opacity: 1;
@@ -66,38 +77,53 @@ const Ring2 = styled.div`
 `;
 
 const Map = ({ show }) => {
-  const [filters, setFilters] = useState([
-    // { id: 1, visible: true, description: "Lotes" },
-    // { id: 2, visible: true, description: "Logradouros" },
+  const [calçadas, setCalçadas] = useState(true);
+  // const [lotes, setLotes] = useState(false);
+  // const [logradouros, setLogradouros] = useState(false);
+  const [calçadasAcessiveis, setCalçadasAcessiveis] = useState(false);
+  const [vegetacao, setVegetacao] = useState(true);
+  const [postes, setPostes] = useState(true);
+
+  const filterHandler = (value) => {
+    if (value === "Calçadas") {
+      setCalçadas(true);
+    } else if (value === "Calçadas Acessiveis") {
+      setCalçadasAcessiveis(true);
+    } else if (value === "Vegetação") {
+      setVegetacao(true);
+    } else if (value === "Postes") {
+      setPostes(true);
+    }
+    // else if (value === "Logradouros") {
+    //   setLogradouros(true);
+    // } else if (value === "Lotes") {
+    //   setLotes(true);
+  };
+
+  const filters = [
+    // { id: 1, visible: lotes, description: "Lotes" },
+    // { id: 2, visible: logradouros, description: "Logradouros" },
     {
       id: 1,
-      visible: true,
+      visible: calçadas,
       description: "Calçadas",
-      value: "Calçadas",
-      label: "Calçadas",
     },
     {
       id: 2,
-      visible: true,
+      visible: postes,
       description: "Postes",
-      value: "Postes",
-      label: "Postes",
     },
     {
       id: 3,
-      visible: true,
+      visible: vegetacao,
       description: "Vegetação",
-      value: "Vegetação",
-      label: "Vegetação",
     },
     {
       id: 4,
-      visible: false,
+      visible: calçadasAcessiveis,
       description: "Calçadas Acessíveis",
-      value: "Calçadas Acessíveis",
-      label: "Calçadas Acessíveis",
     },
-  ]);
+  ];
   const animatedComponents = makeAnimated();
 
   const [viewport, setViewport] = useState({
@@ -110,16 +136,6 @@ const Map = ({ show }) => {
 
   const [showSidebar, setShowSidebar] = useState(false);
   const [showProjectSidebar, setShowProjecSidebar] = useState(true);
-
-  const toggleLayers = (id) => {
-    const updatedLayers = filters.map((f) => {
-      if (f.id === id) {
-        return { ...f, visible: !f.visible };
-      }
-      return f;
-    });
-    setFilters(updatedLayers);
-  };
 
   const layers = [
     // new GeoJsonLayer({
@@ -228,30 +244,6 @@ const Map = ({ show }) => {
       visible: filters[3].visible,
     }),
   ];
-  //  {/* <div className="border-b p-4">
-  //             <span className="text-gray-400">Logradouro</span>
-  //             <p className="mt-2 font-black">Rua Siqueira Campos</p>
-  //           </div>
-  //           <div className="border-b p-4">
-  //             <span className="text-gray-400">Lote</span>
-  //             <p className="mt-2 font-black">8</p>
-  //           </div>
-  //           <div className="border-b p-4">
-  //             <span className="text-gray-400">Tipo</span>
-  //             <p className="mt-2 font-black">Rua</p>
-  //           </div>
-  //           <div className="border-b p-4">
-  //             <span className="text-gray-400">Extensão</span>
-  //             <p className="mt-2 font-black">418,57m</p>
-  //           </div>
-  //           <div className="border-b p-4">
-  //             <span className="text-gray-400">Extensão executada</span>
-  //             <p className="mt-2 font-black">0m</p>
-  //           </div>
-  //           <div className="border-b p-4">
-  //             <span className="text-gray-400">Status da Obra</span>
-  //             <p className="mt-2 font-black">A LICITAR</p>
-  //           </div> */}
   return (
     <div
       className="card card-responsive m-0 p-0 border-0"
@@ -323,11 +315,6 @@ const Map = ({ show }) => {
                         components={animatedComponents}
                         defaultValue={[filters[0], filters[1], filters[2]]}
                         options={filters}
-                        onChange={(selectedObject) =>
-                          toggleLayers(
-                            selectedObject[selectedObject.length - 1]?.id
-                          )
-                        }
                       />
                     </th>
                     <th className="p-2">
@@ -338,26 +325,16 @@ const Map = ({ show }) => {
                         components={animatedComponents}
                         defaultValue={[filters[0], filters[1], filters[2]]}
                         options={filters}
-                        onChange={(selectedObject) =>
-                          toggleLayers(
-                            selectedObject[selectedObject.length - 1]?.id
-                          )
-                        }
                       />
                     </th>
                     <th className="p-2 m-auto">
-                      <p>% EXECUÇÃO</p>
+                      <p>% Execução</p>
                       <Select
                         className="mr-2"
                         closeMenuOnSelect={false}
                         components={animatedComponents}
                         defaultValue={[filters[0], filters[1], filters[2]]}
                         options={filters}
-                        onChange={(selectedObject) =>
-                          toggleLayers(
-                            selectedObject[selectedObject.length - 1]?.id
-                          )
-                        }
                       />
                     </th>
                   </tr>
@@ -504,9 +481,9 @@ const Map = ({ show }) => {
       )}
       {!showSidebar && (
         <div
-          className="card card-responsive   p-3"
+          className="card card-responsive p-3"
           style={{
-            width: "210px",
+            maxWidth: "445px",
             position: "absolute",
             top: "30px",
             right: "30px",
@@ -514,18 +491,96 @@ const Map = ({ show }) => {
           }}
         >
           <div className="map-card text-dark">
-            <div className="map-card--title">Camadas:</div>
             <div className="map-card--body">
-              <Select
-                closeMenuOnSelect={false}
-                components={animatedComponents}
-                defaultValue={[filters[0], filters[1], filters[2]]}
-                isMulti
-                options={filters}
-                onChange={(selectedObject) =>
-                  toggleLayers(selectedObject[selectedObject.length - 1]?.id)
-                }
-              />
+              <FilterSelect
+                className="bg-white p-2 border-2 color-primary-dark rounded-md"
+                onChange={(event) => filterHandler(event.target.value)}
+              >
+                <option selected hidden>
+                  Adicionar Filtro
+                </option>
+                {!calçadas && <option>Calçadas</option>}
+                {!calçadasAcessiveis && <option>Calçadas Acessiveis</option>}
+                {!postes && <option>Postes</option>}
+                {!vegetacao && <option>Vegetação</option>}
+                {/* {!lotes && <option>Lotes</option>} */}
+                {/* {!logradouros && <option>Logradouros</option>} */}
+              </FilterSelect>
+              <div className="flex flex-row flex-wrap">
+                {calçadas && (
+                  <div className="border border-primary-dark p-1 mr-2 ml-2 mt-2 m-0 flex flex-column h-100">
+                    <button
+                      type="button"
+                      className="self-end"
+                      onClick={() => setCalçadas(false)}
+                    >
+                      <VscClose />
+                    </button>
+
+                    <p className="font-bold m-0">Calçadas</p>
+                  </div>
+                )}
+                {/* {logradouros && (
+                  <div className="border border-primary-dark p-1 mr-2 ml-2 mt-2 m-0 flex flex-column h-100">
+                    <button
+                      type="button"
+                      className="self-end"
+                      onClick={() => setLogradouros(false)}
+                    >
+                      <VscClose />
+                    </button>
+                    <p className="font-bold m-0">Logradouros</p>
+                  </div>
+                )} */}
+                {/* {lotes && (
+                  <div className="border border-primary-dark p-1 mr-2 ml-2 mt-2 m-0 flex flex-column h-100">
+                    <button
+                      type="button"
+                      className="self-end"
+                      onClick={() => setLotes(false)}
+                    >
+                      <VscClose />
+                    </button>
+                    <p className="font-bold m-0">Lotes</p>
+                  </div>
+                )} */}
+                {calçadasAcessiveis && (
+                  <div className="border border-primary-dark p-1 mr-2 ml-2 mt-2 m-0 flex flex-column h-100">
+                    <button
+                      type="button"
+                      className="self-end"
+                      onClick={() => setCalçadasAcessiveis(false)}
+                    >
+                      <VscClose />
+                    </button>
+                    <p className="font-bold m-0">Calçadas Acessíveis</p>
+                  </div>
+                )}
+                {postes && (
+                  <div className="border border-primary-dark p-1 mr-2 ml-2 mt-2 m-0 flex flex-column h-100">
+                    <button
+                      type="button"
+                      className="self-end"
+                      onClick={() => setPostes(false)}
+                    >
+                      <VscClose />
+                    </button>
+                    <p className="font-bold m-0">Postes</p>
+                  </div>
+                )}
+                {vegetacao && (
+                  <div className="border border-primary-dark p-1 mr-2 ml-2 mt-2 m-0 flex flex-column h-100">
+                    <button
+                      type="button"
+                      className="self-end"
+                      onClick={() => setVegetacao(false)}
+                    >
+                      <VscClose />
+                    </button>
+                    <p className="font-bold m-0">Vegetação</p>
+                  </div>
+                )}
+              </div>
               {/* {filters.map((f) => (
                 <div className="form-check" key={f.id}>
                   <label className="form-check-label" htmlFor={f.id}>
