@@ -98,7 +98,7 @@ const Home = () => {
       </section>
       <section className="container py-8 flex">
         <img src={logoIMS} height="135px" width="135px" alt="logoIMS" />
-        <div className="border border-red-300 ml-5">
+        <div className=" ml-5">
           <h1 className="font-bold text-4xl uppercase mb-4 text-left text-primary-text">
             Sobre o IMS
           </h1>
@@ -135,11 +135,11 @@ const Home = () => {
           </div>
         </div>
       </section>
-      <section className="container border border-red-300">
+      <section className="container">
         <h1 className="font-bold text-4xl uppercase mb-4 text-left text-primary-text">
           Para Quem?
         </h1>
-        <div className="grid grid-cols-3 border border-red-300">
+        <div className="grid grid-cols-3">
           <div className="flex items-center flex-col">
             <img src={politians} alt="Políticos" className="w-32 h-32" />
             <span className="text-lg font-bold mt-2">Poder Executivo</span>
@@ -170,11 +170,11 @@ const Home = () => {
           </div>
         </div>
       </section>
-      <section className="container border border-red-300">
+      <section className="container">
         <h1 className="font-bold text-4xl uppercase mb-4 text-left text-primary-text">
           MACROÁREAS
         </h1>
-        <div className="grid grid-cols-4 border border-red-300 gap-4">
+        <div className="grid grid-cols-4 gap-4">
           <div className="bg-secondary-green h-48 w-64 rounded-xl flex flex-column items-center justify-center">
             <BsFileEarmark color="white" size="7rem" />
             <p className="text-white text-md font-bold mt-2">Planos</p>
@@ -193,18 +193,18 @@ const Home = () => {
           </div>
         </div>
       </section>
-      <section className="container border border-red-300 mt-5">
+      <section className="container mt-5">
         <h1 className="font-bold text-4xl uppercase mb-4 text-left text-primary-text">
           Nossas Redes
         </h1>
-        <div className="grid grid-cols-4 border border-red-300 gap-1 mx-5">
+        <div className="grid grid-cols-4 gap-1 mx-5">
           <FaTwitterSquare className="text-secondary-green" size="8rem" />
           <FaFacebookSquare className="text-secondary-green" size="8rem" />
           <FaYoutubeSquare className="text-secondary-green" size="8rem" />
           <FaGithubSquare className="text-secondary-green" size="8rem" />
         </div>
       </section>
-      <section className="container border border-red-300 bg-primary-gray my-12">
+      <section className="container bg-primary-gray my-12">
         <h1 className="font-bold text-4xl uppercase mb-4 text-left text-primary-text">
           Destaques
         </h1>
@@ -268,7 +268,7 @@ const Home = () => {
             </div>
           </Slider>
         </div>
-        <div className="grid grid-cols-3 border border-red-300 my-8 gap-4 p-8">
+        <div className="grid grid-cols-3 my-8 gap-4 p-8">
           <div>
             <img src="https://via.placeholder.com/420x170" alt="placeholder" />
             <span className="text-sm text-primary-text font-bold">
@@ -304,7 +304,7 @@ const Home = () => {
           </div>
         </div>
       </section>
-      <section className="container border border-red-300 my-12">
+      <section className="container my-12">
         <div className="flex flex-row flex-wrap space-x-5">
           <div className="flex flex-column" style={{ width: "119px" }}>
             <p className="font-semibold">Financiador multilateral</p>
