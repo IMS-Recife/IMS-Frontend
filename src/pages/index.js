@@ -11,10 +11,7 @@ import {
 import { RiMoneyDollarCircleLine, RiVirusFill } from "react-icons/ri";
 import { BsFileEarmark } from "react-icons/bs";
 import Layout from "../components/Layout";
-import politians from "../assets/contentImages/politians.svg";
-import crowd from "../assets/contentImages/crowd.svg";
-import law from "../assets/contentImages/law.svg";
-import mapImage from "../assets/contentImages/mapImage.svg";
+import { politians, crowd, law, mapImage } from "../assets/contentImages";
 import logoIMS from "../assets/logoIMS.svg";
 import {
   ariesLogo,
@@ -22,7 +19,7 @@ import {
   onuLogo,
   portoDigitalLogo,
   ministerioLogo,
-} from "../assets/organizationsLogos/index";
+} from "../assets/organizationsLogos";
 
 const Home = () => {
   const settings = {
@@ -140,12 +137,12 @@ const Home = () => {
       </section>
       <section className="container border border-red-300">
         <h1 className="font-bold text-4xl uppercase mb-4 text-left text-primary-text">
-          Para Quem
+          Para Quem?
         </h1>
         <div className="grid grid-cols-3 border border-red-300">
           <div className="flex items-center flex-col">
             <img src={politians} alt="Políticos" className="w-32 h-32" />
-            <span className="text-lg">Poder Executivo</span>
+            <span className="text-lg font-bold mt-2">Poder Executivo</span>
             <p className="text-base mt-4 text-justify">
               Prefeitos/as, secretariado, gerentes e técnicos terão seus
               trabalhos facilitados pelo IMS ao atualizar ou acessar dados
@@ -155,7 +152,7 @@ const Home = () => {
           </div>
           <div className="flex items-center flex-col ml-4">
             <img src={law} alt="Lei" className="w-32 h-32" />
-            <span className="text-lg">Poder Legislativo</span>
+            <span className="text-lg font-bold mt-2">Poder Legislativo</span>
             <p className="text-base mt-4 text-justify">
               Vereadores e suas equipes poderão utilizar o IMS em seu trabalho
               de supervisão do executivo, por exemplo.
@@ -163,7 +160,7 @@ const Home = () => {
           </div>
           <div className="flex items-center flex-col ml-4">
             <img src={crowd} alt="pessoas" className="w-32 h-32" />
-            <span className="text-lg">Sociedade Civil</span>
+            <span className="text-lg font-bold mt-2">Sociedade Civil</span>
             <p className="text-base mt-4 text-justify">
               Membros da sociedade civil em geral terão à sua disposição uma
               plataforma de controle social e participação na qual será possível
@@ -178,25 +175,25 @@ const Home = () => {
           MACROÁREAS
         </h1>
         <div className="grid grid-cols-4 border border-red-300 gap-4">
-          <div className="bg-secondary-green h-48 w-48 rounded-lg flex flex-column items-center justify-center">
+          <div className="bg-secondary-green h-48 w-64 rounded-xl flex flex-column items-center justify-center">
             <BsFileEarmark color="white" size="7rem" />
             <p className="text-white text-md font-bold mt-2">Planos</p>
           </div>
-          <div className="bg-secondary-green h-48 w-48 rounded-lg flex flex-column items-center justify-center">
+          <div className="bg-secondary-green h-48 w-64 rounded-xl flex flex-column items-center justify-center">
             <FaCity color="white" size="7rem" />
             <p className="text-white text-md font-bold mt-2">Projetos</p>
           </div>
-          <div className="bg-secondary-green h-48 w-48 rounded-lg flex flex-column items-center justify-center">
+          <div className="bg-secondary-green h-48 w-64 rounded-xl flex flex-column items-center justify-center">
             <RiMoneyDollarCircleLine color="white" size="7rem" />
             <p className="text-white text-md font-bold mt-2">Economia</p>
           </div>
-          <div className="bg-secondary-green h-48 w-48 rounded-lg flex flex-column items-center justify-center">
+          <div className="bg-secondary-green h-48 w-64 rounded-xl flex flex-column items-center justify-center">
             <RiVirusFill color="white" size="7rem" />
             <p className="text-white text-md font-bold mt-2">Covid-19</p>
           </div>
         </div>
       </section>
-      <section className="container border border-red-300">
+      <section className="container border border-red-300 mt-5">
         <h1 className="font-bold text-4xl uppercase mb-4 text-left text-primary-text">
           Nossas Redes
         </h1>
@@ -218,8 +215,10 @@ const Home = () => {
                 src="https://via.placeholder.com/1300x450"
                 alt="placeholder"
               />
-              <span>00 mês, 2021</span>
-              <p>
+              <span className="text-sm text-primary-text font-bold">
+                00 mês, 2021
+              </span>
+              <p className="font-bold mt-2">
                 Slap the dog because cats rule mice yet dead stare with ears
                 cocked walk on car leaving trail of paw prints on hood and
                 windshield.
@@ -230,8 +229,10 @@ const Home = () => {
                 src="https://via.placeholder.com/1300x450"
                 alt="placeholder"
               />
-              <span>00 mês, 2021</span>
-              <p>
+              <span className="text-sm text-primary-text font-bold">
+                00 mês, 2021
+              </span>
+              <p className="font-bold mt-2">
                 Slap the dog because cats rule mice yet dead stare with ears
                 cocked walk on car leaving trail of paw prints on hood and
                 windshield.
@@ -242,8 +243,10 @@ const Home = () => {
                 src="https://via.placeholder.com/1300x450"
                 alt="placeholder"
               />
-              <span>00 mês, 2021</span>
-              <p>
+              <span className="text-sm text-primary-text font-bold">
+                00 mês, 2021
+              </span>
+              <p className="font-bold mt-2">
                 Slap the dog because cats rule mice yet dead stare with ears
                 cocked walk on car leaving trail of paw prints on hood and
                 windshield.
@@ -254,8 +257,10 @@ const Home = () => {
                 src="https://via.placeholder.com/1300x450"
                 alt="placeholder"
               />
-              <span>00 mês, 2021</span>
-              <p>
+              <span className="text-sm text-primary-text font-bold">
+                00 mês, 2021
+              </span>
+              <p className="font-bold mt-2">
                 Slap the dog because cats rule mice yet dead stare with ears
                 cocked walk on car leaving trail of paw prints on hood and
                 windshield.
@@ -266,8 +271,10 @@ const Home = () => {
         <div className="grid grid-cols-3 border border-red-300 my-8 gap-4 p-8">
           <div>
             <img src="https://via.placeholder.com/420x170" alt="placeholder" />
-            <span>00 mês, 2021</span>
-            <p>
+            <span className="text-sm text-primary-text font-bold">
+              00 mês, 2021
+            </span>
+            <p className="font-bold mt-2">
               Slap the dog because cats rule mice yet dead stare with ears
               cocked walk on car leaving trail of paw prints on hood and
               windshield.
@@ -275,8 +282,10 @@ const Home = () => {
           </div>
           <div>
             <img src="https://via.placeholder.com/420x170" alt="placeholder" />
-            <span>00 mês, 2021</span>
-            <p>
+            <span className="text-sm text-primary-text font-bold">
+              00 mês, 2021
+            </span>
+            <p className="font-bold mt-2">
               Slap the dog because cats rule mice yet dead stare with ears
               cocked walk on car leaving trail of paw prints on hood and
               windshield.
@@ -284,8 +293,10 @@ const Home = () => {
           </div>
           <div>
             <img src="https://via.placeholder.com/420x170" alt="placeholder" />
-            <span>00 mês, 2021</span>
-            <p>
+            <span className="text-sm text-primary-text font-bold">
+              00 mês, 2021
+            </span>
+            <p className="font-bold mt-2">
               Slap the dog because cats rule mice yet dead stare with ears
               cocked walk on car leaving trail of paw prints on hood and
               windshield.
@@ -294,15 +305,34 @@ const Home = () => {
         </div>
       </section>
       <section className="container border border-red-300 my-12">
-        <div className="flex flex-row flex-wrap space-x-5 space-y-5">
-          <img src={gefLogo} alt="gef" />
-          <img src={onuLogo} alt="ONU" />
-          <img
-            src={ministerioLogo}
-            alt="Ministério da Ciência, Tecnologia e Inovações"
-          />
-          <img src={ariesLogo} alt="Aries" />
-          <img src={portoDigitalLogo} alt="Porto Digital" />
+        <div className="flex flex-row flex-wrap space-x-5">
+          <div className="flex flex-column" style={{ width: "119px" }}>
+            <p className="font-semibold">Financiador multilateral</p>
+            <img src={gefLogo} alt="gef" height="119px" width="112px" />
+          </div>
+          <div className="flex flex-column">
+            <p className="font-semibold">Agência implementadora</p>
+            <img src={onuLogo} alt="ONU" height="119px" width="207px" />
+          </div>
+          <div>
+            <p className="font-semibold">Agência executora</p>
+            <img
+              src={ministerioLogo}
+              alt="Ministério da Ciência, Tecnologia e Inovações"
+            />
+          </div>
+          <div>
+            <p className="font-semibold">Parceiros coexecutores em Recife</p>
+            <div className="flex flex-row flex-nowrap">
+              <img src={ariesLogo} alt="Aries" height="118px" width="262px" />
+              <img
+                src={portoDigitalLogo}
+                alt="Porto Digital"
+                height="118px"
+                width="312px"
+              />
+            </div>
+          </div>
         </div>
       </section>
     </Layout>
