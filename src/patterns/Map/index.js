@@ -172,7 +172,7 @@ const Map = ({ show }) => {
     new GeoJsonLayer({
       id: "Calçadas",
       data:
-        "https://raw.githubusercontent.com/Filipegbessaa/IMS-Frontend/map_enh/src/assets/Geojsons/passeiospublicos_calcadas.json",
+        "https://raw.githubusercontent.com/Filipegbessaa/IMS-Frontend/dev/src/assets/Geojsons/passeiospublicos_calcadas.json",
       opacity: 0.8,
       lineWidthScale: 0.03,
       stroked: true,
@@ -227,7 +227,7 @@ const Map = ({ show }) => {
     new GeoJsonLayer({
       id: "Calçadas Acessíveis",
       data:
-        "https://raw.githubusercontent.com/Filipegbessaa/IMS-Frontend/map_enh/src/assets/Geojsons/calcadas_acessiveis.json",
+        "https://raw.githubusercontent.com/Filipegbessaa/IMS-Frontend/dev/src/assets/Geojsons/calcadas_acessiveis.json",
       opacity: 0.8,
       lineWidthScale: 0.3,
       stroked: true,
