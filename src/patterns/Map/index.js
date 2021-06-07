@@ -250,163 +250,174 @@ const Map = ({ show }) => {
       style={show ? { minHeight: "100vh" } : { display: "none" }}
     >
       {showProjectSidebar && !showSidebar && (
-        <div className="w-3/5 h-full bg-white opacity-95 z-10 text-black border-r flex-grow">
-          <BigInfoContainer className="float-right mt-5 w-11/12">
-            <h1 className="ml-5 pt-3">Calçada Legal</h1>
-            <div className="flex flex-row ml-5">
-              <YellowCircle className="mr-2 mt-1" />
-              <h4 className="">EM EXECUÇÃO</h4>
-            </div>
-            <p className="ml-5 w-4/5">
-              O Projeto Calçada Legal prevê a requalificação dos passeios
-              públicos dos principais corredores viários da cidade. Tem como
-              objetivo garantir o conforto, a segurança do pedestre ao caminhar
-              e a conectividade com a rede de transporte público. Mais de 100
-              ruas são contempladas com financiamento do PAC Pavimentação e
-              recursos próprios da Prefeitura.
-            </p>
-            <div className="ml-5 flex flex-row">
-              <p
-                style={{ fontSize: "16px" }}
-                className="border border-black mr-2 font-bold p-3"
-              >
-                Acessibilidade
+        <div className="flex w-4/5">
+          <div className="w-3/5 h-full bg-white opacity-95 z-10 text-black border-r flex-grow">
+            <BigInfoContainer className="float-right mt-5 w-11/12">
+              <h1 className="ml-5 pt-3">Calçada Legal</h1>
+              <div className="flex flex-row ml-5">
+                <YellowCircle className="mr-2 mt-1" />
+                <h4 className="">EM EXECUÇÃO</h4>
+              </div>
+              <p className="ml-5 w-4/5">
+                O Projeto Calçada Legal prevê a requalificação dos passeios
+                públicos dos principais corredores viários da cidade. Tem como
+                objetivo garantir o conforto, a segurança do pedestre ao
+                caminhar e a conectividade com a rede de transporte público.
+                Mais de 100 ruas são contempladas com financiamento do PAC
+                Pavimentação e recursos próprios da Prefeitura.
               </p>
-              <p
-                style={{ fontSize: "16px" }}
-                className="border border-black font-bold p-3"
-              >
-                Meio Ambiente
-              </p>
-            </div>
-            <div className="flex flex-row">
-              <SmallInfoContainer className="rounded-xl ml-3 p-3">
-                <div className="flex flex-row flex-wrap justify-center">
-                  <h1>Indicadores Totais</h1>
-                  <h4>Última atualização: 27/04/2021</h4>
-                </div>
-                <div className="grid grid-cols-2">
-                  <div>
-                    <Ring>
-                      <Ring2 className="flex justify-center items-center">
-                        <h1 className="justify-center">100%</h1>
-                      </Ring2>
-                    </Ring>
-                    <h5 className="flex justify-center">Total executado</h5>
+              <div className="ml-5 flex flex-row">
+                <p
+                  style={{ fontSize: "16px" }}
+                  className="border border-black mr-2 font-bold p-3"
+                >
+                  Acessibilidade
+                </p>
+                <p
+                  style={{ fontSize: "16px" }}
+                  className="border border-black font-bold p-3"
+                >
+                  Meio Ambiente
+                </p>
+              </div>
+              <div className="flex flex-row">
+                <SmallInfoContainer className="rounded-xl ml-3 p-3">
+                  <div className="flex flex-row flex-wrap justify-center">
+                    <h1>Indicadores Totais</h1>
+                    <h4>Última atualização: 27/04/2021</h4>
                   </div>
+                  <div className="grid grid-cols-2">
+                    <div>
+                      <Ring>
+                        <Ring2 className="flex justify-center items-center">
+                          <h1 className="justify-center">100%</h1>
+                        </Ring2>
+                      </Ring>
+                      <h5 className="flex justify-center">Total executado</h5>
+                    </div>
+                    <div className="mt-5">
+                      <h6>Data de início: DD/MM/AAAA</h6>
+                      <h6>Data de fim: DD/MM/AAAA</h6>
+                      <h6>Duração:</h6>
+                      <h6>Valor total licitado: R$</h6>
+                      <h6>Valor total pago: R$</h6>
+                    </div>
+                  </div>
+                </SmallInfoContainer>
+                <SmallInfoContainer className="rounded-xl mt-3 ml-3 mr-3 p-3">
+                  <h1 className="flex justify-center">Lotes do Projeto</h1>
+                  <table className="m-auto">
+                    <tr className="bg-primary-dark shadow p-3">
+                      <th className="p-2">
+                        <p>Número</p>
+                        <Select
+                          className="mr-2"
+                          closeMenuOnSelect={false}
+                          components={animatedComponents}
+                          defaultValue={[filters[0], filters[1], filters[2]]}
+                          options={filters}
+                        />
+                      </th>
+                      <th className="p-2">
+                        <p>Status</p>
+                        <Select
+                          className="mr-2"
+                          closeMenuOnSelect={false}
+                          components={animatedComponents}
+                          defaultValue={[filters[0], filters[1], filters[2]]}
+                          options={filters}
+                        />
+                      </th>
+                      <th className="p-2 m-auto">
+                        <p>% Execução</p>
+                        <Select
+                          className="mr-2"
+                          closeMenuOnSelect={false}
+                          components={animatedComponents}
+                          defaultValue={[filters[0], filters[1], filters[2]]}
+                          options={filters}
+                        />
+                      </th>
+                    </tr>
+                    <tr className="border-b border-gray-400">
+                      <td className="p-2">
+                        <p>01</p>
+                      </td>
+                      <td className="flex flex-row p-2">
+                        <GreenCircle className="mr-2" />
+                        <p className="">CONCLUÍDO</p>
+                      </td>
+                      <td className="p-2">
+                        <p>100%</p>
+                      </td>
+                    </tr>
+                    <tr className="border-b border-gray-400">
+                      <td className="p-2">
+                        <p>02</p>
+                      </td>
+                      <td className="flex flex-row p-2">
+                        <GreenCircle className="mr-2" />
+                        <p className="">CONCLUÍDO</p>
+                      </td>
+                      <td className="p-2">
+                        <p>100%</p>
+                      </td>
+                    </tr>
+                    <tr className="border-b border-gray-400">
+                      <td className="p-2">
+                        <p>02</p>
+                      </td>
+                      <td className="flex flex-row p-2">
+                        <YellowCircle className="mr-2" />
+                        <p className="">EM EXECUÇÃO</p>
+                      </td>
+                      <td className="p-2">
+                        <p>50%</p>
+                      </td>
+                    </tr>
+                    <tr className="border-b border-gray-400">
+                      <td className="p-2">
+                        <p>02</p>
+                      </td>
+                      <td className="flex flex-row p-2">
+                        <GreyCircle className="mr-2" />
+                        <p className="">A EXECUTAR</p>
+                      </td>
+                      <td className="p-2">
+                        <p>0%</p>
+                      </td>
+                    </tr>
+                  </table>
+                </SmallInfoContainer>
+              </div>
+              <div className="flex flex-row mb-3">
+                <SmallInfoContainer className="rounded-xl mt-3 mr-3 ml-3 p-3">
+                  <h1 className="flex justify-center">
+                    Indicadores do Projeto
+                  </h1>
+                  <h4>Área total de calçada projetada:_____m²</h4>
+                  <h4>Quantidade total de árvores:_____</h4>
+                </SmallInfoContainer>
+                <SmallInfoContainer className="rounded-xl mt-3 mr-3 ml-3 p-3">
+                  <h1 className="flex justify-center">Arquivos do Projeto</h1>
                   <div className="mt-5">
-                    <h6>Data de início: DD/MM/AAAA</h6>
-                    <h6>Data de fim: DD/MM/AAAA</h6>
-                    <h6>Duração:</h6>
-                    <h6>Valor total licitado: R$</h6>
-                    <h6>Valor total pago: R$</h6>
+                    <h5 className="ml-4">PRESTAÇÃO DE CONTAS LOTE 2</h5>
+                    <hr />
+                    <h5 className="ml-4">PRESTAÇÃO DE CONTAS LOTE 2</h5>
+                    <hr />
+                    <h5 className="ml-4">PRESTAÇÃO DE CONTAS LOTE 2</h5>
                   </div>
-                </div>
-              </SmallInfoContainer>
-              <SmallInfoContainer className="rounded-xl mt-3 ml-3 mr-3 p-3">
-                <h1 className="flex justify-center">Lotes do Projeto</h1>
-                <table className="m-auto">
-                  <tr className="bg-primary-dark shadow p-3">
-                    <th className="p-2">
-                      <p>Número</p>
-                      <Select
-                        className="mr-2"
-                        closeMenuOnSelect={false}
-                        components={animatedComponents}
-                        defaultValue={[filters[0], filters[1], filters[2]]}
-                        options={filters}
-                      />
-                    </th>
-                    <th className="p-2">
-                      <p>Status</p>
-                      <Select
-                        className="mr-2"
-                        closeMenuOnSelect={false}
-                        components={animatedComponents}
-                        defaultValue={[filters[0], filters[1], filters[2]]}
-                        options={filters}
-                      />
-                    </th>
-                    <th className="p-2 m-auto">
-                      <p>% Execução</p>
-                      <Select
-                        className="mr-2"
-                        closeMenuOnSelect={false}
-                        components={animatedComponents}
-                        defaultValue={[filters[0], filters[1], filters[2]]}
-                        options={filters}
-                      />
-                    </th>
-                  </tr>
-                  <tr className="border-b border-gray-400">
-                    <td className="p-2">
-                      <p>01</p>
-                    </td>
-                    <td className="flex flex-row p-2">
-                      <GreenCircle className="mr-2" />
-                      <p className="">CONCLUÍDO</p>
-                    </td>
-                    <td className="p-2">
-                      <p>100%</p>
-                    </td>
-                  </tr>
-                  <tr className="border-b border-gray-400">
-                    <td className="p-2">
-                      <p>02</p>
-                    </td>
-                    <td className="flex flex-row p-2">
-                      <GreenCircle className="mr-2" />
-                      <p className="">CONCLUÍDO</p>
-                    </td>
-                    <td className="p-2">
-                      <p>100%</p>
-                    </td>
-                  </tr>
-                  <tr className="border-b border-gray-400">
-                    <td className="p-2">
-                      <p>02</p>
-                    </td>
-                    <td className="flex flex-row p-2">
-                      <YellowCircle className="mr-2" />
-                      <p className="">EM EXECUÇÃO</p>
-                    </td>
-                    <td className="p-2">
-                      <p>50%</p>
-                    </td>
-                  </tr>
-                  <tr className="border-b border-gray-400">
-                    <td className="p-2">
-                      <p>02</p>
-                    </td>
-                    <td className="flex flex-row p-2">
-                      <GreyCircle className="mr-2" />
-                      <p className="">A EXECUTAR</p>
-                    </td>
-                    <td className="p-2">
-                      <p>0%</p>
-                    </td>
-                  </tr>
-                </table>
-              </SmallInfoContainer>
-            </div>
-            <div className="flex flex-row mb-3">
-              <SmallInfoContainer className="rounded-xl mt-3 mr-3 ml-3 p-3">
-                <h1 className="flex justify-center">Indicadores do Projeto</h1>
-                <h4>Área total de calçada projetada:_____m²</h4>
-                <h4>Quantidade total de árvores:_____</h4>
-              </SmallInfoContainer>
-              <SmallInfoContainer className="rounded-xl mt-3 mr-3 ml-3 p-3">
-                <h1 className="flex justify-center">Arquivos do Projeto</h1>
-                <div className="mt-5">
-                  <h5 className="ml-4">PRESTAÇÃO DE CONTAS LOTE 2</h5>
-                  <hr />
-                  <h5 className="ml-4">PRESTAÇÃO DE CONTAS LOTE 2</h5>
-                  <hr />
-                  <h5 className="ml-4">PRESTAÇÃO DE CONTAS LOTE 2</h5>
-                </div>
-              </SmallInfoContainer>
-            </div>
-          </BigInfoContainer>
+                </SmallInfoContainer>
+              </div>
+            </BigInfoContainer>
+          </div>
+          <button
+            type="button"
+            className="bg-secondary-green py-3 px-5 z-20 text-white rounded-3xl font-semibold self-end mb-5 ml-5 sticky bottom-10"
+            onClick={() => setShowProjecSidebar(false)}
+          >
+            VER MAPA DO PROJETO
+          </button>
         </div>
       )}
       {showSidebar && (
