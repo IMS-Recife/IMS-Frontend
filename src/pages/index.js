@@ -51,25 +51,25 @@ const Home = () => {
           </div>
           <div className="flex items-stretch justify-between mt-auto mb-2">
             <a
-              href=" #"
+              href="#sobre"
               className="font-medium font-bold uppercase text-gray-500 hover:text-gray-900 hover:no-underline"
             >
               Sobre o IMS
             </a>
             <a
-              href=" #"
+              href="#destaques"
               className="font-medium font-bold uppercase text-gray-500 hover:text-gray-900 hover:no-underline"
             >
               Destaques
             </a>
             <a
-              href=" #"
+              href="#contato"
               className="font-medium font-bold uppercase text-gray-500 hover:text-gray-900 hover:no-underline"
             >
               Contato
             </a>
             <a
-              href=" #"
+              href="#parceiros"
               className="font-medium font-bold uppercase text-gray-500 hover:text-gray-900 hover:no-underline"
             >
               Parceiros
@@ -99,7 +99,10 @@ const Home = () => {
       <section className="container py-8 flex">
         <img src={logoIMS} height="135px" width="135px" alt="logoIMS" />
         <div className=" ml-5">
-          <h1 className="font-bold text-4xl uppercase mb-4 text-left text-primary-text">
+          <h1
+            id="sobre"
+            className="font-bold text-4xl uppercase mb-4 text-left text-primary-text"
+          >
             Sobre o IMS
           </h1>
           <div className="flex flex-col">
@@ -193,7 +196,7 @@ const Home = () => {
           </div>
         </div>
       </section>
-      <section className="container mt-5">
+      <section id="contato" className="container mt-5">
         <h1 className="font-bold text-4xl uppercase mb-4 text-left text-primary-text">
           Nossas Redes
         </h1>
@@ -205,7 +208,10 @@ const Home = () => {
         </div>
       </section>
       <section className="container bg-primary-gray my-12">
-        <h1 className="font-bold text-4xl uppercase mb-4 text-left text-primary-text">
+        <h1
+          id="destaques"
+          className="font-bold text-4xl uppercase mb-4 text-left text-primary-text"
+        >
           Destaques
         </h1>
         <div className="border-b border-black p-8">
@@ -304,7 +310,7 @@ const Home = () => {
           </div>
         </div>
       </section>
-      <section className="container my-12">
+      <section id="parceiros" className="container my-12">
         <div className="flex flex-row flex-wrap space-x-20">
           <div className="flex flex-column">
             <p className="font-semibold">Financiador multilateral</p>
