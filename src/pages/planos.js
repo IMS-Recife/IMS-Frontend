@@ -1,7 +1,6 @@
 import { injectIntl } from "react-intl";
 import React from "react";
 import styled from "styled-components";
-import Image from "next/image";
 import Layout from "../components/Layout";
 
 export const Container = styled.div`
