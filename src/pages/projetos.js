@@ -2,6 +2,7 @@
 import React from "react";
 import Select from "react-select";
 import styled from "styled-components";
+import Link from "next/link";
 import Layout from "../components/Layout";
 
 const SearchButton = styled.button`
@@ -83,7 +84,9 @@ const Projects = () => (
             </tr>
             <tr className="border-b border-gray-400">
               <td className="p-4 pt-5">
-                <p>Calçada Legal</p>
+                <Link href="/calcadalegal">
+                  <p className="cursor-pointer">Calçada Legal</p>
+                </Link>
               </td>
               <td className="flex flex-row p-4 pt-5">
                 <YellowCircle className="mr-2" />

@@ -77,43 +77,49 @@ const Sidebar = () => {
               />
             }
           />
-          <StyledMenuItem
-            className="mt-2"
-            icon={
-              <VscHome
-                style={{ color: "#fff" }}
-                size="1.9rem"
-                title={intl.formatMessage({ id: "HOME" })}
-              />
-            }
-          >
-            <FormattedMessage id="HOME" />
-          </StyledMenuItem>
-          <StyledMenuItem
-            className="mt-2"
-            icon={
-              <BsFileEarmark
-                style={{ color: "#fff" }}
-                size="1.7rem"
-                title={intl.formatMessage({ id: "PLANS" })}
-              />
-            }
-          >
-            <FormattedMessage id="PLANS" />
-          </StyledMenuItem>
-          <StyledMenuItem
-            title={intl.formatMessage({ id: "PROJECTS" })}
-            className="mt-2"
-            icon={
-              <FaCity
-                size="1.5rem"
-                title={intl.formatMessage({ id: "PROJECTS" })}
-              />
-            }
-          >
-            <FormattedMessage id="PROJECTS" />
-          </StyledMenuItem>
-          <Link href="/economy">
+          <Link href="/">
+            <StyledMenuItem
+              className="mt-2"
+              icon={
+                <VscHome
+                  style={{ color: "#fff" }}
+                  size="1.9rem"
+                  title={intl.formatMessage({ id: "HOME" })}
+                />
+              }
+            >
+              <FormattedMessage id="HOME" />
+            </StyledMenuItem>
+          </Link>
+          <Link href="/planos">
+            <StyledMenuItem
+              className="mt-2"
+              icon={
+                <BsFileEarmark
+                  style={{ color: "#fff" }}
+                  size="1.7rem"
+                  title={intl.formatMessage({ id: "PLANS" })}
+                />
+              }
+            >
+              <FormattedMessage id="PLANS" />
+            </StyledMenuItem>
+          </Link>
+          <Link href="/projetos">
+            <StyledMenuItem
+              title={intl.formatMessage({ id: "PROJECTS" })}
+              className="mt-2"
+              icon={
+                <FaCity
+                  size="1.5rem"
+                  title={intl.formatMessage({ id: "PROJECTS" })}
+                />
+              }
+            >
+              <FormattedMessage id="PROJECTS" />
+            </StyledMenuItem>
+          </Link>
+          <Link href="/economia">
             <StyledMenuItem
               className="mt-2"
               icon={
