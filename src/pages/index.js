@@ -33,7 +33,7 @@ const Home = () => {
   };
   return (
     <Layout>
-      <div className="h-48 grid grid-cols-2 border-b border-gray-100 shadow-xl">
+      <div className="h-48 grid grid-cols-2 border-b border-gray-100 shadow-xl sticky top-0 z-20 bg-white">
         <div className="w-full ml-2 flex items-start justify-content-center flex-col">
           <h1 className="font-bold text-secondary-green">
             Integrated Management System - IMS
@@ -96,13 +96,14 @@ const Home = () => {
           </button>
         </div>
       </section>
-      <section className="container py-8 flex">
+      <section
+        id="sobre"
+        className="container py-8 flex"
+        style={{ scrollMarginTop: "14rem" }}
+      >
         <img src={logoIMS} height="135px" width="135px" alt="logoIMS" />
         <div className=" ml-5">
-          <h1
-            id="sobre"
-            className="font-bold text-4xl uppercase mb-4 text-left text-primary-text"
-          >
+          <h1 className="font-bold text-4xl uppercase mb-4 text-left text-primary-text">
             Sobre o IMS
           </h1>
           <div className="flex flex-col">
@@ -196,7 +197,11 @@ const Home = () => {
           </div>
         </div>
       </section>
-      <section id="contato" className="container mt-5">
+      <section
+        id="contato"
+        className="container mt-5"
+        style={{ scrollMarginTop: "14rem" }}
+      >
         <h1 className="font-bold text-4xl uppercase mb-4 text-left text-primary-text">
           Nossas Redes
         </h1>
@@ -207,11 +212,12 @@ const Home = () => {
           <FaGithubSquare className="text-secondary-green" size="8rem" />
         </div>
       </section>
-      <section className="container bg-primary-gray my-12">
-        <h1
-          id="destaques"
-          className="font-bold text-4xl uppercase mb-4 text-left text-primary-text"
-        >
+      <section
+        id="destaques"
+        className="container bg-primary-gray my-12"
+        style={{ scrollMarginTop: "14rem" }}
+      >
+        <h1 className="font-bold text-4xl uppercase mb-4 text-left text-primary-text">
           Destaques
         </h1>
         <div className="border-b border-black p-8">
@@ -310,7 +316,11 @@ const Home = () => {
           </div>
         </div>
       </section>
-      <section id="parceiros" className="container my-12">
+      <section
+        id="parceiros"
+        className="container my-12"
+        style={{ scrollMarginTop: "14rem" }}
+      >
         <div className="flex flex-row flex-wrap space-x-20">
           <div className="flex flex-column">
             <p className="font-semibold">Financiador multilateral</p>
