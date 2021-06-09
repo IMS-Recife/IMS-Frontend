@@ -305,31 +305,33 @@ const Home = () => {
         </div>
       </section>
       <section className="container my-12">
-        <div className="flex flex-row flex-wrap space-x-5">
-          <div className="flex flex-column" style={{ width: "119px" }}>
+        <div className="flex flex-row flex-wrap space-x-20">
+          <div className="flex flex-column">
             <p className="font-semibold">Financiador multilateral</p>
-            <img src={gefLogo} alt="gef" height="119px" width="112px" />
+            <img src={gefLogo} alt="gef" height="80px" width="94px" />
           </div>
           <div className="flex flex-column">
             <p className="font-semibold">Agência implementadora</p>
-            <img src={onuLogo} alt="ONU" height="119px" width="207px" />
+            <img src={onuLogo} alt="ONU" height="80px" width="140px" />
           </div>
           <div>
             <p className="font-semibold">Agência executora</p>
             <img
               src={ministerioLogo}
               alt="Ministério da Ciência, Tecnologia e Inovações"
+              height="100px"
+              width="491px"
             />
           </div>
           <div>
             <p className="font-semibold">Parceiros coexecutores em Recife</p>
             <div className="flex flex-row flex-nowrap">
-              <img src={ariesLogo} alt="Aries" height="118px" width="262px" />
+              <img src={ariesLogo} alt="Aries" height="80px" width="177px" />
               <img
                 src={portoDigitalLogo}
                 alt="Porto Digital"
-                height="118px"
-                width="312px"
+                height="80px"
+                width="212px"
               />
             </div>
           </div>

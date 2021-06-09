@@ -3,7 +3,6 @@ import React, { useState } from "react";
 import { StaticMap } from "react-map-gl";
 import { GeoJsonLayer, ScatterplotLayer } from "@deck.gl/layers";
 import { DeckGL } from "deck.gl";
-import PropTypes from "prop-types";
 import { VscClose } from "react-icons/vsc";
 import Select from "react-select";
 import makeAnimated from "react-select/animated";
@@ -22,12 +21,9 @@ const FilterSelect = styled.select`
     background: #c4c4c4;
   }
 `;
-const BigInfoContainer = styled.div`
-  background: ${(props) => props.theme.colors.primary};
-  opacity: 1;
-`;
+
 const SmallInfoContainer = styled.div`
-  background: ${(props) => props.theme.colors.primaryDark};
+  background: ${(props) => props.theme.colors.primaryDarkGray};
   width: 450px;
   height: 100%;
 `;
@@ -70,13 +66,13 @@ const Ring2 = styled.div`
   width: 80%;
   height: 80%;
   border-radius: 50%;
-  background-color: ${(props) => props.theme.colors.primaryDark};
+  background-color: ${(props) => props.theme.colors.primaryDarkGray};
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
 `;
 
-const Map = ({ show }) => {
+const Map = () => {
   const [calçadas, setCalçadas] = useState(true);
   // const [lotes, setLotes] = useState(false);
   // const [logradouros, setLogradouros] = useState(false);
@@ -247,12 +243,12 @@ const Map = ({ show }) => {
   return (
     <div
       className="card card-responsive m-0 p-0 border-0"
-      style={show ? { minHeight: "100vh" } : { display: "none" }}
+      style={{ minHeight: "100vh" }}
     >
       {showProjectSidebar && !showSidebar && (
         <div className="flex w-4/5">
           <div className="w-3/5 h-full bg-white opacity-95 z-10 text-black border-r flex-grow">
-            <BigInfoContainer className="float-right mt-5 w-11/12">
+            <aside className="float-right mt-5 w-11/12 bg-primary-gray">
               <h1 className="ml-5 pt-3">Calçada Legal</h1>
               <div className="flex flex-row ml-5">
                 <YellowCircle className="mr-2 mt-1" />
@@ -281,7 +277,7 @@ const Map = ({ show }) => {
                 </p>
               </div>
               <div className="flex flex-row">
-                <SmallInfoContainer className="rounded-xl ml-3 p-3">
+                <SmallInfoContainer className="rounded-xl ml-3 p-3 primary-gray-darker">
                   <div className="flex flex-row flex-wrap justify-center">
                     <h1>Indicadores Totais</h1>
                     <h4>Última atualização: 27/04/2021</h4>
@@ -307,7 +303,7 @@ const Map = ({ show }) => {
                 <SmallInfoContainer className="rounded-xl mt-3 ml-3 mr-3 p-3">
                   <h1 className="flex justify-center">Lotes do Projeto</h1>
                   <table className="m-auto">
-                    <tr className="bg-primary-dark shadow p-3">
+                    <tr className="bg-primary-gray-dark shadow p-3">
                       <th className="p-2">
                         <p>Número</p>
                         <Select
@@ -409,11 +405,11 @@ const Map = ({ show }) => {
                   </div>
                 </SmallInfoContainer>
               </div>
-            </BigInfoContainer>
+            </aside>
           </div>
           <button
             type="button"
-            className="bg-secondary-green py-3 px-5 z-20 text-white rounded-3xl font-semibold self-end mb-5 ml-5 sticky bottom-10"
+            className="bg-secondary-green hover:bg-secondary-green-darker py-3 px-5 z-20 text-white rounded-3xl font-semibold self-end mb-5 ml-5 sticky bottom-10"
             onClick={() => setShowProjecSidebar(false)}
           >
             VER MAPA DO PROJETO
@@ -429,7 +425,7 @@ const Map = ({ show }) => {
           >
             <VscClose color="#00711F" size="1.5rem" />
           </button>
-          <BigInfoContainer className="float-right mt-5 w-4/5">
+          <div className="float-right mt-5 w-4/5">
             <h1 className="ml-5 pt-3">Calçada Legal | Lote 1</h1>
             <div className="flex flex-row ml-5">
               <GreenCircle className="mr-2 mt-1" />
@@ -487,7 +483,7 @@ const Map = ({ show }) => {
                 <h5 className="ml-4">PRESTAÇÃO DE CONTAS LOTE 2</h5>
               </div>
             </SmallInfoContainer>
-          </BigInfoContainer>
+          </div>
         </div>
       )}
       {!showSidebar && (
@@ -627,7 +623,3 @@ const Map = ({ show }) => {
 };
 
 export default injectIntl(Map);
-
-Map.propTypes = {
-  show: PropTypes.bool.isRequired,
-};
