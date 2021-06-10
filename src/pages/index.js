@@ -207,10 +207,10 @@ const Home = () => {
           Nossas Redes
         </h1>
         <div className="flex flex-row justify-center space-x-20">
-          <img src={twitterIcon} alt="twitter" />
-          <img src={facebookIcon} alt="facebook" />
-          <img src={youtubeIcon} alt="youtube" />
-          <img src={githubIcon} alt="github" />
+          <img src={twitterIcon} alt="twitter" width="110px" />
+          <img src={facebookIcon} alt="facebook" width="110px" />
+          <img src={youtubeIcon} alt="youtube" width="155px" />
+          <img src={githubIcon} alt="github" width="110px" />
         </div>
       </section>
       <section
