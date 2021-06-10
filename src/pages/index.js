@@ -1,9 +1,6 @@
 import { injectIntl } from "react-intl";
 import React from "react";
 import Slider from "react-slick";
-import { FaCity } from "react-icons/fa";
-import { RiMoneyDollarCircleLine, RiVirusFill } from "react-icons/ri";
-import { BsFileEarmark } from "react-icons/bs";
 import Layout from "../components/Layout";
 import { politians, crowd, law, mapImage } from "../assets/contentImages";
 import logoIMS from "../assets/logoIMS.svg";
@@ -14,6 +11,13 @@ import {
   portoDigitalLogo,
   ministerioLogo,
 } from "../assets/organizationsLogos";
+
+import {
+  plansIcon,
+  covidIcon,
+  projectsIcon,
+  economyIcon,
+} from "../assets/macroareasIcons";
 
 import {
   twitterIcon,
@@ -44,7 +48,7 @@ const Home = () => {
           </span>
         </div>
         <div className="mr-4 flex flex-column">
-          <div className="flex ml-auto mt-12 w-75">
+          <div className="flex ml-auto mt-12 w-75 mr-3">
             <input
               className="border-gray-500 border rounded-3xl w-full p-2.5 text-primary outline-none text-sm transition duration-150 ease-in-out mb-4"
               placeholder="Buscar"
@@ -56,7 +60,7 @@ const Home = () => {
               Pesquisar
             </button>
           </div>
-          <div className="flex items-stretch justify-between mt-auto mb-2">
+          <div className="flex items-stretch justify-between mt-auto mb-2 mr-5">
             <a
               href="#sobre"
               className="font-medium font-bold uppercase text-gray-500 hover:text-gray-900 hover:no-underline"
@@ -193,25 +197,25 @@ const Home = () => {
         </h1>
         <div className="grid grid-cols-4 gap-4">
           <div className="bg-secondary-green h-48 w-64 rounded-xl flex flex-column items-center justify-center">
-            <BsFileEarmark color="white" size="7rem" />
+            <img src={plansIcon} alt="Planos" width="100px" />
             <p className="text-white text-md font-bold mt-2 font-raleway text-3xl">
               Planos
             </p>
           </div>
           <div className="bg-secondary-green h-48 w-64 rounded-xl flex flex-column items-center justify-center">
-            <FaCity color="white" size="7rem" />
+            <img src={projectsIcon} alt="Projetos" width="100px" />
             <p className="text-white text-md font-bold mt-2 font-raleway text-3xl">
               Projetos
             </p>
           </div>
           <div className="bg-secondary-green h-48 w-64 rounded-xl flex flex-column items-center justify-center">
-            <RiMoneyDollarCircleLine color="white" size="7rem" />
+            <img src={economyIcon} alt="Economia" width="100px" />
             <p className="text-white text-md font-bold mt-2 font-raleway text-3xl">
               Economia
             </p>
           </div>
           <div className="bg-secondary-green h-48 w-64 rounded-xl flex flex-column items-center justify-center">
-            <RiVirusFill color="white" size="7rem" />
+            <img src={covidIcon} alt="Covid-19" width="100px" />
             <p className="text-white text-md font-bold mt-2 font-raleway text-3xl">
               Covid-19
             </p>
