@@ -321,16 +321,16 @@ const Home = () => {
         className="container my-12"
         style={{ scrollMarginTop: "14rem" }}
       >
-        <div className="flex flex-row flex-wrap space-x-20">
-          <div className="flex flex-column">
+        <div className="flex flex-row flex-wrap">
+          <div className="flex flex-column m-4">
             <p className="font-semibold">Financiador multilateral</p>
             <img src={gefLogo} alt="gef" height="80px" width="94px" />
           </div>
-          <div className="flex flex-column">
+          <div className="flex flex-column m-4">
             <p className="font-semibold">Agência implementadora</p>
             <img src={onuLogo} alt="ONU" height="80px" width="140px" />
           </div>
-          <div>
+          <div className="flex flex-column m-4">
             <p className="font-semibold">Agência executora</p>
             <img
               src={ministerioLogo}
@@ -339,11 +339,12 @@ const Home = () => {
               width="491px"
             />
           </div>
-          <div>
+          <div className="flex flex-column m-4">
             <p className="font-semibold">Parceiros coexecutores em Recife</p>
             <div className="flex flex-row flex-nowrap">
               <img src={ariesLogo} alt="Aries" height="80px" width="177px" />
               <img
+                className="ml-4"
                 src={portoDigitalLogo}
                 alt="Porto Digital"
                 height="80px"
