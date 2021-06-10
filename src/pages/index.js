@@ -91,7 +91,7 @@ const Home = () => {
           </h1>
           <button
             type="button"
-            className="bg-secondary-green px-4 py-3 text-lg font-semibold uppercase text-white rounded-full hover:bg-secondary-green-darker"
+            className="bg-secondary-green px-4 py-3 text-lg uppercase text-white rounded-full hover:bg-secondary-green-darker"
           >
             Explorar o Mapa
           </button>
@@ -132,7 +132,7 @@ const Home = () => {
             <div className="mx-auto mt-8">
               <button
                 type="button"
-                className="bg-secondary-green px-4 py-3 text-lg font-semibold uppercase text-white rounded-full hover:bg-secondary-green-darker"
+                className="bg-secondary-green px-4 py-3 text-lg uppercase text-white rounded-full hover:bg-secondary-green-darker"
               >
                 SAIBA MAIS SOBRE O CITINOVA
               </button>
