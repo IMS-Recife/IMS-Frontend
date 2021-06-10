@@ -44,11 +44,17 @@ const Home = () => {
           </span>
         </div>
         <div className="mr-4 flex flex-column">
-          <div className="ml-auto mt-12 w-50">
+          <div className="flex ml-auto mt-12 w-75">
             <input
-              className="border-gray-500 border w-full p-2 text-primary outline-none text-sm transition duration-150 ease-in-out mb-4"
+              className="border-gray-500 border rounded-3xl w-full p-2.5 text-primary outline-none text-sm transition duration-150 ease-in-out mb-4"
               placeholder="Buscar"
             />
+            <button
+              type="button"
+              className="rounded-3xl bg-primary-text text-white mb-4 p-2.5 px-4 -ml-16"
+            >
+              Pesquisar
+            </button>
           </div>
           <div className="flex items-stretch justify-between mt-auto mb-2">
             <a
