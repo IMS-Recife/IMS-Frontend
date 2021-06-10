@@ -1,13 +1,7 @@
 import { injectIntl } from "react-intl";
 import React from "react";
 import Slider from "react-slick";
-import {
-  FaFacebookSquare,
-  FaGithubSquare,
-  FaTwitterSquare,
-  FaYoutubeSquare,
-  FaCity,
-} from "react-icons/fa";
+import { FaCity } from "react-icons/fa";
 import { RiMoneyDollarCircleLine, RiVirusFill } from "react-icons/ri";
 import { BsFileEarmark } from "react-icons/bs";
 import Layout from "../components/Layout";
@@ -20,6 +14,13 @@ import {
   portoDigitalLogo,
   ministerioLogo,
 } from "../assets/organizationsLogos";
+
+import {
+  twitterIcon,
+  facebookIcon,
+  youtubeIcon,
+  githubIcon,
+} from "../assets/socialMediaIcons";
 
 const Home = () => {
   const settings = {
@@ -205,11 +206,11 @@ const Home = () => {
         <h1 className="font-bold text-4xl uppercase mb-4 text-left text-primary-text">
           Nossas Redes
         </h1>
-        <div className="grid grid-cols-4 gap-1 mx-5">
-          <FaTwitterSquare className="text-secondary-green" size="8rem" />
-          <FaFacebookSquare className="text-secondary-green" size="8rem" />
-          <FaYoutubeSquare className="text-secondary-green" size="8rem" />
-          <FaGithubSquare className="text-secondary-green" size="8rem" />
+        <div className="flex flex-row justify-center space-x-20">
+          <img src={twitterIcon} alt="twitter" />
+          <img src={facebookIcon} alt="facebook" />
+          <img src={youtubeIcon} alt="youtube" />
+          <img src={githubIcon} alt="github" />
         </div>
       </section>
       <section
