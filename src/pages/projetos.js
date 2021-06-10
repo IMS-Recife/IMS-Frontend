@@ -5,15 +5,6 @@ import styled from "styled-components";
 import Link from "next/link";
 import Layout from "../components/Layout";
 
-const SearchButton = styled.button`
-  background: ${(props) => props.theme.colors.textColor1};
-  color: #fff;
-  padding: 10px 50px;
-  border-top-left-radius: 20px;
-  border-bottom-left-radius: 20px;
-  border-top-right-radius: 20px;
-  border-bottom-right-radius: 20px;
-`;
 const GreenCircle = styled.div`
   width: 20px;
   height: 20px;
@@ -40,26 +31,39 @@ const Projects = () => (
         minHeight: "calc(100vh - 136px)",
       }}
     >
-      <div className="bg-primary-gray shadow-xl min-h-full p-8 m-16">
-        <h1 className="uppercase text-primary-text">Projetos</h1>
-        <p>
-          Nessa página estão listados os Projetos em elaboração e em execução na
-          cidade do Recife. Ao acessar a área de cada projeto você terá acesso
-          aos produtos de cada etapa da sua elaboração, assim como indicadores
-          relativos ao monitoramento da sua contratação e execução. Todos os
-          arquivos contratados no escopo dos planos estão em anexo, além da
-          espacialização dos elementos do projeto na visualização
-          georreferenciada.
-        </p>
-        <div className="mt-5">
+      <div className="bg-primary-gray shadow-xl min-h-full m-16">
+        <div className="px-5 pt-5 mb-0">
+          <h1 className="font-raleway uppercase text-4xl font-bold text-primary-text">
+            Projetos
+          </h1>
+          <div className="flex">
+            <p className="w-1/3 mt-3">
+              Nessa página estão listados os Projetos em elaboração e em
+              execução na cidade do Recife. Ao acessar a área de cada projeto
+              você terá acesso aos produtos de cada etapa da sua elaboração,
+              assim como indicadores relativos ao monitoramento da sua
+              contratação e execução. Todos os arquivos contratados no escopo
+              dos planos estão em anexo, além da espacialização dos elementos do
+              projeto na visualização georreferenciada.
+            </p>
+            <select className="bg-transparent border rounded-xl p-2 border-black border-8 self-end ml-auto">
+              <option>Atualização mais recente</option>
+            </select>
+          </div>
+        </div>
+        <div className="mt-1">
           <table className="m-auto  w-100">
-            <tr className="bg-primary-gray shadow p-5">
+            <tr className="bg-primary-gray shadow-sm">
               <th className="p-3" style={{ width: "200px" }}>
-                <label htmlFor="name">Nome</label>
+                <label htmlFor="name" className="uppercase">
+                  Nome
+                </label>
                 <Select id="name" className="mr-2" closeMenuOnSelect={false} />
               </th>
               <th className="p-3" style={{ width: "200px" }}>
-                <label htmlFor="status">Status</label>
+                <label htmlFor="status" className="uppercase">
+                  Status
+                </label>
                 <Select
                   id="status"
                   className="mr-2"
@@ -67,18 +71,21 @@ const Projects = () => (
                 />
               </th>
               <th className="p-3" style={{ width: "200px" }}>
-                <label>Organização</label>
+                <label className="uppercase">Organização</label>
                 <Select className="mr-2" closeMenuOnSelect={false} />
               </th>
               <th className="p-3" style={{ width: "300px" }}>
-                <label>Grupo Temático</label>
+                <label className="uppercase">Grupo Temático</label>
                 <div className="flex flex-row">
                   <div style={{ width: "300px" }}>
                     <Select className="mr-2" closeMenuOnSelect={false} />
                   </div>
-                  <SearchButton className="ml-4" type="button">
+                  <button
+                    className="ml-4 bg-primary-text text-white p-2 px-5 rounded-2xl"
+                    type="button"
+                  >
                     Pesquisar
-                  </SearchButton>
+                  </button>
                 </div>
               </th>
             </tr>
