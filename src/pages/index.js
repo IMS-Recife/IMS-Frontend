@@ -36,10 +36,10 @@ const Home = () => {
     <Layout>
       <div className="h-48 grid grid-cols-2 border-b border-gray-100 shadow-xl sticky top-0 z-20 bg-white">
         <div className="w-full ml-2 flex items-start justify-content-center flex-col">
-          <h1 className="font-bold text-secondary-green">
+          <h1 className="font-bold text-secondary-green text-4xl">
             Integrated Management System - IMS
           </h1>
-          <span className="text-lg text-primary-text">
+          <span className="text-xl text-primary-text">
             Planejamento Urbano e Gerência Integrada das Cidades
           </span>
         </div>
@@ -147,7 +147,9 @@ const Home = () => {
         <div className="grid grid-cols-3">
           <div className="flex items-center flex-col">
             <img src={politians} alt="Políticos" className="w-32 h-32" />
-            <span className="text-lg font-bold mt-2">Poder Executivo</span>
+            <span className="text-xl font-bold mt-2 font-raleway">
+              Poder Executivo
+            </span>
             <p className="text-base mt-4 text-justify">
               Prefeitos/as, secretariado, gerentes e técnicos terão seus
               trabalhos facilitados pelo IMS ao atualizar ou acessar dados
@@ -157,7 +159,9 @@ const Home = () => {
           </div>
           <div className="flex items-center flex-col ml-4">
             <img src={law} alt="Lei" className="w-32 h-32" />
-            <span className="text-lg font-bold mt-2">Poder Legislativo</span>
+            <span className="text-xl font-bold mt-2 font-raleway">
+              Poder Legislativo
+            </span>
             <p className="text-base mt-4 text-justify">
               Vereadores e suas equipes poderão utilizar o IMS em seu trabalho
               de supervisão do executivo, por exemplo.
@@ -165,7 +169,9 @@ const Home = () => {
           </div>
           <div className="flex items-center flex-col ml-4">
             <img src={crowd} alt="pessoas" className="w-32 h-32" />
-            <span className="text-lg font-bold mt-2">Sociedade Civil</span>
+            <span className="text-xl font-bold mt-2 font-raleway">
+              Sociedade Civil
+            </span>
             <p className="text-base mt-4 text-justify">
               Membros da sociedade civil em geral terão à sua disposição uma
               plataforma de controle social e participação na qual será possível
@@ -182,19 +188,27 @@ const Home = () => {
         <div className="grid grid-cols-4 gap-4">
           <div className="bg-secondary-green h-48 w-64 rounded-xl flex flex-column items-center justify-center">
             <BsFileEarmark color="white" size="7rem" />
-            <p className="text-white text-md font-bold mt-2">Planos</p>
+            <p className="text-white text-md font-bold mt-2 font-raleway text-3xl">
+              Planos
+            </p>
           </div>
           <div className="bg-secondary-green h-48 w-64 rounded-xl flex flex-column items-center justify-center">
             <FaCity color="white" size="7rem" />
-            <p className="text-white text-md font-bold mt-2">Projetos</p>
+            <p className="text-white text-md font-bold mt-2 font-raleway text-3xl">
+              Projetos
+            </p>
           </div>
           <div className="bg-secondary-green h-48 w-64 rounded-xl flex flex-column items-center justify-center">
             <RiMoneyDollarCircleLine color="white" size="7rem" />
-            <p className="text-white text-md font-bold mt-2">Economia</p>
+            <p className="text-white text-md font-bold mt-2 font-raleway text-3xl">
+              Economia
+            </p>
           </div>
           <div className="bg-secondary-green h-48 w-64 rounded-xl flex flex-column items-center justify-center">
             <RiVirusFill color="white" size="7rem" />
-            <p className="text-white text-md font-bold mt-2">Covid-19</p>
+            <p className="text-white text-md font-bold mt-2 font-raleway text-3xl">
+              Covid-19
+            </p>
           </div>
         </div>
       </section>
@@ -324,15 +338,21 @@ const Home = () => {
       >
         <div className="flex flex-row flex-wrap">
           <div className="flex flex-column m-4">
-            <p className="font-semibold">Financiador multilateral</p>
+            <p className="font-semibold font-raleway text-primary-text">
+              Financiador multilateral
+            </p>
             <img src={gefLogo} alt="gef" height="80px" width="94px" />
           </div>
           <div className="flex flex-column m-4">
-            <p className="font-semibold">Agência implementadora</p>
+            <p className="font-semibold font-raleway text-primary-text">
+              Agência implementadora
+            </p>
             <img src={onuLogo} alt="ONU" height="80px" width="140px" />
           </div>
           <div className="flex flex-column m-4">
-            <p className="font-semibold">Agência executora</p>
+            <p className="font-semibold font-raleway text-primary-text">
+              Agência executora
+            </p>
             <img
               src={ministerioLogo}
               alt="Ministério da Ciência, Tecnologia e Inovações"
@@ -341,7 +361,9 @@ const Home = () => {
             />
           </div>
           <div className="flex flex-column m-4">
-            <p className="font-semibold">Parceiros coexecutores em Recife</p>
+            <p className="font-semibold font-raleway text-primary-text">
+              Parceiros coexecutores em Recife
+            </p>
             <div className="flex flex-row flex-nowrap">
               <img src={ariesLogo} alt="Aries" height="80px" width="177px" />
               <img

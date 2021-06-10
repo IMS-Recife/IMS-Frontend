@@ -9,7 +9,7 @@ const theme = {
     secondaryDark: "#00711f",
     statusColor1: "#ffee58",
     statusColor2: "#ffc2c2",
-    textColor1: "#4b4d53",
+    primaryText: "#4b4d53",
     background: "#fff",
   },
 };
