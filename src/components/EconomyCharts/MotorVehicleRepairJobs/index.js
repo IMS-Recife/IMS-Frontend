@@ -1,11 +1,8 @@
 import React, { useEffect, useState } from "react";
 import HighchartsReact from "highcharts-react-official";
-import Highcharts from "highcharts";
 import { economyAPI } from "../../../Services/api";
-import useLayout from "../../../contexts/layout";
 
-function PIBPerCapta() {
-  const { collapseSideBar } = useLayout();
+function JobsChart({ Highcharts }) {
   const [years, setYears] = useState([]);
   const [
     numOfMotorVehicleRepairJobs,
@@ -28,14 +25,6 @@ function PIBPerCapta() {
   useEffect(() => {
     getConstructionJobs();
   }, []);
-
-  useEffect(() => {
-    Highcharts.charts.forEach((c) => {
-      if (c !== undefined) {
-        setTimeout(() => c.reflow(), 300);
-      }
-    });
-  }, [collapseSideBar]);
 
   const constructionJobsOptions = {
     title: {
@@ -88,4 +77,4 @@ function PIBPerCapta() {
   );
 }
 
-export default PIBPerCapta;
+export default JobsChart;
