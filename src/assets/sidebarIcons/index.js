@@ -5,6 +5,8 @@ import economyIcon from "./economyIcon.svg";
 import projectsIcon from "./projectsIcon.svg";
 import plansIcon from "./plansIcon.svg";
 import backArrowIcon from "./backArrowIcon.svg";
+import openSidebarIcon from "./openSidebarIcon.svg";
+import closeSidebarIcon from "./closeSidebarIcon.svg";
 
 export {
   covidIcon,
@@ -14,4 +16,6 @@ export {
   projectsIcon,
   plansIcon,
   backArrowIcon,
+  openSidebarIcon,
+  closeSidebarIcon,
 };

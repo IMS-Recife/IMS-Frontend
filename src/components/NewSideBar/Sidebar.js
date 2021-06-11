@@ -10,6 +10,8 @@ import {
   projectsIcon,
   plansIcon,
   backArrowIcon,
+  openSidebarIcon,
+  closeSidebarIcon,
 } from "../../assets/sidebarIcons";
 
 import useLayout from "../../contexts/layout";
@@ -30,17 +32,21 @@ const Li = styled.li`
   cursor: pointer;
   display: flex;
   align-items: center;
-  margin: 8px 0px 8px 0px;
+  margin-top: 0px;
+`;
+
+const Input = styled.input`
+  padding: 12px 20px 12px 40px;
+  ::placeholder {
+    color: white;
+    padding-left: 20%;
+  }
 `;
 
 const Label = styled.label`
   background: url(${searchIcon});
   background-repeat: no-repeat;
   background-position: 10px center;
-
-  &:active {
-    background: transparent;
-  }
 `;
 
 function Sidebar() {
@@ -53,15 +59,38 @@ function Sidebar() {
       onMouseLeave={() => setCollapseSideBar(true)}
       style={collapseSideBar ? { width: "80px" } : { width: "245px" }}
     >
-      <ul className="flex flex-column text-white">
-        <Li>
+      <ul
+        className={
+          collapseSideBar
+            ? "flex flex-column text-white items-center"
+            : "flex flex-column text-white"
+        }
+      >
+        {collapseSideBar && (
+          <div className="mt-3 mb-3">
+            <img src={openSidebarIcon} alt="Abrir" width="26px" />
+          </div>
+        )}
+        <div className="grid grid-cols-2 items-center mt-2 mb-2">
           <IconContainer
             className={collapseSideBar && "hover:bg-secondary-green-darker"}
           >
-            <img src={backArrowIcon} alt="Voltar" width="14px" height="26px" />
+            <button type="button">
+              <img
+                src={backArrowIcon}
+                alt="Voltar"
+                width="14px"
+                height="26px"
+              />
+            </button>
           </IconContainer>
-        </Li>
-        <Li className={!collapseSideBar && "-ml-4"}>
+          {!collapseSideBar && (
+            <div className="flex justify-self-end rounded-full h-14 w-14 flex items-center justify-center bg-secondary-green-light">
+              <img src={closeSidebarIcon} alt="Fechar" width="26px" />
+            </div>
+          )}
+        </div>
+        <Li className="mt-2 mb-2">
           {collapseSideBar ? (
             <IconContainer
               className={collapseSideBar && "hover:bg-secondary-green-darker"}
@@ -70,9 +99,11 @@ function Sidebar() {
             </IconContainer>
           ) : (
             <Label>
-              <input
+              <Input
                 type="text"
-                className="bg-transparent border rounded-lg p-3 w-48"
+                className="bg-transparent border rounded-lg"
+                style={{ width: "100%" }}
+                placeholder="Pesquisar"
               />
             </Label>
           )}
@@ -80,11 +111,19 @@ function Sidebar() {
         <Link href="/">
           <Li
             className={
-              !collapseSideBar && "hover:bg-secondary-green-darker rounded-lg"
+              !collapseSideBar
+                ? router.asPath === "/"
+                  ? "bg-secondary-green-darker rounded-lg mt-0 mb-0"
+                  : "hover:bg-secondary-green-darker rounded-lg mt-2 mb-2"
+                : "mt-3 mb-3"
             }
           >
             <IconContainer
-              className={collapseSideBar && "hover:bg-secondary-green-darker"}
+              className={
+                collapseSideBar &&
+                router.asPath === "/" &&
+                "bg-secondary-green-darker"
+              }
             >
               <img src={homeIcon} alt="Home" width="26px" />
             </IconContainer>
@@ -101,7 +140,11 @@ function Sidebar() {
         <Link href="/planos">
           <Li
             className={
-              !collapseSideBar && "hover:bg-secondary-green-darker rounded-lg"
+              !collapseSideBar
+                ? router.asPath === "/planos"
+                  ? "bg-secondary-green-darker rounded-lg mt-0 mb-0"
+                  : "hover:bg-secondary-green-darker rounded-lg mt-2 mb-2"
+                : "mt-3 mb-3"
             }
           >
             <IconContainer
@@ -125,7 +168,11 @@ function Sidebar() {
         <Link href="/projetos">
           <Li
             className={
-              !collapseSideBar && "hover:bg-secondary-green-darker rounded-lg"
+              !collapseSideBar
+                ? router.asPath === "/projetos"
+                  ? "bg-secondary-green-darker rounded-lg mt-0 mb-0"
+                  : "hover:bg-secondary-green-darker rounded-lg mt-2 mb-2"
+                : "mt-3 mb-3"
             }
           >
             <IconContainer
@@ -149,7 +196,11 @@ function Sidebar() {
         <Link href="/economia">
           <Li
             className={
-              !collapseSideBar && "hover:bg-secondary-green-darker rounded-lg"
+              !collapseSideBar
+                ? router.asPath === "/economia"
+                  ? "bg-secondary-green-darker rounded-lg mt-0 mb-0"
+                  : "hover:bg-secondary-green-darker rounded-lg mt-2 mb-2"
+                : "mt-3 mb-3"
             }
           >
             <IconContainer
@@ -173,13 +224,17 @@ function Sidebar() {
         <Link href="/covid">
           <Li
             className={
-              !collapseSideBar && "hover:bg-secondary-green-darker rounded-lg"
+              !collapseSideBar
+                ? router.asPath === "/covid"
+                  ? "bg-secondary-green-darker rounded-lg mt-0 mb-0"
+                  : "hover:bg-secondary-green-darker rounded-lg mt-2 mb-2"
+                : "mt-3 mb-3"
             }
           >
             <IconContainer
               className={
                 collapseSideBar &&
-                router.asPath === "/planos" &&
+                router.asPath === "/covid" &&
                 "bg-secondary-green-darker"
               }
             >
