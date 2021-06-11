@@ -463,10 +463,12 @@ const Map = () => {
             <VscClose color="#00711F" size="1.5rem" />
           </button>
           <div className="float-right mt-5 w-4/5">
-            <h1 className="ml-5 pt-3">Calçada Legal | Lote 1</h1>
+            <h1 className="font-raleway text-4xl font-bold text-primary-text px-2 mb-2">
+              Calçada Legal | Lote 1
+            </h1>
             <div className="flex flex-row ml-5">
               <GreenCircle className="mr-2 mt-1" />
-              <h4 className="">CONCLUÍDO</h4>
+              <h4 className="text-lg uppercase">CONCLUÍDO</h4>
             </div>
             <div className="ml-5 flex flex-row">
               <p
@@ -483,25 +485,40 @@ const Map = () => {
               </p>
             </div>
             <SmallInfoContainer className="rounded-xl mr-3 ml-5 p-3">
-              <div className="flex flex-row flex-wrap justify-center">
+              <div className="w-4/5 mx-auto">
                 <p className="text-2xl font-bold">Indicadores Totais</p>
-                <h4>Última atualização: 27/04/2021</h4>
+                <p className="text-md font-bold">
+                  Última atualização:
+                  <span className="font-normal"> 27/04/2021</span>
+                </p>
               </div>
               <div className="grid grid-cols-2">
                 <div>
                   <Ring>
                     <Ring2 className="flex justify-center items-center">
-                      <h1 className="justify-center">100%</h1>
+                      <h1 className="justify-center text-4xl font-bold">
+                        100%
+                      </h1>
                     </Ring2>
                   </Ring>
                   <p className="flex justify-center">Total executado</p>
                 </div>
-                <div className="mt-5">
-                  <h6>Data de início: DD/MM/AAAA</h6>
-                  <h6>Data de fim: DD/MM/AAAA</h6>
-                  <h6>Duração:</h6>
-                  <h6>Valor total licitado: R$</h6>
-                  <h6>Valor total pago: R$</h6>
+                <div className="mt-3">
+                  <p className="text-sm font-bold">
+                    Data de início:{" "}
+                    <span className="font-normal">DD/MM/AAAA</span>
+                  </p>
+                  <p className="text-sm font-bold">
+                    Data de fim: <span className="font-normal">DD/MM/AAAA</span>
+                  </p>
+                  <p>Duração:</p>
+                  <p className="text-sm font-bold">
+                    Valor total licitado:{" "}
+                    <span className="font-normal">R$</span>
+                  </p>
+                  <p className="text-sm font-bold">
+                    Valor total pago: <span className="font-normal">R$</span>
+                  </p>
                 </div>
               </div>
             </SmallInfoContainer>
