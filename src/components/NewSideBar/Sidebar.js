@@ -85,7 +85,7 @@ function Sidebar() {
             </button>
           </IconContainer>
           {!collapseSideBar && (
-            <div className="flex justify-self-end rounded-full h-14 w-14 flex items-center justify-center bg-secondary-green-light">
+            <div className="flex justify-self-end rounded-full h-12 w-12 flex items-center justify-center bg-secondary-green-light">
               <img src={closeSidebarIcon} alt="Fechar" width="26px" />
             </div>
           )}
