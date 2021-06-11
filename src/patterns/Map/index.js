@@ -48,7 +48,7 @@ const GreyCircle = styled.div`
   height: 20px;
   border-radius: 50%;
   position: relative;
-  background-color: ${(props) => props.theme.colors.primary};
+  background-color: ${(props) => props.theme.colors.primaryText};
   cursor: pointer;
 `;
 
@@ -57,7 +57,7 @@ const Ring = styled.div`
   height: 150px;
   border-radius: 50%;
   position: relative;
-  background-color: black;
+  background-color: ${(props) => props.theme.colors.primaryText};
   margin: 10px;
   cursor: pointer;
 `;
@@ -249,12 +249,14 @@ const Map = () => {
         <div className="flex w-4/5">
           <div className="w-3/5 h-full bg-white opacity-95 z-10 text-black border-r flex-grow">
             <aside className="float-right mt-5 w-11/12 bg-primary-gray">
-              <h1 className="ml-5 pt-3">Calçada Legal</h1>
+              <h1 className="font-raleway text-5xl font-bold text-primary-text p-5 mb-2">
+                Calçada Legal
+              </h1>
               <div className="flex flex-row ml-5">
                 <YellowCircle className="mr-2 mt-1" />
-                <h4 className="">EM EXECUÇÃO</h4>
+                <h4 className="text-lg uppercase">Em execução</h4>
               </div>
-              <p className="ml-5 w-4/5">
+              <p className="ml-5 w-3/5">
                 O Projeto Calçada Legal prevê a requalificação dos passeios
                 públicos dos principais corredores viários da cidade. Tem como
                 objetivo garantir o conforto, a segurança do pedestre ao
@@ -278,32 +280,53 @@ const Map = () => {
               </div>
               <div className="flex flex-row">
                 <SmallInfoContainer className="rounded-xl ml-3 p-3 primary-gray-darker">
-                  <div className="flex flex-row flex-wrap justify-center">
-                    <h1>Indicadores Totais</h1>
-                    <h4>Última atualização: 27/04/2021</h4>
+                  <div className="w-4/5 mx-auto">
+                    <p className="text-2xl font-bold">Indicadores Totais</p>
+                    <p className="text-md font-bold">
+                      Última atualização:
+                      <span className="font-normal"> 27/04/2021</span>
+                    </p>
                   </div>
                   <div className="grid grid-cols-2">
                     <div>
                       <Ring>
                         <Ring2 className="flex justify-center items-center">
-                          <h1 className="justify-center">100%</h1>
+                          <h1 className="justify-center text-4xl font-bold">
+                            100%
+                          </h1>
                         </Ring2>
                       </Ring>
-                      <h5 className="flex justify-center">Total executado</h5>
+                      <p className="flex justify-center text-lg">
+                        Total executado
+                      </p>
                     </div>
-                    <div className="mt-5">
-                      <h6>Data de início: DD/MM/AAAA</h6>
-                      <h6>Data de fim: DD/MM/AAAA</h6>
-                      <h6>Duração:</h6>
-                      <h6>Valor total licitado: R$</h6>
-                      <h6>Valor total pago: R$</h6>
+                    <div className="mt-3">
+                      <p className="text-sm font-bold">
+                        Data de início:{" "}
+                        <span className="font-normal">DD/MM/AAAA</span>
+                      </p>
+                      <p className="text-sm font-bold">
+                        Data de fim:{" "}
+                        <span className="font-normal">DD/MM/AAAA</span>
+                      </p>
+                      <p>Duração:</p>
+                      <p className="text-sm font-bold">
+                        Valor total licitado:{" "}
+                        <span className="font-normal">R$</span>
+                      </p>
+                      <p className="text-sm font-bold">
+                        Valor total pago:{" "}
+                        <span className="font-normal">R$</span>
+                      </p>
                     </div>
                   </div>
                 </SmallInfoContainer>
-                <SmallInfoContainer className="rounded-xl mt-3 ml-3 mr-3 p-3">
-                  <h1 className="flex justify-center">Lotes do Projeto</h1>
+                <SmallInfoContainer className="rounded-xl mt-3 ml-3 mr-3 p-2">
+                  <p className="flex justify-center text-2xl font-bold">
+                    Lotes do Projeto
+                  </p>
                   <table className="m-auto">
-                    <tr className="bg-primary-gray-dark shadow p-3">
+                    <tr className="bg-primary-gray-dark shadow-md p-3">
                       <th className="p-2">
                         <p>Número</p>
                         <Select
@@ -388,20 +411,34 @@ const Map = () => {
               </div>
               <div className="flex flex-row mb-3">
                 <SmallInfoContainer className="rounded-xl mt-3 mr-3 ml-3 p-3">
-                  <h1 className="flex justify-center">
-                    Indicadores do Projeto
+                  <h1 className="flex justify-center text-2xl font-bold">
+                    Indicadores do projeto
                   </h1>
-                  <h4>Área total de calçada projetada:_____m²</h4>
-                  <h4>Quantidade total de árvores:_____</h4>
+                  <p className="text-md font-bold mt-3">
+                    Área total de calçada projetada:
+                    <span className="font-normal">_____m²</span>
+                  </p>
+                  <p className="text-md font-bold">
+                    Quantidade total de árvores:
+                    <span className="font-normal">_____</span>
+                  </p>
                 </SmallInfoContainer>
                 <SmallInfoContainer className="rounded-xl mt-3 mr-3 ml-3 p-3">
-                  <h1 className="flex justify-center">Arquivos do Projeto</h1>
-                  <div className="mt-5">
-                    <h5 className="ml-4">PRESTAÇÃO DE CONTAS LOTE 2</h5>
+                  <h1 className="flex justify-center text-2xl font-bold">
+                    Arquivos do Projeto
+                  </h1>
+                  <div className="mt-3">
+                    <p className="ml-4 uppercase text-md">
+                      Prestação de contas lote 2
+                    </p>
                     <hr />
-                    <h5 className="ml-4">PRESTAÇÃO DE CONTAS LOTE 2</h5>
+                    <p className="ml-4 uppercase text-md">
+                      Prestação de contas lote 2
+                    </p>
                     <hr />
-                    <h5 className="ml-4">PRESTAÇÃO DE CONTAS LOTE 2</h5>
+                    <p className="ml-4 uppercase text-md">
+                      Prestação de contas lote 2
+                    </p>
                   </div>
                 </SmallInfoContainer>
               </div>
@@ -409,7 +446,7 @@ const Map = () => {
           </div>
           <button
             type="button"
-            className="bg-secondary-green hover:bg-secondary-green-darker py-3 px-5 z-20 text-white rounded-3xl font-semibold self-end mb-5 ml-5 sticky bottom-10"
+            className="bg-secondary-green hover:bg-secondary-green-darker py-3 px-5 z-20 text-white rounded-3xl self-end mb-5 ml-5 sticky bottom-10"
             onClick={() => setShowProjecSidebar(false)}
           >
             VER MAPA DO PROJETO
@@ -447,7 +484,7 @@ const Map = () => {
             </div>
             <SmallInfoContainer className="rounded-xl mr-3 ml-5 p-3">
               <div className="flex flex-row flex-wrap justify-center">
-                <h1>Indicadores Totais</h1>
+                <p className="text-2xl font-bold">Indicadores Totais</p>
                 <h4>Última atualização: 27/04/2021</h4>
               </div>
               <div className="grid grid-cols-2">
@@ -457,7 +494,7 @@ const Map = () => {
                       <h1 className="justify-center">100%</h1>
                     </Ring2>
                   </Ring>
-                  <h5 className="flex justify-center">Total executado</h5>
+                  <p className="flex justify-center">Total executado</p>
                 </div>
                 <div className="mt-5">
                   <h6>Data de início: DD/MM/AAAA</h6>
@@ -469,18 +506,34 @@ const Map = () => {
               </div>
             </SmallInfoContainer>
             <SmallInfoContainer className="rounded-xl mt-3 mr-3 ml-5 p-3">
-              <h1 className="flex justify-center">Indicadores do Projeto</h1>
-              <h4>Área total de calçada projetada:_____m²</h4>
-              <h4>Quantidade total de árvores:_____</h4>
+              <h1 className="flex justify-center text-2xl font-bold mt-3">
+                Indicadores do projeto
+              </h1>
+              <p className="text-md font-bold">
+                Área total de calçada projetada:
+                <span className="font-normal">_____m²</span>
+              </p>
+              <p className="text-md font-bold">
+                Quantidade total de árvores:
+                <span className="font-normal">_____</span>
+              </p>
             </SmallInfoContainer>
             <SmallInfoContainer className="rounded-xl mt-3 mr-3 mb-3 ml-5 p-3">
-              <h1 className="flex justify-center">Arquivos do Projeto</h1>
-              <div className="mt-5">
-                <h5 className="ml-4">PRESTAÇÃO DE CONTAS LOTE 2</h5>
+              <h1 className="flex justify-center text-2xl font-bold">
+                Arquivos do Projeto
+              </h1>
+              <div className="mt-3">
+                <p className="ml-4 uppercase text-md">
+                  Prestação de contas lote 2
+                </p>
                 <hr />
-                <h5 className="ml-4">PRESTAÇÃO DE CONTAS LOTE 2</h5>
+                <p className="ml-4 uppercase text-md">
+                  Prestação de contas lote 2
+                </p>
                 <hr />
-                <h5 className="ml-4">PRESTAÇÃO DE CONTAS LOTE 2</h5>
+                <p className="ml-4 uppercase text-md">
+                  Prestação de contas lote 2
+                </p>
               </div>
             </SmallInfoContainer>
           </div>

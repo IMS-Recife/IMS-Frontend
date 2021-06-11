@@ -15,5 +15,9 @@ export default createGlobalStyle`
     }
     h1 {
       font: 400 16px Raleway, sans-serif;
+      color: ${(props) => props.theme.colors.primaryText};
+    }
+    p {
+      color: ${(props) => props.theme.colors.primaryText};
     }
 `;
