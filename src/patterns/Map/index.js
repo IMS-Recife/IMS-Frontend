@@ -658,20 +658,6 @@ const Map = () => {
                   </div>
                 )}
               </div>
-              {/* {filters.map((f) => (
-                <div className="form-check" key={f.id}>
-                  <label className="form-check-label" htmlFor={f.id}>
-                    <input
-                      className="form-check-input"
-                      type="checkbox"
-                      checked={f.visible}
-                      id={f.id}
-                      onChange={() => toggleLayers(f.id)}
-                    />
-                    {f.description}
-                  </label>
-                </div>
-              ))} */}
             </div>
           </div>
         </div>

@@ -18,6 +18,7 @@ import useLayout from "../../contexts/layout";
 
 const Container = styled.div`
   height: 100%;
+  transition: width 0.15s;
 `;
 
 const IconContainer = styled.div`
