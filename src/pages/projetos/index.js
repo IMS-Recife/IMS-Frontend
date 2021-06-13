@@ -3,7 +3,7 @@ import React from "react";
 import Select from "react-select";
 import styled from "styled-components";
 import Link from "next/link";
-import Layout from "../components/Layout";
+import Layout from "../../components/Layout";
 
 const GreenCircle = styled.div`
   width: 20px;
@@ -91,7 +91,7 @@ const Projects = () => (
             </tr>
             <tr className="border-b border-gray-400">
               <td className="p-4 pt-5">
-                <Link href="/calcadalegal">
+                <Link href="/projetos/calcadalegal">
                   <p className="cursor-pointer">Calçada Legal</p>
                 </Link>
               </td>

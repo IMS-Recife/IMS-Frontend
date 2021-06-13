@@ -1,9 +1,9 @@
 import Head from "next/head";
 import { injectIntl } from "react-intl";
 import React from "react";
-import Layout from "../components/Layout";
+import Layout from "../../components/Layout";
 
-import Map from "../patterns/Map";
+import Map from "../../patterns/Map";
 
 function MapPage() {
   return (
