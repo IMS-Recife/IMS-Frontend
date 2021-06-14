@@ -60,6 +60,11 @@ const Ring = styled.div`
   background-color: ${(props) => props.theme.colors.primaryText};
   margin: 10px;
   cursor: pointer;
+
+  @media (max-width: 1366px) {
+    width: 90px;
+    height: 90px;
+  }
 `;
 const Ring2 = styled.div`
   position: absolute;
@@ -247,7 +252,7 @@ const Map = () => {
     >
       {showProjectSidebar && !showSidebar && (
         <div className="flex w-4/5">
-          <div className="w-3/5 h-full bg-white opacity-95 z-10 text-black border-r flex-grow">
+          <div className="sm:w-4/5 2xl:w-3/5 h-full bg-white opacity-95 z-10 text-black border-r flex-grow">
             <aside className="float-right mt-5 w-11/12 bg-primary-gray">
               <h1 className="font-raleway text-5xl font-bold text-primary-text p-5 mb-2">
                 Calçada Legal
@@ -291,7 +296,7 @@ const Map = () => {
                     <div>
                       <Ring>
                         <Ring2 className="flex justify-center items-center">
-                          <h1 className="justify-center text-4xl font-bold">
+                          <h1 className="justify-center sm:text-2xl 2xl:text-4xl font-bold">
                             100%
                           </h1>
                         </Ring2>
@@ -329,33 +334,21 @@ const Map = () => {
                     <tr className="bg-primary-gray-dark shadow-md p-3">
                       <th className="p-2">
                         <p>Número</p>
-                        <Select
-                          className="mr-2"
-                          closeMenuOnSelect={false}
-                          components={animatedComponents}
-                          defaultValue={[filters[0], filters[1], filters[2]]}
-                          options={filters}
-                        />
+                        <select className="bg-transparent border rounded-xl p-2 border-black border-8">
+                          <option>Teste</option>
+                        </select>
                       </th>
                       <th className="p-2">
                         <p>Status</p>
-                        <Select
-                          className="mr-2"
-                          closeMenuOnSelect={false}
-                          components={animatedComponents}
-                          defaultValue={[filters[0], filters[1], filters[2]]}
-                          options={filters}
-                        />
+                        <select className="bg-transparent border rounded-xl p-2 border-black border-8">
+                          <option>Teste</option>
+                        </select>
                       </th>
                       <th className="p-2 m-auto">
-                        <p>% Execução</p>
-                        <Select
-                          className="mr-2"
-                          closeMenuOnSelect={false}
-                          components={animatedComponents}
-                          defaultValue={[filters[0], filters[1], filters[2]]}
-                          options={filters}
-                        />
+                        <p>%Execução</p>
+                        <select className="bg-transparent border rounded-xl p-2 border-black border-8">
+                          <option>Teste</option>
+                        </select>
                       </th>
                     </tr>
                     <tr className="border-b border-gray-400">
@@ -364,7 +357,7 @@ const Map = () => {
                       </td>
                       <td className="flex flex-row p-2">
                         <GreenCircle className="mr-2" />
-                        <p className="">CONCLUÍDO</p>
+                        <p className="sm:text-xs 2xl:text-lg">CONCLUÍDO</p>
                       </td>
                       <td className="p-2">
                         <p>100%</p>
@@ -376,7 +369,7 @@ const Map = () => {
                       </td>
                       <td className="flex flex-row p-2">
                         <GreenCircle className="mr-2" />
-                        <p className="">CONCLUÍDO</p>
+                        <p className="sm:text-xs 2xl:text-lg">CONCLUÍDO</p>
                       </td>
                       <td className="p-2">
                         <p>100%</p>
@@ -388,7 +381,7 @@ const Map = () => {
                       </td>
                       <td className="flex flex-row p-2">
                         <YellowCircle className="mr-2" />
-                        <p className="">EM EXECUÇÃO</p>
+                        <p className="sm:text-xs 2xl:text-lg">EM EXECUÇÃO</p>
                       </td>
                       <td className="p-2">
                         <p>50%</p>
@@ -400,7 +393,7 @@ const Map = () => {
                       </td>
                       <td className="flex flex-row p-2">
                         <GreyCircle className="mr-2" />
-                        <p className="">A EXECUTAR</p>
+                        <p className="sm:text-xs 2xl:text-lg">A EXECUTAR</p>
                       </td>
                       <td className="p-2">
                         <p>0%</p>
