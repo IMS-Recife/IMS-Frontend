@@ -1,15 +1,6 @@
 import { injectIntl } from "react-intl";
 import React from "react";
 import Slider from "react-slick";
-import {
-  FaFacebookSquare,
-  FaGithubSquare,
-  FaTwitterSquare,
-  FaYoutubeSquare,
-  FaCity,
-} from "react-icons/fa";
-import { RiMoneyDollarCircleLine, RiVirusFill } from "react-icons/ri";
-import { BsFileEarmark } from "react-icons/bs";
 import Layout from "../components/Layout";
 import { politians, crowd, law, mapImage } from "../assets/contentImages";
 import logoIMS from "../assets/logoIMS.svg";
@@ -20,6 +11,20 @@ import {
   portoDigitalLogo,
   ministerioLogo,
 } from "../assets/organizationsLogos";
+
+import {
+  plansIcon,
+  covidIcon,
+  projectsIcon,
+  economyIcon,
+} from "../assets/macroareasIcons";
+
+import {
+  twitterIcon,
+  facebookIcon,
+  youtubeIcon,
+  githubIcon,
+} from "../assets/socialMediaIcons";
 
 const Home = () => {
   const settings = {
@@ -33,43 +38,49 @@ const Home = () => {
   };
   return (
     <Layout>
-      <div className="h-48 grid grid-cols-2 border-b border-gray-100 shadow-xl">
+      <div className="h-48 grid grid-cols-2 border-b border-gray-100 shadow-xl sticky top-0 z-20 bg-white">
         <div className="w-full ml-2 flex items-start justify-content-center flex-col">
-          <h1 className="font-bold text-secondary-green">
+          <h1 className="font-bold text-secondary-green text-4xl">
             Integrated Management System - IMS
           </h1>
-          <span className="text-lg text-primary-text">
+          <span className="text-xl text-primary-text">
             Planejamento Urbano e Gerência Integrada das Cidades
           </span>
         </div>
         <div className="mr-4 flex flex-column">
-          <div className="ml-auto mt-12 w-50">
+          <div className="flex ml-auto mt-12 w-75 mr-3">
             <input
-              className="border-gray-500 border w-full p-2 text-primary outline-none text-sm transition duration-150 ease-in-out mb-4"
+              className="border-gray-500 border rounded-3xl w-full p-2.5 text-primary outline-none text-sm transition duration-150 ease-in-out mb-4"
               placeholder="Buscar"
             />
+            <button
+              type="button"
+              className="rounded-3xl bg-primary-text text-white mb-4 p-2.5 px-4 -ml-16"
+            >
+              Pesquisar
+            </button>
           </div>
-          <div className="flex items-stretch justify-between mt-auto mb-2">
+          <div className="flex items-stretch justify-between mt-auto mb-2 mr-5">
             <a
-              href=" #"
+              href="#sobre"
               className="font-medium font-bold uppercase text-gray-500 hover:text-gray-900 hover:no-underline"
             >
               Sobre o IMS
             </a>
             <a
-              href=" #"
+              href="#destaques"
               className="font-medium font-bold uppercase text-gray-500 hover:text-gray-900 hover:no-underline"
             >
               Destaques
             </a>
             <a
-              href=" #"
+              href="#contato"
               className="font-medium font-bold uppercase text-gray-500 hover:text-gray-900 hover:no-underline"
             >
               Contato
             </a>
             <a
-              href=" #"
+              href="#parceiros"
               className="font-medium font-bold uppercase text-gray-500 hover:text-gray-900 hover:no-underline"
             >
               Parceiros
@@ -90,13 +101,17 @@ const Home = () => {
           </h1>
           <button
             type="button"
-            className="bg-secondary-green px-4 py-3 text-lg font-semibold uppercase text-white rounded-full hover:bg-secondary-green-darker"
+            className="bg-secondary-green px-4 py-3 text-lg uppercase text-white rounded-full hover:bg-secondary-green-darker"
           >
             Explorar o Mapa
           </button>
         </div>
       </section>
-      <section className="container py-8 flex">
+      <section
+        id="sobre"
+        className="container py-8 flex"
+        style={{ scrollMarginTop: "14rem" }}
+      >
         <img src={logoIMS} height="135px" width="135px" alt="logoIMS" />
         <div className=" ml-5">
           <h1 className="font-bold text-4xl uppercase mb-4 text-left text-primary-text">
@@ -127,7 +142,7 @@ const Home = () => {
             <div className="mx-auto mt-8">
               <button
                 type="button"
-                className="bg-secondary-green px-4 py-3 text-lg font-semibold uppercase text-white rounded-full hover:bg-secondary-green-darker"
+                className="bg-secondary-green px-4 py-3 text-lg uppercase text-white rounded-full hover:bg-secondary-green-darker"
               >
                 SAIBA MAIS SOBRE O CITINOVA
               </button>
@@ -142,7 +157,9 @@ const Home = () => {
         <div className="grid grid-cols-3">
           <div className="flex items-center flex-col">
             <img src={politians} alt="Políticos" className="w-32 h-32" />
-            <span className="text-lg font-bold mt-2">Poder Executivo</span>
+            <span className="text-xl font-bold mt-2 font-raleway">
+              Poder Executivo
+            </span>
             <p className="text-base mt-4 text-justify">
               Prefeitos/as, secretariado, gerentes e técnicos terão seus
               trabalhos facilitados pelo IMS ao atualizar ou acessar dados
@@ -152,7 +169,9 @@ const Home = () => {
           </div>
           <div className="flex items-center flex-col ml-4">
             <img src={law} alt="Lei" className="w-32 h-32" />
-            <span className="text-lg font-bold mt-2">Poder Legislativo</span>
+            <span className="text-xl font-bold mt-2 font-raleway">
+              Poder Legislativo
+            </span>
             <p className="text-base mt-4 text-justify">
               Vereadores e suas equipes poderão utilizar o IMS em seu trabalho
               de supervisão do executivo, por exemplo.
@@ -160,7 +179,9 @@ const Home = () => {
           </div>
           <div className="flex items-center flex-col ml-4">
             <img src={crowd} alt="pessoas" className="w-32 h-32" />
-            <span className="text-lg font-bold mt-2">Sociedade Civil</span>
+            <span className="text-xl font-bold mt-2 font-raleway">
+              Sociedade Civil
+            </span>
             <p className="text-base mt-4 text-justify">
               Membros da sociedade civil em geral terão à sua disposição uma
               plataforma de controle social e participação na qual será possível
@@ -176,35 +197,51 @@ const Home = () => {
         </h1>
         <div className="grid grid-cols-4 gap-4">
           <div className="bg-secondary-green h-48 w-64 rounded-xl flex flex-column items-center justify-center">
-            <BsFileEarmark color="white" size="7rem" />
-            <p className="text-white text-md font-bold mt-2">Planos</p>
+            <img src={plansIcon} alt="Planos" width="100px" />
+            <p className="text-white text-md font-bold mt-2 font-raleway text-3xl">
+              Planos
+            </p>
           </div>
           <div className="bg-secondary-green h-48 w-64 rounded-xl flex flex-column items-center justify-center">
-            <FaCity color="white" size="7rem" />
-            <p className="text-white text-md font-bold mt-2">Projetos</p>
+            <img src={projectsIcon} alt="Projetos" width="100px" />
+            <p className="text-white text-md font-bold mt-2 font-raleway text-3xl">
+              Projetos
+            </p>
           </div>
           <div className="bg-secondary-green h-48 w-64 rounded-xl flex flex-column items-center justify-center">
-            <RiMoneyDollarCircleLine color="white" size="7rem" />
-            <p className="text-white text-md font-bold mt-2">Economia</p>
+            <img src={economyIcon} alt="Economia" width="100px" />
+            <p className="text-white text-md font-bold mt-2 font-raleway text-3xl">
+              Economia
+            </p>
           </div>
           <div className="bg-secondary-green h-48 w-64 rounded-xl flex flex-column items-center justify-center">
-            <RiVirusFill color="white" size="7rem" />
-            <p className="text-white text-md font-bold mt-2">Covid-19</p>
+            <img src={covidIcon} alt="Covid-19" width="100px" />
+            <p className="text-white text-md font-bold mt-2 font-raleway text-3xl">
+              Covid-19
+            </p>
           </div>
         </div>
       </section>
-      <section className="container mt-5">
+      <section
+        id="contato"
+        className="container mt-5"
+        style={{ scrollMarginTop: "14rem" }}
+      >
         <h1 className="font-bold text-4xl uppercase mb-4 text-left text-primary-text">
           Nossas Redes
         </h1>
-        <div className="grid grid-cols-4 gap-1 mx-5">
-          <FaTwitterSquare className="text-secondary-green" size="8rem" />
-          <FaFacebookSquare className="text-secondary-green" size="8rem" />
-          <FaYoutubeSquare className="text-secondary-green" size="8rem" />
-          <FaGithubSquare className="text-secondary-green" size="8rem" />
+        <div className="flex flex-row justify-center space-x-20">
+          <img src={twitterIcon} alt="twitter" width="110px" />
+          <img src={facebookIcon} alt="facebook" width="110px" />
+          <img src={youtubeIcon} alt="youtube" width="155px" />
+          <img src={githubIcon} alt="github" width="110px" />
         </div>
       </section>
-      <section className="container bg-primary-gray my-12">
+      <section
+        id="destaques"
+        className="container bg-primary-gray my-12"
+        style={{ scrollMarginTop: "14rem" }}
+      >
         <h1 className="font-bold text-4xl uppercase mb-4 text-left text-primary-text">
           Destaques
         </h1>
@@ -304,32 +341,47 @@ const Home = () => {
           </div>
         </div>
       </section>
-      <section className="container my-12">
-        <div className="flex flex-row flex-wrap space-x-5">
-          <div className="flex flex-column" style={{ width: "119px" }}>
-            <p className="font-semibold">Financiador multilateral</p>
-            <img src={gefLogo} alt="gef" height="119px" width="112px" />
+      <section
+        id="parceiros"
+        className="container my-12"
+        style={{ scrollMarginTop: "14rem" }}
+      >
+        <div className="flex flex-row flex-wrap">
+          <div className="flex flex-column m-4">
+            <p className="font-semibold font-raleway text-primary-text">
+              Financiador multilateral
+            </p>
+            <img src={gefLogo} alt="gef" height="80px" width="94px" />
           </div>
-          <div className="flex flex-column">
-            <p className="font-semibold">Agência implementadora</p>
-            <img src={onuLogo} alt="ONU" height="119px" width="207px" />
+          <div className="flex flex-column m-4">
+            <p className="font-semibold font-raleway text-primary-text">
+              Agência implementadora
+            </p>
+            <img src={onuLogo} alt="ONU" height="80px" width="140px" />
           </div>
-          <div>
-            <p className="font-semibold">Agência executora</p>
+          <div className="flex flex-column m-4">
+            <p className="font-semibold font-raleway text-primary-text">
+              Agência executora
+            </p>
             <img
               src={ministerioLogo}
               alt="Ministério da Ciência, Tecnologia e Inovações"
+              height="100px"
+              width="491px"
             />
           </div>
-          <div>
-            <p className="font-semibold">Parceiros coexecutores em Recife</p>
+          <div className="flex flex-column m-4">
+            <p className="font-semibold font-raleway text-primary-text">
+              Parceiros coexecutores em Recife
+            </p>
             <div className="flex flex-row flex-nowrap">
-              <img src={ariesLogo} alt="Aries" height="118px" width="262px" />
+              <img src={ariesLogo} alt="Aries" height="80px" width="177px" />
               <img
+                className="ml-4"
                 src={portoDigitalLogo}
                 alt="Porto Digital"
-                height="118px"
-                width="312px"
+                height="80px"
+                width="212px"
               />
             </div>
           </div>
