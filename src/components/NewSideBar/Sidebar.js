@@ -15,6 +15,7 @@ import {
 } from "../../assets/sidebarIcons";
 
 import useLayout from "../../contexts/layout";
+import usePreviousPath from "../../contexts/previousPath";
 
 const Container = styled.div`
   height: 100%;
@@ -52,6 +53,7 @@ const Label = styled.label`
 
 function Sidebar() {
   const { collapseSideBar, setCollapseSideBar } = useLayout();
+  const { previousPath, setPreviousPath } = usePreviousPath();
   const router = useRouter();
   return (
     <Container
@@ -60,6 +62,7 @@ function Sidebar() {
       onMouseLeave={() => setCollapseSideBar(true)}
       style={collapseSideBar ? { width: "80px" } : { width: "245px" }}
     >
+      {console.log(previousPath)}
       <ul
         className={
           collapseSideBar
@@ -76,14 +79,14 @@ function Sidebar() {
           <IconContainer
             className={collapseSideBar && "hover:bg-secondary-green-darker"}
           >
-            <button type="button">
+            <a href={previousPath}>
               <img
                 src={backArrowIcon}
                 alt="Voltar"
                 width="14px"
                 height="26px"
               />
-            </button>
+            </a>
           </IconContainer>
           {!collapseSideBar && (
             <div className="flex justify-self-end rounded-full h-12 w-12 flex items-center justify-center bg-secondary-green-light">
@@ -166,7 +169,7 @@ function Sidebar() {
             </p>
           </Li>
         </Link>
-        <Link href="/projetos">
+        <Link href="/projetos" onClick={() => setPreviousPath("/")}>
           <Li
             className={
               !collapseSideBar
