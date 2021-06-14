@@ -4,8 +4,6 @@ import { StaticMap } from "react-map-gl";
 import { GeoJsonLayer, ScatterplotLayer } from "@deck.gl/layers";
 import { DeckGL } from "deck.gl";
 import { VscClose } from "react-icons/vsc";
-import Select from "react-select";
-import makeAnimated from "react-select/animated";
 import styled from "styled-components";
 import trees from "../../assets/Geojsons/passeiospublicos_arvores.json";
 import streetPoles from "../../assets/Geojsons/passeiospublicos_postes.json";
@@ -125,7 +123,6 @@ const Map = () => {
       description: "Calçadas Acessíveis",
     },
   ];
-  const animatedComponents = makeAnimated();
 
   const [viewport, setViewport] = useState({
     width: "100%",
