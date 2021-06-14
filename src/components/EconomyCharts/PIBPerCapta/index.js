@@ -1,11 +1,8 @@
 import React, { useEffect, useState } from "react";
 import HighchartsReact from "highcharts-react-official";
-import Highcharts from "highcharts";
 import { economyAPI } from "../../../Services/api";
-import useLayout from "../../../contexts/layout";
 
-function PIBPerCapta() {
-  const { collapseSideBar } = useLayout();
+function PIBPerCapta({ Highcharts }) {
   const [pibPerCaptaYear, setPibPerCaptaYear] = useState([]);
   const [pibPerCaptaValue, setPibPerCaptaValue] = useState([]);
 
@@ -25,14 +22,6 @@ function PIBPerCapta() {
   useEffect(() => {
     getPibPerCapta();
   }, []);
-
-  useEffect(() => {
-    Highcharts.charts.forEach((c) => {
-      if (c !== undefined) {
-        setTimeout(() => c.reflow(), 300);
-      }
-    });
-  }, [collapseSideBar]);
 
   const PibPerCaptaOptions = {
     title: {
