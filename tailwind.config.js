@@ -21,6 +21,7 @@ module.exports = {
   variants: {
     extend: {
       backgroundColor: ["odd"],
+      fontWeight: ["hover"],
     },
   },
   plugins: [],

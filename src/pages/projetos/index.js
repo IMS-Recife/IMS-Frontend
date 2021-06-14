@@ -34,6 +34,7 @@ const Projects = () => {
         style={{
           backgroundImage: `url("/mapaims.jpeg")`,
           minHeight: "calc(100vh - 136px)",
+          filter: "grayscale(100%)",
         }}
       >
         <div className="bg-primary-gray shadow-xl min-h-full m-16">
@@ -103,9 +104,12 @@ const Projects = () => {
                   <Link href="/projetos/calcadalegal">
                     <button
                       type="button"
+                      className="hover:font-bold"
                       onClick={() => handleChangePreviousPath(router.asPath)}
                     >
-                      <p className="cursor-pointer">Calçada Legal</p>
+                      <p className="cursor-pointer hover:font-bold">
+                        Calçada Legal
+                      </p>
                     </button>
                   </Link>
                 </td>
