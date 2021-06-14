@@ -34,7 +34,6 @@ const Projects = () => {
         style={{
           backgroundImage: `url("/mapaims.jpeg")`,
           minHeight: "calc(100vh - 136px)",
-          filter: "grayscale(100%)",
         }}
       >
         <div className="bg-primary-gray shadow-xl min-h-full m-16">
