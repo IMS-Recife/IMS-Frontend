@@ -8,9 +8,16 @@ export default createGlobalStyle`
     }
 
     body {
-        background: ${(props) => props.theme.colors.background};
-        color: ${(props) => props.theme.colors.light};
+        background: #fff;
+        color: ${(props) => props.theme.colors.primaryText};
         font: 400 16px Roboto, sans-serif;
         overflow-x: hidden;
+    }
+    h1 {
+      font: 400 16px Raleway, sans-serif;
+      color: ${(props) => props.theme.colors.primaryText};
+    }
+    p {
+      color: ${(props) => props.theme.colors.primaryText};
     }
 `;

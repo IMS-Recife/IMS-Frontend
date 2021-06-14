@@ -1,17 +1,11 @@
 import Head from "next/head";
 import { injectIntl } from "react-intl";
-import React, { useState } from "react";
-import Layout from "../components/Layout";
+import React from "react";
+import Layout from "../../components/Layout";
 
-import Map from "../patterns/Map";
+import Map from "../../patterns/Map";
 
 function MapPage() {
-  const [showMobileMenu, setShowMobileMenu] = useState(false);
-
-  const handleShowMobileMenu = () => {
-    setShowMobileMenu(!showMobileMenu);
-  };
-
   return (
     <Layout>
       <Head>
@@ -21,7 +15,7 @@ function MapPage() {
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Map show={!showMobileMenu} />
+      <Map />
     </Layout>
   );
 }

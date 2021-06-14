@@ -1,57 +1,35 @@
 import React from "react";
 import { injectIntl } from "react-intl";
-import styled from "styled-components";
-
-import { LanguagesDropdownSelect } from "../Selects";
-
-const Nav = styled.nav`
-  background: ${(props) => props.theme.colors.primaryLight};
-  z-index: 10;
-  opacity: 1;
-  height: 72px;
-`;
-
-const ProjectNavLink = styled.a`
-  color: ${(props) => props.theme.colors.secondary};
-  letter-spacing: 0.2rem;
-  text-decoration: none;
-  padding: 0 0.5rem;
-  cursor: pointer;
-  font: 700 16px Roboto Mono, sans-serif;
-  :hover {
-    color: ${(props) => props.theme.colors.secondaryDark};
-    text-decoration: none;
-  }
-`;
-
-const NavLink = styled.a`
-  color: ${(props) => props.theme.colors.textColor1};
-  letter-spacing: 0.2rem;
-  text-decoration: none;
-  padding: 0 0.5rem;
-  cursor: pointer;
-  font: 700 16px Raleway, sans-serif;
-  :hover {
-    color: ${(props) => props.theme.colors.primaryDark};
-    text-decoration: none;
-  }
-`;
+import Link from "next/link";
 
 const Navbar = () => (
-  <>
-    <Nav className="grid grid-cols-2 w-100 shadow-md">
-      <div className="flex items-center justify-start">
-        <ProjectNavLink href="/">
+  <nav
+    className="grid grid-cols-2 w-100 shadow-md bg-white z-30 relative"
+    style={{ height: "76px" }}
+  >
+    <div className="flex items-center justify-start">
+      <Link href="/">
+        <p className="text-xl font-md text-secondary-green hover:text-secondary-green-darker font-raleway ml-2 cursor-pointer mb-0">
           Integrated Management System - IMS
-        </ProjectNavLink>
-      </div>
-      <div className="flex items-center justify-end mr-3">
-        <LanguagesDropdownSelect />
-        <NavLink href="/">Cadastre-se</NavLink>
-        <NavLink href="/">Login</NavLink>
-      </div>
-    </Nav>
-  </>
+        </p>
+      </Link>
+    </div>
+    <div className="flex items-center justify-end mr-3">
+      <Link href="/">
+        <p
+          className="text-lg font-semibold text-primary-text hover:text-primary-dark cursor-pointer mb-0"
+          style={{ marginRight: "150px" }}
+        >
+          Cadastre-se
+        </p>
+      </Link>
+      <Link href="/">
+        <p className="text-lg font-semibold text-primary-text hover:text-primary-dark mr-5 cursor-pointer mb-0">
+          Login
+        </p>
+      </Link>
+    </div>
+  </nav>
 );
 
 export default injectIntl(Navbar);
