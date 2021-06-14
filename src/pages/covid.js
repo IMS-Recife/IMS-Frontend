@@ -6,6 +6,7 @@ import styled from "styled-components";
 import Layout from "../components/Layout";
 import useLayout from "../contexts/layout";
 import { covidAPI } from "../Services/api";
+import useHighchartsDefault from "../hooks/useHighchartsDefault";
 
 const Card = styled.div`
   background: #f7f7f7;
@@ -23,6 +24,8 @@ const CovidPage = () => {
   const [mm7, setMM7] = useState([]);
   const [panelData, setPanelData] = useState({});
 
+  useHighchartsDefault(Highcharts);
+
   const getItems = async () => {
     try {
       const { data } = await covidAPI.get("/analises2", {
@@ -32,8 +35,7 @@ const CovidPage = () => {
       setAnalise11(
         data.map((d) => {
           if (d.Óbitos === null) {
-            d.Óbitos = 0;
-            return d.Óbitos;
+            return 0;
           }
           return d.Óbitos;
         })
@@ -41,14 +43,13 @@ const CovidPage = () => {
       let res = await covidAPI.get("/analises18");
       const weeks = res.data.map((s) => s.week);
       setWeekCat(weeks);
-
       setSubnot(
         res.data
           .filter((s) => s.cor !== "Estável")
           .map((s) => ({
             pointWidth: 15,
             y: s.new_deaths,
-            x: weekCat.lastIndexOf(s.week),
+            x: weeks.lastIndexOf(s.week),
             start: s["Início"],
             end: s["Término"],
             color: "#fc8d62",
@@ -73,7 +74,7 @@ const CovidPage = () => {
           .map((s) => ({
             pointWidth: 15,
             y: s.new_notifications,
-            x: weekCat.lastIndexOf(s.week),
+            x: weeks.lastIndexOf(s.week),
             start: s["Início"],
             end: s["Término"],
           }))
