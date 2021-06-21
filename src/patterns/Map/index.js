@@ -227,7 +227,6 @@ const Map = () => {
       data:
         "https://raw.githubusercontent.com/Filipegbessaa/IMS-Frontend/dev/src/assets/Geojsons/calcadas_acessiveis.json",
       opacity: 0.8,
-      lineWidthScale: 0.3,
       stroked: true,
       filled: true,
       autoHighlight: true,
@@ -237,7 +236,9 @@ const Map = () => {
         console.log(object);
         setShowSidebar((prevState) => !prevState);
       },
-      getLineWidth: 4,
+      getLineWidth: 8,
+      lineWidthMinPixels: 3,
+      lineWidthMaxPixels: 3,
       getFillColor: [55, 126, 184],
       visible: filters[3].visible,
     }),
