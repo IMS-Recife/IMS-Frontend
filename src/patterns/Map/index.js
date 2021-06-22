@@ -324,7 +324,7 @@ const Map = () => {
                     </div>
                   </div>
                 </SmallInfoContainer>
-                <SmallInfoContainer className="rounded-xl mt-3 ml-3 mr-3 p-2">
+                <SmallInfoContainer className="rounded-xl mt-3 ml-3 p-2">
                   <p className="flex justify-center text-2xl font-bold">
                     Lotes do Projeto
                   </p>
@@ -414,7 +414,7 @@ const Map = () => {
                     <span className="font-normal">_____</span>
                   </p>
                 </SmallInfoContainer>
-                <SmallInfoContainer className="rounded-xl mt-3 mr-3 ml-3 p-3">
+                <SmallInfoContainer className="rounded-xl mt-3 p-3">
                   <h1 className="flex justify-center text-2xl font-bold">
                     Arquivos do Projeto
                   </h1>

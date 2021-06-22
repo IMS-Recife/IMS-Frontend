@@ -13,7 +13,6 @@ const GreenCircle = styled.div`
   border-radius: 50%;
   position: relative;
   background-color: ${(props) => props.theme.colors.secondaryLight};
-  cursor: pointer;
 `;
 const YellowCircle = styled.div`
   width: 20px;
@@ -21,7 +20,6 @@ const YellowCircle = styled.div`
   border-radius: 50%;
   position: relative;
   background-color: ${(props) => props.theme.colors.statusColor1};
-  cursor: pointer;
 `;
 
 const Projects = () => {
@@ -99,22 +97,22 @@ const Projects = () => {
                 </th>
               </tr>
               <tr className="border-b border-gray-400">
-                <td className="p-4 pt-5">
+                <td className="p-4 pt-5 h-100">
                   <Link href="/projetos/calcadalegal">
                     <button
                       type="button"
                       className="hover:font-bold"
                       onClick={() => handleChangePreviousPath(router.asPath)}
                     >
-                      <p className="cursor-pointer hover:font-bold">
+                      <p className="cursor-pointer hover:font-bold uppercase">
                         Calçada Legal
                       </p>
                     </button>
                   </Link>
                 </td>
-                <td className="flex flex-row p-4 pt-5">
+                <td className="flex flex-row p-4 pt-5 content-center h-100">
                   <YellowCircle className="mr-2" />
-                  <p className="">EM EXECUÇÃO</p>
+                  <p className="m-0">Em execução</p>
                 </td>
                 <td className="p-4 pt-5">
                   <p>
@@ -131,11 +129,11 @@ const Projects = () => {
               </tr>
               <tr className="border-b border-gray-400">
                 <td className="p-4">
-                  <p>Habitação de interesse social</p>
+                  <p className="uppercase">Habitação de interesse social</p>
                 </td>
                 <td className="flex flex-row p-4">
                   <YellowCircle className="mr-2" />
-                  <p className="">EM EXECUÇÃO</p>
+                  <p className="m-0">Em execução</p>
                 </td>
                 <td className="p-4">
                   <p>
@@ -152,11 +150,11 @@ const Projects = () => {
               </tr>
               <tr className="border-b border-gray-400">
                 <td className="p-4">
-                  <p>Parque Capibaribe</p>
+                  <p className="uppercase">Parque Capibaribe</p>
                 </td>
                 <td className="flex flex-row p-4">
                   <GreenCircle className="mr-2" />
-                  <p className="">CONCLUÍDO</p>
+                  <p className="m-0">Concluído</p>
                 </td>
                 <td className="p-4">
                   <p>
@@ -173,11 +171,13 @@ const Projects = () => {
               </tr>
               <tr className="border-b border-gray-400">
                 <td className="p-4">
-                  <p>Requalificação Av. Cde. da Boa Vista</p>
+                  <p className="uppercase">
+                    Requalificação Av. Cde. da Boa Vista
+                  </p>
                 </td>
                 <td className="flex flex-row p-4">
                   <GreenCircle className="mr-2" />
-                  <p className="">CONCLUÍDO</p>
+                  <p className="m-0">Concluído</p>
                 </td>
                 <td className="p-4">
                   <p>
