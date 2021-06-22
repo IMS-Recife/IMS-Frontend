@@ -19,6 +19,7 @@
     "highcharts": "^9.0.1",
     "highcharts-react-official": "^3.0.0",
     "next": "10.0.6",
+    "next-fonts": "^1.5.1",
     "next-images": "^1.7.0",
     "prop-types": "^15.7.2",
     "react": "^17.0.1",

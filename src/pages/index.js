@@ -40,9 +40,9 @@ const Home = () => {
     <Layout>
       <div className="h-48 grid grid-cols-2 border-b border-gray-100 shadow-xl sticky top-0 z-20 bg-white">
         <div className="w-full ml-2 flex items-start justify-content-center flex-col">
-          <h1 className="font-bold text-secondary-green text-4xl">
+          <p className="font-black text-secondary-green text-4xl mb-0">
             Integrated Management System - IMS
-          </h1>
+          </p>
           <span className="text-xl text-primary-text">
             Planejamento Urbano e Gerência Integrada das Cidades
           </span>
