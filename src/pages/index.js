@@ -41,13 +41,13 @@ const Home = () => {
       <div className="h-48 grid grid-cols-2 border-b border-gray-100 shadow-xl sticky top-0 z-20 bg-white">
         <div className="w-full ml-2 flex items-start justify-content-center flex-col">
           <p className="font-black text-secondary-green text-4xl mb-0">
-            Integrated Management System - IMS
+            Sistema de Gestão Georreferenciada Integrada
           </p>
           <span className="text-xl text-primary-text">
             Planejamento Urbano e Gerência Integrada das Cidades
           </span>
         </div>
-        <div className="mr-4 flex flex-column">
+        <div className="mr-3 flex flex-column">
           <div className="flex ml-auto mt-12 w-75 mr-3">
             <input
               className="border-gray-500 border rounded-3xl w-full p-2.5 text-primary outline-none text-sm transition duration-150 ease-in-out mb-4"

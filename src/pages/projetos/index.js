@@ -110,9 +110,11 @@ const Projects = () => {
                     </button>
                   </Link>
                 </td>
-                <td className="flex flex-row p-4 pt-5 content-center h-100">
-                  <YellowCircle className="mr-2" />
-                  <p className="m-0">Em execução</p>
+                <td className="p-4 pt-5">
+                  <div className="flex flex-row ml-5">
+                    <YellowCircle className="mr-2" />
+                    <p className="m-0">Em execução</p>
+                  </div>
                 </td>
                 <td className="p-4 pt-5">
                   <p>
@@ -131,9 +133,11 @@ const Projects = () => {
                 <td className="p-4">
                   <p className="uppercase">Habitação de interesse social</p>
                 </td>
-                <td className="flex flex-row p-4">
-                  <YellowCircle className="mr-2" />
-                  <p className="m-0">Em execução</p>
+                <td className="p-4">
+                  <div className="flex flex-row ml-5">
+                    <YellowCircle className="mr-2" />
+                    <p className="m-0">Em execução</p>
+                  </div>
                 </td>
                 <td className="p-4">
                   <p>
@@ -152,9 +156,11 @@ const Projects = () => {
                 <td className="p-4">
                   <p className="uppercase">Parque Capibaribe</p>
                 </td>
-                <td className="flex flex-row p-4">
-                  <GreenCircle className="mr-2" />
-                  <p className="m-0">Concluído</p>
+                <td className="p-4">
+                  <div className="flex flex-row ml-5">
+                    <GreenCircle className="mr-2" />
+                    <p className="m-0">Concluído</p>
+                  </div>
                 </td>
                 <td className="p-4">
                   <p>
@@ -175,9 +181,11 @@ const Projects = () => {
                     Requalificação Av. Cde. da Boa Vista
                   </p>
                 </td>
-                <td className="flex flex-row p-4">
-                  <GreenCircle className="mr-2" />
-                  <p className="m-0">Concluído</p>
+                <td className="p-4">
+                  <div className="flex flex-row ml-5">
+                    <GreenCircle className="mr-2" />
+                    <p className="m-0">Concluído</p>
+                  </div>
                 </td>
                 <td className="p-4">
                   <p>

@@ -351,50 +351,50 @@ const Map = () => {
                     </tr>
                     <tr className="border-b border-gray-400">
                       <td className="p-2">
-                        <p>01</p>
+                        <p className="ml-4">01</p>
                       </td>
                       <td className="flex flex-row p-2">
                         <GreenCircle className="mr-2" />
                         <p className="sm:text-xs 2xl:text-lg">CONCLUÍDO</p>
                       </td>
                       <td className="p-2">
-                        <p>100%</p>
+                        <p className="ml-4">100%</p>
                       </td>
                     </tr>
                     <tr className="border-b border-gray-400">
                       <td className="p-2">
-                        <p>02</p>
+                        <p className="ml-4">02</p>
                       </td>
                       <td className="flex flex-row p-2">
                         <GreenCircle className="mr-2" />
                         <p className="sm:text-xs 2xl:text-lg">CONCLUÍDO</p>
                       </td>
                       <td className="p-2">
-                        <p>100%</p>
+                        <p className="ml-4">100%</p>
                       </td>
                     </tr>
                     <tr className="border-b border-gray-400">
                       <td className="p-2">
-                        <p>02</p>
+                        <p className="ml-4">03</p>
                       </td>
                       <td className="flex flex-row p-2">
                         <YellowCircle className="mr-2" />
                         <p className="sm:text-xs 2xl:text-lg">EM EXECUÇÃO</p>
                       </td>
                       <td className="p-2">
-                        <p>50%</p>
+                        <p className="ml-4">50%</p>
                       </td>
                     </tr>
                     <tr className="border-b border-gray-400">
                       <td className="p-2">
-                        <p>02</p>
+                        <p className="ml-4">04</p>
                       </td>
                       <td className="flex flex-row p-2">
                         <GreyCircle className="mr-2" />
                         <p className="sm:text-xs 2xl:text-lg">A EXECUTAR</p>
                       </td>
                       <td className="p-2">
-                        <p>0%</p>
+                        <p className="ml-4">0%</p>
                       </td>
                     </tr>
                   </table>
@@ -454,7 +454,7 @@ const Map = () => {
             <VscClose color="#00711F" size="1.5rem" />
           </button>
           <div className="float-right mt-5 w-4/5">
-            <h1 className="font-raleway text-4xl font-bold text-primary-text px-2 mb-2">
+            <h1 className="font-raleway  font-bold text-primary-text px-2 mb-2">
               Calçada Legal | Lote 1
             </h1>
             <div className="flex flex-row ml-5">

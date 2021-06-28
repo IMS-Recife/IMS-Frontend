@@ -117,8 +117,8 @@ function Sidebar() {
             className={
               !collapseSideBar
                 ? router.asPath === "/"
-                  ? "bg-secondary-green-darker rounded-lg mt-0 mb-0"
-                  : "hover:bg-secondary-green-darker rounded-lg mt-2 mb-2"
+                  ? "bg-secondary-green-darker rounded-lg mb-3 mt-3"
+                  : "hover:bg-secondary-green-darker rounded-lg mb-3 mt-3"
                 : "mt-3 mb-3"
             }
           >
@@ -146,8 +146,8 @@ function Sidebar() {
             className={
               !collapseSideBar
                 ? router.asPath === "/planos"
-                  ? "bg-secondary-green-darker rounded-lg mt-0 mb-0"
-                  : "hover:bg-secondary-green-darker rounded-lg mt-2 mb-2"
+                  ? "bg-secondary-green-darker rounded-lg mb-3 mt-3"
+                  : "hover:bg-secondary-green-darker rounded-lg mb-3 mt-3"
                 : "mt-3 mb-3"
             }
           >
@@ -174,8 +174,8 @@ function Sidebar() {
             className={
               !collapseSideBar
                 ? router.asPath === "/projetos"
-                  ? "bg-secondary-green-darker rounded-lg mt-0 mb-0"
-                  : "hover:bg-secondary-green-darker rounded-lg mt-2 mb-2"
+                  ? "bg-secondary-green-darker rounded-lg mb-3 mt-3"
+                  : "hover:bg-secondary-green-darker rounded-lg mb-3 mt-3"
                 : "mt-3 mb-3"
             }
           >
@@ -202,8 +202,8 @@ function Sidebar() {
             className={
               !collapseSideBar
                 ? router.asPath === "/economia"
-                  ? "bg-secondary-green-darker rounded-lg mt-0 mb-0"
-                  : "hover:bg-secondary-green-darker rounded-lg mt-2 mb-2"
+                  ? "bg-secondary-green-darker rounded-lg mb-3 mt-3"
+                  : "hover:bg-secondary-green-darker rounded-lg mb-3 mt-3"
                 : "mt-3 mb-3"
             }
           >
@@ -218,7 +218,7 @@ function Sidebar() {
             </IconContainer>
             <p
               className={
-                collapseSideBar ? "hidden" : "text-white mb-0 ml-3 text-lg"
+                collapseSideBar ? "hidden" : "text-white mb-2 mt-2 ml-3 text-lg"
               }
             >
               Economia
@@ -230,8 +230,8 @@ function Sidebar() {
             className={
               !collapseSideBar
                 ? router.asPath === "/covid"
-                  ? "bg-secondary-green-darker rounded-lg mt-0 mb-0"
-                  : "hover:bg-secondary-green-darker rounded-lg mt-2 mb-2"
+                  ? "bg-secondary-green-darker rounded-lg mb-3 mt-3"
+                  : "hover:bg-secondary-green-darker rounded-lg mt-3 mb-3"
                 : "mt-3 mb-3"
             }
           >
