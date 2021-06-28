@@ -355,7 +355,7 @@ const Map = () => {
                       </td>
                       <td className="flex flex-row p-2">
                         <GreenCircle className="mr-2" />
-                        <p className="sm:text-xs 2xl:text-lg">CONCLUÍDO</p>
+                        <p className="sm:text-xs 2xl:text-lg">Concluído</p>
                       </td>
                       <td className="p-2">
                         <p className="ml-4">100%</p>
@@ -367,7 +367,7 @@ const Map = () => {
                       </td>
                       <td className="flex flex-row p-2">
                         <GreenCircle className="mr-2" />
-                        <p className="sm:text-xs 2xl:text-lg">CONCLUÍDO</p>
+                        <p className="sm:text-xs 2xl:text-lg">Concluído</p>
                       </td>
                       <td className="p-2">
                         <p className="ml-4">100%</p>
@@ -379,7 +379,7 @@ const Map = () => {
                       </td>
                       <td className="flex flex-row p-2">
                         <YellowCircle className="mr-2" />
-                        <p className="sm:text-xs 2xl:text-lg">EM EXECUÇÃO</p>
+                        <p className="sm:text-xs 2xl:text-lg">Em execução</p>
                       </td>
                       <td className="p-2">
                         <p className="ml-4">50%</p>
@@ -391,7 +391,7 @@ const Map = () => {
                       </td>
                       <td className="flex flex-row p-2">
                         <GreyCircle className="mr-2" />
-                        <p className="sm:text-xs 2xl:text-lg">A EXECUTAR</p>
+                        <p className="sm:text-xs 2xl:text-lg">A executar</p>
                       </td>
                       <td className="p-2">
                         <p className="ml-4">0%</p>
@@ -459,7 +459,7 @@ const Map = () => {
             </h1>
             <div className="flex flex-row ml-5">
               <GreenCircle className="mr-2 mt-1" />
-              <h4 className="text-lg uppercase">CONCLUÍDO</h4>
+              <h4 className="text-lg">Concluído</h4>
             </div>
             <div className="ml-5 flex flex-row">
               <p
