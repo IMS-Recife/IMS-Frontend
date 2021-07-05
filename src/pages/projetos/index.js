@@ -6,6 +6,7 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import Layout from "../../components/Layout";
 import usePreviousPath from "../../contexts/previousPath";
+import Breadcrumbs from "../../components/Breadcrumbs";
 
 const GreenCircle = styled.div`
   width: 20px;
@@ -28,13 +29,14 @@ const Projects = () => {
   return (
     <Layout>
       <div
-        className="flex"
+        className="flex flex-column"
         style={{
           backgroundImage: `url("/mapaims.jpeg")`,
           minHeight: "calc(100vh - 136px)",
         }}
       >
-        <div className="bg-primary-gray shadow-xl min-h-full m-16">
+        <Breadcrumbs />
+        <div className="bg-primary-gray shadow-xl min-h-full m-16 mt-3">
           <div className="px-5 pt-5 mb-0">
             <h1 className="font-raleway uppercase text-4xl font-bold text-primary-text">
               Projetos

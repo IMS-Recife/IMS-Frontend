@@ -7,6 +7,7 @@ import { VscClose } from "react-icons/vsc";
 import styled from "styled-components";
 import trees from "../../assets/Geojsons/passeiospublicos_arvores.json";
 import streetPoles from "../../assets/Geojsons/passeiospublicos_postes.json";
+import Breadcrumbs from "../../components/Breadcrumbs";
 
 const FilterSelect = styled.select`
   option:hover {
@@ -251,189 +252,196 @@ const Map = () => {
       {showProjectSidebar && !showSidebar && (
         <div className="flex w-4/5">
           <div className="sm:w-4/5 2xl:w-3/5 h-full bg-white opacity-95 z-10 text-black border-r flex-grow">
-            <aside className="float-right mt-5 w-11/12 bg-primary-gray">
-              <h1 className="font-raleway text-5xl font-bold text-primary-text p-5 mb-2">
-                Calçada Legal
-              </h1>
-              <div className="flex flex-row ml-5">
-                <YellowCircle className="mr-2 mt-1" />
-                <h4 className="text-lg uppercase">Em execução</h4>
-              </div>
-              <p className="ml-5 w-3/5">
-                O Projeto Calçada Legal prevê a requalificação dos passeios
-                públicos dos principais corredores viários da cidade. Tem como
-                objetivo garantir o conforto, a segurança do pedestre ao
-                caminhar e a conectividade com a rede de transporte público.
-                Mais de 100 ruas são contempladas com financiamento do PAC
-                Pavimentação e recursos próprios da Prefeitura.
-              </p>
-              <div className="ml-5 flex flex-row">
-                <p
-                  style={{ fontSize: "16px" }}
-                  className="border border-black mr-2 font-bold p-3"
-                >
-                  Acessibilidade
-                </p>
-                <p
-                  style={{ fontSize: "16px" }}
-                  className="border border-black font-bold p-3"
-                >
-                  Meio Ambiente
-                </p>
-              </div>
-              <div className="flex flex-row">
-                <SmallInfoContainer className="rounded-xl ml-3 p-3 primary-gray-darker">
-                  <div className="w-4/5 mx-auto">
-                    <p className="text-2xl font-bold">Indicadores Totais</p>
-                    <p className="text-md font-bold">
-                      Última atualização:
-                      <span className="font-normal"> 27/04/2021</span>
-                    </p>
-                  </div>
-                  <div className="grid grid-cols-2">
-                    <div>
-                      <Ring>
-                        <Ring2 className="flex justify-center items-center">
-                          <h1 className="justify-center sm:text-2xl 2xl:text-4xl font-bold">
-                            100%
-                          </h1>
-                        </Ring2>
-                      </Ring>
-                      <p className="flex justify-center text-lg">
-                        Total executado
-                      </p>
-                    </div>
-                    <div className="mt-3">
-                      <p className="text-sm font-bold">
-                        Data de início:{" "}
-                        <span className="font-normal">DD/MM/AAAA</span>
-                      </p>
-                      <p className="text-sm font-bold">
-                        Data de fim:{" "}
-                        <span className="font-normal">DD/MM/AAAA</span>
-                      </p>
-                      <p>Duração:</p>
-                      <p className="text-sm font-bold">
-                        Valor total licitado:{" "}
-                        <span className="font-normal">R$</span>
-                      </p>
-                      <p className="text-sm font-bold">
-                        Valor total pago:{" "}
-                        <span className="font-normal">R$</span>
-                      </p>
-                    </div>
-                  </div>
-                </SmallInfoContainer>
-                <SmallInfoContainer className="rounded-xl mt-3 ml-3 p-2">
-                  <p className="flex justify-center text-2xl font-bold">
-                    Lotes do Projeto
-                  </p>
-                  <table className="m-auto">
-                    <tr className="bg-primary-gray-dark shadow-md p-3">
-                      <th className="p-2">
-                        <p>Número</p>
-                        <select className="bg-transparent border rounded-xl p-2 border-black border-8">
-                          <option>Teste</option>
-                        </select>
-                      </th>
-                      <th className="p-2">
-                        <p>Status</p>
-                        <select className="bg-transparent border rounded-xl p-2 border-black border-8">
-                          <option>Teste</option>
-                        </select>
-                      </th>
-                      <th className="p-2 m-auto">
-                        <p>%Execução</p>
-                        <select className="bg-transparent border rounded-xl p-2 border-black border-8">
-                          <option>Teste</option>
-                        </select>
-                      </th>
-                    </tr>
-                    <tr className="border-b border-gray-400">
-                      <td className="p-2">
-                        <p className="ml-4">01</p>
-                      </td>
-                      <td className="flex flex-row p-2">
-                        <GreenCircle className="mr-2" />
-                        <p className="sm:text-xs 2xl:text-lg">Concluído</p>
-                      </td>
-                      <td className="p-2">
-                        <p className="ml-4">100%</p>
-                      </td>
-                    </tr>
-                    <tr className="border-b border-gray-400">
-                      <td className="p-2">
-                        <p className="ml-4">02</p>
-                      </td>
-                      <td className="flex flex-row p-2">
-                        <GreenCircle className="mr-2" />
-                        <p className="sm:text-xs 2xl:text-lg">Concluído</p>
-                      </td>
-                      <td className="p-2">
-                        <p className="ml-4">100%</p>
-                      </td>
-                    </tr>
-                    <tr className="border-b border-gray-400">
-                      <td className="p-2">
-                        <p className="ml-4">03</p>
-                      </td>
-                      <td className="flex flex-row p-2">
-                        <YellowCircle className="mr-2" />
-                        <p className="sm:text-xs 2xl:text-lg">Em execução</p>
-                      </td>
-                      <td className="p-2">
-                        <p className="ml-4">50%</p>
-                      </td>
-                    </tr>
-                    <tr className="border-b border-gray-400">
-                      <td className="p-2">
-                        <p className="ml-4">04</p>
-                      </td>
-                      <td className="flex flex-row p-2">
-                        <GreyCircle className="mr-2" />
-                        <p className="sm:text-xs 2xl:text-lg">A executar</p>
-                      </td>
-                      <td className="p-2">
-                        <p className="ml-4">0%</p>
-                      </td>
-                    </tr>
-                  </table>
-                </SmallInfoContainer>
-              </div>
-              <div className="flex flex-row mb-3">
-                <SmallInfoContainer className="rounded-xl mt-3 mr-3 ml-3 p-3">
-                  <h1 className="flex justify-center text-2xl font-bold">
-                    Indicadores do projeto
+            <div className="self-end">
+              <div className="mr-0">
+                <Breadcrumbs />
+                <aside className="w-11/12 bg-primary-gray ml-16">
+                  <h1 className="font-raleway text-5xl font-bold text-primary-text p-5 mb-2">
+                    Calçada Legal
                   </h1>
-                  <p className="text-md font-bold mt-3">
-                    Área total de calçada projetada:
-                    <span className="font-normal">_____m²</span>
+                  <div className="flex flex-row ml-5">
+                    <YellowCircle className="mr-2 mt-1" />
+                    <h4 className="text-lg">Em execução</h4>
+                  </div>
+                  <p className="ml-5 w-3/5">
+                    O Projeto Calçada Legal prevê a requalificação dos passeios
+                    públicos dos principais corredores viários da cidade. Tem
+                    como objetivo garantir o conforto, a segurança do pedestre
+                    ao caminhar e a conectividade com a rede de transporte
+                    público. Mais de 100 ruas são contempladas com financiamento
+                    do PAC Pavimentação e recursos próprios da Prefeitura.
                   </p>
-                  <p className="text-md font-bold">
-                    Quantidade total de árvores:
-                    <span className="font-normal">_____</span>
-                  </p>
-                </SmallInfoContainer>
-                <SmallInfoContainer className="rounded-xl mt-3 p-3">
-                  <h1 className="flex justify-center text-2xl font-bold">
-                    Arquivos do Projeto
-                  </h1>
-                  <div className="mt-3">
-                    <p className="ml-4 uppercase text-md">
-                      Prestação de contas lote 2
+                  <div className="ml-5 flex flex-row">
+                    <p
+                      style={{ fontSize: "16px" }}
+                      className="border border-black mr-2 font-bold p-3"
+                    >
+                      Acessibilidade
                     </p>
-                    <hr />
-                    <p className="ml-4 uppercase text-md">
-                      Prestação de contas lote 2
-                    </p>
-                    <hr />
-                    <p className="ml-4 uppercase text-md">
-                      Prestação de contas lote 2
+                    <p
+                      style={{ fontSize: "16px" }}
+                      className="border border-black font-bold p-3"
+                    >
+                      Meio Ambiente
                     </p>
                   </div>
-                </SmallInfoContainer>
+                  <div className="flex flex-row">
+                    <SmallInfoContainer className="rounded-xl ml-3 p-3 primary-gray-darker">
+                      <div className="w-4/5 mx-auto">
+                        <p className="text-2xl font-bold">Indicadores Totais</p>
+                        <p className="text-md font-bold">
+                          Última atualização:
+                          <span className="font-normal"> 27/04/2021</span>
+                        </p>
+                      </div>
+                      <div className="grid grid-cols-2">
+                        <div>
+                          <Ring>
+                            <Ring2 className="flex justify-center items-center">
+                              <h1 className="justify-center sm:text-2xl 2xl:text-4xl font-bold">
+                                100%
+                              </h1>
+                            </Ring2>
+                          </Ring>
+                          <p className="flex justify-center text-lg">
+                            Total executado
+                          </p>
+                        </div>
+                        <div className="mt-3">
+                          <p className="text-sm font-bold">
+                            Data de início:{" "}
+                            <span className="font-normal">DD/MM/AAAA</span>
+                          </p>
+                          <p className="text-sm font-bold">
+                            Data de fim:{" "}
+                            <span className="font-normal">DD/MM/AAAA</span>
+                          </p>
+                          <p>Duração:</p>
+                          <p className="text-sm font-bold">
+                            Valor total licitado:{" "}
+                            <span className="font-normal">R$</span>
+                          </p>
+                          <p className="text-sm font-bold">
+                            Valor total pago:{" "}
+                            <span className="font-normal">R$</span>
+                          </p>
+                        </div>
+                      </div>
+                    </SmallInfoContainer>
+                    <SmallInfoContainer className="rounded-xl mt-3 ml-3 p-2">
+                      <p className="flex justify-center text-2xl font-bold">
+                        Lotes do Projeto
+                      </p>
+                      <table className="m-auto">
+                        <tr className="bg-primary-gray-dark shadow-md p-3">
+                          <th className="p-2">
+                            <p>Número</p>
+                            <select className="bg-transparent border rounded-xl p-2 border-black border-8">
+                              <option>Teste</option>
+                            </select>
+                          </th>
+                          <th className="p-2">
+                            <p>Status</p>
+                            <select className="bg-transparent border rounded-xl p-2 border-black border-8">
+                              <option>Teste</option>
+                            </select>
+                          </th>
+                          <th className="p-2 m-auto">
+                            <p>%Execução</p>
+                            <select className="bg-transparent border rounded-xl p-2 border-black border-8">
+                              <option>Teste</option>
+                            </select>
+                          </th>
+                        </tr>
+                        <tr className="border-b border-gray-400">
+                          <td className="p-2">
+                            <p className="ml-4">01</p>
+                          </td>
+                          <td className="flex flex-row p-2">
+                            <GreenCircle className="mr-2" />
+                            <p className="sm:text-xs 2xl:text-lg">Concluído</p>
+                          </td>
+                          <td className="p-2">
+                            <p className="ml-4">100%</p>
+                          </td>
+                        </tr>
+                        <tr className="border-b border-gray-400">
+                          <td className="p-2">
+                            <p className="ml-4">02</p>
+                          </td>
+                          <td className="flex flex-row p-2">
+                            <GreenCircle className="mr-2" />
+                            <p className="sm:text-xs 2xl:text-lg">Concluído</p>
+                          </td>
+                          <td className="p-2">
+                            <p className="ml-4">100%</p>
+                          </td>
+                        </tr>
+                        <tr className="border-b border-gray-400">
+                          <td className="p-2">
+                            <p className="ml-4">03</p>
+                          </td>
+                          <td className="flex flex-row p-2">
+                            <YellowCircle className="mr-2" />
+                            <p className="sm:text-xs 2xl:text-lg">
+                              Em execução
+                            </p>
+                          </td>
+                          <td className="p-2">
+                            <p className="ml-4">50%</p>
+                          </td>
+                        </tr>
+                        <tr className="border-b border-gray-400">
+                          <td className="p-2">
+                            <p className="ml-4">04</p>
+                          </td>
+                          <td className="flex flex-row p-2">
+                            <GreyCircle className="mr-2" />
+                            <p className="sm:text-xs 2xl:text-lg">A executar</p>
+                          </td>
+                          <td className="p-2">
+                            <p className="ml-4">0%</p>
+                          </td>
+                        </tr>
+                      </table>
+                    </SmallInfoContainer>
+                  </div>
+                  <div className="flex flex-row mb-3">
+                    <SmallInfoContainer className="rounded-xl mt-3 mr-3 ml-3 p-3">
+                      <h1 className="flex justify-center text-2xl font-bold">
+                        Indicadores do projeto
+                      </h1>
+                      <p className="text-md font-bold mt-3">
+                        Área total de calçada projetada:
+                        <span className="font-normal">_____m²</span>
+                      </p>
+                      <p className="text-md font-bold">
+                        Quantidade total de árvores:
+                        <span className="font-normal">_____</span>
+                      </p>
+                    </SmallInfoContainer>
+                    <SmallInfoContainer className="rounded-xl mt-3 p-3">
+                      <h1 className="flex justify-center text-2xl font-bold">
+                        Arquivos do Projeto
+                      </h1>
+                      <div className="mt-3">
+                        <p className="ml-4 uppercase text-md">
+                          Prestação de contas lote 2
+                        </p>
+                        <hr />
+                        <p className="ml-4 uppercase text-md">
+                          Prestação de contas lote 2
+                        </p>
+                        <hr />
+                        <p className="ml-4 uppercase text-md">
+                          Prestação de contas lote 2
+                        </p>
+                      </div>
+                    </SmallInfoContainer>
+                  </div>
+                </aside>
               </div>
-            </aside>
+            </div>
           </div>
           <button
             type="button"
@@ -453,8 +461,9 @@ const Map = () => {
           >
             <VscClose color="#00711F" size="1.5rem" />
           </button>
-          <div className="float-right mt-5 w-4/5">
-            <h1 className="font-raleway  font-bold text-primary-text px-2 mb-2">
+          <Breadcrumbs />
+          <div className="mt-4 w-4/5 bg-primary-gray ml-16">
+            <h1 className="font-raleway text-4xl font-bold text-primary-text p-5 mb-2">
               Calçada Legal | Lote 1
             </h1>
             <div className="flex flex-row ml-5">

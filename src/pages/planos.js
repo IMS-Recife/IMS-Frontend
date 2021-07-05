@@ -1,13 +1,15 @@
 import { injectIntl } from "react-intl";
 import React from "react";
 import Layout from "../components/Layout";
+import Breadcrumbs from "../components/Breadcrumbs";
 
 function Plans() {
   return (
     <>
       <Layout>
+        <Breadcrumbs />
         <div
-          className="m-16 bg-primary-gray shadow-xl p-8"
+          className="m-16 mt-3 bg-primary-gray shadow-xl p-8"
           style={{
             minHeight: "calc(100vh - 264px)",
           }}
