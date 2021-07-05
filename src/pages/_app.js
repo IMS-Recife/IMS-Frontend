@@ -1,6 +1,5 @@
 import React from "react";
 import { ThemeProvider } from "styled-components";
-import { ToastContainer } from "react-toastify";
 import I18nProvider from "../i18n/I18nProvider";
 import "../styles/global.scss";
 import "react-toastify/dist/ReactToastify.css";

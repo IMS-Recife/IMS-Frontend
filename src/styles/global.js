@@ -25,4 +25,8 @@ export default createGlobalStyle`
     font-family: "Raleway";
     src: url("/fonts/Raleway-VariableFont_wght.ttf");
 }
+  @font-face {
+    font-family: "Roboto";
+    src: url("/fonts/Roboto/Roboto-Regular.ttf");
+}
 `;

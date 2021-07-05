@@ -298,7 +298,7 @@ const Map = () => {
                         <div>
                           <Ring>
                             <Ring2 className="flex justify-center items-center">
-                              <h1 className="justify-center sm:text-2xl 2xl:text-4xl font-bold">
+                              <h1 className="justify-center sm:text-2xl 2xl:text-4xl font-bold font-roboto">
                                 100%
                               </h1>
                             </Ring2>

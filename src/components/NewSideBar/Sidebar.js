@@ -60,7 +60,6 @@ function Sidebar() {
       onMouseLeave={() => setCollapseSideBar(true)}
       style={collapseSideBar ? { width: "80px" } : { width: "245px" }}
     >
-      {console.log(previousPath)}
       <ul
         className={
           collapseSideBar
