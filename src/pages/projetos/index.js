@@ -31,7 +31,7 @@ const Projects = () => {
       <div
         className="flex flex-column"
         style={{
-          backgroundImage: `url("/mapaims.jpeg")`,
+          backgroundImage: `url("/mapaimsBW.jpeg")`,
           minHeight: "calc(100vh - 136px)",
         }}
       >

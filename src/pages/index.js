@@ -63,25 +63,25 @@ const Home = () => {
           <div className="flex items-stretch justify-between mt-auto mb-2 mr-5">
             <a
               href="#sobre"
-              className="font-medium font-bold uppercase text-gray-500 hover:text-gray-900 hover:no-underline"
+              className="font-medium font-bold uppercase text-gray-500 hover:text-primary-dark hover:no-underline"
             >
               Sobre o IMS
             </a>
             <a
               href="#destaques"
-              className="font-medium font-bold uppercase text-gray-500 hover:text-gray-900 hover:no-underline"
+              className="font-medium font-bold uppercase text-gray-500 hover:text-primary-dark hover:no-underline"
             >
               Destaques
             </a>
             <a
               href="#contato"
-              className="font-medium font-bold uppercase text-gray-500 hover:text-gray-900 hover:no-underline"
+              className="font-medium font-bold uppercase text-gray-500 hover:text-primary-dark hover:no-underline"
             >
               Contato
             </a>
             <a
               href="#parceiros"
-              className="font-medium font-bold uppercase text-gray-500 hover:text-gray-900 hover:no-underline"
+              className="font-medium font-bold uppercase text-gray-500 hover:text-primary-dark hover:no-underline"
             >
               Parceiros
             </a>
