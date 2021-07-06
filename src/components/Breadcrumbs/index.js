@@ -7,15 +7,25 @@ function Breadcrumbs() {
   const router = useRouter();
   const pathArray = router.asPath.split("/");
 
-  const getPreviousPath = (currentPath) => currentPath.join("/");
+  const getPreviousPath = (currentPath) => {
+    if (currentPath === undefined) {
+      return "/";
+    }
+    return currentPath.join("/");
+  };
 
   return (
     <>
       <div className="flex z-40 content-center ml-16 mt-8 mb-3">
         {pathArray.map((path, i) => (
-          <div className="flex justify-center content-center">
+          <div key={path} className="flex justify-center content-center">
             <Link
-              href={`/${getPreviousPath(pathArray.slice(0, i))}`}
+              href={
+                path === ""
+                  ? "/"
+                  : `${getPreviousPath(pathArray.slice(0, i + 1))}`
+              }
+              replace
               className="cursor-pointer"
             >
               <p
