@@ -40,14 +40,14 @@ const Home = () => {
     <Layout>
       <div className="h-48 grid grid-cols-2 border-b border-gray-100 shadow-xl sticky top-0 z-20 bg-white">
         <div className="w-full ml-2 flex items-start justify-content-center flex-col">
-          <h1 className="font-bold text-secondary-green text-4xl">
-            Integrated Management System - IMS
-          </h1>
+          <p className="font-black text-secondary-green text-4xl mb-0">
+            Sistema de Gestão Georreferenciada Integrada
+          </p>
           <span className="text-xl text-primary-text">
             Planejamento Urbano e Gerência Integrada das Cidades
           </span>
         </div>
-        <div className="mr-4 flex flex-column">
+        <div className="mr-3 flex flex-column">
           <div className="flex ml-auto mt-12 w-75 mr-3">
             <input
               className="border-gray-500 border rounded-3xl w-full p-2.5 text-primary outline-none text-sm transition duration-150 ease-in-out mb-4"
@@ -63,25 +63,25 @@ const Home = () => {
           <div className="flex items-stretch justify-between mt-auto mb-2 mr-5">
             <a
               href="#sobre"
-              className="font-medium font-bold uppercase text-gray-500 hover:text-gray-900 hover:no-underline"
+              className="font-medium font-bold uppercase text-gray-500 hover:text-primary-dark hover:no-underline"
             >
               Sobre o IMS
             </a>
             <a
               href="#destaques"
-              className="font-medium font-bold uppercase text-gray-500 hover:text-gray-900 hover:no-underline"
+              className="font-medium font-bold uppercase text-gray-500 hover:text-primary-dark hover:no-underline"
             >
               Destaques
             </a>
             <a
               href="#contato"
-              className="font-medium font-bold uppercase text-gray-500 hover:text-gray-900 hover:no-underline"
+              className="font-medium font-bold uppercase text-gray-500 hover:text-primary-dark hover:no-underline"
             >
               Contato
             </a>
             <a
               href="#parceiros"
-              className="font-medium font-bold uppercase text-gray-500 hover:text-gray-900 hover:no-underline"
+              className="font-medium font-bold uppercase text-gray-500 hover:text-primary-dark hover:no-underline"
             >
               Parceiros
             </a>

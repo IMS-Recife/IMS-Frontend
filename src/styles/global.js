@@ -20,4 +20,13 @@ export default createGlobalStyle`
     p {
       color: ${(props) => props.theme.colors.primaryText};
     }
+
+  @font-face {
+    font-family: "Raleway";
+    src: url("/fonts/Raleway-VariableFont_wght.ttf");
+}
+  @font-face {
+    font-family: "Roboto";
+    src: url("/fonts/Roboto/Roboto-Regular.ttf");
+}
 `;

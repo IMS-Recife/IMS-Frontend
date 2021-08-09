@@ -10,8 +10,6 @@ import {
   projectsIcon,
   plansIcon,
   backArrowIcon,
-  openSidebarIcon,
-  closeSidebarIcon,
 } from "../../assets/sidebarIcons";
 
 import useLayout from "../../contexts/layout";
@@ -62,7 +60,6 @@ function Sidebar() {
       onMouseLeave={() => setCollapseSideBar(true)}
       style={collapseSideBar ? { width: "80px" } : { width: "245px" }}
     >
-      {console.log(previousPath)}
       <ul
         className={
           collapseSideBar
@@ -70,11 +67,6 @@ function Sidebar() {
             : "flex flex-column text-white"
         }
       >
-        {collapseSideBar && (
-          <div className="mt-3 mb-3">
-            <img src={openSidebarIcon} alt="Abrir" width="26px" />
-          </div>
-        )}
         <div className="grid grid-cols-2 items-center mt-2 mb-2">
           <IconContainer
             className={collapseSideBar && "hover:bg-secondary-green-darker"}
@@ -88,11 +80,6 @@ function Sidebar() {
               />
             </a>
           </IconContainer>
-          {!collapseSideBar && (
-            <div className="flex justify-self-end rounded-full h-12 w-12 flex items-center justify-center bg-secondary-green-light">
-              <img src={closeSidebarIcon} alt="Fechar" width="26px" />
-            </div>
-          )}
         </div>
         <Li className="mt-2 mb-2">
           {collapseSideBar ? (
@@ -117,8 +104,8 @@ function Sidebar() {
             className={
               !collapseSideBar
                 ? router.asPath === "/"
-                  ? "bg-secondary-green-darker rounded-lg mt-0 mb-0"
-                  : "hover:bg-secondary-green-darker rounded-lg mt-2 mb-2"
+                  ? "bg-secondary-green-darker rounded-lg mb-3 mt-3"
+                  : "hover:bg-secondary-green-darker rounded-lg mb-3 mt-3"
                 : "mt-3 mb-3"
             }
           >
@@ -146,8 +133,8 @@ function Sidebar() {
             className={
               !collapseSideBar
                 ? router.asPath === "/planos"
-                  ? "bg-secondary-green-darker rounded-lg mt-0 mb-0"
-                  : "hover:bg-secondary-green-darker rounded-lg mt-2 mb-2"
+                  ? "bg-secondary-green-darker rounded-lg mb-3 mt-3"
+                  : "hover:bg-secondary-green-darker rounded-lg mb-3 mt-3"
                 : "mt-3 mb-3"
             }
           >
@@ -174,8 +161,8 @@ function Sidebar() {
             className={
               !collapseSideBar
                 ? router.asPath === "/projetos"
-                  ? "bg-secondary-green-darker rounded-lg mt-0 mb-0"
-                  : "hover:bg-secondary-green-darker rounded-lg mt-2 mb-2"
+                  ? "bg-secondary-green-darker rounded-lg mb-3 mt-3"
+                  : "hover:bg-secondary-green-darker rounded-lg mb-3 mt-3"
                 : "mt-3 mb-3"
             }
           >
@@ -202,8 +189,8 @@ function Sidebar() {
             className={
               !collapseSideBar
                 ? router.asPath === "/economia"
-                  ? "bg-secondary-green-darker rounded-lg mt-0 mb-0"
-                  : "hover:bg-secondary-green-darker rounded-lg mt-2 mb-2"
+                  ? "bg-secondary-green-darker rounded-lg mb-3 mt-3"
+                  : "hover:bg-secondary-green-darker rounded-lg mb-3 mt-3"
                 : "mt-3 mb-3"
             }
           >
@@ -218,7 +205,7 @@ function Sidebar() {
             </IconContainer>
             <p
               className={
-                collapseSideBar ? "hidden" : "text-white mb-0 ml-3 text-lg"
+                collapseSideBar ? "hidden" : "text-white mb-2 mt-2 ml-3 text-lg"
               }
             >
               Economia
@@ -230,8 +217,8 @@ function Sidebar() {
             className={
               !collapseSideBar
                 ? router.asPath === "/covid"
-                  ? "bg-secondary-green-darker rounded-lg mt-0 mb-0"
-                  : "hover:bg-secondary-green-darker rounded-lg mt-2 mb-2"
+                  ? "bg-secondary-green-darker rounded-lg mb-3 mt-3"
+                  : "hover:bg-secondary-green-darker rounded-lg mt-3 mb-3"
                 : "mt-3 mb-3"
             }
           >
