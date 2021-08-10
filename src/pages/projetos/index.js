@@ -156,7 +156,17 @@ const Projects = () => {
               </tr>
               <tr className="border-b border-gray-400">
                 <td className="p-4">
-                  <p className="uppercase">Parque Capibaribe</p>
+                  <Link href="/projetos/parquecapibaribe">
+                    <button
+                      type="button"
+                      className="hover:font-bold"
+                      onClick={() => handleChangePreviousPath(router.asPath)}
+                    >
+                      <p className="cursor-pointer hover:font-bold uppercase">
+                        Parque Capibaribe
+                      </p>
+                    </button>
+                  </Link>
                 </td>
                 <td className="p-4">
                   <div className="flex flex-row ml-5">
