@@ -2,8 +2,7 @@ import Head from "next/head";
 import { injectIntl } from "react-intl";
 import React from "react";
 import Layout from "../../components/Layout";
-
-import Map from "../../patterns/Map";
+import ParqueCapibaribeMap from "../../patterns/Map/ParqueCapibaribeMap";
 
 function ParqueCapibaribe() {
   return (
@@ -15,7 +14,7 @@ function ParqueCapibaribe() {
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Map />
+      <ParqueCapibaribeMap />
     </Layout>
   );
 }
