@@ -133,12 +133,22 @@ const Projects = () => {
               </tr>
               <tr className="border-b border-gray-400">
                 <td className="p-4">
-                  <p className="uppercase">Habitação de interesse social</p>
+                  <Link href="/projetos/parquecapibaribe">
+                    <button
+                      type="button"
+                      className="hover:font-bold"
+                      onClick={() => handleChangePreviousPath(router.asPath)}
+                    >
+                      <p className="cursor-pointer hover:font-bold uppercase">
+                        Parque Capibaribe
+                      </p>
+                    </button>
+                  </Link>
                 </td>
                 <td className="p-4">
                   <div className="flex flex-row ml-5">
-                    <YellowCircle className="mr-2" />
-                    <p className="m-0">Em execução</p>
+                    <GreenCircle className="mr-2" />
+                    <p className="m-0">Concluído</p>
                   </div>
                 </td>
                 <td className="p-4">
@@ -156,22 +166,12 @@ const Projects = () => {
               </tr>
               <tr className="border-b border-gray-400">
                 <td className="p-4">
-                  <Link href="/projetos/parquecapibaribe">
-                    <button
-                      type="button"
-                      className="hover:font-bold"
-                      onClick={() => handleChangePreviousPath(router.asPath)}
-                    >
-                      <p className="cursor-pointer hover:font-bold uppercase">
-                        Parque Capibaribe
-                      </p>
-                    </button>
-                  </Link>
+                  <p className="uppercase">Habitação de interesse social</p>
                 </td>
                 <td className="p-4">
                   <div className="flex flex-row ml-5">
-                    <GreenCircle className="mr-2" />
-                    <p className="m-0">Concluído</p>
+                    <YellowCircle className="mr-2" />
+                    <p className="m-0">Em execução</p>
                   </div>
                 </td>
                 <td className="p-4">
