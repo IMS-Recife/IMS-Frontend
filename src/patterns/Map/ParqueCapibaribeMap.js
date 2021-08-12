@@ -23,7 +23,7 @@ const FilterSelect = styled.select`
 
 const SmallInfoContainer = styled.div`
   background: ${(props) => props.theme.colors.primaryDarkGray};
-  width: 450px;
+  width: 400px;
   height: 100%;
 `;
 const GreenCircle = styled.div`
@@ -286,49 +286,10 @@ const Map = () => {
                     </p>
                   </div>
                   <div className="flex flex-row">
-                    <SmallInfoContainer className="rounded-xl ml-3 p-3 primary-gray-darker">
-                      <div className="w-4/5 mx-auto">
-                        <p className="text-2xl font-bold">Indicadores Totais</p>
-                        <p className="text-md font-bold">
-                          Última atualização:
-                          <span className="font-normal"> 27/04/2021</span>
-                        </p>
-                      </div>
-                      <div className="grid grid-cols-2">
-                        <div>
-                          <Ring>
-                            <Ring2 className="flex justify-center items-center">
-                              <h1 className="justify-center sm:text-2xl 2xl:text-4xl font-bold font-roboto">
-                                100%
-                              </h1>
-                            </Ring2>
-                          </Ring>
-                          <p className="flex justify-center text-lg">
-                            Total executado
-                          </p>
-                        </div>
-                        <div className="mt-3">
-                          <p className="text-sm font-bold">
-                            Data de início:{" "}
-                            <span className="font-normal">DD/MM/AAAA</span>
-                          </p>
-                          <p className="text-sm font-bold">
-                            Data de fim:{" "}
-                            <span className="font-normal">DD/MM/AAAA</span>
-                          </p>
-                          <p>Duração:</p>
-                          <p className="text-sm font-bold">
-                            Valor total licitado:{" "}
-                            <span className="font-normal">R$</span>
-                          </p>
-                          <p className="text-sm font-bold">
-                            Valor total pago:{" "}
-                            <span className="font-normal">R$</span>
-                          </p>
-                        </div>
-                      </div>
-                    </SmallInfoContainer>
-                    <SmallInfoContainer className="rounded-xl mt-3 ml-3 p-2">
+                    <SmallInfoContainer
+                      style={{ width: "815px" }}
+                      className="rounded-xl mt-3 ml-3 p-2"
+                    >
                       <p className="flex justify-center text-2xl font-bold">
                         Trechos do Projeto
                       </p>
@@ -341,13 +302,19 @@ const Map = () => {
                             </select>
                           </th>
                           <th className="p-2">
+                            <p>Nome do Trecho</p>
+                            <select className="bg-transparent border rounded-xl p-2 border-black border-8">
+                              <option>Teste</option>
+                            </select>
+                          </th>
+                          <th className="p-2">
                             <p>Status</p>
                             <select className="bg-transparent border rounded-xl p-2 border-black border-8">
                               <option>Teste</option>
                             </select>
                           </th>
                           <th className="p-2 m-auto">
-                            <p>%Execução</p>
+                            <p>Porcentagem de Execução</p>
                             <select className="bg-transparent border rounded-xl p-2 border-black border-8">
                               <option>Teste</option>
                             </select>
@@ -356,6 +323,9 @@ const Map = () => {
                         <tr className="border-b border-gray-400">
                           <td className="p-2">
                             <p className="ml-4">01</p>
+                          </td>
+                          <td className="p-2">
+                            <p className="ml-4">Jardim do Baobá</p>
                           </td>
                           <td className="flex flex-row p-2">
                             <GreenCircle className="mr-2" />
@@ -369,6 +339,9 @@ const Map = () => {
                           <td className="p-2">
                             <p className="ml-4">02</p>
                           </td>
+                          <td className="p-2">
+                            <p className="ml-4">Otávio de Freitas</p>
+                          </td>
                           <td className="flex flex-row p-2">
                             <GreenCircle className="mr-2" />
                             <p className="sm:text-xs 2xl:text-lg">Concluído</p>
@@ -380,6 +353,9 @@ const Map = () => {
                         <tr className="border-b border-gray-400">
                           <td className="p-2">
                             <p className="ml-4">03</p>
+                          </td>
+                          <td className="p-2">
+                            <p className="ml-4">Jardins Filtrantes</p>
                           </td>
                           <td className="flex flex-row p-2">
                             <YellowCircle className="mr-2" />
@@ -394,6 +370,9 @@ const Map = () => {
                         <tr className="border-b border-gray-400">
                           <td className="p-2">
                             <p className="ml-4">04</p>
+                          </td>
+                          <td className="p-2">
+                            <p className="ml-4">Estação Caiara</p>
                           </td>
                           <td className="flex flex-row p-2">
                             <GreyCircle className="mr-2" />
@@ -412,8 +391,12 @@ const Map = () => {
                         Indicadores do projeto
                       </h1>
                       <p className="text-md font-bold mt-3">
-                        Área total de calçada projetada:
-                        <span className="font-normal">_____m²</span>
+                        Total de Trechos projetados:
+                        <span className="font-normal">_____</span>
+                      </p>
+                      <p className="text-md font-bold mt-3">
+                        Total de Trechos executados:
+                        <span className="font-normal">_____</span>
                       </p>
                       <p className="text-md font-bold">
                         Quantidade total de árvores:
