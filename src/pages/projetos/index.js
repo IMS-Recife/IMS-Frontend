@@ -51,7 +51,10 @@ const Projects = () => {
                 dos planos estão em anexo, além da espacialização dos elementos
                 do projeto na visualização georreferenciada.
               </p>
-              <select className="bg-transparent border rounded-xl p-2 border-black border-8 self-end ml-auto">
+              <select
+                id="most_recent_update"
+                className="bg-transparent border rounded-xl p-2 border-black border-8 self-end ml-auto"
+              >
                 <option>Atualização mais recente</option>
               </select>
             </div>
@@ -65,7 +68,7 @@ const Projects = () => {
                       Nome
                     </label>
                     <Select
-                      id="name"
+                      instanceId="name"
                       className="mr-2"
                       closeMenuOnSelect={false}
                     />
@@ -75,20 +78,32 @@ const Projects = () => {
                       Status
                     </label>
                     <Select
-                      id="status"
+                      instanceId="status"
                       className="mr-2"
                       closeMenuOnSelect={false}
                     />
                   </th>
                   <th className="p-3" style={{ width: "200px" }}>
-                    <label className="uppercase">Organização</label>
-                    <Select className="mr-2" closeMenuOnSelect={false} />
+                    <label htmlFor="organization" className="uppercase">
+                      Organização
+                    </label>
+                    <Select
+                      instanceId="organization"
+                      className="mr-2"
+                      closeMenuOnSelect={false}
+                    />
                   </th>
                   <th className="p-3" style={{ width: "300px" }}>
-                    <label className="uppercase">Grupo Temático</label>
+                    <label htmlFor="thematic_group" className="uppercase">
+                      Grupo Temático
+                    </label>
                     <div className="flex flex-row">
                       <div style={{ width: "300px" }}>
-                        <Select className="mr-2" closeMenuOnSelect={false} />
+                        <Select
+                          instanceId="thematic_group"
+                          className="mr-2"
+                          closeMenuOnSelect={false}
+                        />
                       </div>
                       <button
                         className="ml-4 bg-primary-text text-white p-2 px-5 rounded-2xl"
