@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 import { injectIntl } from "react-intl";
 import React, { useState } from "react";
 import { StaticMap } from "react-map-gl";
@@ -149,6 +150,7 @@ const Map = () => {
       data:
         "https://raw.githubusercontent.com/IMS-Recife/IMS-Frontend/dev_parque_map/src/assets/Geojsons/pq_capibaribe_trechos.json",
       onClick: ({ object }) => {
+        // eslint-disable-next-line no-console
         console.log(object);
       },
       getPointRadius: 100,

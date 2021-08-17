@@ -1,9 +1,8 @@
 import React from "react";
 import PropTypes from "prop-types";
 import Navbar from "../Navbar";
-// import Sidebar from "../Sidebar";
 import Footer from "../Footer";
-import Sidebar from "../NewSideBar/Sidebar";
+import Sidebar from "../SideBar/Sidebar";
 
 const Layout = ({ children }) => (
   <div className="flex flex-no-wrap h-full min-h-screen">
