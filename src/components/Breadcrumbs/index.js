@@ -6,6 +6,21 @@ import breadcrumbArrow from "../../assets/breadcrumbArrow.svg";
 function Breadcrumbs() {
   const router = useRouter();
   const pathArray = router.asPath.split("/");
+  const pathSwitch = (path) => {
+    switch (path) {
+      case "":
+        return "Home";
+
+      case "calcadalegal":
+        return "Calçada Legal";
+
+      case "parquecapibaribe":
+        return "Parque Capibaribe";
+
+      default:
+        return path;
+    }
+  };
 
   const getPreviousPath = (currentPath) => {
     if (currentPath === undefined) {
@@ -35,7 +50,7 @@ function Breadcrumbs() {
                     : "mr-2 text-lg text-primary-text capitalize font-bold mb-0 cursor-pointer"
                 }
               >
-                {path === "" ? "Home" : path}
+                {pathSwitch(path)}
               </p>
             </Link>
             {i < pathArray.length - 1 && (
