@@ -2,7 +2,7 @@
 import { injectIntl } from "react-intl";
 import React, { useState } from "react";
 import { StaticMap } from "react-map-gl";
-import { GeoJsonLayer, PolygonLayer, ScatterplotLayer } from "@deck.gl/layers";
+import { GeoJsonLayer, ScatterplotLayer } from "@deck.gl/layers";
 import { DeckGL } from "deck.gl";
 import { VscClose } from "react-icons/vsc";
 import styled from "styled-components";
@@ -24,7 +24,7 @@ const FilterSelect = styled.select`
 
 const SmallInfoContainer = styled.div`
   background: ${(props) => props.theme.colors.primaryDarkGray};
-  width: 400px;
+  width: 450px;
   height: 100%;
 `;
 const GreenCircle = styled.div`
@@ -77,12 +77,13 @@ const Ring2 = styled.div`
   transform: translate(-50%, -50%);
 `;
 
-const Map = () => {
+const CalcadaLegalMap = () => {
+  // const [lotes, setLotes] = useState(false);
+  // const [logradouros, setLogradouros] = useState(false);
   const [calçadas, setCalçadas] = useState(true);
   const [calçadasAcessiveis, setCalçadasAcessiveis] = useState(false);
   const [vegetacao, setVegetacao] = useState(true);
   const [postes, setPostes] = useState(true);
-  const [parqueTrechos, setParqueTrechos] = useState(true);
 
   const filterHandler = (value) => {
     if (value === "Calçadas") {
@@ -93,12 +94,16 @@ const Map = () => {
       setVegetacao(true);
     } else if (value === "Postes") {
       setPostes(true);
-    } else if (value === "Trechos - Parque Capibaribe") {
-      setParqueTrechos(true);
     }
+    // else if (value === "Logradouros") {
+    //   setLogradouros(true);
+    // } else if (value === "Lotes") {
+    //   setLotes(true);
   };
 
   const filters = [
+    // { id: 1, visible: lotes, description: "Lotes" },
+    // { id: 2, visible: logradouros, description: "Logradouros" },
     {
       id: 1,
       visible: calçadas,
@@ -119,11 +124,6 @@ const Map = () => {
       visible: calçadasAcessiveis,
       description: "Calçadas Acessíveis",
     },
-    {
-      id: 5,
-      visible: parqueTrechos,
-      description: "Trechos - Parque Capibaribe",
-    },
   ];
 
   const [viewport, setViewport] = useState({
@@ -138,54 +138,37 @@ const Map = () => {
   const [showProjectSidebar, setShowProjecSidebar] = useState(true);
 
   const layers = [
-    new GeoJsonLayer({
-      id: "Trechos - Parque Capibaribe",
-      pickable: true,
-      stroked: false,
-      filled: true,
-      extruded: true,
-      lineWidthScale: 20,
-      lineWidthMinPixels: 2,
-      getFillColor: [34, 139, 34, 200],
-      data:
-        "https://raw.githubusercontent.com/IMS-Recife/IMS-Frontend/dev_parque_map/src/assets/Geojsons/pq_capibaribe_trechos.json",
-      onClick: ({ object }) => {
-        // eslint-disable-next-line no-console
-        console.log(object);
-      },
-      getPointRadius: 100,
-      getLineWidth: 1,
-      getElevation: 30,
-      visible: parqueTrechos,
-    }),
-    new GeoJsonLayer({
-      id: "Macrozona - Parque Capibaribe",
-      pickable: false,
-      stroked: true,
-      filled: true,
-      extruded: false,
-      lineWidthScale: 5,
-      lineWidthMinPixels: 1,
-      getFillColor: [0, 139, 34, 30],
-      data:
-        "https://raw.githubusercontent.com/IMS-Recife/IMS-Frontend/dev_parque_map/src/assets/Geojsons/pq_capibaribe_macro.json",
-      getLineWidth: 1,
-      visible: true,
-    }),
-    new GeoJsonLayer({
-      id: "Infiltrações - Parque Capibaribe",
-      pickable: false,
-      stroked: true,
-      filled: false,
-      extruded: false,
-      lineWidthScale: 5,
-      lineWidthMinPixels: 1,
-      getLineColor: [30, 160, 180, 200],
-      data:
-        "https://raw.githubusercontent.com/IMS-Recife/IMS-Frontend/dev_parque_map/src/assets/Geojsons/pq_capibaribe_infiltra.json",
-      getLineWidth: 1,
-      visible: true,
-    }),
+    // new GeoJsonLayer({
+    //   id: "Lotes",
+    //   data:
+    //     "https://raw.githubusercontent.com/Filipegbessaa/IMS-Frontend/dev_map/src/assets/lotes.json",
+    //   opacity: 0.2,
+    //   stroked: true,
+    //   filled: true,
+    //   lineWidthScale: 0.1,
+    //   autoHighlight: true,
+    //   highlightColor: [0, 0, 128, 128],
+    //   wireframe: true,
+    //   getFillColor: [255, 127, 0],
+    //   pickable: true,
+    //   onClick: ({ object }) => {
+    //     console.log(object);
+    //     setShowSidebar((prevState) => !prevState);
+    //   },
+    //   visible: filters[0].visible,
+    // }),
+    // new GeoJsonLayer({
+    //   id: "Logradouros",
+    //   data:
+    //     "https://raw.githubusercontent.com/Filipegbessaa/IMS-Frontend/dev_map/src/assets/logradouros.json",
+    //   opacity: 0.8,
+    //   stroked: false,
+    //   filled: true,
+    //   getLineWidth: 0.5,
+    //   getLineColor: [183, 72, 75],
+    //   getFillColor: [183, 72, 75],
+    //   visible: filters[0].visible,
+    // }),
     new GeoJsonLayer({
       id: "Calçadas",
       data:
@@ -275,26 +258,26 @@ const Map = () => {
                 <Breadcrumbs />
                 <aside className="w-11/12 bg-primary-gray ml-16">
                   <h1 className="font-raleway text-5xl font-bold text-primary-text p-5 mb-2">
-                    Parque Capibaribe
+                    Calçada Legal
                   </h1>
                   <div className="flex flex-row ml-5">
                     <YellowCircle className="mr-2 mt-1" />
                     <h4 className="text-lg">Em execução</h4>
                   </div>
                   <p className="ml-5 w-3/5">
-                    O Parque Capibaribe prevê um sistema de parques integrados
-                    ao longo das duas margens do rio Capibaribe no Recife,
-                    totalizando 30km. O projeto revoluciona a forma como as
-                    pessoas vivem a cidade ao reconectá-las com as águas do rio,
-                    resgatando a bacia hidrográfica como espinha dorsal da
-                    cidade através de áreas de lazer, descanso e bem estar.
+                    O Projeto Calçada Legal prevê a requalificação dos passeios
+                    públicos dos principais corredores viários da cidade. Tem
+                    como objetivo garantir o conforto, a segurança do pedestre
+                    ao caminhar e a conectividade com a rede de transporte
+                    público. Mais de 100 ruas são contempladas com financiamento
+                    do PAC Pavimentação e recursos próprios da Prefeitura.
                   </p>
                   <div className="ml-5 flex flex-row">
                     <p
                       style={{ fontSize: "16px" }}
                       className="border border-black mr-2 font-bold p-3"
                     >
-                      Urbanismo
+                      Acessibilidade
                     </p>
                     <p
                       style={{ fontSize: "16px" }}
@@ -304,12 +287,51 @@ const Map = () => {
                     </p>
                   </div>
                   <div className="flex flex-row">
-                    <SmallInfoContainer
-                      style={{ width: "815px" }}
-                      className="rounded-xl mt-3 ml-3 p-2"
-                    >
+                    <SmallInfoContainer className="rounded-xl ml-3 p-3 primary-gray-darker">
+                      <div className="w-4/5 mx-auto">
+                        <p className="text-2xl font-bold">Indicadores Totais</p>
+                        <p className="text-md font-bold">
+                          Última atualização:
+                          <span className="font-normal"> 27/04/2021</span>
+                        </p>
+                      </div>
+                      <div className="grid grid-cols-2">
+                        <div>
+                          <Ring>
+                            <Ring2 className="flex justify-center items-center">
+                              <h1 className="justify-center sm:text-2xl 2xl:text-4xl font-bold font-roboto">
+                                100%
+                              </h1>
+                            </Ring2>
+                          </Ring>
+                          <p className="flex justify-center text-lg">
+                            Total executado
+                          </p>
+                        </div>
+                        <div className="mt-3">
+                          <p className="text-sm font-bold">
+                            Data de início:{" "}
+                            <span className="font-normal">DD/MM/AAAA</span>
+                          </p>
+                          <p className="text-sm font-bold">
+                            Data de fim:{" "}
+                            <span className="font-normal">DD/MM/AAAA</span>
+                          </p>
+                          <p>Duração:</p>
+                          <p className="text-sm font-bold">
+                            Valor total licitado:{" "}
+                            <span className="font-normal">R$</span>
+                          </p>
+                          <p className="text-sm font-bold">
+                            Valor total pago:{" "}
+                            <span className="font-normal">R$</span>
+                          </p>
+                        </div>
+                      </div>
+                    </SmallInfoContainer>
+                    <SmallInfoContainer className="rounded-xl mt-3 ml-3 p-2">
                       <p className="flex justify-center text-2xl font-bold">
-                        Trechos do Projeto
+                        Lotes do Projeto
                       </p>
                       <table className="m-auto">
                         <thead>
@@ -321,19 +343,13 @@ const Map = () => {
                               </select>
                             </th>
                             <th className="p-2">
-                              <p>Nome do Trecho</p>
-                              <select className="bg-transparent border rounded-xl p-2 border-black border-8">
-                                <option>Teste</option>
-                              </select>
-                            </th>
-                            <th className="p-2">
                               <p>Status</p>
                               <select className="bg-transparent border rounded-xl p-2 border-black border-8">
                                 <option>Teste</option>
                               </select>
                             </th>
                             <th className="p-2 m-auto">
-                              <p>Porcentagem de Execução</p>
+                              <p>%Execução</p>
                               <select className="bg-transparent border rounded-xl p-2 border-black border-8">
                                 <option>Teste</option>
                               </select>
@@ -344,9 +360,6 @@ const Map = () => {
                           <tr className="border-b border-gray-400">
                             <td className="p-2">
                               <p className="ml-4">01</p>
-                            </td>
-                            <td className="p-2">
-                              <p className="ml-4">Jardim do Baobá</p>
                             </td>
                             <td className="flex flex-row p-2">
                               <GreenCircle className="mr-2" />
@@ -362,9 +375,6 @@ const Map = () => {
                             <td className="p-2">
                               <p className="ml-4">02</p>
                             </td>
-                            <td className="p-2">
-                              <p className="ml-4">Otávio de Freitas</p>
-                            </td>
                             <td className="flex flex-row p-2">
                               <GreenCircle className="mr-2" />
                               <p className="sm:text-xs 2xl:text-lg">
@@ -379,9 +389,6 @@ const Map = () => {
                             <td className="p-2">
                               <p className="ml-4">03</p>
                             </td>
-                            <td className="p-2">
-                              <p className="ml-4">Jardins Filtrantes</p>
-                            </td>
                             <td className="flex flex-row p-2">
                               <YellowCircle className="mr-2" />
                               <p className="sm:text-xs 2xl:text-lg">
@@ -395,9 +402,6 @@ const Map = () => {
                           <tr className="border-b border-gray-400">
                             <td className="p-2">
                               <p className="ml-4">04</p>
-                            </td>
-                            <td className="p-2">
-                              <p className="ml-4">Estação Caiara</p>
                             </td>
                             <td className="flex flex-row p-2">
                               <GreyCircle className="mr-2" />
@@ -419,12 +423,8 @@ const Map = () => {
                         Indicadores do projeto
                       </h1>
                       <p className="text-md font-bold mt-3">
-                        Total de Trechos projetados:
-                        <span className="font-normal">_____</span>
-                      </p>
-                      <p className="text-md font-bold mt-3">
-                        Total de Trechos executados:
-                        <span className="font-normal">_____</span>
+                        Área total de calçada projetada:
+                        <span className="font-normal">_____m²</span>
                       </p>
                       <p className="text-md font-bold">
                         Quantidade total de árvores:
@@ -437,15 +437,15 @@ const Map = () => {
                       </h1>
                       <div className="mt-3">
                         <p className="ml-4 uppercase text-md">
-                          PROJETO TRECHO 2
+                          Prestação de contas lote 2
                         </p>
                         <hr />
                         <p className="ml-4 uppercase text-md">
-                          PRESTAÇÃO DE CTAS TRECHO 2
+                          Prestação de contas lote 2
                         </p>
                         <hr />
                         <p className="ml-4 uppercase text-md">
-                          TERMO DE REF TRECHO 2
+                          Prestação de contas lote 2
                         </p>
                       </div>
                     </SmallInfoContainer>
@@ -591,7 +591,8 @@ const Map = () => {
                 {!calçadasAcessiveis && <option>Calçadas Acessiveis</option>}
                 {!postes && <option>Postes</option>}
                 {!vegetacao && <option>Vegetação</option>}
-                {!parqueTrechos && <option>Trechos - Parque Capibaribe</option>}
+                {/* {!lotes && <option>Lotes</option>} */}
+                {/* {!logradouros && <option>Logradouros</option>} */}
               </FilterSelect>
               <div className="flex flex-row flex-wrap">
                 {calçadas && (
@@ -607,6 +608,30 @@ const Map = () => {
                     <p className="font-bold m-0">Calçadas</p>
                   </div>
                 )}
+                {/* {logradouros && (
+                  <div className="border border-primary-dark p-1 mr-2 ml-2 mt-2 m-0 flex flex-column h-100">
+                    <button
+                      type="button"
+                      className="self-end"
+                      onClick={() => setLogradouros(false)}
+                    >
+                      <VscClose />
+                    </button>
+                    <p className="font-bold m-0">Logradouros</p>
+                  </div>
+                )} */}
+                {/* {lotes && (
+                  <div className="border border-primary-dark p-1 mr-2 ml-2 mt-2 m-0 flex flex-column h-100">
+                    <button
+                      type="button"
+                      className="self-end"
+                      onClick={() => setLotes(false)}
+                    >
+                      <VscClose />
+                    </button>
+                    <p className="font-bold m-0">Lotes</p>
+                  </div>
+                )} */}
                 {calçadasAcessiveis && (
                   <div className="border border-primary-dark p-1 mr-2 ml-2 mt-2 m-0 flex flex-column h-100">
                     <button
@@ -643,18 +668,6 @@ const Map = () => {
                     <p className="font-bold m-0">Vegetação</p>
                   </div>
                 )}
-                {parqueTrechos && (
-                  <div className="border border-primary-dark p-1 mr-2 ml-2 mt-2 m-0 flex flex-column h-100">
-                    <button
-                      type="button"
-                      className="self-end"
-                      onClick={() => setParqueTrechos(false)}
-                    >
-                      <VscClose />
-                    </button>
-                    <p className="font-bold m-0">Trechos - Parque Capibaribe</p>
-                  </div>
-                )}
               </div>
             </div>
           </div>
@@ -676,4 +689,4 @@ const Map = () => {
   );
 };
 
-export default injectIntl(Map);
+export default injectIntl(CalcadaLegalMap);
