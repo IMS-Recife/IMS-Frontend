@@ -58,160 +58,164 @@ const Projects = () => {
           </div>
           <div className="mt-1">
             <table className="m-auto  w-100">
-              <tr className="bg-primary-gray shadow-sm">
-                <th className="p-3" style={{ width: "200px" }}>
-                  <label htmlFor="name" className="uppercase">
-                    Nome
-                  </label>
-                  <Select
-                    id="name"
-                    className="mr-2"
-                    closeMenuOnSelect={false}
-                  />
-                </th>
-                <th className="p-3" style={{ width: "200px" }}>
-                  <label htmlFor="status" className="uppercase">
-                    Status
-                  </label>
-                  <Select
-                    id="status"
-                    className="mr-2"
-                    closeMenuOnSelect={false}
-                  />
-                </th>
-                <th className="p-3" style={{ width: "200px" }}>
-                  <label className="uppercase">Organização</label>
-                  <Select className="mr-2" closeMenuOnSelect={false} />
-                </th>
-                <th className="p-3" style={{ width: "300px" }}>
-                  <label className="uppercase">Grupo Temático</label>
-                  <div className="flex flex-row">
-                    <div style={{ width: "300px" }}>
-                      <Select className="mr-2" closeMenuOnSelect={false} />
+              <thead>
+                <tr className="bg-primary-gray shadow-sm">
+                  <th className="p-3" style={{ width: "200px" }}>
+                    <label htmlFor="name" className="uppercase">
+                      Nome
+                    </label>
+                    <Select
+                      id="name"
+                      className="mr-2"
+                      closeMenuOnSelect={false}
+                    />
+                  </th>
+                  <th className="p-3" style={{ width: "200px" }}>
+                    <label htmlFor="status" className="uppercase">
+                      Status
+                    </label>
+                    <Select
+                      id="status"
+                      className="mr-2"
+                      closeMenuOnSelect={false}
+                    />
+                  </th>
+                  <th className="p-3" style={{ width: "200px" }}>
+                    <label className="uppercase">Organização</label>
+                    <Select className="mr-2" closeMenuOnSelect={false} />
+                  </th>
+                  <th className="p-3" style={{ width: "300px" }}>
+                    <label className="uppercase">Grupo Temático</label>
+                    <div className="flex flex-row">
+                      <div style={{ width: "300px" }}>
+                        <Select className="mr-2" closeMenuOnSelect={false} />
+                      </div>
+                      <button
+                        className="ml-4 bg-primary-text text-white p-2 px-5 rounded-2xl"
+                        type="button"
+                      >
+                        Pesquisar
+                      </button>
                     </div>
-                    <button
-                      className="ml-4 bg-primary-text text-white p-2 px-5 rounded-2xl"
-                      type="button"
-                    >
-                      Pesquisar
-                    </button>
-                  </div>
-                </th>
-              </tr>
-              <tr className="border-b border-gray-400">
-                <td className="p-4 pt-5 h-100">
-                  <Link href="/projetos/calcadalegal">
-                    <button
-                      type="button"
-                      className="hover:font-bold"
-                      onClick={() => handleChangePreviousPath(router.asPath)}
-                    >
-                      <p className="cursor-pointer hover:font-bold uppercase">
-                        Calçada Legal
-                      </p>
-                    </button>
-                  </Link>
-                </td>
-                <td className="p-4 pt-5">
-                  <div className="flex flex-row ml-5">
-                    <YellowCircle className="mr-2" />
-                    <p className="m-0">Em execução</p>
-                  </div>
-                </td>
-                <td className="p-4 pt-5">
-                  <p>
-                    CTTU | Secretaria do Meio Ambiente | Secretaria de
-                    Desenvolvimento
-                  </p>
-                </td>
-                <td className="p-4 pt-5">
-                  <p>
-                    Mobilidade | Urbanismo | Meio ambiente | Acessibilidade |
-                    Requalificação | Calçadas
-                  </p>
-                </td>
-              </tr>
-              <tr className="border-b border-gray-400">
-                <td className="p-4">
-                  <Link href="/projetos/parquecapibaribe">
-                    <button
-                      type="button"
-                      className="hover:font-bold"
-                      onClick={() => handleChangePreviousPath(router.asPath)}
-                    >
-                      <p className="cursor-pointer hover:font-bold uppercase">
-                        Parque Capibaribe
-                      </p>
-                    </button>
-                  </Link>
-                </td>
-                <td className="p-4">
-                  <div className="flex flex-row ml-5">
-                    <GreenCircle className="mr-2" />
-                    <p className="m-0">Concluído</p>
-                  </div>
-                </td>
-                <td className="p-4">
-                  <p>
-                    CTTU | Secretaria do Meio Ambiente | Secretaria de
-                    Desenvolvimento
-                  </p>
-                </td>
-                <td className="p-4">
-                  <p>
-                    Mobilidade | Urbanismo | Meio ambiente | Acessibilidade |
-                    Requalificação | Calçadas
-                  </p>
-                </td>
-              </tr>
-              <tr className="border-b border-gray-400">
-                <td className="p-4">
-                  <p className="uppercase">Habitação de interesse social</p>
-                </td>
-                <td className="p-4">
-                  <div className="flex flex-row ml-5">
-                    <YellowCircle className="mr-2" />
-                    <p className="m-0">Em execução</p>
-                  </div>
-                </td>
-                <td className="p-4">
-                  <p>
-                    CTTU | Secretaria do Meio Ambiente | Secretaria de
-                    Desenvolvimento
-                  </p>
-                </td>
-                <td className="p-4">
-                  <p>
-                    Mobilidade | Urbanismo | Meio ambiente | Acessibilidade |
-                    Requalificação | Calçadas
-                  </p>
-                </td>
-              </tr>
-              <tr className="border-b border-gray-400">
-                <td className="p-4">
-                  <p className="uppercase">
-                    Requalificação Av. Cde. da Boa Vista
-                  </p>
-                </td>
-                <td className="p-4">
-                  <div className="flex flex-row ml-5">
-                    <GreenCircle className="mr-2" />
-                    <p className="m-0">Concluído</p>
-                  </div>
-                </td>
-                <td className="p-4">
-                  <p>
-                    CTTU | Secretaria do Meio Ambiente | Secretaria de
-                    Desenvolvimento
-                  </p>
-                </td>
-                <td className="p-4">
-                  <p>
-                    Mobilidade | Urbanismo | Meio ambiente | Acessibilidade |
-                    Requalificação | Calçadas
-                  </p>
-                </td>
-              </tr>
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr className="border-b border-gray-400">
+                  <td className="p-4 pt-5 h-100">
+                    <Link href="/projetos/calcadalegal">
+                      <button
+                        type="button"
+                        className="hover:font-bold"
+                        onClick={() => handleChangePreviousPath(router.asPath)}
+                      >
+                        <p className="cursor-pointer hover:font-bold uppercase">
+                          Calçada Legal
+                        </p>
+                      </button>
+                    </Link>
+                  </td>
+                  <td className="p-4 pt-5">
+                    <div className="flex flex-row ml-5">
+                      <YellowCircle className="mr-2" />
+                      <p className="m-0">Em execução</p>
+                    </div>
+                  </td>
+                  <td className="p-4 pt-5">
+                    <p>
+                      CTTU | Secretaria do Meio Ambiente | Secretaria de
+                      Desenvolvimento
+                    </p>
+                  </td>
+                  <td className="p-4 pt-5">
+                    <p>
+                      Mobilidade | Urbanismo | Meio ambiente | Acessibilidade |
+                      Requalificação | Calçadas
+                    </p>
+                  </td>
+                </tr>
+                <tr className="border-b border-gray-400">
+                  <td className="p-4">
+                    <Link href="/projetos/parquecapibaribe">
+                      <button
+                        type="button"
+                        className="hover:font-bold"
+                        onClick={() => handleChangePreviousPath(router.asPath)}
+                      >
+                        <p className="cursor-pointer hover:font-bold uppercase">
+                          Parque Capibaribe
+                        </p>
+                      </button>
+                    </Link>
+                  </td>
+                  <td className="p-4">
+                    <div className="flex flex-row ml-5">
+                      <GreenCircle className="mr-2" />
+                      <p className="m-0">Concluído</p>
+                    </div>
+                  </td>
+                  <td className="p-4">
+                    <p>
+                      CTTU | Secretaria do Meio Ambiente | Secretaria de
+                      Desenvolvimento
+                    </p>
+                  </td>
+                  <td className="p-4">
+                    <p>
+                      Mobilidade | Urbanismo | Meio ambiente | Acessibilidade |
+                      Requalificação | Calçadas
+                    </p>
+                  </td>
+                </tr>
+                <tr className="border-b border-gray-400">
+                  <td className="p-4">
+                    <p className="uppercase">Habitação de interesse social</p>
+                  </td>
+                  <td className="p-4">
+                    <div className="flex flex-row ml-5">
+                      <YellowCircle className="mr-2" />
+                      <p className="m-0">Em execução</p>
+                    </div>
+                  </td>
+                  <td className="p-4">
+                    <p>
+                      CTTU | Secretaria do Meio Ambiente | Secretaria de
+                      Desenvolvimento
+                    </p>
+                  </td>
+                  <td className="p-4">
+                    <p>
+                      Mobilidade | Urbanismo | Meio ambiente | Acessibilidade |
+                      Requalificação | Calçadas
+                    </p>
+                  </td>
+                </tr>
+                <tr className="border-b border-gray-400">
+                  <td className="p-4">
+                    <p className="uppercase">
+                      Requalificação Av. Cde. da Boa Vista
+                    </p>
+                  </td>
+                  <td className="p-4">
+                    <div className="flex flex-row ml-5">
+                      <GreenCircle className="mr-2" />
+                      <p className="m-0">Concluído</p>
+                    </div>
+                  </td>
+                  <td className="p-4">
+                    <p>
+                      CTTU | Secretaria do Meio Ambiente | Secretaria de
+                      Desenvolvimento
+                    </p>
+                  </td>
+                  <td className="p-4">
+                    <p>
+                      Mobilidade | Urbanismo | Meio ambiente | Acessibilidade |
+                      Requalificação | Calçadas
+                    </p>
+                  </td>
+                </tr>
+              </tbody>
             </table>
           </div>
         </div>

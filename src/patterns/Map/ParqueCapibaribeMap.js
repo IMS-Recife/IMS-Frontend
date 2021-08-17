@@ -312,94 +312,104 @@ const Map = () => {
                         Trechos do Projeto
                       </p>
                       <table className="m-auto">
-                        <tr className="bg-primary-gray-dark shadow-md p-3">
-                          <th className="p-2">
-                            <p>Número</p>
-                            <select className="bg-transparent border rounded-xl p-2 border-black border-8">
-                              <option>Teste</option>
-                            </select>
-                          </th>
-                          <th className="p-2">
-                            <p>Nome do Trecho</p>
-                            <select className="bg-transparent border rounded-xl p-2 border-black border-8">
-                              <option>Teste</option>
-                            </select>
-                          </th>
-                          <th className="p-2">
-                            <p>Status</p>
-                            <select className="bg-transparent border rounded-xl p-2 border-black border-8">
-                              <option>Teste</option>
-                            </select>
-                          </th>
-                          <th className="p-2 m-auto">
-                            <p>Porcentagem de Execução</p>
-                            <select className="bg-transparent border rounded-xl p-2 border-black border-8">
-                              <option>Teste</option>
-                            </select>
-                          </th>
-                        </tr>
-                        <tr className="border-b border-gray-400">
-                          <td className="p-2">
-                            <p className="ml-4">01</p>
-                          </td>
-                          <td className="p-2">
-                            <p className="ml-4">Jardim do Baobá</p>
-                          </td>
-                          <td className="flex flex-row p-2">
-                            <GreenCircle className="mr-2" />
-                            <p className="sm:text-xs 2xl:text-lg">Concluído</p>
-                          </td>
-                          <td className="p-2">
-                            <p className="ml-4">100%</p>
-                          </td>
-                        </tr>
-                        <tr className="border-b border-gray-400">
-                          <td className="p-2">
-                            <p className="ml-4">02</p>
-                          </td>
-                          <td className="p-2">
-                            <p className="ml-4">Otávio de Freitas</p>
-                          </td>
-                          <td className="flex flex-row p-2">
-                            <GreenCircle className="mr-2" />
-                            <p className="sm:text-xs 2xl:text-lg">Concluído</p>
-                          </td>
-                          <td className="p-2">
-                            <p className="ml-4">100%</p>
-                          </td>
-                        </tr>
-                        <tr className="border-b border-gray-400">
-                          <td className="p-2">
-                            <p className="ml-4">03</p>
-                          </td>
-                          <td className="p-2">
-                            <p className="ml-4">Jardins Filtrantes</p>
-                          </td>
-                          <td className="flex flex-row p-2">
-                            <YellowCircle className="mr-2" />
-                            <p className="sm:text-xs 2xl:text-lg">
-                              Em execução
-                            </p>
-                          </td>
-                          <td className="p-2">
-                            <p className="ml-4">50%</p>
-                          </td>
-                        </tr>
-                        <tr className="border-b border-gray-400">
-                          <td className="p-2">
-                            <p className="ml-4">04</p>
-                          </td>
-                          <td className="p-2">
-                            <p className="ml-4">Estação Caiara</p>
-                          </td>
-                          <td className="flex flex-row p-2">
-                            <GreyCircle className="mr-2" />
-                            <p className="sm:text-xs 2xl:text-lg">A executar</p>
-                          </td>
-                          <td className="p-2">
-                            <p className="ml-4">0%</p>
-                          </td>
-                        </tr>
+                        <thead>
+                          <tr className="bg-primary-gray-dark shadow-md p-3">
+                            <th className="p-2">
+                              <p>Número</p>
+                              <select className="bg-transparent border rounded-xl p-2 border-black border-8">
+                                <option>Teste</option>
+                              </select>
+                            </th>
+                            <th className="p-2">
+                              <p>Nome do Trecho</p>
+                              <select className="bg-transparent border rounded-xl p-2 border-black border-8">
+                                <option>Teste</option>
+                              </select>
+                            </th>
+                            <th className="p-2">
+                              <p>Status</p>
+                              <select className="bg-transparent border rounded-xl p-2 border-black border-8">
+                                <option>Teste</option>
+                              </select>
+                            </th>
+                            <th className="p-2 m-auto">
+                              <p>Porcentagem de Execução</p>
+                              <select className="bg-transparent border rounded-xl p-2 border-black border-8">
+                                <option>Teste</option>
+                              </select>
+                            </th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr className="border-b border-gray-400">
+                            <td className="p-2">
+                              <p className="ml-4">01</p>
+                            </td>
+                            <td className="p-2">
+                              <p className="ml-4">Jardim do Baobá</p>
+                            </td>
+                            <td className="flex flex-row p-2">
+                              <GreenCircle className="mr-2" />
+                              <p className="sm:text-xs 2xl:text-lg">
+                                Concluído
+                              </p>
+                            </td>
+                            <td className="p-2">
+                              <p className="ml-4">100%</p>
+                            </td>
+                          </tr>
+                          <tr className="border-b border-gray-400">
+                            <td className="p-2">
+                              <p className="ml-4">02</p>
+                            </td>
+                            <td className="p-2">
+                              <p className="ml-4">Otávio de Freitas</p>
+                            </td>
+                            <td className="flex flex-row p-2">
+                              <GreenCircle className="mr-2" />
+                              <p className="sm:text-xs 2xl:text-lg">
+                                Concluído
+                              </p>
+                            </td>
+                            <td className="p-2">
+                              <p className="ml-4">100%</p>
+                            </td>
+                          </tr>
+                          <tr className="border-b border-gray-400">
+                            <td className="p-2">
+                              <p className="ml-4">03</p>
+                            </td>
+                            <td className="p-2">
+                              <p className="ml-4">Jardins Filtrantes</p>
+                            </td>
+                            <td className="flex flex-row p-2">
+                              <YellowCircle className="mr-2" />
+                              <p className="sm:text-xs 2xl:text-lg">
+                                Em execução
+                              </p>
+                            </td>
+                            <td className="p-2">
+                              <p className="ml-4">50%</p>
+                            </td>
+                          </tr>
+                          <tr className="border-b border-gray-400">
+                            <td className="p-2">
+                              <p className="ml-4">04</p>
+                            </td>
+                            <td className="p-2">
+                              <p className="ml-4">Estação Caiara</p>
+                            </td>
+                            <td className="flex flex-row p-2">
+                              <GreyCircle className="mr-2" />
+                              <p className="sm:text-xs 2xl:text-lg">
+                                A executar
+                              </p>
+                            </td>
+                            <td className="p-2">
+                              <p className="ml-4">0%</p>
+                            </td>
+                          </tr>
+                        </tbody>
                       </table>
                     </SmallInfoContainer>
                   </div>
