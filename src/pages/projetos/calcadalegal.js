@@ -2,7 +2,7 @@ import Head from "next/head";
 import { injectIntl } from "react-intl";
 import React from "react";
 import Layout from "../../components/Layout";
-import { CalcadaLegalMap } from "../../patterns/Maps";
+import { CalcadaLegalMap } from "../../components/maps";
 
 function MapPage() {
   return (

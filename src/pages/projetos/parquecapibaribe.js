@@ -2,7 +2,7 @@ import Head from "next/head";
 import { injectIntl } from "react-intl";
 import React from "react";
 import Layout from "../../components/Layout";
-import { ParqueCapibaribeMap } from "../../patterns/Maps";
+import { ParqueCapibaribeMap } from "../../components/maps";
 
 function ParqueCapibaribe() {
   return (
