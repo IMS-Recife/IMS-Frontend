@@ -5,7 +5,7 @@ import Highcharts from "highcharts";
 import styled from "styled-components";
 import Layout from "../components/Layout";
 import useLayout from "../contexts/layout";
-import { covidAPI } from "../Services/api";
+import { covidAPI } from "../services/api";
 import useHighchartsDefault from "../hooks/useHighchartsDefault";
 
 const Card = styled.div`

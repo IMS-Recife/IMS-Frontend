@@ -1,6 +1,6 @@
 import React, { createContext, useContext, useEffect, useState } from "react";
 import PropTypes from "prop-types";
-import { covidAPI } from "../Services/api";
+import { covidAPI } from "../services/api";
 
 const LayoutContext = createContext(undefined);
 
