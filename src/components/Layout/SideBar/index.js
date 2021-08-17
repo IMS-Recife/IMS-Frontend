@@ -10,10 +10,10 @@ import {
   projectsIcon,
   plansIcon,
   backArrowIcon,
-} from "../../assets/sidebarIcons";
+} from "../../../assets/sidebarIcons";
 
-import useLayout from "../../contexts/layout";
-import usePreviousPath from "../../contexts/previousPath";
+import useLayout from "../../../contexts/layout";
+import usePreviousPath from "../../../contexts/previousPath";
 
 const Container = styled.div`
   height: 100%;

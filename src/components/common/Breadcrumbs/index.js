@@ -1,7 +1,7 @@
 import React from "react";
 import { useRouter } from "next/router";
 import Link from "next/link";
-import breadcrumbArrow from "../../assets/breadcrumbArrow.svg";
+import breadcrumbArrow from "../../../assets/breadcrumbArrow.svg";
 
 function Breadcrumbs() {
   const router = useRouter();

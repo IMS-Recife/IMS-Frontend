@@ -8,7 +8,7 @@ import { VscClose } from "react-icons/vsc";
 import styled from "styled-components";
 import trees from "../../assets/Geojsons/passeiospublicos_arvores.json";
 import streetPoles from "../../assets/Geojsons/passeiospublicos_postes.json";
-import Breadcrumbs from "../../components/Breadcrumbs";
+import Breadcrumbs from "../../components/common/Breadcrumbs";
 
 const FilterSelect = styled.select`
   option:hover {
