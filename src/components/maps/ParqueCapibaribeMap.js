@@ -9,6 +9,7 @@ import styled from "styled-components";
 import trees from "../../assets/Geojsons/passeiospublicos_arvores.json";
 import streetPoles from "../../assets/Geojsons/passeiospublicos_postes.json";
 import Breadcrumbs from "../common/Breadcrumbs";
+import StatusLabel from "../common/StatusLabel";
 
 const FilterSelect = styled.select`
   option:hover {
@@ -26,30 +27,6 @@ const SmallInfoContainer = styled.div`
   background: ${(props) => props.theme.colors.primaryDarkGray};
   width: 400px;
   height: 100%;
-`;
-const GreenCircle = styled.div`
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-  position: relative;
-  background-color: ${(props) => props.theme.colors.secondaryLight};
-  cursor: pointer;
-`;
-const YellowCircle = styled.div`
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-  position: relative;
-  background-color: ${(props) => props.theme.colors.statusColor1};
-  cursor: pointer;
-`;
-const GreyCircle = styled.div`
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-  position: relative;
-  background-color: ${(props) => props.theme.colors.primaryText};
-  cursor: pointer;
 `;
 
 const Ring = styled.div`
@@ -274,12 +251,15 @@ const ParqueCapibaribeMap = () => {
               <div className="mr-0">
                 <Breadcrumbs />
                 <aside className="w-11/12 bg-primary-gray ml-16">
-                  <h1 className="font-raleway text-5xl font-bold text-primary-text p-5 mb-2">
+                  <h1 className="font-raleway text-5xl font-bold text-primary-text pt-5 pl-5 pb-2 mb-0">
                     Parque Capibaribe
                   </h1>
                   <div className="flex flex-row ml-5">
-                    <YellowCircle className="mr-2 mt-1" />
-                    <h4 className="text-lg">Em execução</h4>
+                    <StatusLabel
+                      status="inProgress"
+                      fontWeight="bold"
+                      projectStatus
+                    />
                   </div>
                   <p className="ml-5 w-3/5">
                     O Parque Capibaribe prevê um sistema de parques integrados
@@ -349,10 +329,7 @@ const ParqueCapibaribeMap = () => {
                               <p className="ml-4">Jardim do Baobá</p>
                             </td>
                             <td className="flex flex-row p-2">
-                              <GreenCircle className="mr-2" />
-                              <p className="sm:text-xs 2xl:text-lg">
-                                Concluído
-                              </p>
+                              <StatusLabel status="finished" />
                             </td>
                             <td className="p-2">
                               <p className="ml-4">100%</p>
@@ -366,10 +343,7 @@ const ParqueCapibaribeMap = () => {
                               <p className="ml-4">Otávio de Freitas</p>
                             </td>
                             <td className="flex flex-row p-2">
-                              <GreenCircle className="mr-2" />
-                              <p className="sm:text-xs 2xl:text-lg">
-                                Concluído
-                              </p>
+                              <StatusLabel status="finished" />
                             </td>
                             <td className="p-2">
                               <p className="ml-4">100%</p>
@@ -383,10 +357,7 @@ const ParqueCapibaribeMap = () => {
                               <p className="ml-4">Jardins Filtrantes</p>
                             </td>
                             <td className="flex flex-row p-2">
-                              <YellowCircle className="mr-2" />
-                              <p className="sm:text-xs 2xl:text-lg">
-                                Em execução
-                              </p>
+                              <StatusLabel status="inProgress" />
                             </td>
                             <td className="p-2">
                               <p className="ml-4">50%</p>
@@ -400,10 +371,7 @@ const ParqueCapibaribeMap = () => {
                               <p className="ml-4">Estação Caiara</p>
                             </td>
                             <td className="flex flex-row p-2">
-                              <GreyCircle className="mr-2" />
-                              <p className="sm:text-xs 2xl:text-lg">
-                                A executar
-                              </p>
+                              <StatusLabel status="toRun" />
                             </td>
                             <td className="p-2">
                               <p className="ml-4">0%</p>
@@ -478,8 +446,7 @@ const ParqueCapibaribeMap = () => {
               Calçada Legal | Lote 1
             </h1>
             <div className="flex flex-row ml-5">
-              <GreenCircle className="mr-2 mt-1" />
-              <h4 className="text-lg">Concluído</h4>
+              <StatusLabel status="finished" fontWeight="bold" projectStatus />
             </div>
             <div className="ml-5 flex flex-row">
               <p

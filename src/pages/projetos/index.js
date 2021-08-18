@@ -1,27 +1,12 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
 import React from "react";
 import Select from "react-select";
-import styled from "styled-components";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import Layout from "../../components/Layout";
 import usePreviousPath from "../../contexts/previousPath";
 import Breadcrumbs from "../../components/common/Breadcrumbs";
-
-const GreenCircle = styled.div`
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-  position: relative;
-  background-color: ${(props) => props.theme.colors.secondaryLight};
-`;
-const YellowCircle = styled.div`
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-  position: relative;
-  background-color: ${(props) => props.theme.colors.statusColor1};
-`;
+import StatusLabel from "../../components/common/StatusLabel";
 
 const Projects = () => {
   const { handleChangePreviousPath } = usePreviousPath();
@@ -132,8 +117,7 @@ const Projects = () => {
                   </td>
                   <td className="p-4 pt-5">
                     <div className="flex flex-row ml-5">
-                      <YellowCircle className="mr-2" />
-                      <p className="m-0">Em execução</p>
+                      <StatusLabel status="inProgress" />
                     </div>
                   </td>
                   <td className="p-4 pt-5">
@@ -165,8 +149,7 @@ const Projects = () => {
                   </td>
                   <td className="p-4">
                     <div className="flex flex-row ml-5">
-                      <GreenCircle className="mr-2" />
-                      <p className="m-0">Concluído</p>
+                      <StatusLabel status="finished" />
                     </div>
                   </td>
                   <td className="p-4">
@@ -188,8 +171,7 @@ const Projects = () => {
                   </td>
                   <td className="p-4">
                     <div className="flex flex-row ml-5">
-                      <YellowCircle className="mr-2" />
-                      <p className="m-0">Em execução</p>
+                      <StatusLabel status="inProgress" />
                     </div>
                   </td>
                   <td className="p-4">
@@ -213,8 +195,7 @@ const Projects = () => {
                   </td>
                   <td className="p-4">
                     <div className="flex flex-row ml-5">
-                      <GreenCircle className="mr-2" />
-                      <p className="m-0">Concluído</p>
+                      <StatusLabel status="finished" />
                     </div>
                   </td>
                   <td className="p-4">
