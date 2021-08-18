@@ -2,9 +2,9 @@ import Head from "next/head";
 import { injectIntl } from "react-intl";
 import React from "react";
 import Layout from "../../components/Layout";
-import { CalcadaLegalMap } from "../../components/maps";
+import { ParqueCapibaribeMap } from "../../components/maps";
 
-function MapPage() {
+function ParqueCapibaribe() {
   return (
     <Layout>
       <Head>
@@ -14,8 +14,8 @@ function MapPage() {
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <CalcadaLegalMap />
+      <ParqueCapibaribeMap />
     </Layout>
   );
 }
-export default injectIntl(MapPage);
+export default injectIntl(ParqueCapibaribe);

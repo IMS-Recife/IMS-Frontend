@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import HighchartsReact from "highcharts-react-official";
-import { economyAPI } from "../../../Services/api";
+import { economyAPI } from "../../../services/api";
 
 function PIBPerCapta({ Highcharts }) {
   const [pibPerCaptaYear, setPibPerCaptaYear] = useState([]);

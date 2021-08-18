@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Spinner } from "react-bootstrap";
 import styled from "styled-components";
-import { economyAPI } from "../../../Services/api";
+import { economyAPI } from "../../../services/api";
 
 const Card = styled.div`
   background: #f7f7f7;

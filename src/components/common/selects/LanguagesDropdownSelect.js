@@ -3,8 +3,8 @@ import Select from "react-select";
 import styled from "styled-components";
 import { useRouter } from "next/router";
 
-import BrasilFlag from "../../assets/Flags/255-brazil.svg";
-import USFlag from "../../assets/Flags/226-united-states.svg";
+import BrasilFlag from "../../../assets/Flags/255-brazil.svg";
+import USFlag from "../../../assets/Flags/226-united-states.svg";
 
 const StyledSelect = styled(Select)`
   display: block !important;

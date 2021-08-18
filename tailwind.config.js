@@ -15,6 +15,11 @@ module.exports = {
         "secondary-green-light": "#59C28A",
         "secondary-green-darker": "#00711F",
         "primary-text": "#4B4D53",
+
+        "status-in-progress": "#FFEE58",
+        "status-finished": "#53D378",
+        "status-paralyzed": "#FFC2C2",
+        "status-to-run": "#4b4d53",
       },
       fontWeight: {
         hairline: 100,
