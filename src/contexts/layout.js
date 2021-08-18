@@ -1,12 +1,12 @@
 import React, { createContext, useContext, useEffect, useState } from "react";
 import PropTypes from "prop-types";
-import { covidAPI } from "../Services/api";
+import { covidAPI } from "../services/api";
 
 const LayoutContext = createContext(undefined);
 
 export const LayoutProvider = ({ children }) => {
   const [toggledSidebar, setToggledSidebar] = useState(false);
-  const [collapseSideBar, setCollapseSideBar] = useState(false);
+  const [collapseSideBar, setCollapseSideBar] = useState(true);
   const [lastTimeUpdated, setLastTimeUpdated] = useState(new Date());
 
   const handleToggleSidebar = (value) => {

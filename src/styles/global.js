@@ -8,9 +8,25 @@ export default createGlobalStyle`
     }
 
     body {
-        background: ${(props) => props.theme.colors.background};
-        color: ${(props) => props.theme.colors.light};
+        background: #fff;
+        color: ${(props) => props.theme.colors.primaryText};
         font: 400 16px Roboto, sans-serif;
         overflow-x: hidden;
     }
+    h1 {
+      font: 400 16px Raleway, sans-serif;
+      color: ${(props) => props.theme.colors.primaryText};
+    }
+    p {
+      color: ${(props) => props.theme.colors.primaryText};
+    }
+
+  @font-face {
+    font-family: "Raleway";
+    src: url("/fonts/Raleway-VariableFont_wght.ttf");
+}
+  @font-face {
+    font-family: "Roboto";
+    src: url("/fonts/Roboto/Roboto-Regular.ttf");
+}
 `;
