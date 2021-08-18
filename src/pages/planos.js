@@ -1,7 +1,7 @@
 import { injectIntl } from "react-intl";
 import React from "react";
 import Layout from "../components/Layout";
-import Breadcrumbs from "../components/Breadcrumbs";
+import Breadcrumbs from "../components/common/Breadcrumbs";
 
 function Plans() {
   return (

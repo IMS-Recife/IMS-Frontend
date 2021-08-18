@@ -9,7 +9,7 @@ import MotorVehicleRepairJobs from "../components/EconomyCharts/MotorVehicleRepa
 import WorkAndIncomeIndicators from "../components/EconomyCharts/WorkAndIncomeIndicators";
 import EconomyIndicators from "../components/EconomyCharts/EconomyIndicators";
 import NeighborhoodsTable from "../components/EconomyCharts/NeighborhoodsTable";
-import { economyAPI } from "../Services/api";
+import { economyAPI } from "../services/api";
 import useHighchartsDefault from "../hooks/useHighchartsDefault";
 import useLayout from "../contexts/layout";
 
