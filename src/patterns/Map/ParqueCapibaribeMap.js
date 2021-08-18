@@ -1,7 +1,7 @@
 import { injectIntl } from "react-intl";
 import React, { useState } from "react";
 import { StaticMap } from "react-map-gl";
-import { GeoJsonLayer, ScatterplotLayer } from "@deck.gl/layers";
+import { GeoJsonLayer, PolygonLayer, ScatterplotLayer } from "@deck.gl/layers";
 import { DeckGL } from "deck.gl";
 import { VscClose } from "react-icons/vsc";
 import styled from "styled-components";
@@ -78,11 +78,10 @@ const Ring2 = styled.div`
 
 const Map = () => {
   const [calçadas, setCalçadas] = useState(true);
-  // const [lotes, setLotes] = useState(false);
-  // const [logradouros, setLogradouros] = useState(false);
   const [calçadasAcessiveis, setCalçadasAcessiveis] = useState(false);
   const [vegetacao, setVegetacao] = useState(true);
   const [postes, setPostes] = useState(true);
+  const [parqueTrechos, setParqueTrechos] = useState(true);
 
   const filterHandler = (value) => {
     if (value === "Calçadas") {
@@ -93,16 +92,12 @@ const Map = () => {
       setVegetacao(true);
     } else if (value === "Postes") {
       setPostes(true);
+    } else if (value === "Trechos - Parque Capibaribe") {
+      setParqueTrechos(true);
     }
-    // else if (value === "Logradouros") {
-    //   setLogradouros(true);
-    // } else if (value === "Lotes") {
-    //   setLotes(true);
   };
 
   const filters = [
-    // { id: 1, visible: lotes, description: "Lotes" },
-    // { id: 2, visible: logradouros, description: "Logradouros" },
     {
       id: 1,
       visible: calçadas,
@@ -123,6 +118,11 @@ const Map = () => {
       visible: calçadasAcessiveis,
       description: "Calçadas Acessíveis",
     },
+    {
+      id: 5,
+      visible: parqueTrechos,
+      description: "Trechos - Parque Capibaribe",
+    },
   ];
 
   const [viewport, setViewport] = useState({
@@ -137,37 +137,53 @@ const Map = () => {
   const [showProjectSidebar, setShowProjecSidebar] = useState(true);
 
   const layers = [
-    // new GeoJsonLayer({
-    //   id: "Lotes",
-    //   data:
-    //     "https://raw.githubusercontent.com/Filipegbessaa/IMS-Frontend/dev_map/src/assets/lotes.json",
-    //   opacity: 0.2,
-    //   stroked: true,
-    //   filled: true,
-    //   lineWidthScale: 0.1,
-    //   autoHighlight: true,
-    //   highlightColor: [0, 0, 128, 128],
-    //   wireframe: true,
-    //   getFillColor: [255, 127, 0],
-    //   pickable: true,
-    //   onClick: ({ object }) => {
-    //     console.log(object);
-    //     setShowSidebar((prevState) => !prevState);
-    //   },
-    //   visible: filters[0].visible,
-    // }),
-    // new GeoJsonLayer({
-    //   id: "Logradouros",
-    //   data:
-    //     "https://raw.githubusercontent.com/Filipegbessaa/IMS-Frontend/dev_map/src/assets/logradouros.json",
-    //   opacity: 0.8,
-    //   stroked: false,
-    //   filled: true,
-    //   getLineWidth: 0.5,
-    //   getLineColor: [183, 72, 75],
-    //   getFillColor: [183, 72, 75],
-    //   visible: filters[0].visible,
-    // }),
+    new GeoJsonLayer({
+      id: "Trechos - Parque Capibaribe",
+      pickable: true,
+      stroked: false,
+      filled: true,
+      extruded: true,
+      lineWidthScale: 20,
+      lineWidthMinPixels: 2,
+      getFillColor: [34, 139, 34, 200],
+      data:
+        "https://raw.githubusercontent.com/IMS-Recife/IMS-Frontend/dev_parque_map/src/assets/Geojsons/pq_capibaribe_trechos.json",
+      onClick: ({ object }) => {
+        console.log(object);
+      },
+      getPointRadius: 100,
+      getLineWidth: 1,
+      getElevation: 30,
+      visible: parqueTrechos,
+    }),
+    new GeoJsonLayer({
+      id: "Macrozona - Parque Capibaribe",
+      pickable: false,
+      stroked: true,
+      filled: true,
+      extruded: false,
+      lineWidthScale: 5,
+      lineWidthMinPixels: 1,
+      getFillColor: [0, 139, 34, 30],
+      data:
+        "https://raw.githubusercontent.com/IMS-Recife/IMS-Frontend/dev_parque_map/src/assets/Geojsons/pq_capibaribe_macro.json",
+      getLineWidth: 1,
+      visible: true,
+    }),
+    new GeoJsonLayer({
+      id: "Infiltrações - Parque Capibaribe",
+      pickable: false,
+      stroked: true,
+      filled: false,
+      extruded: false,
+      lineWidthScale: 5,
+      lineWidthMinPixels: 1,
+      getLineColor: [30, 160, 180, 200],
+      data:
+        "https://raw.githubusercontent.com/IMS-Recife/IMS-Frontend/dev_parque_map/src/assets/Geojsons/pq_capibaribe_infiltra.json",
+      getLineWidth: 1,
+      visible: true,
+    }),
     new GeoJsonLayer({
       id: "Calçadas",
       data:
@@ -563,8 +579,7 @@ const Map = () => {
                 {!calçadasAcessiveis && <option>Calçadas Acessiveis</option>}
                 {!postes && <option>Postes</option>}
                 {!vegetacao && <option>Vegetação</option>}
-                {/* {!lotes && <option>Lotes</option>} */}
-                {/* {!logradouros && <option>Logradouros</option>} */}
+                {!parqueTrechos && <option>Trechos - Parque Capibaribe</option>}
               </FilterSelect>
               <div className="flex flex-row flex-wrap">
                 {calçadas && (
@@ -580,30 +595,6 @@ const Map = () => {
                     <p className="font-bold m-0">Calçadas</p>
                   </div>
                 )}
-                {/* {logradouros && (
-                  <div className="border border-primary-dark p-1 mr-2 ml-2 mt-2 m-0 flex flex-column h-100">
-                    <button
-                      type="button"
-                      className="self-end"
-                      onClick={() => setLogradouros(false)}
-                    >
-                      <VscClose />
-                    </button>
-                    <p className="font-bold m-0">Logradouros</p>
-                  </div>
-                )} */}
-                {/* {lotes && (
-                  <div className="border border-primary-dark p-1 mr-2 ml-2 mt-2 m-0 flex flex-column h-100">
-                    <button
-                      type="button"
-                      className="self-end"
-                      onClick={() => setLotes(false)}
-                    >
-                      <VscClose />
-                    </button>
-                    <p className="font-bold m-0">Lotes</p>
-                  </div>
-                )} */}
                 {calçadasAcessiveis && (
                   <div className="border border-primary-dark p-1 mr-2 ml-2 mt-2 m-0 flex flex-column h-100">
                     <button
@@ -638,6 +629,18 @@ const Map = () => {
                       <VscClose />
                     </button>
                     <p className="font-bold m-0">Vegetação</p>
+                  </div>
+                )}
+                {parqueTrechos && (
+                  <div className="border border-primary-dark p-1 mr-2 ml-2 mt-2 m-0 flex flex-column h-100">
+                    <button
+                      type="button"
+                      className="self-end"
+                      onClick={() => setParqueTrechos(false)}
+                    >
+                      <VscClose />
+                    </button>
+                    <p className="font-bold m-0">Trechos - Parque Capibaribe</p>
                   </div>
                 )}
               </div>
