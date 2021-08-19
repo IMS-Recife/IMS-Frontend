@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from "react";
 import HighchartsReact from "highcharts-react-official";
+import PropTypes from "prop-types";
 import { economyAPI } from "../../../services/api";
 
-function JobsChart({ Highcharts }) {
+function MotorVehicleRepairJobs({ Highcharts }) {
   const [years, setYears] = useState([]);
   const [
     numOfMotorVehicleRepairJobs,
@@ -19,6 +20,7 @@ function JobsChart({ Highcharts }) {
       setYears(data.map((d) => d.B3).reverse());
       setNumOfMotorVehicleRepairJobs(data.map((d) => d.E8).reverse());
     } catch (error) {
+      // eslint-disable-next-line no-alert
       alert("Ocorreu um erro ao buscar os items");
     }
   };
@@ -77,4 +79,8 @@ function JobsChart({ Highcharts }) {
   );
 }
 
-export default JobsChart;
+export default MotorVehicleRepairJobs;
+
+MotorVehicleRepairJobs.propTypes = {
+  Highcharts: PropTypes.node.isRequired,
+};
