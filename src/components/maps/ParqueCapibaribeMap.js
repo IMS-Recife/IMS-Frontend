@@ -2,7 +2,7 @@
 import { injectIntl } from "react-intl";
 import React, { useState } from "react";
 import { StaticMap } from "react-map-gl";
-import { GeoJsonLayer, PolygonLayer, ScatterplotLayer } from "@deck.gl/layers";
+import { GeoJsonLayer, ScatterplotLayer } from "@deck.gl/layers";
 import { DeckGL } from "deck.gl";
 import { VscClose } from "react-icons/vsc";
 import styled from "styled-components";
@@ -55,6 +55,11 @@ const Ring2 = styled.div`
 `;
 
 const ParqueCapibaribeMap = () => {
+  const route = {
+    label: "Parque Capibaribe",
+    url: "/projetos/parquecapibaribe",
+    path: ["/", "/projetos", "/parquecapibaribe"],
+  };
   const [calçadas, setCalçadas] = useState(true);
   const [calçadasAcessiveis, setCalçadasAcessiveis] = useState(false);
   const [vegetacao, setVegetacao] = useState(true);
@@ -249,7 +254,11 @@ const ParqueCapibaribeMap = () => {
           <div className="sm:w-4/5 2xl:w-3/5 h-full bg-white opacity-95 z-10 text-black border-r flex-grow">
             <div className="self-end">
               <div className="mr-0">
-                <Breadcrumbs />
+                <Breadcrumbs
+                  label={route.label}
+                  url={route.url}
+                  path={route.path}
+                />
                 <aside className="w-11/12 bg-primary-gray ml-16">
                   <h1 className="font-raleway text-5xl font-bold text-primary-text pt-5 pl-5 pb-2 mb-0">
                     Parque Capibaribe

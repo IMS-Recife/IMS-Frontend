@@ -55,6 +55,11 @@ const Ring2 = styled.div`
 `;
 
 const CalcadaLegalMap = () => {
+  const route = {
+    label: "Calçada Legal",
+    url: "/projetos/calcadalegal",
+    path: ["/", "/projetos", "/calcadalegal"],
+  };
   // const [lotes, setLotes] = useState(false);
   // const [logradouros, setLogradouros] = useState(false);
   const [calçadas, setCalçadas] = useState(true);
@@ -232,7 +237,11 @@ const CalcadaLegalMap = () => {
           <div className="sm:w-4/5 2xl:w-3/5 h-full bg-white opacity-95 z-10 text-black border-r flex-grow">
             <div className="self-end">
               <div className="mr-0">
-                <Breadcrumbs />
+                <Breadcrumbs
+                  label={route.label}
+                  url={route.url}
+                  path={route.path}
+                />
                 <aside className="w-11/12 bg-primary-gray ml-16">
                   <h1 className="font-raleway text-5xl font-bold text-primary-text pt-5 pl-5 pb-2 mb-0">
                     Calçada Legal

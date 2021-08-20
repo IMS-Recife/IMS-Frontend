@@ -4,6 +4,11 @@ import Layout from "../components/Layout";
 import Breadcrumbs from "../components/common/Breadcrumbs";
 
 function Plans() {
+  const route = {
+    label: "Planos",
+    url: "/planos",
+    path: ["/", "/planos"],
+  };
   return (
     <>
       <Layout>
@@ -14,7 +19,7 @@ function Plans() {
             minHeight: "calc(100vh - 136px)",
           }}
         >
-          <Breadcrumbs />
+          <Breadcrumbs label={route.label} url={route.url} path={route.path} />
           <div
             className="m-16 mt-3 bg-primary-gray shadow-xl p-8"
             style={{

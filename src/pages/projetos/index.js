@@ -9,6 +9,11 @@ import Breadcrumbs from "../../components/common/Breadcrumbs";
 import StatusLabel from "../../components/common/StatusLabel";
 
 const Projects = () => {
+  const route = {
+    label: "Projetos",
+    url: "/projetos",
+    path: ["/", "/projetos"],
+  };
   const { handleChangePreviousPath } = usePreviousPath();
   const router = useRouter();
   return (
@@ -20,7 +25,7 @@ const Projects = () => {
           minHeight: "calc(100vh - 136px)",
         }}
       >
-        <Breadcrumbs />
+        <Breadcrumbs label={route.label} url={route.url} path={route.path} />
         <div className="bg-primary-gray shadow-xl min-h-full m-16 mt-3">
           <div className="px-5 pt-5 mb-0">
             <h1 className="font-raleway uppercase text-4xl font-bold text-primary-text">
