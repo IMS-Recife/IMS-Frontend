@@ -5,13 +5,9 @@
     {
       "type": "Feature",
       "properties": {
-        "Name": "trc_jaqueira-baoba",
-        "description": "<html xmlns:fo=\"http://www.w3.org/1999/XSL/Format\" xmlns:msxsl=\"urn:schemas-microsoft-com:xslt\">\n\n<head>\n\n<META http-equiv=\"Content-Type\" content=\"text/html\">\n\n<meta http-equiv=\"content-type\" content=\"text/html; charset=UTF-8\">\n\n</head>\n\n<body style=\"margin:0px 0px 0px 0px;overflow:auto;background:#FFFFFF;\">\n\n<table style=\"font-family:Arial,Verdana,Times;font-size:12px;text-align:left;width:100%;border-collapse:collapse;padding:3px 3px 3px 3px\">\n\n<tr style=\"text-align:center;font-weight:bold;background:#9CBCE2\">\n\n<td>trc_jaqueira-baoba</td>\n\n</tr>\n\n<tr>\n\n<td>\n\n<table style=\"font-family:Arial,Verdana,Times;font-size:12px;text-align:left;width:100%;border-spacing:0px; padding:3px 3px 3px 3px\">\n\n<tr>\n\n<td>FID</td>\n\n<td>1</td>\n\n</tr>\n\n<tr bgcolor=\"#D4E4F3\">\n\n<td>Layer</td>\n\n<td>trc_jaqueira-baoba</td>\n\n</tr>\n\n<tr>\n\n<td>numeracao</td>\n\n<td>03</td>\n\n</tr>\n\n</table>\n\n</td>\n\n</tr>\n\n</table>\n\n</body>\n\n</html>\n\n",
-        "altitudeMode": "clampToGround",
-        "tessellate": -1,
-        "extrude": 0,
-        "visibility": -1,
-        "snippet": ""
+        "name": "Jaqueira",
+        "extension": "600m",
+        "status": "Projeto Executivo Urbanístico concluído e Complementares em processo de finalização."
       },
       "geometry": {
         "type": "MultiPolygon",
@@ -1572,13 +1568,9 @@
     {
       "type": "Feature",
       "properties": {
-        "Name": "trc_derby-fundaj",
-        "description": "<html xmlns:fo=\"http://www.w3.org/1999/XSL/Format\" xmlns:msxsl=\"urn:schemas-microsoft-com:xslt\">\n\n<head>\n\n<META http-equiv=\"Content-Type\" content=\"text/html\">\n\n<meta http-equiv=\"content-type\" content=\"text/html; charset=UTF-8\">\n\n</head>\n\n<body style=\"margin:0px 0px 0px 0px;overflow:auto;background:#FFFFFF;\">\n\n<table style=\"font-family:Arial,Verdana,Times;font-size:12px;text-align:left;width:100%;border-collapse:collapse;padding:3px 3px 3px 3px\">\n\n<tr style=\"text-align:center;font-weight:bold;background:#9CBCE2\">\n\n<td>trc_derby-fundaj</td>\n\n</tr>\n\n<tr>\n\n<td>\n\n<table style=\"font-family:Arial,Verdana,Times;font-size:12px;text-align:left;width:100%;border-spacing:0px; padding:3px 3px 3px 3px\">\n\n<tr>\n\n<td>FID</td>\n\n<td>3</td>\n\n</tr>\n\n<tr bgcolor=\"#D4E4F3\">\n\n<td>Layer</td>\n\n<td>trc_derby-fundaj</td>\n\n</tr>\n\n<tr>\n\n<td>numeracao</td>\n\n<td>09</td>\n\n</tr>\n\n</table>\n\n</td>\n\n</tr>\n\n</table>\n\n</body>\n\n</html>\n\n",
-        "altitudeMode": "clampToGround",
-        "tessellate": -1,
-        "extrude": 0,
-        "visibility": -1,
-        "snippet": ""
+        "name": "Derby",
+        "extension": "≈175m",
+        "status": "Projeto Executivo Urbanístico."
       },
       "geometry": {
         "type": "MultiPolygon",
@@ -1783,13 +1775,9 @@
     {
       "type": "Feature",
       "properties": {
-        "Name": "trc_capunga",
-        "description": "<html xmlns:fo=\"http://www.w3.org/1999/XSL/Format\" xmlns:msxsl=\"urn:schemas-microsoft-com:xslt\">\n\n<head>\n\n<META http-equiv=\"Content-Type\" content=\"text/html\">\n\n<meta http-equiv=\"content-type\" content=\"text/html; charset=UTF-8\">\n\n</head>\n\n<body style=\"margin:0px 0px 0px 0px;overflow:auto;background:#FFFFFF;\">\n\n<table style=\"font-family:Arial,Verdana,Times;font-size:12px;text-align:left;width:100%;border-collapse:collapse;padding:3px 3px 3px 3px\">\n\n<tr style=\"text-align:center;font-weight:bold;background:#9CBCE2\">\n\n<td>trc_capunga</td>\n\n</tr>\n\n<tr>\n\n<td>\n\n<table style=\"font-family:Arial,Verdana,Times;font-size:12px;text-align:left;width:100%;border-spacing:0px; padding:3px 3px 3px 3px\">\n\n<tr>\n\n<td>FID</td>\n\n<td>4</td>\n\n</tr>\n\n<tr bgcolor=\"#D4E4F3\">\n\n<td>Layer</td>\n\n<td>trc_capunga</td>\n\n</tr>\n\n<tr>\n\n<td>numeracao</td>\n\n<td>07</td>\n\n</tr>\n\n</table>\n\n</td>\n\n</tr>\n\n</table>\n\n</body>\n\n</html>\n\n",
-        "altitudeMode": "clampToGround",
-        "tessellate": -1,
-        "extrude": 0,
-        "visibility": -1,
-        "snippet": ""
+        "name": "Capunga",
+        "extension": "400m",
+        "status": "Projeto Executivo Urbanístico."
       },
       "geometry": {
         "type": "MultiPolygon",
@@ -4089,13 +4077,9 @@
     {
       "type": "Feature",
       "properties": {
-        "Name": "trc_jardim do baoba",
-        "description": "<html xmlns:fo=\"http://www.w3.org/1999/XSL/Format\" xmlns:msxsl=\"urn:schemas-microsoft-com:xslt\">\n\n<head>\n\n<META http-equiv=\"Content-Type\" content=\"text/html\">\n\n<meta http-equiv=\"content-type\" content=\"text/html; charset=UTF-8\">\n\n</head>\n\n<body style=\"margin:0px 0px 0px 0px;overflow:auto;background:#FFFFFF;\">\n\n<table style=\"font-family:Arial,Verdana,Times;font-size:12px;text-align:left;width:100%;border-collapse:collapse;padding:3px 3px 3px 3px\">\n\n<tr style=\"text-align:center;font-weight:bold;background:#9CBCE2\">\n\n<td>trc_jardim do baoba</td>\n\n</tr>\n\n<tr>\n\n<td>\n\n<table style=\"font-family:Arial,Verdana,Times;font-size:12px;text-align:left;width:100%;border-spacing:0px; padding:3px 3px 3px 3px\">\n\n<tr>\n\n<td>FID</td>\n\n<td>5</td>\n\n</tr>\n\n<tr bgcolor=\"#D4E4F3\">\n\n<td>Layer</td>\n\n<td>trc_jardim do baoba</td>\n\n</tr>\n\n<tr>\n\n<td>numeracao</td>\n\n<td>04</td>\n\n</tr>\n\n</table>\n\n</td>\n\n</tr>\n\n</table>\n\n</body>\n\n</html>\n\n",
-        "altitudeMode": "clampToGround",
-        "tessellate": -1,
-        "extrude": 0,
-        "visibility": -1,
-        "snippet": ""
+        "name": "Jardim do Baobá",
+        "extension": "100m",
+        "status": "Finalizado."
       },
       "geometry": {
         "type": "MultiPolygon",
@@ -4511,13 +4495,10 @@
     {
       "type": "Feature",
       "properties": {
-        "Name": "tcr_parque das gracas",
-        "description": "<html xmlns:fo=\"http://www.w3.org/1999/XSL/Format\" xmlns:msxsl=\"urn:schemas-microsoft-com:xslt\">\n\n<head>\n\n<META http-equiv=\"Content-Type\" content=\"text/html\">\n\n<meta http-equiv=\"content-type\" content=\"text/html; charset=UTF-8\">\n\n</head>\n\n<body style=\"margin:0px 0px 0px 0px;overflow:auto;background:#FFFFFF;\">\n\n<table style=\"font-family:Arial,Verdana,Times;font-size:12px;text-align:left;width:100%;border-collapse:collapse;padding:3px 3px 3px 3px\">\n\n<tr style=\"text-align:center;font-weight:bold;background:#9CBCE2\">\n\n<td>tcr_parque das gracas</td>\n\n</tr>\n\n<tr>\n\n<td>\n\n<table style=\"font-family:Arial,Verdana,Times;font-size:12px;text-align:left;width:100%;border-spacing:0px; padding:3px 3px 3px 3px\">\n\n<tr>\n\n<td>FID</td>\n\n<td>7</td>\n\n</tr>\n\n<tr bgcolor=\"#D4E4F3\">\n\n<td>Layer</td>\n\n<td>tcr_parque das gracas</td>\n\n</tr>\n\n<tr>\n\n<td>numeracao</td>\n\n<td>06</td>\n\n</tr>\n\n</table>\n\n</td>\n\n</tr>\n\n</table>\n\n</body>\n\n</html>\n\n",
-        "altitudeMode": "clampToGround",
-        "tessellate": -1,
-        "extrude": 0,
-        "visibility": -1,
-        "snippet": ""
+        "name": "Parque das Graças",
+        "extension": "900m",
+        "status": "Em execução (Mar 2021-Mar 2023)",
+        "valor_orçado": 43596339.70
       },
       "geometry": {
         "type": "MultiPolygon",
@@ -9768,13 +9749,9 @@
     {
       "type": "Feature",
       "properties": {
-        "Name": "trc_baoba-ponte da torre",
-        "description": "<html xmlns:fo=\"http://www.w3.org/1999/XSL/Format\" xmlns:msxsl=\"urn:schemas-microsoft-com:xslt\">\n\n<head>\n\n<META http-equiv=\"Content-Type\" content=\"text/html\">\n\n<meta http-equiv=\"content-type\" content=\"text/html; charset=UTF-8\">\n\n</head>\n\n<body style=\"margin:0px 0px 0px 0px;overflow:auto;background:#FFFFFF;\">\n\n<table style=\"font-family:Arial,Verdana,Times;font-size:12px;text-align:left;width:100%;border-collapse:collapse;padding:3px 3px 3px 3px\">\n\n<tr style=\"text-align:center;font-weight:bold;background:#9CBCE2\">\n\n<td>trc_baoba-ponte da torre</td>\n\n</tr>\n\n<tr>\n\n<td>\n\n<table style=\"font-family:Arial,Verdana,Times;font-size:12px;text-align:left;width:100%;border-spacing:0px; padding:3px 3px 3px 3px\">\n\n<tr>\n\n<td>FID</td>\n\n<td>9</td>\n\n</tr>\n\n<tr bgcolor=\"#D4E4F3\">\n\n<td>Layer</td>\n\n<td>trc_baoba-ponte da torre</td>\n\n</tr>\n\n<tr>\n\n<td>numeracao</td>\n\n<td>05</td>\n\n</tr>\n\n</table>\n\n</td>\n\n</tr>\n\n</table>\n\n</body>\n\n</html>\n\n",
-        "altitudeMode": "clampToGround",
-        "tessellate": -1,
-        "extrude": 0,
-        "visibility": -1,
-        "snippet": ""
+        "name": "Ponte D’Uchôa",
+        "extension": "400m",
+        "status": "Projeto Executivo Urbanístico concluído e Complementares em andamento."
       },
       "geometry": {
         "type": "MultiPolygon",
