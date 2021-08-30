@@ -60,6 +60,9 @@ const ParqueCapibaribeMap = () => {
   const [vegetacao, setVegetacao] = useState(true);
   const [postes, setPostes] = useState(true);
   const [parqueTrechos, setParqueTrechos] = useState(true);
+  const [showSidebar, setShowSidebar] = useState(false);
+  const [showProjectSidebar, setShowProjecSidebar] = useState(true);
+  const [sidebarContent, setSidebarContent] = useState({});
 
   const filterHandler = (value) => {
     if (value === "Calçadas") {
@@ -111,9 +114,6 @@ const ParqueCapibaribeMap = () => {
     zoom: 16,
   });
 
-  const [showSidebar, setShowSidebar] = useState(false);
-  const [showProjectSidebar, setShowProjecSidebar] = useState(true);
-
   const layers = [
     new GeoJsonLayer({
       id: "Trechos - Parque Capibaribe",
@@ -125,10 +125,11 @@ const ParqueCapibaribeMap = () => {
       lineWidthMinPixels: 2,
       getFillColor: [34, 139, 34, 200],
       data:
-        "https://raw.githubusercontent.com/IMS-Recife/IMS-Frontend/dev_parque_map/src/assets/Geojsons/pq_capibaribe_trechos.json",
+        "https://raw.githubusercontent.com/IMS-Recife/IMS-Frontend/dev_parque_sidebar/src/assets/Geojsons/pq_capibaribe_trechos.json",
       onClick: ({ object }) => {
-        // eslint-disable-next-line no-console
-        console.log(object);
+        setShowSidebar((prevState) => !prevState);
+        console.log(object.properties)
+        setSidebarContent(object.properties)
       },
       getPointRadius: 100,
       getLineWidth: 1,
@@ -443,10 +444,15 @@ const ParqueCapibaribeMap = () => {
           <Breadcrumbs />
           <div className="mt-4 w-4/5 bg-primary-gray ml-16">
             <h1 className="font-raleway text-4xl font-bold text-primary-text p-5 mb-2">
-              Calçada Legal | Lote 1
+              {sidebarContent.name}
             </h1>
-            <div className="flex flex-row ml-5">
-              <StatusLabel status="finished" fontWeight="bold" projectStatus />
+            <div className="flex flex-col ml-5">
+              <label>Status:</label>
+              <span>{sidebarContent.status}</span>
+            </div>
+            <div className="flex flex-col ml-5">
+              <label>Extensão:</label>
+              <span>{sidebarContent.extension}</span>
             </div>
             <div className="ml-5 flex flex-row">
               <p
