@@ -1,36 +1,21 @@
-import React, { createContext, useContext, useEffect, useState } from "react";
+import React, { createContext, useContext, useState } from "react";
 import PropTypes from "prop-types";
-import { covidAPI } from "../services/api";
 
 const LayoutContext = createContext(undefined);
 
 export const LayoutProvider = ({ children }) => {
   const [toggledSidebar, setToggledSidebar] = useState(false);
   const [collapseSideBar, setCollapseSideBar] = useState(true);
-  const [lastTimeUpdated, setLastTimeUpdated] = useState(new Date());
 
   const handleToggleSidebar = (value) => {
     setToggledSidebar(value);
   };
-
-  useEffect(() => {
-    const getLastTimeUpdated = async () => {
-      try {
-        const { data } = await covidAPI.get("/painel");
-        setLastTimeUpdated(new Date(data[0]["Data.de.atualização"]));
-      } catch (error) {
-        alert("Ocorreu um erro ao buscar os items");
-      }
-    };
-    getLastTimeUpdated();
-  }, []);
 
   return (
     <LayoutContext.Provider
       value={{
         collapseSideBar,
         setCollapseSideBar,
-        lastTimeUpdated,
         toggledSidebar,
         setToggledSidebar,
         handleToggleSidebar,
